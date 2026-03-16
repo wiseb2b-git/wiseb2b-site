@@ -16,8 +16,9 @@ import BaseLayout from '../layouts/BaseLayout.astro';
       <div class="main-head-container container">
         <div class="main-head-container-desc">
           <div class="animated fadeInLeft">
-            <h2>eCommerce B2B Platform</h2>
-            <p class="title-main"><span class="text-head">Realizuj <i>swoją</i><br> strategię sprzedaży </span><span class="text-head">Wejdź na <i>wyższy</i><br> poziom e-Commerce</span><span class="text-head">Otwieraj <i>nowe</i> kanały<br> i&nbsp;modele sprzedaży </span></p>
+            <h2>Commerce B2B Platform</h2>
+            <p class="title-main">
+              <span class="text-head">Realizuj <i>swoją</i><br> strategię sprzedaży </span> <span class="text-head">Skaluj <i>swój</i><br> biznes </span> <span class="text-head">Wejdź na <i>wyższy</i><br> poziom e-Commerce</span>
             <p class="yellow-text">z #wiseB2B</p>
           </div>
         </div>
@@ -61,29 +62,48 @@ import BaseLayout from '../layouts/BaseLayout.astro';
   <section class="main-partners-logos">
     <div class="container">
       <div class="row"><div class="col-lg-12"><h2 class="wow fadeIn" data-wow-delay="0.15s">Zaufali nam</h2></div></div>
-      <div class="row justify-content-center">
-        <div class="container-logo">
-          <div class="box-logo col-4 col-md-3 col-lg-2 wow fadeIn" data-wow-delay="0.45s" data-wow-duration="1s">
-            <div class="image">
-              <img loading="lazy" width="68" height="68" src="/images/candelluxLogo.jpg" class="img-logo" alt="" />
-            </div>
-          </div>
-          <div class="box-logo col-4 col-md-3 col-lg-2 wow fadeIn" data-wow-delay="0.65s" data-wow-duration="1s">
-            <div class="image">
-              <img loading="lazy" width="169" height="32" src="/images/logo_lobos.png" class="img-logo" alt="" />
-            </div>
-          </div>
-          <div class="box-logo col-4 col-md-3 col-lg-2 wow fadeIn" data-wow-delay="0.85s" data-wow-duration="1s">
-            <div class="image">
-              <img loading="lazy" width="132" height="50" src="/images/raw_pol_logo.jpg" class="img-logo" alt="" />
-            </div>
-          </div>
-          <div class="box-logo col-4 col-md-3 col-lg-2 wow fadeIn" data-wow-delay="1.05s" data-wow-duration="1s">
-            <div class="image">
-              <img loading="lazy" width="152" height="44" src="/images/triplexLogo.jpg" class="img-logo" alt="" />
+      <div class="row">
+        <div class="col-12">
+          <div class="logos-marquee wow fadeIn" data-wow-delay="0.45s">
+            <div class="logos-marquee-track">
+              <!-- Zestaw 1 -->
+              <div class="logo-item"><img width="152" height="44" src="/images/triplexLogo.jpg" alt="Triplex" /></div>
+              <div class="logo-item"><img width="68" height="68" src="/images/candelluxLogo.jpg" alt="Candellux" /></div>
+              <div class="logo-item"><img width="132" height="50" src="/images/raw_pol_logo.jpg" alt="Raw-Pol" /></div>
+              <div class="logo-item"><img width="93" height="45" src="/images/mastermedia_logo.png" alt="Mastermedia" /></div>
+              <div class="logo-item"><img width="169" height="32" src="/images/logo_lobos.png" alt="Łobos" /></div>
+              <div class="logo-item"><img width="140" height="50" src="/images/logo-vmp.jpg" alt="VMP" /></div>
+              <div class="logo-item"><img width="140" height="50" src="/images/logo-momenti.jpg" alt="Momenti" /></div>
+              <div class="logo-item"><img width="140" height="50" src="/images/logo-tedmark.jpg" alt="TedMark" /></div>
+              <div class="logo-item"><img width="140" height="50" src="/images/logo-agrotex.jpg" alt="Agrotex" /></div>
+              <div class="logo-item"><img width="140" height="50" src="/images/logo-intermal.png" alt="Intermal" /></div>
+              <!-- Zestaw 2 (duplikat dla płynnej pętli) -->
+              <div class="logo-item"><img width="152" height="44" src="/images/triplexLogo.jpg" alt="Triplex" /></div>
+              <div class="logo-item"><img width="68" height="68" src="/images/candelluxLogo.jpg" alt="Candellux" /></div>
+              <div class="logo-item"><img width="132" height="50" src="/images/raw_pol_logo.jpg" alt="Raw-Pol" /></div>
+              <div class="logo-item"><img width="93" height="45" src="/images/mastermedia_logo.png" alt="Mastermedia" /></div>
+              <div class="logo-item"><img width="169" height="32" src="/images/logo_lobos.png" alt="Łobos" /></div>
+              <div class="logo-item"><img width="140" height="50" src="/images/logo-vmp.jpg" alt="VMP" /></div>
+              <div class="logo-item"><img width="140" height="50" src="/images/logo-momenti.jpg" alt="Momenti" /></div>
+              <div class="logo-item"><img width="140" height="50" src="/images/logo-tedmark.jpg" alt="TedMark" /></div>
+              <div class="logo-item"><img width="140" height="50" src="/images/logo-agrotex.jpg" alt="Agrotex" /></div>
+              <div class="logo-item"><img width="140" height="50" src="/images/logo-intermal.png" alt="Intermal" /></div>
             </div>
           </div>
         </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- MAIN CLAIM -->
+  <section class="main-claim">
+    <div class="container">
+      <div class="main-claim-inner wow fadeIn" data-wow-duration="1s">
+        <h2 class="main-claim-heading">
+          Jedyna platforma <span class="main-claim-highlight">Commerce B2B</span><br/>
+          z użytecznym AI, Panelem Handlowca i otwartym kodem
+        </h2>
+        <div class="main-claim-line"></div>
       </div>
     </div>
   </section>
@@ -95,7 +115,7 @@ import BaseLayout from '../layouts/BaseLayout.astro';
         <div class="box-img-logo wow fadeIn" data-wow-delay=".25s">
           <img class="logo" src="/svg/logo-wiseb2b_black.svg" alt="WiseB2B" />
         </div>
-        <h2 class="wow fadeIn" data-wow-delay=".3525s">eCommerce B2B Platform</h2>
+        <h2 class="wow fadeIn" data-wow-delay=".3525s">Commerce B2B Platform</h2>
       </div>
       <div class="main-feature-wrapper">
         <div class="main-feature-box-tool wow fadeIn" data-wow-duration="0.5s">
@@ -222,7 +242,7 @@ import BaseLayout from '../layouts/BaseLayout.astro';
                 </div>
               </div>
               <button class="card-title">
-                <h4>Portfolio funkcjonalność B2B</h4>
+                <h4>Platforma eCommerce B2B</h4>
               </button>
               <div class="bg-after-box"></div>
             </div>
@@ -234,7 +254,7 @@ import BaseLayout from '../layouts/BaseLayout.astro';
           </div>
         </div>
 
-        <!-- Card 2: Wsparcie ekspertów i rozwój -->
+        <!-- Card 2: Praktyczne wykorzystanie AI -->
         <div class="main-feature-container-cards  left-bottom">
           <div class="main-feature-card wow   fadeInRight" data-wow-duration=".6s" data-wow-delay=".5s">
             <div class="main-feature-box">
@@ -267,25 +287,84 @@ import BaseLayout from '../layouts/BaseLayout.astro';
                     </defs>
                 </svg>
                 <div class="box-icon">
-                  <img loading="lazy" width="40" height="40" src="/svg/feature-wsparcie.svg" class="img-icon" alt="" />
+                  <svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg" class="img-icon">
+                    <path d="M20 4C18.9 4 18 4.9 18 6V7.1C14.1 7.9 11 11.3 11 15.5V16H9C7.9 16 7 16.9 7 18C7 19.1 7.9 20 9 20H11V22C11 26.2 14.1 29.6 18 30.4V32H15C13.9 32 13 32.9 13 34C13 35.1 13.9 36 15 36H25C26.1 36 27 35.1 27 34C27 32.9 26.1 32 25 32H22V30.4C25.9 29.6 29 26.2 29 22V20H31C32.1 20 33 19.1 33 18C33 16.9 32.1 16 31 16H29V15.5C29 11.3 25.9 7.9 22 7.1V6C22 4.9 21.1 4 20 4ZM16 16C16 15.4 16.4 15 17 15H23C23.6 15 24 15.4 24 16C24 16.6 23.6 17 23 17H17C16.4 17 16 16.6 16 16ZM16 20C16 19.4 16.4 19 17 19H23C23.6 19 24 19.4 24 20C24 20.6 23.6 21 23 21H17C16.4 21 16 20.6 16 20ZM17 23H23C23.6 23 24 23.4 24 24C24 24.6 23.6 25 23 25H17C16.4 25 16 24.6 16 24C16 23.4 16.4 23 17 23Z" fill="white"/>
+                  </svg>
                 </div>
               </div>
               <button class="card-title">
-                <h4>Wsparcie ekspertów i rozwój</h4>
+                <h4>Praktyczne wykorzystanie AI</h4>
               </button>
               <div class="bg-after-box"></div>
             </div>
             <div class="card-desc">
               <button class="btn-close-card"><img src="/svg/btn-close.svg"></button>
-              <p>Skalowanie cyfrowej sprzedaży w B2B to duże wyzwanie. Doświadczony zespół praktyków, partnerzy wdrożeniowi i sprawdzone metody wdrożeniowe pomogą nam odnieść wspólny sukces Twojej sprzedaży.</p>
+              <p>Technologie AI stanowią dzisiaj podstawę wzrostu efektywności. WiseB2B wykorzystuje te możliwości, zarówno przy obsłudze klienta, jak i szybkim procesie wdrożenia na nowy poziom efektywności.</p>
               <a href="/platforma-b2b/" class="show-more">PRZEJDŹ DO SZCZEGÓŁÓW</a>
             </div>
           </div>
         </div>
 
-        <!-- Card 3: Mądre dopasowanie -->
+        <!-- Card 3: Panel Handlowca - sales CRM -->
         <div class="main-feature-container-cards  right-top">
           <div class="main-feature-card wow   fadeInLeft" data-wow-duration=".6s" data-wow-delay=".25s">
+            <div class="main-feature-box">
+              <div class="image-box">
+                <svg class="bg-card bg-card-1" viewBox="0 0 157 112" fill="none"
+                    xmlns="http://www.w3.org/2000/svg">
+                    <path class="wave-first wave-1"
+                        d="M100.76 51.0436C106.754 93.5961 101.848 121.339 62.5085 126.88C23.1687 132.421 -13.5816 102.418 -19.5756 59.8654C-30.6781 -18.9541 84.8818 -27.5548 124.222 -33.0962C163.562 -38.6376 94.7664 8.49097 100.76 51.0436Z"
+                        fill="url(#paint0_linear_17_115)" fill-opacity="0.3" />
+                    <path class="wave-second wave-1"
+                        d="M90.3901 56.2403C90.3901 99.213 81.6625 126 41.9343 126C2.20609 126 -30 91.1638 -30 48.1911C-30 -31.4065 85.6299 -23.8045 125.358 -23.8045C165.086 -23.8045 90.3901 13.2676 90.3901 56.2403Z"
+                        fill="url(#paint1_linear_17_115)" />
+                    <circle class="first-circle" opacity="0.2" cx="37.4688" cy="81.2604" r="20.3125"
+                        fill="#F7F7F7" />
+                    <circle class="second-circle" opacity="0.2" cx="75.3594" cy="25.6615" r="12.8906"
+                        fill="#F7F7F7" />
+                    <circle class="third-circle" opacity="0.2" cx="37.5991" cy="29.5677" r="5.07812"
+                        fill="#F7F7F7" />
+                    <defs>
+                        <linearGradient id="paint0_linear_17_115" x1="-8.72258" y1="136.914" x2="174.579"
+                            y2="34.9166" gradientUnits="userSpaceOnUse">
+                            <stop stop-color="#000428" />
+                            <stop offset="1" stop-color="#004E92" />
+                        </linearGradient>
+                        <linearGradient id="paint1_linear_17_115" x1="-30" y1="126" x2="165.737"
+                            y2="50.5674" gradientUnits="userSpaceOnUse">
+                            <stop stop-color="#000428" />
+                            <stop offset="1" stop-color="#004E92" />
+                        </linearGradient>
+                    </defs>
+                </svg>
+                <div class="box-icon">
+                  <svg width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg" class="img-icon">
+                    <path d="M24 8C21.8 8 20 9.8 20 12C20 14.2 21.8 16 24 16C26.2 16 28 14.2 28 12C28 9.8 26.2 8 24 8Z" fill="white"/>
+                    <path d="M36 14C34.3 14 33 15.3 33 17C33 18.7 34.3 20 36 20C37.7 20 39 18.7 39 17C39 15.3 37.7 14 36 14Z" fill="white"/>
+                    <path d="M12 14C10.3 14 9 15.3 9 17C9 18.7 10.3 20 12 20C13.7 20 15 18.7 15 17C15 15.3 13.7 14 12 14Z" fill="white"/>
+                    <path d="M18 18H30C31.1 18 32 18.9 32 20V28C32 29.1 31.1 30 30 30H18C16.9 30 16 29.1 16 28V20C16 18.9 16.9 18 18 18ZM20 22V24H28V22H20ZM20 26V27H25V26H20Z" fill="white"/>
+                    <path d="M8 22H14V28H8C6.9 28 6 27.1 6 26V24C6 22.9 6.9 22 8 22Z" fill="white"/>
+                    <path d="M34 22H40C41.1 22 42 22.9 42 24V26C42 27.1 41.1 28 40 28H34V22Z" fill="white"/>
+                    <path d="M19 32H29L31 38C31.4 39.2 30.5 40 29.3 40H18.7C17.5 40 16.6 39.2 17 38L19 32Z" fill="white"/>
+                  </svg>
+                </div>
+              </div>
+              <button class="card-title">
+                <h4>Panel Handlowca - sales CRM</h4>
+              </button>
+              <div class="bg-after-box"></div>
+            </div>
+            <div class="card-desc">
+              <button class="btn-close-card"><img src="/svg/btn-close.svg"></button>
+              <p>Spraw, aby obsługa Twojego klienta była zintegrowana, aby off-line i on-line mogły ze sobą płynnie współistnieć i współpracować.</p>
+              <a href="/platforma-b2b/" class="show-more">PRZEJDŹ DO SZCZEGÓŁÓW</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Card 4: Mądre dopasowanie -->
+        <div class="main-feature-container-cards  right-bottom">
+          <div class="main-feature-card wow   fadeInLeft" data-wow-duration=".6s" data-wow-delay=".75s">
             <div class="main-feature-box">
               <div class="image-box">
                 <svg class="bg-card bg-card-1" viewBox="0 0 157 112" fill="none"
@@ -331,55 +410,6 @@ import BaseLayout from '../layouts/BaseLayout.astro';
             </div>
           </div>
         </div>
-
-        <!-- Card 4: Integracje -->
-        <div class="main-feature-container-cards  right-bottom">
-          <div class="main-feature-card wow   fadeInLeft" data-wow-duration=".6s" data-wow-delay=".75s">
-            <div class="main-feature-box">
-              <div class="image-box">
-                <svg class="bg-card bg-card-1" viewBox="0 0 157 112" fill="none"
-                    xmlns="http://www.w3.org/2000/svg">
-                    <path class="wave-first wave-1"
-                        d="M100.76 51.0436C106.754 93.5961 101.848 121.339 62.5085 126.88C23.1687 132.421 -13.5816 102.418 -19.5756 59.8654C-30.6781 -18.9541 84.8818 -27.5548 124.222 -33.0962C163.562 -38.6376 94.7664 8.49097 100.76 51.0436Z"
-                        fill="url(#paint0_linear_17_115)" fill-opacity="0.3" />
-                    <path class="wave-second wave-1"
-                        d="M90.3901 56.2403C90.3901 99.213 81.6625 126 41.9343 126C2.20609 126 -30 91.1638 -30 48.1911C-30 -31.4065 85.6299 -23.8045 125.358 -23.8045C165.086 -23.8045 90.3901 13.2676 90.3901 56.2403Z"
-                        fill="url(#paint1_linear_17_115)" />
-                    <circle class="first-circle" opacity="0.2" cx="37.4688" cy="81.2604" r="20.3125"
-                        fill="#F7F7F7" />
-                    <circle class="second-circle" opacity="0.2" cx="75.3594" cy="25.6615" r="12.8906"
-                        fill="#F7F7F7" />
-                    <circle class="third-circle" opacity="0.2" cx="37.5991" cy="29.5677" r="5.07812"
-                        fill="#F7F7F7" />
-                    <defs>
-                        <linearGradient id="paint0_linear_17_115" x1="-8.72258" y1="136.914" x2="174.579"
-                            y2="34.9166" gradientUnits="userSpaceOnUse">
-                            <stop stop-color="#000428" />
-                            <stop offset="1" stop-color="#004E92" />
-                        </linearGradient>
-                        <linearGradient id="paint1_linear_17_115" x1="-30" y1="126" x2="165.737"
-                            y2="50.5674" gradientUnits="userSpaceOnUse">
-                            <stop stop-color="#000428" />
-                            <stop offset="1" stop-color="#004E92" />
-                        </linearGradient>
-                    </defs>
-                </svg>
-                <div class="box-icon">
-                  <img loading="lazy" width="48" height="48" src="/svg/feature-plan.svg" class="img-icon" alt="" />
-                </div>
-              </div>
-              <button class="card-title">
-                <h4>Integracje</h4>
-              </button>
-              <div class="bg-after-box"></div>
-            </div>
-            <div class="card-desc">
-              <button class="btn-close-card"><img src="/svg/btn-close.svg"></button>
-              <p>Platforma eCommerce to jedno z wielu narzędzi, jakimi się posługujesz. Gotowe integracje to krótszy czas wdrożenia, niższe koszty i większa stabilność.</p>
-              <a href="/platforma-b2b/integracje/" class="show-more">PRZEJDŹ DO SZCZEGÓŁÓW</a>
-            </div>
-          </div>
-        </div>
       </div>
     </div>
   </section>
@@ -402,16 +432,16 @@ import BaseLayout from '../layouts/BaseLayout.astro';
     </div>
     <div class="main-believe-container container">
       <div class="main-believe-box">
-        <h2 class="wow fadeIn" data-wow-delay="0.6s">Wierzymy</h2>
+        <h2 class="wow fadeIn" data-wow-delay="0.3s">Dlaczego WiseB2B?</h2>
 
         <div class="box-believe-point ">
-          <div class="box-believe-icon wow fadeIn" data-wow-delay="1s">
+          <div class="box-believe-icon wow fadeIn" data-wow-delay="0.5s">
             <img loading="lazy" width="47" height="60" src="/svg/first-icon-believe-1.svg" class="believe-icon wow zoomIn" alt="" />
           </div>
           <div class="box-believe-desc">
-            <h4 class="wow fadeInRight" data-wow-delay="-0.5s">Spójne reguły handlowe to wyzwanie</h4>
-            <p class="wow fadeInRight" data-wow-delay="-0.2s">Relacje B2B są bardzo złożone. Nie wystarczą zwykłe cenniki, promocje. W grę wchodzą rabaty progowe, kontrakty, programy lojalnościowe, umowy bonusowe. Zachęcasz do zakupów swoich klientów na wiele sposobów i wszystkie muszą być zgodne z Twoim systemem ERP, jego implementacją. Zadbamy o spójności pomiędzy platformą B2B a działaniem handlowym</p>
-            <button class="btn-believe wow fadeInRight" data-wow-delay="-0.2s">
+            <h4 class="wow fadeInRight" data-wow-delay="0.6s">AI działający w praktyce</h4>
+            <p class="wow fadeInRight" data-wow-delay="0.7s">WiseB2B oferuje nowoczesne narzędzie Agentów AI, które zupełnie zmienia doświadczenia zakupowe klientów. Dopasowanie produktów, obsługa całych koszyków, zamówień, sprawne wsparcie w zakupach to mniej maili i spraw w Twoim BOK.</p>
+            <button class="btn-believe wow fadeInRight" data-wow-delay="0.7s">
               <span class="show-more">Czytaj więcej</span>
               <span class="hide-more">Zwiń</span>
             </button>
@@ -419,13 +449,13 @@ import BaseLayout from '../layouts/BaseLayout.astro';
         </div>
 
         <div class="box-believe-point ">
-          <div class="box-believe-icon wow fadeIn" data-wow-delay="1s">
+          <div class="box-believe-icon wow fadeIn" data-wow-delay="0.8s">
             <img loading="lazy" width="45" height="60" src="/svg/second-icon-believe.svg" class="believe-icon wow zoomIn" alt="" />
           </div>
           <div class="box-believe-desc">
-            <h4 class="wow fadeInRight" data-wow-delay="-0.5s">Doświadczenie klienta jest priorytetem</h4>
-            <p class="wow fadeInRight" data-wow-delay="-0.2s">Nie da się robić wszystkiego najlepiej. Zdając sobie z tego sprawę, skupiamy się na najlepszych doświadczeniach Twojego klienta w codziennych zakupach. Zarządzanie Twoją ofertą, cenami, czy procesem obsługi, zostawiamy tym systemom, które to robią lepiej. Dlatego zamiast rozwoju funkcjonalności skupiamy się na integracji z systemami ERP, PIM, płatności czy kurierskimi.</p>
-            <button class="btn-believe wow fadeInRight" data-wow-delay="-0.2s">
+            <h4 class="wow fadeInRight" data-wow-delay="0.9s">Spójna obsługa klienta online i offline</h4>
+            <p class="wow fadeInRight" data-wow-delay="1s">WiseB2B to jedyna platforma dla B2B, która oferuje również moduły dla pracy handlowców. Kalendarze spotkań, ofertowanie, nadzór nad swoją bazą klientów, oraz pełna komunikacja z klientem — wszystko w jednym miejscu. Nie potrzebujesz osobnego systemu CRM, aby sprawnie obsługiwać klientów. Monitorowanie procesów handlowych nigdy nie było takie łatwe.</p>
+            <button class="btn-believe wow fadeInRight" data-wow-delay="1s">
               <span class="show-more">Czytaj więcej</span>
               <span class="hide-more">Zwiń</span>
             </button>
@@ -435,26 +465,26 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 
       <div class="main-believe-box">
         <div class="box-believe-point ">
-          <div class="box-believe-icon wow fadeIn" data-wow-delay="2s">
-            <img loading="lazy" width="60" height="60" src="/svg/third-icon-believe.svg" class="believe-icon wow zoomIn" alt="" />
-          </div>
-          <div class="box-believe-desc">
-            <h4 class="wow fadeInRight" data-wow-delay="0.5s">Niezależność to fundament biznesu</h4>
-            <p class="wow fadeInRight" data-wow-delay="0.8s">Wielu dostawców platform eCommerce to rozwiązania czysto SaaS. To wygoda, która ogranicza. WiseB2B jest rozwiązaniem otwartym na wsparcie niezależnych agencji i dostawców usług. Możesz korzystać SaaS, ale też zainstalować je u siebie. Możesz mieć dostęp do kodu źródłowego. Jesteś bezpieczny i niezależny.</p>
-            <button class="btn-believe wow fadeInRight" data-wow-delay="0.8s">
-              <span class="show-more">Czytaj więcej</span>
-              <span class="hide-more">Zwiń</span>
-            </button>
-          </div>
-        </div>
-
-        <div class="box-believe-point ">
-          <div class="box-believe-icon wow fadeIn" data-wow-delay="2s">
+          <div class="box-believe-icon wow fadeIn" data-wow-delay="0.3s">
             <img loading="lazy" width="60" height="60" src="/svg/fourtrh-icon-believe.svg" class="believe-icon wow zoomIn" alt="" />
           </div>
           <div class="box-believe-desc">
-            <h4 class="wow fadeInRight" data-wow-delay="0.5s">Sukces wymaga wyróżnienia i perfekcji</h4>
-            <p class="wow fadeInRight" data-wow-delay="0.8s">Cena i dostępność towaru to dzisiaj za mało. Musisz swoim klientom zaoferować ponadprzeciętną jakość obsługi. I to dostosowaną do Twojej branży, potrzeb i sytuacji Twoich klientów. Stwórz dla nich przyjazne doświadczenia zakupowe mądrze wykorzystując naszą platformę. Wygoda buduje nawyki.</p>
+            <h4 class="wow fadeInRight" data-wow-delay="0.4s">Sukces wymaga wyróżnienia i perfekcji</h4>
+            <p class="wow fadeInRight" data-wow-delay="0.5s">Musisz swoim klientom zaoferować ponadprzeciętną jakość obsługi. I to dostosowaną do Twojej branży, potrzeb i sytuacji Twoich klientów. Stwórz dla nich przyjazne doświadczenia zakupowe. WiseB2B to technologia przygotowana do rozszerzeń i indywidualnej rozbudowy, umożliwi Ci perfekcyjne dostosowanie procesu obsługi do ich potrzeb.</p>
+            <button class="btn-believe wow fadeInRight" data-wow-delay="0.5s">
+              <span class="show-more">Czytaj więcej</span>
+              <span class="hide-more">Zwiń</span>
+            </button>
+          </div>
+        </div>
+
+        <div class="box-believe-point ">
+          <div class="box-believe-icon wow fadeIn" data-wow-delay="0.6s">
+            <img loading="lazy" width="60" height="60" src="/svg/firth-icon-believe.svg" class="believe-icon wow zoomIn" alt="" />
+          </div>
+          <div class="box-believe-desc">
+            <h4 class="wow fadeInRight" data-wow-delay="0.7s">Platforma projektowana dla B2B</h4>
+            <p class="wow fadeInRight" data-wow-delay="0.8s">Wiele rozwiązań dostępnych na rynku ewoluowało z platform B2C. Dodatkowe moduły, rozszerzenia, łatki. WiseB2B od samego początku projektowane jest jako platforma B2B, z całą obsługą złożoności procesów handlowych w B2B. Dzięki natywnej obsłudze B2B pracy wdrożeniowej jest znacznie mniej.</p>
             <button class="btn-believe wow fadeInRight" data-wow-delay="0.8s">
               <span class="show-more">Czytaj więcej</span>
               <span class="hide-more">Zwiń</span>
@@ -463,13 +493,13 @@ import BaseLayout from '../layouts/BaseLayout.astro';
         </div>
 
         <div class="box-believe-point ">
-          <div class="box-believe-icon wow fadeIn" data-wow-delay="2s">
-            <img loading="lazy" width="60" height="60" src="/svg/firth-icon-believe.svg" class="believe-icon wow zoomIn" alt="" />
+          <div class="box-believe-icon wow fadeIn" data-wow-delay="0.9s">
+            <img loading="lazy" width="60" height="60" src="/svg/third-icon-believe.svg" class="believe-icon wow zoomIn" alt="" />
           </div>
           <div class="box-believe-desc">
-            <h4 class="wow fadeInRight" data-wow-delay="0.5s">Edukacja daje przewagę</h4>
-            <p class="wow fadeInRight" data-wow-delay="0.8s">Jeśli uda Ci się sprawić, aby Twoi klienci przychodzili do Ciebie nie tylko po towar, ale też po wiedzę i edukację, staniesz się liderem swojej branży. O to warto walczyć. I warto tą strategię odpowiednio wspierać narzędziowo.</p>
-            <button class="btn-believe wow fadeInRight" data-wow-delay="0.8s">
+            <h4 class="wow fadeInRight" data-wow-delay="1s">Niezależność to podstawa bezpieczeństwa</h4>
+            <p class="wow fadeInRight" data-wow-delay="1.1s">Oprogramowanie SaaS to wygoda, ale często też ograniczenie. WiseB2B jest rozwiązaniem otwartym na wsparcie niezależnych agencji i dostawców usług. Możesz korzystać SaaS, ale też zainstalować je na swoich serwerach. Możesz mieć dostęp do kodu źródłowego. Jesteś bezpieczny i niezależny.</p>
+            <button class="btn-believe wow fadeInRight" data-wow-delay="1.1s">
               <span class="show-more">Czytaj więcej</span>
               <span class="hide-more">Zwiń</span>
             </button>
@@ -648,7 +678,7 @@ import BaseLayout from '../layouts/BaseLayout.astro';
         </figure>
         <div class="info-container-lider-desc wow fadeInUp" data-wow-delay="0.1s">
           <p class="name-lider">Jakub Czyżkowski</p>
-          <p class="role-lider">LIDER PROJEKTU</p>
+          <p class="role-lider">CEO</p>
         </div>
       </div>
       <div class="info-container wow fadeInRight" data-wow-delay="0.1s">
@@ -657,7 +687,7 @@ import BaseLayout from '../layouts/BaseLayout.astro';
             <img loading="lazy" width="93" height="93" src="/svg/main-lider-tool.svg" class="info-image" alt="" />
           </figure>
           <div class="info-container-desc wow fadeInRight" data-wow-delay="0.3s">
-            <p>Łączymy ponad 20 lat doświadczenia tworzenia produktów usprawniających pracę firm i automatyzujących procesy w przedsiebiorstwach</p>
+            <p>Łączymy ponad 25 lat doświadczenia tworzenia produktów usprawniających pracę firm i automatyzujących procesy w przedsiebiorstwach</p>
             <button class="wow fadeInUp btn-anim-puls" data-wow-delay="0.4s"><a href="/o-nas/">POZNAJ NASZ ZESPÓŁ</a></button>
           </div>
         </div>

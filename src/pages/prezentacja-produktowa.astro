@@ -4,6 +4,8 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 
 <BaseLayout title="Prezentacja produktowa">
 
+<div class="overlay"></div>
+
 <div class="presentation-top">
   <div class="container">
     <div class="row">
@@ -12,9 +14,9 @@ import BaseLayout from '../layouts/BaseLayout.astro';
           <p class="p_regular_3">Prezentacja produktowa</p>
           <h2 class="h2_semi">Zarezerwuj około <span>60 minut</span>  w&nbsp;wygodnym dla Ciebie momencie.</h2>
           <div class="presentation-top__buttons">
-            <a class="left wise-button wise-button--dark-wise" href="#presentation-form">Skonsultuj się z nami</a>
+            <span class="left js-presentation-contact-us-top wise-button wise-button--dark-wise">Skonsultuj się z nami</span>
             <span class="or p_regular_3">lub</span>
-            <a class="right wise-button wise-button--dark-wise" href="#presentation-form">Umów się na prezentację</a>
+            <span class="right js-presentation-form-call wise-button wise-button--dark-wise">Umów się na prezentację</span>
           </div>
         </div>
       </div>
@@ -141,7 +143,7 @@ import BaseLayout from '../layouts/BaseLayout.astro';
   <div class="container">
     <div class="row">
       <div class="col-lg-10 offset-lg-1">
-        <h5 class="h5_regular lm-observer">Od 21 lat projektujemy i wdrażamy rozwiązania informatyczne wspierające efektywności i&nbsp;rozwój biznesu naszych klientów. Z naszych rozwiązań skorzystało już ponad 100 klientów z&nbsp;różnych branż. Wspieramy firmy poprzez dostarczanie dopasowanych systemów ERP, WMS, CRM i B2B oraz dedykowanych narzędzi, takich jak WiseB2B.</h5>
+        <h5 class="h5_regular lm-observer">Od 25 lat projektujemy i wdrażamy rozwiązania informatyczne wspierające efektywności i&nbsp;rozwój biznesu naszych klientów. Z naszych rozwiązań skorzystało już ponad 100 klientów z&nbsp;różnych branż. Wspieramy firmy poprzez dostarczanie dopasowanych systemów ERP, WMS, CRM i B2B oraz dedykowanych narzędzi, takich jak WiseB2B.</h5>
       </div>
     </div>
   </div>
@@ -151,38 +153,51 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 
 <script>
   document.addEventListener('DOMContentLoaded', () => {
-    const formCallButtons = document.querySelectorAll('.js-presentation-form-call');
     const popup = document.querySelector('.presentation-form__popup');
-    const closeBtn = document.querySelector('.presentation-form__close');
+    const overlay = document.querySelector('.overlay');
+    const popupHeading = popup?.querySelector('h3');
+    const formNameInput = document.getElementById('presentation-form-name');
+    const topHeaderBar = document.querySelector('.top-header-bar');
 
-    formCallButtons.forEach(btn => {
-      btn.addEventListener('click', () => {
-        if (popup) {
-          popup.classList.add('active');
-          document.body.classList.add('overlay-active');
-        }
-      });
-    });
+    const CONTACT_HEAD = 'Chcę się skonsultować z ekspertem:';
+    const PRESENTATION_HEAD = 'Zarezerwuj prezentację:';
 
-    if (closeBtn) {
-      closeBtn.addEventListener('click', () => {
-        if (popup) {
-          popup.classList.remove('active');
-          document.body.classList.remove('overlay-active');
-        }
-      });
+    function openPopup(heading) {
+      const form = document.getElementById('presentation-form__popup');
+      if (form) form.reset();
+      if (popupHeading) popupHeading.textContent = heading;
+      if (formNameInput) formNameInput.value = heading;
+      if (overlay) overlay.style.display = 'block';
+      if (topHeaderBar) topHeaderBar.style.display = 'none';
+      if (popup) popup.style.display = 'block';
     }
 
-    // Scroll to form section from top buttons
-    document.querySelectorAll('a[href="#presentation-form"]').forEach(link => {
-      link.addEventListener('click', (e) => {
-        e.preventDefault();
-        const target = document.getElementById('presentation-form');
-        if (target) {
-          target.scrollIntoView({ behavior: 'smooth' });
-        }
-      });
+    function closePopup() {
+      if (popup) popup.style.display = 'none';
+      if (overlay) overlay.style.display = 'none';
+      if (topHeaderBar) topHeaderBar.style.display = '';
+    }
+
+    // "Umów się na prezentację" buttons (hero + middle section)
+    document.querySelectorAll('.js-presentation-form-call').forEach(btn => {
+      btn.addEventListener('click', () => openPopup(PRESENTATION_HEAD));
     });
+
+    // "Skonsultuj się z nami" button (hero)
+    document.querySelectorAll('.js-presentation-contact-us-top').forEach(btn => {
+      btn.addEventListener('click', () => openPopup(CONTACT_HEAD));
+    });
+
+    // Close button (SVG X)
+    const closeBtn = popup?.querySelector('form > svg');
+    if (closeBtn) {
+      closeBtn.addEventListener('click', closePopup);
+    }
+
+    // Close on overlay click
+    if (overlay) {
+      overlay.addEventListener('click', closePopup);
+    }
 
     // Form validation
     const form = document.getElementById('presentation-form__popup');
@@ -194,15 +209,20 @@ import BaseLayout from '../layouts/BaseLayout.astro';
         const policy = form.querySelector('input[name="policy"]');
 
         // Reset errors
-        form.querySelectorAll('.error, .error-info').forEach(el => el.style.display = 'none');
+        form.querySelectorAll('.wrapper').forEach(w => w.classList.remove('error'));
+        form.querySelectorAll('.error-info').forEach(el => el.style.display = 'none');
+        form.querySelector('.response__ok')?.style.setProperty('display', 'none');
+        form.querySelector('.response__error')?.style.setProperty('display', 'none');
 
-        if (!email || !email.value.trim()) {
-          const errorEl = email?.parentElement?.querySelector('.error');
+        if (!email || !email.value.trim() || !isEmail(email.value)) {
+          email?.parentElement?.classList.add('error');
+          const errorEl = email?.parentElement?.querySelector('.error-info');
           if (errorEl) errorEl.style.display = 'block';
           valid = false;
         }
 
         if (!policy || !policy.checked) {
+          policy?.closest('.checkbox')?.classList.add('error');
           const errorEl = policy?.closest('.checkbox')?.querySelector('.error-info');
           if (errorEl) errorEl.style.display = 'block';
           valid = false;
@@ -216,6 +236,10 @@ import BaseLayout from '../layouts/BaseLayout.astro';
           }
         }
       });
+    }
+
+    function isEmail(email) {
+      return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
     }
   });
 </script>

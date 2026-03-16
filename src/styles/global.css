@@ -86,6 +86,16 @@ button {
   transform: translateY(-1px);
 }
 
+/* === Header z-index fix (feature cards have z-index:100) === */
+.header {
+  z-index: 150 !important;
+}
+
+.top-header-bar {
+  z-index: 151;
+  position: relative;
+}
+
 /* === Animate on scroll === */
 .lm-observer {
   opacity: 0;

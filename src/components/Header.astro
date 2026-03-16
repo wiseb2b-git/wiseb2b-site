@@ -1,559 +1,231 @@
 ---
-const navItems = [
-  {
-    label: 'Platforma B2B',
-    href: '/platforma-b2b/',
-    submenu: [
-      {
-        label: 'Platforma B2B',
-        href: '/platforma-b2b/',
-        desc: 'Poznaj możliwości platfromy WiseB2B.',
-      },
-      {
-        label: 'Wersje',
-        href: '/platforma-b2b/wersje/',
-        desc: 'Porównaj wersję WiseB2B i wybierz najlepszy plan dla Twojej firmy.',
-      },
-      {
-        label: 'Funkcje',
-        href: '/platforma-b2b/funkcje/',
-        desc: 'Dowiedz się, jakie funkcje posiada platforma WiseB2B.',
-      },
-      {
-        label: 'Proces wdrożenia',
-        href: '/platforma-b2b/proces-wdrozenia/',
-        desc: 'Sprawdź jak przebiega proces wdrożenia.',
-      },
-      {
-        label: 'Integracje',
-        href: '/platforma-b2b/integracje/',
-        desc: 'Zapoznaj się ze szczegółowymi informacjami na temat integracji.',
-      },
-      {
-        label: 'Bezpieczna migracja klientów',
-        href: '/platforma-b2b/bezpieczna-migracja/',
-        desc: 'Sprawdź jak przebiega proces wdrożenia.',
-      },
-    ],
-    submenuCta: 'Potrzebujesz dodatkowych informacji? Zamów rozmowę z ekspertem',
-  },
-  {
-    label: 'Dla kogo',
-    href: '/dla-kogo/',
-    submenu: [
-      {
-        label: 'Dla dystrybutorów',
-        href: '/dla-kogo/dla-dystrybutorow/',
-        desc: 'Stoisz przed wyzwaniem stworzenia cyfrowego kanału sprzedaży, który odwzorowuje skomplikowane warunki handlowe Twojego biznesu?',
-      },
-      {
-        label: 'Dla producentów',
-        href: '/dla-kogo/dla-producentow/',
-        desc: 'Twoje relacje z partnerami handlowymi są skomplikowane. Ceny, ilości, terminy – zwykle to żmudny proces ustaleń. Popraw jego jakość i zaoferuj klientom nowe doświadczenia zakupowe dzięki WiseB2B.',
-      },
-    ],
-  },
-  { label: 'Wsparcie', href: '/wsparcie/' },
-  { label: 'Wdrożenia', href: '/wdrozenia/' },
-  { label: 'O nas', href: '/o-nas/' },
-  { label: 'Baza wiedzy', href: '/baza-wiedzy/' },
-];
 ---
 
-<header class="site-header">
-  <!-- EU Funding Banner -->
-  <div class="eu-banner">
-    <div class="container">
-      <img src="/svg/FEDDS-kolor-poziom.svg" alt="Fundusze Europejskie" class="eu-banner-img" />
-    </div>
-  </div>
+<div class="top-header-bar">
+  <a href="/fundusze-europejskie/">
+    <img src="/svg/FEDDS-kolor-poziom.svg" alt="Fundusze Europejskie" />
+  </a>
+</div>
 
-  <!-- Top Bar -->
-  <div class="top-bar">
-    <div class="container top-bar-inner">
-      <span class="top-bar-label">Dla wymagających</span>
-      <span class="top-bar-brand">WiseB2B</span>
-      <span class="top-bar-desc">Kompletne, zaawansowane narzędzie skupione na maksymalizacji przychodów. Skalowalne i bezpieczne.</span>
-    </div>
-  </div>
-
-  <!-- Main Header -->
-  <div class="header-main">
-    <div class="container header-inner">
-      <a href="/" class="logo">
-        <img src="/svg/logo-wiseb2b.svg" alt="WiseB2B" width="160" height="40" />
-      </a>
-
-      <nav class="main-nav" id="mainNav">
-        <ul class="nav-list">
-          {navItems.map((item) => (
-            <li class={`nav-item ${item.submenu ? 'has-submenu' : ''}`}>
-              <a href={item.href} class="nav-link">
-                {item.label}
-                {item.submenu && (
-                  <svg class="chevron" width="10" height="6" viewBox="0 0 10 6" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M1 1L5 5L9 1" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-                  </svg>
-                )}
-              </a>
-              {item.submenu && (
-                <div class="submenu-box">
-                  <div class="submenu-grid">
-                    {item.submenu.map((sub) => (
-                      <a href={sub.href} class="submenu-item">
-                        <span class="submenu-item-label">{sub.label}</span>
-                        <span class="submenu-item-desc">{sub.desc}</span>
-                      </a>
-                    ))}
-                  </div>
-                  {item.submenuCta && (
-                    <div class="submenu-cta">
-                      <a href="/prezentacja-produktowa/">{item.submenuCta}</a>
-                    </div>
-                  )}
-                </div>
-              )}
-            </li>
-          ))}
-        </ul>
-
-        <!-- Mobile-only social links -->
-        <div class="mobile-social">
-          <span class="mobile-social-label">Dołącz do nas:</span>
-          <div class="mobile-social-links">
-            <a href="https://www.linkedin.com/company/wiseb2b/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
-              <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
-                <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
+<header id="header" class="header">
+  <div class="container">
+    <div class="row">
+      <div class="col-12">
+        <div class="header-inner">
+          <a href="/" title="WiseB2B" rel="home">
+            <img src="/svg/logo-wiseb2b.svg" alt="WiseB2B" width="171" height="46" />
+          </a>
+          <div class="header__right">
+            <nav class="primary-navigation site-navigation" role="navigation">
+              <ul class="nav-menu">
+                <li class="submenu menu-no-click menu-item" data-submenu="technologia">
+                  <a href="/platforma-b2b/" title="technologia">Platforma B2B</a>
+                </li>
+                <li class="submenu menu-no-click menu-item" data-submenu="rozwiazania">
+                  <a href="/dla-kogo/" title="rozwiazania">Dla kogo</a>
+                </li>
+                <li class="menu-item"><a href="/wsparcie/">Wsparcie</a></li>
+                <li class="menu-item"><a href="/wdrozenia/">Wdrożenia</a></li>
+                <li class="menu-item"><a href="/o-nas/">O nas</a></li>
+              </ul>
+            </nav>
+            <nav class="secondary-navigation site-navigation" role="navigation">
+              <ul class="secondary-menu">
+                <li class="menu-item"><a href="/baza-wiedzy/">Baza wiedzy</a></li>
+              </ul>
+            </nav>
+            <a class="wise-button wise-button--wise-harvest" href="/prezentacja-produktowa/">Zamów demo</a>
+            <button class="mobile-menu-btn js-mobile-menu-hamburger" aria-label="Menu Mobilne">
+              <svg width="50" height="50" viewBox="0 0 100 100">
+                <path class="line line1" d="M 20,29.000046 H 80.000231 C 80.000231,29.000046 94.498839,28.817352 94.532987,66.711331 94.543142,77.980673 90.966081,81.670246 85.259173,81.668997 79.552261,81.667751 75.000211,74.999942 75.000211,74.999942 L 25.000021,25.000058" />
+                <path class="line line2" d="M 20,50 H 80" />
+                <path class="line line3" d="M 20,70.999954 H 80.000231 C 80.000231,70.999954 94.498839,71.182648 94.532987,33.288669 94.543142,22.019327 90.966081,18.329754 85.259173,18.331003 79.552261,18.332249 75.000211,25.000058 75.000211,25.000058 L 25.000021,74.999942" />
               </svg>
-            </a>
-            <a href="https://www.facebook.com/wiseb2b/" target="_blank" rel="noopener noreferrer" aria-label="Facebook">
-              <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
-                <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/>
-              </svg>
-            </a>
+            </button>
           </div>
         </div>
-      </nav>
+      </div>
+    </div>
+  </div>
 
-      <a href="/prezentacja-produktowa/" class="btn-cta header-cta">Zamów demo</a>
+  <!-- Technologia submenu -->
+  <div class="submenu-box" id="technologia">
+    <div class="submenu-box__content">
+      <div class="submenu-box__left">
+        <p class="label_regular">Dla wymagających</p>
+        <h3 class="h3_semi">WiseB2B</h3>
+        <p class="p_regular_3">Kompletne, zaawansowane narzędzie skupione na maksymalizacji przychodów. Skalowalne i bezpieczne.</p>
+      </div>
+      <div class="submenu-box__right">
+        <a class="item" href="/platforma-b2b/">
+          <div>
+            <div class="icon">
+              <img width="31" height="31" src="/images/np_ecommerce_4557208_000000-1.png" alt="" />
+            </div>
+          </div>
+          <div class="text">
+            <p class="p_semi_3">Platforma B2B</p>
+            <p class="p_mulish_regular_3">Poznaj możliwości platfromy WiseB2B.</p>
+          </div>
+        </a>
+        <a class="item" href="/platforma-b2b/wersje/">
+          <div>
+            <div class="icon">
+              <img width="31" height="31" src="/images/np_price_4514256_000000-1.png" alt="" />
+            </div>
+          </div>
+          <div class="text">
+            <p class="p_semi_3">Wersje</p>
+            <p class="p_mulish_regular_3">Porównaj wersję WiseB2B i wybierz najlepszy plan dla Twojej firmy. </p>
+          </div>
+        </a>
+        <a class="item" href="/platforma-b2b/funkcje/">
+          <div>
+            <div class="icon">
+              <img width="20" height="20" src="/images/np_function_1286758_000000-1.png" alt="" />
+            </div>
+          </div>
+          <div class="text">
+            <p class="p_semi_3">Funkcje</p>
+            <p class="p_mulish_regular_3">Dowiedz się, jakie funkcje posiada platforma WiseB2B.</p>
+          </div>
+        </a>
+        <a class="item" href="/platforma-b2b/proces-wdrozenia/">
+          <div>
+            <div class="icon">
+              <img width="26" height="26" src="/images/np_update_2970152_000000-1.png" alt="" />
+            </div>
+          </div>
+          <div class="text">
+            <p class="p_semi_3">Proces wdrożenia</p>
+            <p class="p_mulish_regular_3">Sprawdź jak przebiega proces wdrożenia. </p>
+          </div>
+        </a>
+        <a class="item" href="/platforma-b2b/integracje/">
+          <div>
+            <div class="icon">
+              <img width="27" height="27" src="/images/np_gears_9428_000000-1.png" alt="" />
+            </div>
+          </div>
+          <div class="text">
+            <p class="p_semi_3">Integracje</p>
+            <p class="p_mulish_regular_3">Zapoznaj się ze szczegółowymi informacjami na temat integracji. </p>
+          </div>
+        </a>
+        <a class="item" href="/platforma-b2b/bezpieczna-migracja/">
+          <div>
+            <div class="icon">
+              <img width="26" height="26" src="/images/np_update_2970152_000000-1.png" alt="" />
+            </div>
+          </div>
+          <div class="text">
+            <p class="p_semi_3">Bezpieczna migracja klientów</p>
+            <p class="p_mulish_regular_3">Sprawdź jak przebiega proces wdrożenia. </p>
+          </div>
+        </a>
+      </div>
+    </div>
+    <div class="submenu-box__footer">
+      <div class="information">
+        <p class="p_semi_3">Potrzebujesz dodatkowych informacji? </p>
+      </div>
+      <a href="/prezentacja-produktowa/" class="button wise-slim-button wise-slim-button--transparent-lazur label_semi">Zamów rozmowę z ekspertem</a>
+    </div>
+  </div>
 
-      <button class="hamburger" id="hamburger" aria-label="Menu">
-        <span></span>
-        <span></span>
-        <span></span>
-      </button>
+  <!-- Rozwiązania submenu -->
+  <div class="submenu-box submenu-box--solutions" id="rozwiazania">
+    <div class="submenu-box__content">
+      <div class="submenu-box__center">
+        <a class="item" href="/dla-kogo/dla-dystrybutorow/">
+          <div class="text">
+            <p class="p_semi_3">Dla dystrybutorów</p>
+            <p class="p_regular_3">Stoisz przed wyzwaniem stworzenia cyfrowego kanału sprzedaży, który odwzorowuje skomplikowane warunki handlowe Twojego biznesu, jednocześnie umożliwiając klientom szybkie i intuicyjne zakupy?</p>
+          </div>
+          <p class="item__know-more p_regular_3">
+            Dowiedz się więcej
+            <svg width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M4.5 2.25L8.25 6L4.5 9.75" stroke="#C6973D" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </p>
+        </a>
+        <a class="item" href="/dla-kogo/dla-producentow/">
+          <div class="text">
+            <p class="p_semi_3">Dla producentów</p>
+            <p class="p_regular_3">Twoje relacje z partnerami handlowymi są skomplikowane. Ceny, ilości, terminy – zwykle to żmudny proces ustaleń. Popraw jego jakość i zaoferuj klientom nowe doświadczenia zakupowe dzięki WiseB2B.</p>
+          </div>
+          <p class="item__know-more p_regular_3">
+            Dowiedz się więcej
+            <svg width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M4.5 2.25L8.25 6L4.5 9.75" stroke="#C6973D" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </p>
+        </a>
+      </div>
+    </div>
+    <div class="submenu-box__footer submenu-box__footer--solutions">
+      <a href="/platforma-b2b/bezpieczna-migracja/" class="p_regular_3">
+        Bezpieczna Migracja
+        <svg width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M4.5 2.25L8.25 6L4.5 9.75" stroke="#5A5565" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+      </a>
     </div>
   </div>
 </header>
 
-<script>
-  const hamburger = document.getElementById('hamburger');
-  const nav = document.getElementById('mainNav');
-  const header = document.querySelector('.site-header');
-
-  // Toggle mobile menu
-  hamburger?.addEventListener('click', () => {
-    hamburger.classList.toggle('active');
-    nav?.classList.toggle('open');
-    document.body.classList.toggle('menu-open');
+<script is:inline>
+// Submenu toggle for desktop
+document.querySelectorAll('.submenu.menu-no-click > a').forEach(function(link) {
+  link.addEventListener('click', function(e) {
+    if (window.innerWidth > 991) {
+      e.preventDefault();
+    }
   });
 
-  // Toggle submenus on mobile
-  const submenuParents = document.querySelectorAll('.has-submenu > .nav-link');
-  submenuParents.forEach((link) => {
-    link.addEventListener('click', (e) => {
-      if (window.innerWidth <= 991) {
-        e.preventDefault();
-        const parent = link.parentElement;
-        parent?.classList.toggle('submenu-open');
+  link.parentElement.addEventListener('mouseenter', function() {
+    if (window.innerWidth > 991) {
+      var submenuId = this.getAttribute('data-submenu');
+      var box = document.getElementById(submenuId);
+      if (box) {
+        // Hide all submenu boxes first
+        document.querySelectorAll('.submenu-box').forEach(function(b) { b.classList.remove('show'); });
+        document.querySelectorAll('.submenu.menu-no-click').forEach(function(li) { li.classList.remove('show'); });
+        box.classList.add('show');
+        this.classList.add('show');
       }
-    });
+    }
   });
+});
+
+// Hide submenu when mouse leaves both the menu item and submenu box
+document.querySelectorAll('.submenu-box').forEach(function(box) {
+  box.addEventListener('mouseleave', function() {
+    this.classList.remove('show');
+    document.querySelectorAll('.submenu.menu-no-click').forEach(function(li) { li.classList.remove('show'); });
+  });
+});
+
+document.querySelector('.header')?.addEventListener('mouseleave', function() {
+  document.querySelectorAll('.submenu-box').forEach(function(b) { b.classList.remove('show'); });
+  document.querySelectorAll('.submenu.menu-no-click').forEach(function(li) { li.classList.remove('show'); });
+});
+
+// Sticky header
+var header = document.getElementById('header');
+window.addEventListener('scroll', function() {
+  if (window.scrollY > 50) {
+    header?.classList.add('header--sticky');
+  } else {
+    header?.classList.remove('header--sticky');
+  }
+});
+
+// Mobile menu
+var hamburger = document.querySelector('.js-mobile-menu-hamburger');
+hamburger?.addEventListener('click', function() {
+  this.classList.toggle('active');
+  document.querySelector('.header')?.classList.toggle('menu-mobile-open');
+  document.body.classList.toggle('no-scroll');
+});
 </script>
-
-<style>
-  /* ===== Site Header (sticky wrapper) ===== */
-  .site-header {
-    position: sticky;
-    top: 0;
-    z-index: 100;
-    background: var(--color-white);
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
-  }
-
-  /* ===== EU Funding Banner ===== */
-  .eu-banner {
-    background: var(--color-white);
-    border-bottom: 1px solid #e8e8e8;
-    padding: 6px 0;
-  }
-
-  .eu-banner .container {
-    display: flex;
-    justify-content: flex-end;
-  }
-
-  .eu-banner-img {
-    height: 28px;
-    width: auto;
-  }
-
-  /* ===== Top Bar ===== */
-  .top-bar {
-    background: var(--color-dark);
-    color: var(--color-white);
-    padding: 8px 0;
-    font-size: 0.8rem;
-  }
-
-  .top-bar-inner {
-    display: flex;
-    align-items: center;
-    gap: 8px;
-    flex-wrap: wrap;
-  }
-
-  .top-bar-label {
-    opacity: 0.7;
-  }
-
-  .top-bar-brand {
-    font-weight: 700;
-    color: var(--color-accent);
-  }
-
-  .top-bar-desc {
-    opacity: 0.7;
-  }
-
-  /* ===== Main Header Row ===== */
-  .header-main {
-    padding: 0;
-  }
-
-  .header-inner {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    gap: 24px;
-    height: 68px;
-  }
-
-  /* ===== Logo ===== */
-  .logo {
-    flex-shrink: 0;
-  }
-
-  .logo img {
-    height: 40px;
-    width: auto;
-  }
-
-  /* ===== Navigation ===== */
-  .nav-list {
-    display: flex;
-    gap: 4px;
-    align-items: center;
-  }
-
-  .nav-link {
-    display: flex;
-    align-items: center;
-    gap: 4px;
-    font-size: 0.9rem;
-    font-weight: 500;
-    padding: 8px 12px;
-    border-radius: 6px;
-    transition: color 0.2s, background-color 0.2s;
-    white-space: nowrap;
-  }
-
-  .nav-link:hover {
-    color: var(--color-accent);
-    background-color: rgba(217, 176, 98, 0.06);
-  }
-
-  .chevron {
-    transition: transform 0.2s;
-    flex-shrink: 0;
-  }
-
-  .has-submenu:hover .chevron {
-    transform: rotate(180deg);
-  }
-
-  /* ===== Submenu ===== */
-  .has-submenu {
-    position: relative;
-  }
-
-  .submenu-box {
-    display: none;
-    position: absolute;
-    top: 100%;
-    left: 50%;
-    transform: translateX(-50%);
-    background: var(--color-white);
-    border-radius: 12px;
-    box-shadow: 0 12px 36px rgba(0, 0, 0, 0.12);
-    padding: 20px;
-    min-width: 340px;
-    max-width: 520px;
-    z-index: 10;
-  }
-
-  .has-submenu:hover .submenu-box {
-    display: block;
-  }
-
-  .submenu-grid {
-    display: flex;
-    flex-direction: column;
-    gap: 4px;
-  }
-
-  .submenu-item {
-    display: block;
-    padding: 10px 14px;
-    border-radius: 8px;
-    transition: background-color 0.2s;
-  }
-
-  .submenu-item:hover {
-    background-color: var(--color-bg);
-  }
-
-  .submenu-item-label {
-    display: block;
-    font-size: 0.9rem;
-    font-weight: 600;
-    color: var(--color-text);
-    margin-bottom: 2px;
-  }
-
-  .submenu-item-desc {
-    display: block;
-    font-size: 0.8rem;
-    color: #6b6b7b;
-    line-height: 1.4;
-  }
-
-  .submenu-cta {
-    margin-top: 12px;
-    padding-top: 12px;
-    border-top: 1px solid #e8e8e8;
-  }
-
-  .submenu-cta a {
-    display: block;
-    font-size: 0.82rem;
-    color: var(--color-accent);
-    font-weight: 600;
-    padding: 8px 14px;
-    border-radius: 8px;
-    transition: background-color 0.2s;
-  }
-
-  .submenu-cta a:hover {
-    background-color: rgba(217, 176, 98, 0.08);
-  }
-
-  /* ===== CTA Button ===== */
-  .header-cta {
-    white-space: nowrap;
-    font-size: 0.85rem;
-    padding: 10px 24px;
-    flex-shrink: 0;
-  }
-
-  /* ===== Hamburger ===== */
-  .hamburger {
-    display: none;
-    flex-direction: column;
-    gap: 5px;
-    padding: 4px;
-    z-index: 11;
-  }
-
-  .hamburger span {
-    display: block;
-    width: 26px;
-    height: 3px;
-    background: var(--color-text);
-    border-radius: 2px;
-    transition: transform 0.3s, opacity 0.3s;
-  }
-
-  .hamburger.active span:nth-child(1) {
-    transform: translateY(8px) rotate(45deg);
-  }
-
-  .hamburger.active span:nth-child(2) {
-    opacity: 0;
-  }
-
-  .hamburger.active span:nth-child(3) {
-    transform: translateY(-8px) rotate(-45deg);
-  }
-
-  /* ===== Mobile Social Links (hidden on desktop) ===== */
-  .mobile-social {
-    display: none;
-  }
-
-  /* ===== Responsive ===== */
-  @media (max-width: 991px) {
-    .top-bar {
-      font-size: 0.72rem;
-    }
-
-    .eu-banner-img {
-      height: 22px;
-    }
-
-    .header-inner {
-      height: 56px;
-    }
-
-    .hamburger {
-      display: flex;
-    }
-
-    .main-nav {
-      display: none;
-      position: fixed;
-      top: 0;
-      left: 0;
-      right: 0;
-      bottom: 0;
-      background: var(--color-white);
-      padding: 100px 20px 40px;
-      overflow-y: auto;
-      z-index: 10;
-    }
-
-    .main-nav.open {
-      display: flex;
-      flex-direction: column;
-    }
-
-    .nav-list {
-      flex-direction: column;
-      gap: 0;
-      align-items: stretch;
-    }
-
-    .nav-link {
-      display: flex;
-      justify-content: space-between;
-      padding: 14px 0;
-      border-bottom: 1px solid #eee;
-      border-radius: 0;
-      font-size: 1rem;
-    }
-
-    .has-submenu .chevron {
-      transition: transform 0.3s;
-    }
-
-    .has-submenu.submenu-open .chevron {
-      transform: rotate(180deg);
-    }
-
-    .submenu-box {
-      position: static;
-      transform: none;
-      box-shadow: none;
-      border-radius: 0;
-      padding: 0 0 8px 12px;
-      min-width: 0;
-      max-width: none;
-      display: none;
-    }
-
-    .has-submenu.submenu-open .submenu-box {
-      display: block;
-    }
-
-    .has-submenu:hover .submenu-box {
-      display: none;
-    }
-
-    .has-submenu.submenu-open:hover .submenu-box {
-      display: block;
-    }
-
-    .submenu-item {
-      padding: 8px 10px;
-    }
-
-    .submenu-item-label {
-      font-size: 0.85rem;
-    }
-
-    .submenu-item-desc {
-      font-size: 0.75rem;
-    }
-
-    .submenu-cta {
-      padding-left: 10px;
-    }
-
-    .header-cta {
-      display: none;
-    }
-
-    /* Mobile social */
-    .mobile-social {
-      display: block;
-      margin-top: auto;
-      padding-top: 24px;
-      border-top: 1px solid #eee;
-    }
-
-    .mobile-social-label {
-      display: block;
-      font-size: 0.85rem;
-      font-weight: 600;
-      margin-bottom: 12px;
-      color: var(--color-text);
-    }
-
-    .mobile-social-links {
-      display: flex;
-      gap: 16px;
-    }
-
-    .mobile-social-links a {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      width: 40px;
-      height: 40px;
-      border-radius: 50%;
-      background: var(--color-bg);
-      color: var(--color-text);
-      transition: background-color 0.2s, color 0.2s;
-    }
-
-    .mobile-social-links a:hover {
-      background: var(--color-accent);
-      color: var(--color-white);
-    }
-
-    .mobile-social-links svg {
-      width: 18px;
-      height: 18px;
-    }
-  }
-
-  @media (max-width: 743px) {
-    .top-bar-desc {
-      display: none;
-    }
-
-    .eu-banner-img {
-      height: 18px;
-    }
-  }
-</style>

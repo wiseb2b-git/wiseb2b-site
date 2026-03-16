@@ -1,0 +1,96 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import { getCollection, render } from 'astro:content';
+import ArticleCards from '../../components/ArticleCards.astro';
+
+export async function getStaticPaths() {
+  const articles = await getCollection('baza-wiedzy');
+  return articles.map((article) => ({
+    params: { slug: article.id },
+    props: { article },
+  }));
+}
+
+const { article } = Astro.props;
+const { Content } = await render(article);
+const { title, description, image, category, date, author, authorJob, authorImage, authorBio } = article.data;
+
+const allArticles = await getCollection('baza-wiedzy');
+const otherSlugs = allArticles.filter((a) => a.id !== article.id).slice(0, 3).map((a) => a.id);
+
+const formattedDate = new Date(date).toLocaleDateString('pl-PL', { year: 'numeric', month: 'long', day: 'numeric' });
+---
+
+<BaseLayout title={title} description={description}>
+
+<div class="mceContentBody">
+  <div class="container">
+    <div class="row">
+      <div class="col-xl-8 offset-xl-2 col-lg-10 offset-lg-1">
+
+        <!-- Meta: category, author, date -->
+        <div class="single-meta" style="margin-top: 40px; display: flex; align-items: center; gap: 20px; flex-wrap: wrap;">
+          <span class="p_regular_3" style="color: #d9b062;">{category}</span>
+          {author && (
+            <span class="p_regular_3" style="color: #5a5565;">
+              {author}
+            </span>
+          )}
+          <span class="p_regular_3" style="color: #a5a5af;">{formattedDate}</span>
+        </div>
+
+        <!-- Title -->
+        <h1 class="h2_semi" style="margin-top: 20px; font-size: 4rem; line-height: 5rem;">{title}</h1>
+
+        <!-- Featured image -->
+        <div class="single-image">
+          <div class="image">
+            <img width="800" height="533" src={image} alt={title} />
+          </div>
+        </div>
+
+        <!-- Article content -->
+        <div class="single-content" style="margin-top: 33px;">
+          <Content />
+        </div>
+
+        <!-- Author section -->
+        {author && (
+          <div class="single-author-bottom">
+            <div class="single-author-bottom__left">
+              {authorImage && (
+                <img width="64" height="64" src={authorImage} alt={author} style="border-radius: 50%; width: 64px; height: 64px; object-fit: cover;" />
+              )}
+              <p class="name p_semi_2">{author}</p>
+              {authorJob && <p class="job p_regular_3" style="color: #5a5565;">{authorJob}</p>}
+            </div>
+            {authorBio && (
+              <div class="single-author-bottom__desc p_regular_3" style="color: #5a5565;">
+                {authorBio}
+              </div>
+            )}
+          </div>
+        )}
+
+      </div>
+    </div>
+  </div>
+</div>
+
+<ArticleCards slugs={otherSlugs} showButton={true} />
+
+<div class="cta-expert">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-6 offset-lg-3 lm-observer">
+        <h2 class="h2_semi">Doświadczenie i efekty naszej pracy pomagają tworzyć nam powyższe treści. Ale każdy biznes jest inny.</h2>
+        <p class="p_regular_1">Chętnie poznamy Twoje wyzwania i oczekiwania.</p>
+        <div class="cta-expert__buttons">
+          <a class="wise-button wise-button--wise-harvest" href="/prezentacja-produktowa/">Skontaktuj się z nami</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+</BaseLayout>

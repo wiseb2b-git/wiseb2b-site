@@ -1,0 +1,115 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import { getCollection } from 'astro:content';
+
+const articles = await getCollection('baza-wiedzy');
+const featured = articles[0];
+---
+
+<BaseLayout title="Baza wiedzy">
+
+<div class="knowledge-bases-top">
+  <div class="knowledge-bases-top__bg"></div>
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-6 offset-lg-3">
+        <p class="p_regular_3 type">Baza wiedzy</p>
+        <h1 class="h2_semi">Baza wiedzy o platformie B2B</h1>
+      </div>
+    </div>
+
+    <div class="row knowledge-bases-top__wrapper lm-observer">
+      <div class="col-md-12 offset-xmd-1 col-xmd-5 col-xl-4 offset-xl-2">
+        <div class="knowledge-bases-top__img">
+          <img fetchpriority="high" width="448" height="298" src={featured.data.image} class="attachment-knowledge-bases-top size-knowledge-bases-top wp-post-image" alt="" />
+        </div>
+      </div>
+      <div class="col-md-10 offset-md-1 offset-xmd-0 col-xmd-5">
+        <a class="knowledge-bases-top__content" href={`/baza-wiedzy/${featured.id}/`}>
+          <p class="item_category p_regular_3">{featured.data.category}</p>
+          <h4 class="title h4_semi">{featured.data.title}</h4>
+          <p class="excerpt p_regular_3">{featured.data.description}</p>
+        </a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="articles-filter-categories">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-12 col-xl-10 offset-xl-1">
+        <div class="categories lm-observer">
+          <ul class="categories__list">
+            <li class="p_regular_3 active" data-slug="all">Wszystkie kategorie</li>
+            <li class="p_regular_3" data-slug="dystrybucja-i-handel">Dystrybucja i Handel</li>
+            <li class="p_regular_3" data-slug="funkcje">Funkcje</li>
+            <li class="p_regular_3" data-slug="korzysci">Korzyści</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div id="posts-list-wrapper">
+      <div class="row">
+        <div class="col-lg-12 col-xl-10 offset-xl-1">
+          <div class="box-posts">
+
+            {articles.map((article) => (
+              <a class="item lm-observer" href={`/baza-wiedzy/${article.id}/`}
+                 data-category={article.data.category.toLowerCase().replace(/\s+/g, '-').normalize('NFD').replace(/[\u0300-\u036f]/g, '')}>
+                <div class="image">
+                  <img loading="lazy" width="632" height="421" src={article.data.image} class="attachment-box-posts size-box-posts wp-post-image" alt="" />
+                </div>
+                <div class="content">
+                  <p class="item_category p_regular_3">{article.data.category}</p>
+                  <h2 class="title p_semi_1">{article.data.title}</h2>
+                  <p class="excerpt p_regular_3">{article.data.description}</p>
+                </div>
+              </a>
+            ))}
+
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-12">
+          <div class="pagination lm-observer">
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="cta-expert">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-6 offset-lg-3 lm-observer">
+        <h2 class="h2_semi">Doświadczenie i efekty naszej pracy pomagają tworzyć nam powyższe treści. Ale każdy biznes jest inny.</h2>
+        <p class="p_regular_1">Chętnie poznamy Twoje wyzwania i oczekiwania.</p>
+        <div class="cta-expert__buttons">
+          <a class="wise-button wise-button--wise-harvest" href="/prezentacja-produktowa/">Skontaktuj się z nami</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script is:inline>
+  document.querySelectorAll('.categories__list li').forEach(function(li) {
+    li.addEventListener('click', function() {
+      document.querySelectorAll('.categories__list li').forEach(function(l) { l.classList.remove('active'); });
+      li.classList.add('active');
+      var slug = li.getAttribute('data-slug');
+      document.querySelectorAll('.box-posts .item').forEach(function(item) {
+        if (slug === 'all' || item.getAttribute('data-category') === slug) {
+          item.style.display = '';
+        } else {
+          item.style.display = 'none';
+        }
+      });
+    });
+  });
+</script>
+
+</BaseLayout>

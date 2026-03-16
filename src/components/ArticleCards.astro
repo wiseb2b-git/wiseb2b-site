@@ -1,0 +1,56 @@
+---
+import { getCollection } from 'astro:content';
+
+interface Props {
+  slugs?: string[];
+  limit?: number;
+  showButton?: boolean;
+}
+
+const { slugs, limit = 3, showButton = true } = Astro.props;
+
+const allArticles = await getCollection('baza-wiedzy');
+let articles;
+if (slugs && slugs.length > 0) {
+  articles = slugs
+    .map((s) => allArticles.find((a) => a.id === s))
+    .filter(Boolean);
+} else {
+  articles = allArticles.slice(0, limit);
+}
+---
+
+<section class="knowledge-bases">
+  <div class="container">
+    <div class="row">
+      <div class="col-xl-10 offset-xl-1 col-lg-12">
+        <div class="knowledge-bases__wrapper">
+          <h2 class="h2_semi">Baza wiedzy</h2>
+          <div class="box-posts">
+            {articles.map((article) => (
+              <a class="item lm-observer" href={`/baza-wiedzy/${article!.id}/`}>
+                <div class="image">
+                  <img loading="lazy" width="632" height="421" src={article!.data.image} alt={article!.data.title} />
+                </div>
+                <div class="content">
+                  <p class="item_category p_regular_3">{article!.data.category}</p>
+                  <h3 class="title p_semi_1">{article!.data.title}</h3>
+                  <p class="excerpt p_regular_3">{article!.data.description}</p>
+                </div>
+              </a>
+            ))}
+          </div>
+        </div>
+      </div>
+    </div>
+    {showButton && (
+      <div class="row">
+        <div class="col-12">
+          <div class="knowledge-bases__button">
+            <a class="wise-button wise-button--transparent-wise" href="/baza-wiedzy/">Zobacz wszystkie artykuły</a>
+          </div>
+        </div>
+      </div>
+    )}
+  </div>
+</section>

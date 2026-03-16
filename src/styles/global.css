@@ -61,14 +61,6 @@ button {
   font-family: inherit;
 }
 
-/* === Container === */
-.container {
-  width: 100%;
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 0 20px;
-}
-
 /* === CTA Button === */
 .btn-cta {
   display: inline-block;
@@ -94,6 +86,45 @@ button {
 .top-header-bar {
   z-index: 151;
   position: relative;
+}
+
+/* === Fix WordPress asset paths in CSS === */
+.support-cta__data {
+  background-image: url("/images/cta-support.png") !important;
+}
+
+.header .nav-menu li.submenu a:before {
+  content: url("/svg/arrow-menu.svg") !important;
+}
+
+/* Zmniejszenie paska Fundusze Europejskie o 20% */
+.top-header-bar {
+  height: 60px !important;
+}
+.top-header-bar > a > img {
+  width: 560px !important;
+}
+
+/* Zmniejszenie wysokości menu o 10% */
+.header-inner {
+  min-height: 97px !important;
+}
+.header .nav-menu a,
+.header .secondary-menu a {
+  height: 97px !important;
+}
+
+/* Sticky header po scrollu — proporcjonalnie zmniejszone (85px -> 77px) */
+.header--sticky {
+  height: 77px !important;
+}
+.header--sticky .header-inner {
+  height: 77px !important;
+  min-height: 77px !important;
+}
+.header--sticky .header-inner .nav-menu a,
+.header--sticky .header-inner .secondary-menu a {
+  height: 77px !important;
 }
 
 /* === Animate on scroll === */

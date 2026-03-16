@@ -38,6 +38,19 @@ const { title, description = 'WiseB2B - eCommerce B2B Platform' } = Astro.props;
     <Footer />
     <CookieBar />
 
+    <script is:inline>
+      // Intersection Observer for .lm-observer elements
+      var lmObserver = new IntersectionObserver(function(entries) {
+        entries.forEach(function(entry) {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('visible');
+          }
+        });
+      }, { threshold: 0.1 });
+      document.querySelectorAll('.lm-observer').forEach(function(el) {
+        lmObserver.observe(el);
+      });
+    </script>
     <script is:inline src="/js/wow.min.js"></script>
     <script is:inline src="/js/swiper-bundle.min.js"></script>
     <script is:inline src="/js/custom.js"></script>

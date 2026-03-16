@@ -1,0 +1,44 @@
+---
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import CookieBar from '../components/CookieBar.astro';
+import '../styles/global.css';
+
+interface Props {
+  title: string;
+  description?: string;
+}
+
+const { title, description = 'WiseB2B - eCommerce B2B Platform' } = Astro.props;
+---
+
+<!doctype html>
+<html lang="pl">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1, minimum-scale=1, user-scalable=no" />
+    <meta name="description" content={description} />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Sora:wght@300;400;600;700&display=swap" rel="stylesheet" />
+    <link rel="icon" type="image/svg+xml" href="/svg/logo-wiseb2b.svg" />
+    <link rel="stylesheet" href="/css/bootstrap-grid.min.css" />
+    <link rel="stylesheet" href="/css/swiper-bundle.min.css" />
+    <link rel="stylesheet" href="/css/slick.min.css" />
+    <link rel="stylesheet" href="/css/otree.css" />
+    <link rel="stylesheet" href="/css/styles.min.css" />
+    <title>{title} - WiseB2B</title>
+  </head>
+  <body>
+    <Header />
+    <main>
+      <slot />
+    </main>
+    <Footer />
+    <CookieBar />
+
+    <script is:inline src="/js/wow.min.js"></script>
+    <script is:inline src="/js/swiper-bundle.min.js"></script>
+    <script is:inline src="/js/custom.js"></script>
+  </body>
+</html>

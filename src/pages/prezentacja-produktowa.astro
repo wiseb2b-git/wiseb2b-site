@@ -1,0 +1,221 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+---
+
+<BaseLayout title="Prezentacja produktowa">
+
+<div class="presentation-top">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 offset-lg-2">
+        <div class="presentation-top__wrapper">
+          <p class="p_regular_3">Prezentacja produktowa</p>
+          <h2 class="h2_semi">Zarezerwuj około <span>60 minut</span>  w&nbsp;wygodnym dla Ciebie momencie.</h2>
+          <div class="presentation-top__buttons">
+            <a class="left wise-button wise-button--dark-wise" href="#presentation-form">Skonsultuj się z nami</a>
+            <span class="or p_regular_3">lub</span>
+            <a class="right wise-button wise-button--dark-wise" href="#presentation-form">Umów się na prezentację</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="presentation-image-content">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-10 offset-md-1 col-lg-10 offset-lg-1 col-xl-8 offset-xl-2">
+        <div class="presentation-image-content__image lm-observer">
+          <img width="996" height="460" src="/images/prezentacja-produktowa-hero.jpg" class="attachment-presentation-image size-presentation-image" alt="" />
+        </div>
+        <div class="presentation-image-content__wrapper lm-observer">
+          <div class="presentation-image-content__left">
+            <h3 class="h3_semi">Czego możesz się spodziewać po naszym spotkaniu?</h3>
+            <p class="p_regular_1">Wysłuchamy Twoich potrzeb i odpowiemy na&nbsp;wszelkie pytania. Podzielimy się swoim doświadczeniem z procesów transformacji sprzedaży w firmach handlowych i&nbsp;produkcyjnych. </p>
+          </div>
+          <div class="presentation-image-content__right">
+            <h4 class="h4_semi">To czas dla Ciebie. Porozmawiamy o&nbsp;najważniejszych dla Ciebie tematach, a także:</h4>
+            <ul>
+              <li class="p_regular_2">
+                Porozmawiamy o aktualnej sytuacji Twojej firmy, wyzwaniach i celach w obszarze sprzedaży.
+              </li>
+              <li class="p_regular_2">
+                Przybliżymy możliwości WiseB2B i efekty wdrożeń.
+              </li>
+              <li class="p_regular_2">
+                Wyjaśnimy jak działa integracja z systemem ERP.
+              </li>
+              <li class="p_regular_2">
+                Opowiemy o wersjach WiseB2B i omówimy, która z nich byłaby najlepsza dla Twojego biznesu.
+              </li>
+              <li class="p_regular_2">
+                Odpowiemy na wszystkie Twoje pytania i wątpliwości.
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div id="presentation-form" class="presentation-form">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-10 offset-lg-1 col-xl-8 offset-xl-2">
+        <div class="presentation-form__wrapper lm-observer presentation-form__wrapper--no-line">
+          <div class="row">
+            <div class="col-12">
+              <div class="wrap wrap--centered">
+                <img width="65" height="66" src="/images/np_video_2567858_000000-1.png" class="attachment-case_study_logo size-case_study_logo" alt="" />
+                <h4 class="right h4_semi">Chcę się umówić na prezentację.</h4>
+                <span class="js-presentation-form-call wise-button wise-button--plum-darker">Wybieram</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="presentation-form__popup">
+    <h3 class="h3_semi">Zarezerwuj prezentację:</h3>
+
+    <form id="presentation-form__popup" action="#" method="post">
+
+      <input type="hidden" name="form_name" id="presentation-form-name" />
+
+      <svg class="presentation-form__close" width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <circle cx="16" cy="16" r="16" fill="#5A5565"/>
+        <path d="M22.0449 9.95557L10.6671 21.3333" stroke="#312B3F"/>
+        <path d="M10.667 9.95557L22.0448 21.3333" stroke="#312B3F"/>
+      </svg>
+
+      <div class="presentation-form__popup-box">
+
+        <div class="wrapper">
+          <label class="p_regular_3 head head--name">Imię i nazwisko</label>
+          <input autocomplete="off" class="p_regular_3" type="text" name="name" placeholder="np. Adam Kowalski" />
+          <span class="error-info">To pole jest wymagane</span>
+        </div>
+
+        <div class="wrapper">
+          <label class="p_regular_3 head head--email">Adres e-mail<span>*</span></label>
+          <input autocomplete="off" class="p_regular_3" type="email" name="email" placeholder="przykład@mail.pl" />
+          <span class="error">To pole jest wymagane</span>
+        </div>
+
+        <div class="wrapper">
+          <label class="p_regular_3 head head--phone">Telefon</label>
+          <input autocomplete="off" class="p_regular_3" type="tel" name="phone" placeholder="np. + 48 500 001 002" />
+          <span class="error">To pole jest wymagane</span>
+        </div>
+
+        <div class="checkbox">
+          <label for="policy">
+            <input type="checkbox" id="policy" name="policy" />
+            <p class="p_regular_3">Zapoznałem się z polityką prywatności i wyrażam zgodę na przetwarzanie moich danych osobowych<span>*</span></p>
+            <div class="checkmark"></div>
+          </label>
+          <span class="error-info">To pole jest wymagane</span>
+        </div>
+
+        <div class="submit">
+          <input class="wise-button wise-button--wise-harvest" type="submit" value="Porozmawiajmy" />
+        </div>
+
+        <div class="response">
+          <div class="response__error p_regular_3"></div>
+          <div class="response__ok p_regular_3"></div>
+        </div>
+
+      </div>
+
+    </form>
+  </div>
+
+</div>
+
+<div class="presentation-description">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-10 offset-lg-1">
+        <h5 class="h5_regular lm-observer">Od 21 lat projektujemy i wdrażamy rozwiązania informatyczne wspierające efektywności i&nbsp;rozwój biznesu naszych klientów. Z naszych rozwiązań skorzystało już ponad 100 klientów z&nbsp;różnych branż. Wspieramy firmy poprzez dostarczanie dopasowanych systemów ERP, WMS, CRM i B2B oraz dedykowanych narzędzi, takich jak WiseB2B.</h5>
+      </div>
+    </div>
+  </div>
+</div>
+
+</BaseLayout>
+
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    const formCallButtons = document.querySelectorAll('.js-presentation-form-call');
+    const popup = document.querySelector('.presentation-form__popup');
+    const closeBtn = document.querySelector('.presentation-form__close');
+
+    formCallButtons.forEach(btn => {
+      btn.addEventListener('click', () => {
+        if (popup) {
+          popup.classList.add('active');
+          document.body.classList.add('overlay-active');
+        }
+      });
+    });
+
+    if (closeBtn) {
+      closeBtn.addEventListener('click', () => {
+        if (popup) {
+          popup.classList.remove('active');
+          document.body.classList.remove('overlay-active');
+        }
+      });
+    }
+
+    // Scroll to form section from top buttons
+    document.querySelectorAll('a[href="#presentation-form"]').forEach(link => {
+      link.addEventListener('click', (e) => {
+        e.preventDefault();
+        const target = document.getElementById('presentation-form');
+        if (target) {
+          target.scrollIntoView({ behavior: 'smooth' });
+        }
+      });
+    });
+
+    // Form validation
+    const form = document.getElementById('presentation-form__popup');
+    if (form) {
+      form.addEventListener('submit', (e) => {
+        e.preventDefault();
+        let valid = true;
+        const email = form.querySelector('input[name="email"]');
+        const policy = form.querySelector('input[name="policy"]');
+
+        // Reset errors
+        form.querySelectorAll('.error, .error-info').forEach(el => el.style.display = 'none');
+
+        if (!email || !email.value.trim()) {
+          const errorEl = email?.parentElement?.querySelector('.error');
+          if (errorEl) errorEl.style.display = 'block';
+          valid = false;
+        }
+
+        if (!policy || !policy.checked) {
+          const errorEl = policy?.closest('.checkbox')?.querySelector('.error-info');
+          if (errorEl) errorEl.style.display = 'block';
+          valid = false;
+        }
+
+        if (valid) {
+          const responseOk = form.querySelector('.response__ok');
+          if (responseOk) {
+            responseOk.textContent = 'Dziękujemy! Skontaktujemy się z Tobą wkrótce.';
+            responseOk.style.display = 'block';
+          }
+        }
+      });
+    }
+  });
+</script>

@@ -1,0 +1,85 @@
+---
+---
+
+<div class="cookie-info" id="cookieBar">
+  <div class="cookie-info-inner">
+    <div class="cookie-info-header">
+      <div class="cookie-info-header-title">Pliki cookie</div>
+      <div class="cookie-info-header-close"><a href="#" id="cookieClose">zamknij <span class="cookie-x">[x]</span></a></div>
+    </div>
+    <div class="cookie-info-content">
+      Strona korzysta z plików cookies. Są one wykorzystywane w celu jak najlepszego świadczenia usług i dostosowania strony do Państwa potrzeb.
+    </div>
+  </div>
+</div>
+
+<script>
+  const bar = document.getElementById('cookieBar');
+  const closeBtn = document.getElementById('cookieClose');
+
+  if (localStorage.getItem('cookiesAccepted')) {
+    bar?.remove();
+  } else {
+    if (bar) bar.style.display = 'block';
+  }
+
+  closeBtn?.addEventListener('click', (e) => {
+    e.preventDefault();
+    localStorage.setItem('cookiesAccepted', 'true');
+    bar?.remove();
+  });
+</script>
+
+<style>
+  .cookie-info {
+    display: none;
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background: #fff;
+    border-radius: 12px;
+    box-shadow: 0 4px 24px rgba(0, 0, 0, 0.15);
+    z-index: 200;
+    max-width: 380px;
+    width: calc(100% - 40px);
+    overflow: hidden;
+  }
+
+  .cookie-info-inner {
+    padding: 20px;
+  }
+
+  .cookie-info-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 12px;
+  }
+
+  .cookie-info-header-title {
+    font-weight: 700;
+    font-size: 1rem;
+    color: var(--color-text);
+  }
+
+  .cookie-info-header-close a {
+    font-size: 0.85rem;
+    color: var(--color-accent);
+    text-decoration: none;
+    cursor: pointer;
+  }
+
+  .cookie-info-content {
+    font-size: 0.85rem;
+    line-height: 1.5;
+    color: #666;
+  }
+
+  @media (max-width: 480px) {
+    .cookie-info {
+      bottom: 10px;
+      right: 10px;
+      max-width: calc(100% - 20px);
+    }
+  }
+</style>

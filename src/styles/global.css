@@ -1,0 +1,115 @@
+/* === Reset === */
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* === Variables === */
+:root {
+  --color-bg: #f3f6fa;
+  --color-text: #312b3f;
+  --color-accent: #d9b062;
+  --color-white: #ffffff;
+  --color-dark: #1a1a2e;
+
+  --font-family: 'Sora', sans-serif;
+
+  --header-height: 108px;
+  --header-height-mobile: 85px;
+
+  --bp-sm: 743px;
+  --bp-md: 991px;
+  --bp-lg: 1279px;
+  --bp-xl: 1599px;
+}
+
+/* === Base === */
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--font-family);
+  color: var(--color-text);
+  background-color: var(--color-bg);
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+ul, ol {
+  list-style: none;
+}
+
+button {
+  cursor: pointer;
+  border: none;
+  background: none;
+  font-family: inherit;
+}
+
+/* === Container === */
+.container {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+/* === CTA Button === */
+.btn-cta {
+  display: inline-block;
+  background-color: var(--color-accent);
+  color: var(--color-white);
+  padding: 12px 32px;
+  border-radius: 6px;
+  font-weight: 600;
+  font-size: 1rem;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.btn-cta:hover {
+  background-color: #c49a4e;
+  transform: translateY(-1px);
+}
+
+/* === Animate on scroll === */
+.lm-observer {
+  opacity: 0;
+  transition: opacity 0.5s ease;
+}
+
+.lm-observer.visible {
+  opacity: 1;
+}
+
+/* === Section spacing === */
+section {
+  padding: 80px 0;
+}
+
+/* === Responsive === */
+@media (max-width: 991px) {
+  section {
+    padding: 60px 0;
+  }
+}
+
+@media (max-width: 743px) {
+  section {
+    padding: 40px 0;
+  }
+}

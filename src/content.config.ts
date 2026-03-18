@@ -1,6 +1,39 @@
 import { defineCollection, z } from 'astro:content';
 import { glob } from 'astro/loaders';
 
+const caseStudy = defineCollection({
+  loader: glob({ pattern: '**/*.md', base: './src/content/case-study' }),
+  schema: z.object({
+    title: z.string(),
+    description: z.string(),
+    clientLogo: z.string(),
+    mainImage: z.string(),
+    galleryImages: z.array(z.string()).optional(),
+    info: z.array(z.object({
+      label: z.string(),
+      items: z.array(z.string()),
+    })),
+    about: z.object({
+      heading: z.string(),
+      text: z.string(),
+    }),
+    functions: z.array(z.object({
+      name: z.string(),
+      description: z.string(),
+    })),
+    stats: z.array(z.object({
+      value: z.string(),
+      label: z.string(),
+    })).optional(),
+    quote: z.object({
+      text: z.string(),
+      author: z.string(),
+      role: z.string(),
+    }).optional(),
+    date: z.string(),
+  }),
+});
+
 const bazaWiedzy = defineCollection({
   loader: glob({ pattern: '**/*.md', base: './src/content/baza-wiedzy' }),
   schema: z.object({
@@ -23,7 +56,26 @@ const funkcjonalnosci = defineCollection({
   }),
 });
 
+const planStatus = z.enum(['included', 'optional', 'unavailable']);
+
+const obszary = defineCollection({
+  loader: glob({ pattern: '**/*.md', base: './src/content/obszary' }),
+  schema: z.object({
+    title: z.string(),
+    order: z.number(),
+    modules: z.array(z.object({
+      name: z.string(),
+      description: z.string(),
+      starter: planStatus,
+      professional: planStatus,
+      enterprise: planStatus,
+    })),
+  }),
+});
+
 export const collections = {
   'baza-wiedzy': bazaWiedzy,
+  'case-study': caseStudy,
   'funkcjonalnosci': funkcjonalnosci,
+  'obszary': obszary,
 };

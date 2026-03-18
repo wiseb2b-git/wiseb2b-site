@@ -1,0 +1,201 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import { getCollection } from 'astro:content';
+
+export async function getStaticPaths() {
+  const studies = await getCollection('case-study');
+  return studies.map((study) => ({
+    params: { slug: study.id },
+    props: { study },
+  }));
+}
+
+const { study } = Astro.props;
+const { title, description, clientLogo, mainImage, galleryImages, info, about, functions, stats, quote } = study.data;
+---
+
+<BaseLayout title={title} description={description}>
+
+<article class="article">
+  <div class="container">
+    <div class="row">
+      <div class="col-xmd-3 offset-xmd-1 col-lg-3 offset-lg-1 col-xl-2 offset-xl-2 p-0">
+        <div class="single-case-study__logo">
+          <img width="156" height="44" src={clientLogo} class="attachment-single-case-study size-single-case-study" alt="" />
+        </div>
+      </div>
+      <div class="col-md-10 offset-md-1 col-xmd-7 offset-xmd-1 col-lg-7 offset-lg-0 col-xl-6 offset-xl-0">
+        <h1 class="h3_semi head">{title}</h1>
+      </div>
+    </div>
+  </div>
+
+  <div class="entry-content">
+    <div class="mceContentBody mceFrontEnd">
+
+      <!-- Info section -->
+      <div class="single-case-study-description">
+        <div class="container">
+          <div class="row">
+            <div class="col-md-10 offset-md-1 col-xmd-7 offset-xmd-5 col-lg-7 offset-lg-4 col-xl-6 offset-xl-4">
+              <div class="single-case-study-description__wrapper lm-observer">
+                {info.map((item) => (
+                  <div class="item">
+                    <div class="row">
+                      <div class="col-lg-5 col-xl-6">
+                        <p class="p_semi_2 single-case-study-description__head">{item.label}</p>
+                      </div>
+                      <div class="col-lg-7 col-xl-6">
+                        <ul>
+                          {item.items.map((li) => (
+                            <li class="p_regular_3 description">{li}</li>
+                          ))}
+                        </ul>
+                      </div>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Images -->
+      <div class="single-case-study-images">
+        <div class="container">
+          <div class="row">
+            <div class="col-12 offset-0 col-lg-10 offset-lg-1 col-xl-8 offset-xl-2">
+              <div class="single-case-study-images__main lm-observer">
+                <img width="811" height="608" src={mainImage} class="main" alt="" />
+              </div>
+              {galleryImages && galleryImages.length > 0 && (
+                <div class="row">
+                  {galleryImages.map((img, i) => (
+                    <div class="col-md-6 lm-observer">
+                      <img width="397" height="298" src={img} class={i === 0 ? 'left' : 'right'} alt="" loading="lazy" />
+                    </div>
+                  ))}
+                </div>
+              )}
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- About -->
+      <div class="single-case-study-header-content">
+        <div class="container">
+          <div class="row">
+            <div class="col-md-10 offset-md-1 col-lg-8 offset-lg-2 col-xl-6 offset-xl-3 p-xl-0">
+              <div class="single-case-study-header-content__wrap lm-observer">
+                <h4 class="h4_semi">{about.heading}</h4>
+                <p class="p_regular_1">{about.text}</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Key functions -->
+      <div class="single-case-study-functions">
+        <div class="container">
+          <div class="row">
+            <div class="col-md-10 offset-md-1 col-lg-8 offset-lg-2 col-xl-6 offset-xl-3 p-xl-0">
+              <div class="single-case-study-functions__wrap">
+                <h4 class="h4_semi lm-observer">Kluczowe rozwiązania</h4>
+                <div class="row">
+                  {functions.map((fn) => (
+                    <div class="col-md-6 col-lg-6">
+                      <div class="single-case-study-functions__item lm-observer">
+                        <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                          <g clip-path="url(#clip0_cs)">
+                            <path d="M17.0705 2.92949C15.1947 1.05449 12.6509 0.000488281 9.99951 0.000488281C7.34711 0.000488281 4.80351 1.05439 2.92851 2.92949C1.05273 4.80527 -0.000488281 7.34829 -0.000488281 10.0005C-0.000488281 12.6529 1.05263 15.1965 2.92851 17.0715C4.80351 18.9473 7.34731 20.0005 9.99951 20.0005C12.6511 20.0005 15.1949 18.9474 17.0705 17.0715C18.9549 15.2012 20.0151 12.6559 20.0151 10.0005C20.0151 7.34589 18.955 4.79969 17.0705 2.92949Z" fill="#43AB1E"/>
+                            <path d="M8.58555 14.8177L4.28955 10.5201L6.56775 8.23972L8.63175 10.4819L14.188 5.87012L15.8458 7.5584L8.58555 14.8177Z" fill="white"/>
+                          </g>
+                          <defs>
+                            <clipPath id="clip0_cs">
+                              <rect width="20" height="20" fill="white"/>
+                            </clipPath>
+                          </defs>
+                        </svg>
+                        <p class="p_regular_1 single-case-study-functions__head">{fn.name}</p>
+                        <p class="p_regular_3 single-case-study-functions__desc">{fn.description}</p>
+                      </div>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Stats -->
+      {stats && stats.length > 0 && (
+        <div class="single-case-study-percentages">
+          <div class="container">
+            <div class="row">
+              <div class="col-lg-8 offset-lg-2 col-xl-6 offset-xl-3 p-xl-0">
+                <div class="single-case-study-percentages__wrapper lm-observer">
+                  {stats.map((stat) => (
+                    <div class="item">
+                      <p class="h2_semi head">{stat.value}</p>
+                      <p class="p_regular_3 desc">{stat.label}</p>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      )}
+
+      <!-- Quote -->
+      {quote && (
+        <div class="single-case-study-comments">
+          <div class="container">
+            <div class="row">
+              <div class="col-lg-8 offset-lg-2 col-xl-6 offset-xl-3 p-xl-0">
+                <div class="single-case-study-comments__quote lm-observer">
+                  <svg width="102" height="81" viewBox="0 0 102 81" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M0 40.5C0 40.5 37.0001 0 60.1263 0C83.2525 0 102 18.1325 102 40.5C102 62.8675 83.2525 81 60.1263 81C37.0001 81 0 40.5 0 40.5Z" fill="#312B3F"/>
+                    <path fill-rule="evenodd" clip-rule="evenodd" d="M44.2008 37.0304V31.1229C44.2008 29.492 45.5262 28.1678 47.1558 28.1678H53.0633C54.6943 28.1678 56.0144 29.4933 56.0144 31.1229V41.9526C56.0144 47.1444 51.9582 49.8311 47.1557 49.827C46.6178 49.827 46.1676 49.3808 46.1676 48.8429V46.8746C46.1676 46.3367 46.6178 45.8865 47.1557 45.8865C49.6978 45.8905 52.0752 44.9714 52.0752 41.9513C52.0752 40.9712 51.8308 39.983 50.601 39.983H47.1558C45.5248 39.983 44.2007 38.6576 44.2007 37.0279L44.2008 37.0304Z" fill="#F3F6FA"/>
+                    <path fill-rule="evenodd" clip-rule="evenodd" d="M57.9855 31.1229C57.9855 29.492 59.307 28.1678 60.9366 28.1678H66.8441C68.4751 28.1678 69.7992 29.4933 69.7992 31.1229V41.9526C69.7992 47.1444 65.743 49.8311 60.9368 49.827C60.3989 49.827 59.9526 49.3808 59.9526 48.8429V46.8746C59.9526 46.3367 60.3989 45.8865 60.9368 45.8865C63.4828 45.8905 65.86 44.9714 65.86 41.9513C65.86 40.9712 65.6156 39.983 64.3817 39.983H60.9365C59.3056 39.983 57.9814 38.6576 57.9814 37.0279L57.9854 31.1204L57.9855 31.1229Z" fill="#F3F6FA"/>
+                  </svg>
+                  <p class="h4_regular desc">{quote.text}</p>
+                  <div class="single-case-study-comments__data">
+                    <p class="p_semi_2 name">{quote.author}</p>
+                    <p class="p_regular_3 www">{quote.role}</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      )}
+
+      <!-- CTA -->
+      <div class="cta">
+        <div class="container">
+          <div class="row">
+            <div class="col-xl-5 offset-xl-2 col-lg-6 offset-lg-1 col-md-11">
+              <div class="cta__wrapper lm-observer">
+                <div class="cta__data">
+                  <div class="cta__content">
+                    <h3 class="h3_semi">Dowiedz się więcej o WiseB2B</h3>
+                    <a class="wise-button wise-button--wise-harvest" href="/wsparcie/">Zamów demo</a>
+                  </div>
+                </div>
+                <img loading="lazy" width="510" height="405" src="/images/Ellipse-126.png" class="attachment-cta_image size-cta_image" alt="" />
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</article>
+
+</BaseLayout>

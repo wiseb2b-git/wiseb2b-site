@@ -9,6 +9,9 @@ Strona marketingowa firmy WiseB2B (platforma e-Commerce B2B) migrowana z WordPre
 - Netlify: auto-deploy z GitHub
 - Oryginalna strona: `https://wiseb2b.eu`
 
+## Wiedza biznesowa
+Katalog `.knowledge/` zawiera materiały z NotebookLM — wiedzę biznesową o produkcie WiseB2B (opisy funkcji, wartości, USP, grupy docelowe, messaging). Przy tworzeniu i edycji treści na stronach należy czerpać z tych materiałów, aby zapewnić spójność komunikacji marketingowej.
+
 ## Stos technologiczny
 - **Astro 6** (SSG, `trailingSlash: 'always'`)
 - **Astro Content Collections** — blog w `src/content/baza-wiedzy/*.md`

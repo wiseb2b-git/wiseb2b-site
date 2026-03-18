@@ -1,0 +1,130 @@
+Obszar,Moduł,Opis,Starter,Proffesional,Enterprise,dodatek do pakietu,Cena modułu,,,,,-,brak modułu w pakiecie i brak możliwosci dodania
+Wartość modułów w pakiecie,,,"2 490,00","4 490,00","8 590,00",,,,,,,O,"Moduł możliwy do dodania w pakiecie, ale jego cena nie jest uwzględniona"
+Redukcja za pakiety,,,"400,00","400,00","500,00",,,,,,,🟢,moduł uwzględniony w pakiecie.
+Cena pakietu,,,"2 090,00","3 690,00","7 290,00",,,,,,,,
+Wartość dodatków do pakietu,,,"0,00","0,00","0,00",,,,,,,,
+Wartość pakietu z dodatkami,,,"2 090,00","3 690,00","7 290,00",,,,,,,,
+Katalog Produktów,,,,,,,,,,,,,
+,Cyfrowy katalog produktów,"– kategorie produktów,
+– katalog produktów,
+– atrybuty,
+– zdjęcia i multimedia,
+– dokumenty związane z towarami,
+– powiązania (akcesoria, zamienniki itp.),",🟢,🟢,🟢,,90,,,,,,
+,GPSR,"- kartoteka dostawców GPSR
+- dodatkowe opis produktów",🟢,🟢,🟢,,40,,,,,,
+,Wielojęzycznosć,"- opisy produktów, usług, artykuły itd",-,O,🟢,,350,,,,,,
+,Ograniczenie widoczności produktów,"- produkty dostępne tylko dla wybranych grup klientów 
+- produkty dostępne tylko dla wybranych klientów",-,O,O,,100,,,,,,
+,Symbole włąsne,- klienci definiują i przechowuja włąsne symbole celem szybszego skąłdania zamówień,-,-,O,,70,,,,,,
+Oferta handlowa,,,,,,,,,,,,,
+,Cenniki grupowe i indywidualne,,🟢,🟢,🟢,,80,,,,,,
+,Promocje katalogowe,,🟢,🟢,🟢,,90,,,,,,
+,Promocje koszykowe,,🟢,🟢,🟢,,90,,,,,,
+,Dostępność produktów,"- stany magazynowe na wielu magazynach
+- poziomy dostępnosci (mało, dużo, na wyczrpaniu itp)",🟢,🟢,🟢,,80,,,,,,
+,Warunki handlowe,"- limity kredytowe
+- dostępne sposoby płatności dla klientów",🟢,🟢,🟢,,80,,,,,,
+,Feedy produktowe dla klientów,"- włąsne zestawienia grupproduktó i danych do eksportu
+- formaty Shopfy, Ceneo, IAI - do importu do sklepó internetowych",O,🟢,🟢,,90,,,,,,
+,Ceny wg magazynów,- różnce ceny w zależności od magazynu sprzedaży,- ,O,🟢,,110,,,,,,
+,Cenny wg opakowań i progów ilościowych,"- różne ceny na opakowania (sztukaa, karton)
+- ceny progowe zależne od ilości",- ,O,🟢,,110,,,,,,
+,Cenniki wielowalutowe,- cenniki w różnych walutach,-,O,🟢,,180,,,,,,
+,Zarządzanie kredytem kupieckim,- integracja z wywiadownią i sugerowanie wielkości limitu kupieckiego,-,O,O,,180,,,,,,
+Prezentacja oferty,,,,,,,,,,,,,
+,Wyszukiwarka z obsługą synonimów i priorytetów,"- wyszukiwanie po słowach kluczowych, znormalizowanych",🟢,🟢,🟢,,100,,,,,,
+,Dynamiczny ranking produktów,"- dynamiczne określanie rankingu w zależności od dopasowania, promocji, strategii sprzedażowej",-,O,🟢,,250,,,,,,
+,Wyszukiwanie z Elasticsearch,- wykorzystanie do wyszukiwania silnika ElasticSearch,-,-,O,,250,,,,,,
+,Wyszukiwanie z TypeSense,,-,-,O,,250,,,,,,
+Proces zakupowy,,,,,,,,,,,,,
+,Zakupy B2B,"- sprzedaż B2B wg cenn netto/brutto
+- miejsca odbioru
+- umowy i zgody zakupwoe
+- koszty dostawy, koszty płątności ",🟢,🟢,🟢,,120,,,,,,
+,Wielokoszyki,- wiele koszyków dla jednego użytkownika / klienta,🟢,🟢,🟢,,60,,,,,,
+,Listy zakupowe,- listy zakupowe do częstego opisu,🟢,🟢,🟢,,60,,,,,,
+,Import zamówienia,"- export wzorca XLS, CSV
+- import koszyka z pliku CSV, XLS",🟢,🟢,🟢,,60,,,,,,
+,Podział koszyka,,🟢,🟢,🟢,,60,,,,,,
+,Kurierzy,"- integracja z GLS, DPD, DPD PickUp, InPost, InPost Kurier, Pocztex",O,🟢,🟢,,120,,,,,,
+,Płatności elektroniczne,"- jeden drajwer AutoPay, PayU",O,🟢,🟢,,130,,,,,,
+,Dropshipping,"- możliwość podania dowolnego adresu przy zamóieniu
+- naliczanie opłąty za obsługę dropshppingową
+- dodatkowe usługi, np. pakowanie indywidualne, ubezpieczenie zwrotu itp",O,O,🟢,,110,,,,,,
+,Sprzedaż zagraniczna,"- kontrola VIES autoamtyczna i VAT0%
+- różne waluty koszyka sprzedaży",-,O,🟢,,160,,,,,,
+,Zaawansowane uprawnienia użytkowników,"- limity zakupowe
+- proces akceptacji zakupów przez przełożonego
+- oddziały i MPK",-,O,O,,140,,,,,,
+,SUP,- obsługa opłąty SUP i rezygnacji (zakup profesjonalny),-,O,O,,50,,,,,,
+,Optymalizator zakupów,,-,-,O,,500,,,,,,
+Obsługa klienta,,,,,,,,,,,,,
+,,,,,,,,,,,,,
+,Dane klienta,"- dane adresowe, rejestrowe
+- miesjca odbioru",🟢,🟢,🟢,,100,,,,,,
+,Użytkownicy klienta i role,"- rola głónego użytkownika i zakupowców (po stronie klienta)
+",🟢,🟢,🟢,,100,,,,,,
+,Listy zakupowe,"- listy zakupowe do dowolnego gromadzenia specyfikacji produktów
+- zamawianie wybranych produktów lub całości",🟢,🟢,🟢,,80,,,,,,
+,Historai zamówień,- statusy zamówień,🟢,🟢,🟢,,80,,,,,,
+,Historia faktur,,-,🟢,🟢,,120,,,,,,
+,Historia dostaw,- listy spedycyjne powiązane z zamóieniami i fakturami,-,🟢,🟢,,120,,,,,,
+,Rozrachunki,- salda rozliczeń i rozrachunków,-,🟢,🟢,,130,,,,,,
+,Zwroty i reklamacje,,O,🟢,🟢,,190,,,,,,
+,Oferty dedykowane,"- dostęp do dedykowanych ofert dla klienta
+- budowanie koszyka w oparciu o oferty",-,O,🟢,,350,,,,,,
+,Edycja zamówień w realizacji,- blokowanie zamówień do realizacji (np. przy dropshiipongu),-,O,O,,200,,,,,,
+,,,,,,,,,,,,,
+AI,,,,,,,,,,,,,
+,Agent klienta,- wyszukiwanie i realizacja zakupów,- ,O,🟢,,600,,,,,,
+,Agent administratora,- asystent konfigurowania systemu,- ,O,O,,600,,,,,,
+,Automatyzacja generowania AI,- dla każdego pola dowolnego elementu systemu możliwość konfgurowania schmatu generowania wartości poprzez AI,-,O,O,,800,,,,,,
+CMS,,,,,,,,,,,,,
+,Konfigurowanie loyoutu,"- strona główna
+- slidery, w tym obsługa video
+- wybrane kategorię
+- dowolne bloki HTML
+- obsługa mediów
+- boxy produktowe",🟢,🟢,🟢,,70,,,,,,
+,Aktualnośći,,🟢,🟢,🟢,,50,,,,,,
+,Baza wiedzy,,🟢,🟢,🟢,,50,,,,,,
+,SEO,"- zarządzanie treściami SEO dla różnych rodzajó podstron (główna, listingi produktów, kategorie, produkty, artykuły i sekcje)",O,🟢,🟢,,180,,,,,,
+,,,,,,,,,,,,,
+Dostępność platformy,,,,,,,,,,,,,
+,Profil zamknięty,- platforma dostępna jedynie po zalogowaniu,🟢,🟢,🟢,,50,,,,,,
+,Profil otwarty,"– prezentacja produktów i wyszukiwanie bez logowania,
+– generowanie leadów do rejestracji,
+– automatyczne akceptowanie rejestracji,
+– bez możliwości zakupów bez rejestracji.",🟢,🟢,🟢,,50,,,,,,
+,MultiStore,"- definicje wielu sklepów (zakres produktó, grup klientów, cenniki, języki)
+- różne fronty - jeden backend
+- dowolna zmiana konfiguracji per sklep",-,-,🟢,,600,,,,,,
+B2C,,,,,,,,,,,,,
+,Profil B2C,"- zakupy niezarejestrowanego użytkownika
+- rejestracja B2C, prezentacja w cenach brutto, ",-,O,O,,600,,,,,,
+,Obsługa Omnibus,,-,O,O,,0,,,,,,
+Handlowiec,,,,,,,,,,,,,
+,Wsparcie klienta w zakupach,- przelogowanie w konto klienta i obsługa sklepu w imieniu klienta,🟢,🟢,🟢,,100,,,,,,
+,Panel handlowca,,-,O,🟢,,300,,,,,,
+,Ofertowanie,- tworzenie i edycja ofert,-,O,🟢,,300,,,,,,
+,Zadania,,,O,🟢,,300,,,,,,
+,Monitoring klientów,"- klienci wymagajacy uwagi
+- definiowalne polityki monitorowania klienta",-,-,O,,100,,,,,,
+Integracje,,,,,,,,,,,,,
+,Admin API,,O,🟢,🟢,,160,,,,,,
+,Client API,,-,🟢,🟢,,160,,,,,,
+,Integracje ERP,"- Teneum, Comarch Optima, eNova, Comarch XL",O,O,O,,400,,,,,,
+WiseB2B Cloud,,,,,,,,,,,,,
+,Środowisko produkcyjne,"- oprogramowanie platformy
+- instalacja aktualizacji do nowych wersji",🟢,🟢,🟢,,750,,,,,,
+,Środowisko testowe,"- instancja testowa platformy
+- dane z nocy z dnia poprzedniego ",-,🟢,🟢,,300,,,,,,
+,n8n,- środowisko do automatyzacji i synchronizacji systemu z jego otoczeniem,O,🟢,🟢,,300,,,,,,
+,OnPremise,- możliwość instalacji lokalnej,-,🟢,🟢,,0,,,,,,
+,Tłumaczenia jezykowe,,-,-,🟢,,80,,,,,,
+,,,,,,,,,,,,,
+Technologia,,,,,,,,,,,,,
+,Wtyczki własne,- dostęp do możliwości instalacji wąłsnych wtyczek rozszerzających,-,🟢,🟢,,0,,,,,,
+,Kod źródłowy,- dostęp do kodu źrółowego,-,O,🟢,,300,,,,,,
+,Customization Studio,- środowisko do budowania i generowania włąsnych pluginów,-,-,O,,400,,,,,,

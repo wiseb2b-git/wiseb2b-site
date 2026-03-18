@@ -37,6 +37,7 @@ body {
   background-color: var(--color-bg);
   line-height: 1.6;
   -webkit-font-smoothing: antialiased;
+  overflow-x: hidden;
 }
 
 a {
@@ -170,6 +171,7 @@ section {
   color: var(--color-text);
   margin: 0;
   white-space: nowrap;
+  text-align: center;
 }
 @media (max-width: 767px) {
   .main-claim-heading {
@@ -275,6 +277,103 @@ section {
 @keyframes logos-scroll {
   0% { transform: translateX(0); }
   100% { transform: translateX(-50%); }
+}
+
+/* === Sekcja "WiseB2B daje więcej" === */
+.wise-more-table {
+  margin-top: 40px;
+  border-radius: 16px;
+  overflow: hidden;
+}
+.wise-more-row {
+  display: flex;
+  align-items: center;
+  gap: 32px;
+  padding: 28px 32px;
+}
+.wise-more-row:nth-child(odd) {
+  background: #f8f7fa;
+}
+.wise-more-row:nth-child(even) {
+  background: #fff;
+}
+.wise-more-row__name {
+  width: 180px;
+  flex-shrink: 0;
+}
+.wise-more-row__icon {
+  width: 72px;
+  flex-shrink: 0;
+  display: flex;
+  justify-content: center;
+}
+.wise-more-row__icon-bg {
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  background: #312b3f;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.wise-more-row__desc {
+  flex: 1;
+  min-width: 0;
+}
+@media (max-width: 743px) {
+  .wise-more-row {
+    flex-wrap: wrap;
+    gap: 16px;
+    padding: 20px 20px;
+  }
+  .wise-more-row__name {
+    width: auto;
+  }
+}
+
+/* === Kompaktowe about-us-rules (sekcja Bezpieczeństwo) === */
+.rules-compact .about-us-rules__item {
+  min-height: 0 !important;
+  margin-top: 32px !important;
+}
+.rules-compact .about-us-rules__content {
+  padding-bottom: 0 !important;
+}
+.rules-compact .about-us-rules__icon span {
+  display: none !important;
+}
+
+/* === FAQ accordion === */
+.questions__items .item h2:after {
+  background-image: none !important;
+  content: "+" !important;
+  font-size: 28px;
+  font-weight: 300;
+  color: #c6973d;
+  display: flex !important;
+  align-items: center;
+  justify-content: center;
+  line-height: 1;
+  transition: transform 0.3s ease;
+}
+.questions__items .item.show h2:after {
+  content: "−" !important;
+  background-image: none !important;
+}
+.questions__items .item p {
+  max-height: 0;
+  overflow: hidden;
+  opacity: 0;
+  transition: max-height 0.4s ease, opacity 0.3s ease, margin 0.3s ease;
+  display: block !important;
+  margin-top: 0 !important;
+  margin-bottom: 0 !important;
+}
+.questions__items .item.show p {
+  max-height: 300px;
+  opacity: 1;
+  margin-top: 14px !important;
+  margin-bottom: -7px !important;
 }
 
 /* === Responsive === */

@@ -8,7 +8,6 @@ import BaseLayout from '../layouts/BaseLayout.astro';
   <div class="container">
     <div class="row">
       <div class="col-lg-10 offset-lg-1">
-        <p class="p_regular_3 head">Wdrożenia</p>
         <h1 class="h2_semi lm-observer">Przykłady wdrożeń platformy B2B</h1>
 
         <div class="items lm-observer">
@@ -22,8 +21,27 @@ import BaseLayout from '../layouts/BaseLayout.astro';
             <div class="item__content">
               <img width="74" height="21" src="/images/triplex-logo.png" class="d-block d-lg-none" alt="Logo Triplex" />
               <h4 class="h4_semi">Czołowy dystrybutor pirotechniki postawił na WiseB2B</h4>
-              <p class="p_regular_3 description">Jesteśmy w branży 30 lat, nasi klienci również – baliśmy się na początku, że klienci przyzwyczajeni do exceli i telefonu nie będą chcieli składać zamówień przez platformę B2B. Ale reakcje są inne – klienci są zachwyceni. Takie zmiany też dobrze wpływają na wizerunek branży i przyciągają młode pokolenie. Bardzo pozytywnie oceniam zmiany, jakie wniosła platforma B2B wdrożona przez Sente.</p>
-              <a class="p_regular_3" href="/case-study/liderzy-rynku-wdrazaja-wise/">
+              <p class="p_regular_3 description">Triplex, jeden z czołowych dystrybutorów artykułów pirotechnicznych w Polsce i Europie, wdrożył platformę WiseB2B, aby przenieść większość sprzedaży do kanału cyfrowego. Dzięki platformie klienci mogą składać zamówienia o każdej porze, a handlowcy zostali odciążeni z powtarzalnych czynności.</p>
+              <a class="p_regular_3" href="/case-study/triplex/" >
+                Przeczytaj case study
+                <svg width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M4.5 2.25L8.25 6L4.5 9.75" stroke="#C6973D" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+              </a>
+            </div>
+          </div>
+          <div class="item">
+            <div class="item__logo d-none d-lg-block">
+              <img width="74" height="21" src="/case-study/vmp/vmp-logo.png" class="attachment-implementation-logo size-implementation-logo" alt="Logo VMP Group" />
+            </div>
+            <div class="item__image">
+              <img width="333" height="130" src="/case-study/vmp/vmp-banner.png" class="attachment-functions-images-small size-functions-images-small" alt="Wdrożenie platformy B2B dla dystrybutora bielizny" />
+            </div>
+            <div class="item__content">
+              <img width="74" height="21" src="/case-study/vmp/vmp-logo.png" class="d-block d-lg-none" alt="Logo VMP Group" />
+              <h4 class="h4_semi">Platforma B2B dla lidera dystrybucji bielizny w Europie</h4>
+              <p class="p_regular_3 description">VMP Group, dystrybutor bielizny i odzieży premium z katalogiem ponad 86 000 indeksów, wdrożył WiseB2B aby zastąpić przestarzały system B2B. Platforma obsługuje 13 rynków zagranicznych, automatyzuje zwroty i integruje się z ERP — skracając czas obsługi zamówień o 60%.</p>
+              <a class="p_regular_3" href="/case-study/vmp/" >
                 Przeczytaj case study
                 <svg width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
                   <path d="M4.5 2.25L8.25 6L4.5 9.75" stroke="#C6973D" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/>
@@ -44,9 +62,9 @@ import BaseLayout from '../layouts/BaseLayout.astro';
       <div class="col-lg-10 offset-lg-1 p-lg-0 col-xl-10 offset-xl-1 p-xl-none">
         <div class="implementation-brand__wrapper">
 
-          <h3 class="h3_semi lm-observer">Wspieramy firmy dystrybucyjne i produkcyjne </h3>
+          <h3 class="h3_semi lm-observer">Klienci mówią o nas</h3>
 
-          <div class="items lm-observer">
+          <div class="items testimonials-slider lm-observer">
             <div class="item">
               <div class="item__image">
                 <img loading="lazy" width="138" height="403" src="/images/AdobeStock_390964938-138x403.jpeg" class="person" alt="Pracownik firmy korzystający z platformy B2B" />
@@ -60,7 +78,21 @@ import BaseLayout from '../layouts/BaseLayout.astro';
                 <p class="p_regular_3 job">Prokurent w Triplex</p>
               </div>
             </div>
+            <div class="item">
+              <div class="item__image">
+                <img loading="lazy" width="138" height="403" src="/case-study/vmp/vmp-banner.png" class="person" alt="Platforma B2B VMP Group" />
+                <div class="item__image-logo">
+                  <img loading="lazy" width="46" height="13" src="/case-study/vmp/vmp-logo.png" class="attachment-brand-logo size-brand-logo" alt="Logo VMP Group" />
+                </div>
+              </div>
+              <div class="item__content">
+                <p class="p_regular_2">Potrzebowaliśmy solidnej platformy, która automatyzuje i ułatwia współpracę z partnerami handlowymi w całej Europie. Poprzedni system nie nadążał za naszym rozwojem — błędy, brak automatyzacji rabatów i wysokie koszty obsługi. WiseB2B dało nam nowoczesne narzędzie, które odciąża zespół, a naszym klientom zapewnia doświadczenia zakupowe na najwyższym poziomie.</p>
+                <p class="p_semi_2 name">VMP Group</p>
+                <p class="p_regular_3 job">Dystrybutor bielizny i odzieży premium</p>
+              </div>
+            </div>
           </div>
+          <div class="testimonials-dots lm-observer"></div>
         </div>
       </div>
     </div>
@@ -109,5 +141,72 @@ import BaseLayout from '../layouts/BaseLayout.astro';
     </div>
   </div>
 </div>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  const slider = document.querySelector('.testimonials-slider');
+  const dotsContainer = document.querySelector('.testimonials-dots');
+  if (!slider || !dotsContainer) return;
+
+  const items = slider.querySelectorAll('.item');
+
+  // Click on partially visible item scrolls it into view
+  items.forEach(function(item) {
+    item.addEventListener('click', function() {
+      item.scrollIntoView({ behavior: 'smooth', block: 'nearest', inline: 'center' });
+    });
+    item.style.cursor = 'pointer';
+  });
+
+  // Generate dots
+  items.forEach(function(_, i) {
+    const dot = document.createElement('button');
+    dot.setAttribute('aria-label', 'Przejdź do opinii ' + (i + 1));
+    if (i === 0) dot.classList.add('active');
+    dot.addEventListener('click', function() {
+      items[i].scrollIntoView({ behavior: 'smooth', block: 'nearest', inline: 'center' });
+    });
+    dotsContainer.appendChild(dot);
+  });
+
+  // Sync dots with scroll position
+  var dots = dotsContainer.querySelectorAll('button');
+  var observer = new IntersectionObserver(function(entries) {
+    entries.forEach(function(entry) {
+      if (entry.isIntersecting) {
+        var idx = Array.from(items).indexOf(entry.target);
+        dots.forEach(function(d, j) {
+          d.classList.toggle('active', j === idx);
+        });
+      }
+    });
+  }, { root: slider, threshold: 0.6 });
+
+  items.forEach(function(item) { observer.observe(item); });
+
+  // Mouse drag to scroll
+  var isDown = false, startX, scrollLeft, dragged = false;
+  slider.addEventListener('mousedown', function(e) {
+    isDown = true; dragged = false;
+    startX = e.pageX - slider.offsetLeft;
+    scrollLeft = slider.scrollLeft;
+    slider.style.cursor = 'grabbing';
+  });
+  slider.addEventListener('mouseleave', function() { isDown = false; slider.style.cursor = ''; });
+  slider.addEventListener('mouseup', function() { isDown = false; slider.style.cursor = ''; });
+  slider.addEventListener('mousemove', function(e) {
+    if (!isDown) return;
+    e.preventDefault();
+    var x = e.pageX - slider.offsetLeft;
+    var walk = (x - startX) * 1.5;
+    if (Math.abs(walk) > 5) dragged = true;
+    slider.scrollLeft = scrollLeft - walk;
+  });
+  // Prevent click after drag
+  slider.addEventListener('click', function(e) {
+    if (dragged) { e.stopPropagation(); dragged = false; }
+  }, true);
+});
+</script>
 
 </BaseLayout>

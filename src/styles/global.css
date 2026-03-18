@@ -89,6 +89,13 @@ button {
   position: relative;
 }
 
+/* === Odstęp od menu na podstronach === */
+.supports-logos,
+.implementation-lic,
+.about-us-top {
+  padding-top: 50px;
+}
+
 /* === Fix WordPress asset paths in CSS === */
 .support-cta__data {
   background-image: url("/images/cta-support.png") !important;
@@ -96,6 +103,11 @@ button {
 
 .header .nav-menu li.submenu a:before {
   content: url("/svg/arrow-menu.svg") !important;
+}
+
+/* Fix: szerokość nagłówka w sekcji CTA branże */
+.price-list-cta-contact h2 {
+  width: 80% !important;
 }
 
 /* Zmniejszenie paska Fundusze Europejskie o 20% */
@@ -470,6 +482,191 @@ section {
   transform: rotate(180deg);
 }
 
+/* === Wersje page — spacing before comparison === */
+.price-list-cta-contact {
+  margin-bottom: 60px;
+}
+
+/* === Plan comparison legend === */
+.plan-legend {
+  display: flex;
+  gap: 24px;
+  flex-wrap: wrap;
+  margin-bottom: 20px;
+}
+.legend-item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 14px;
+  color: #6b6b7b;
+}
+.legend-icon {
+  display: inline-block;
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+.legend-icon--included {
+  background: #2ecc71;
+}
+.legend-icon--optional {
+  background: #f0c040;
+}
+.legend-icon--unavailable {
+  background: #d5d5dd;
+}
+
+/* === Modules comparison table === */
+.modules-table {
+  width: 100%;
+  margin-bottom: 8px;
+}
+.modules-table__header {
+  display: flex;
+  align-items: center;
+  padding: 12px 0;
+  border-bottom: 2px solid #e8e8ee;
+  font-weight: 600;
+  font-size: 13px;
+  color: #6b6b7b;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+.modules-table__row {
+  display: flex;
+  align-items: center;
+  padding: 14px 0;
+  border-bottom: 1px solid #f0f0f5;
+  transition: background 0.2s ease;
+}
+.modules-table__row:last-child {
+  border-bottom: none;
+}
+.modules-table__row:hover {
+  background: #f8f8fc;
+}
+.modules-table__col--name {
+  flex: 1;
+  min-width: 0;
+  padding-right: 16px;
+}
+.modules-table__col--plan {
+  width: 120px;
+  text-align: center;
+  flex-shrink: 0;
+  font-size: 12px;
+  word-break: break-word;
+  hyphens: auto;
+}
+.modules-table__col--name strong {
+  display: block;
+  font-size: 15px;
+  font-weight: 600;
+  color: #1a1a2e;
+  margin-bottom: 2px;
+}
+.modules-table__desc {
+  display: block;
+  font-size: 13px;
+  color: #8888a0;
+  line-height: 1.4;
+}
+
+/* Plan availability icons */
+.plan-icon {
+  display: inline-block;
+  width: 26px;
+  height: 26px;
+  border-radius: 50%;
+  position: relative;
+}
+.plan-icon--included {
+  background: #2ecc71;
+}
+.plan-icon--included::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 10px;
+  height: 6px;
+  border-left: 2px solid #fff;
+  border-bottom: 2px solid #fff;
+  transform: translate(-50%, -60%) rotate(-45deg);
+}
+.plan-icon--optional {
+  background: #f0c040;
+}
+.plan-icon--optional::after {
+  content: "+";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: #fff;
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 1;
+}
+.plan-icon--unavailable {
+  background: #d5d5dd;
+}
+.plan-icon--unavailable::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 12px;
+  height: 2px;
+  background: #fff;
+  transform: translate(-50%, -50%);
+}
+
+/* Modules table mobile responsive */
+@media (max-width: 767px) {
+  .modules-table__header {
+    display: none;
+  }
+  .modules-table__row {
+    flex-wrap: wrap;
+    padding: 16px 0;
+    gap: 10px;
+  }
+  .modules-table__col--name {
+    flex: 0 0 100%;
+    padding-right: 0;
+    margin-bottom: 4px;
+  }
+  .modules-table__col--plan {
+    width: auto;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 4px;
+  }
+  .modules-table__col--plan::before {
+    font-size: 11px;
+    color: #8888a0;
+    font-weight: 600;
+    text-transform: uppercase;
+  }
+  .modules-table__row .modules-table__col--plan:nth-child(2)::before {
+    content: "Starter";
+  }
+  .modules-table__row .modules-table__col--plan:nth-child(3)::before {
+    content: "Professional";
+  }
+  .modules-table__row .modules-table__col--plan:nth-child(4)::before {
+    content: "Enterprise";
+  }
+  .plan-legend {
+    gap: 16px;
+  }
+}
+
 /* === FAQ accordion === */
 .questions__items .item h2:after {
   background-image: none !important;
@@ -631,4 +828,84 @@ section {
   .integrations-n8n__summary {
     padding: 24px 20px;
   }
+}
+
+/* Baza wiedzy — odstęp od menu i tytuł bez zawijania */
+.knowledge-bases-top {
+  padding-top: 140px;
+}
+
+@media (min-width: 768px) {
+  .kb-title {
+    white-space: nowrap;
+  }
+}
+
+/* === Testimonials slider (implementation-brand) === */
+.implementation-brand__wrapper .items.testimonials-slider {
+  display: flex !important;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: none;
+  gap: 0;
+  margin-left: 0 !important;
+  margin-right: 0 !important;
+  padding-left: 40px !important;
+  padding-right: 40px !important;
+}
+
+.implementation-brand__wrapper .items.testimonials-slider .item {
+  margin-right: 30px !important;
+}
+
+.implementation-brand__wrapper .items.testimonials-slider .item:last-child {
+  margin-right: 0 !important;
+}
+
+@media (min-width: 992px) {
+  .implementation-brand__wrapper .items.testimonials-slider {
+    padding-left: 64px !important;
+    padding-right: 64px !important;
+  }
+
+  .implementation-brand__wrapper .items.testimonials-slider .item {
+    margin-right: 40px !important;
+  }
+
+  .implementation-brand__wrapper .items.testimonials-slider .item:last-child {
+    margin-right: 0 !important;
+  }
+}
+
+.implementation-brand__wrapper .testimonials-slider::-webkit-scrollbar {
+  display: none;
+}
+
+.implementation-brand__wrapper .testimonials-slider .item {
+  flex: 0 0 auto;
+  scroll-snap-align: center;
+}
+
+.testimonials-dots {
+  display: flex;
+  justify-content: center;
+  margin-top: 40px;
+  gap: 16px;
+}
+
+.testimonials-dots button {
+  font-size: 0;
+  border-radius: 50%;
+  height: 12px;
+  width: 12px;
+  background-color: #83808c;
+  border: 0;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.testimonials-dots button.active {
+  background-color: #d9b062;
+  cursor: default;
 }

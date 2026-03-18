@@ -53,7 +53,7 @@ Dla każdej podstrony: pobrać treść z oryginału (WebFetch), odtworzyć layou
 | Strona | Route | Status |
 |--------|-------|--------|
 | Platforma B2B | `/platforma-b2b/` | placeholder |
-| Wersje | `/platforma-b2b/wersje/` | placeholder |
+| Wersje | `/platforma-b2b/pakiety_obszary_moduly/` | placeholder |
 | Funkcje | `/platforma-b2b/funkcje/` | placeholder |
 | Proces wdrożenia | `/platforma-b2b/proces-wdrozenia/` | placeholder |
 | Integracje | `/platforma-b2b/integracje/` | placeholder |

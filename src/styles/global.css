@@ -343,6 +343,133 @@ section {
   display: none !important;
 }
 
+/* === Wersje page — "Co zawiera WiseB2B Cloud" section === */
+.cloud-includes {
+  padding: 80px 0 60px;
+}
+.cloud-includes__header {
+  text-align: center;
+  margin-bottom: 50px;
+}
+.cloud-includes__header h3 {
+  margin-bottom: 16px;
+}
+.cloud-includes__header p {
+  color: #5a5565;
+  max-width: 580px;
+  margin: 0 auto;
+}
+.cloud-includes__grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 32px;
+}
+.cloud-includes__item {
+  background: #fff;
+  border-radius: 16px;
+  padding: 32px 28px;
+  box-shadow: 0 2px 16px rgba(0, 0, 0, 0.04);
+}
+.cloud-includes__icon {
+  margin-bottom: 16px;
+}
+.cloud-includes__item h5 {
+  margin-bottom: 10px;
+  color: #312b3f;
+}
+.cloud-includes__item p {
+  color: #5a5565;
+  margin-bottom: 16px;
+}
+.cloud-includes__badge {
+  display: inline-block;
+  padding: 5px 14px;
+  border-radius: 20px;
+  font-size: 12px;
+  font-weight: 600;
+  background: #f3f6fa;
+  color: #8b8b96;
+}
+@media (max-width: 991px) {
+  .cloud-includes__grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+@media (max-width: 743px) {
+  .cloud-includes__grid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+}
+
+/* === Wersje page — plan cards equal height alignment === */
+.price-list-plans__wrapper .plan {
+  display: flex !important;
+  flex-direction: column !important;
+}
+.price-list-plans__wrapper .plan .plan__monthly-price {
+  margin-top: auto;
+}
+
+/* === Wersje page — monthly price in plan cards === */
+.plan__monthly-price {
+  text-align: center;
+  margin: 32px 0 20px;
+  padding-top: 24px;
+}
+.plan__monthly-label {
+  display: block;
+  font-size: 13px;
+  font-weight: 400;
+  color: #8b8b96;
+  margin-bottom: 4px;
+}
+.plan__monthly-amount {
+  display: block;
+  font-size: 32px;
+  font-weight: 700;
+  color: #312b3f;
+  line-height: 1.2;
+}
+.plan__monthly-period {
+  display: block;
+  font-size: 13px;
+  font-weight: 400;
+  color: #8b8b96;
+  margin-top: 2px;
+}
+
+/* === Wersje page — bullet SVG overrides === */
+.price-list-plans__list li:before {
+  content: url("/svg/arrow-cennik-list.svg") !important;
+}
+.plan:nth-child(2) .price-list-plans__list li:before {
+  content: url("/svg/arrow-cennik-list-2.svg") !important;
+}
+.plan:nth-child(3) .price-list-plans__list li:before {
+  content: url("/svg/arrow-cennik-list-3.svg") !important;
+}
+
+/* === Wersje page — price-functions accordion (js_element hidden by default) === */
+.price-functions .js_element {
+  display: none;
+}
+.price-functions .element.show .js_element {
+  display: block;
+}
+.price-functions .element h5 {
+  cursor: pointer;
+}
+.price-functions .element h5 svg {
+  transition: transform 0.3s ease;
+}
+.price-functions .element.show h5 svg {
+  transform: rotate(0deg);
+}
+.price-functions .element:not(.show) h5 svg {
+  transform: rotate(180deg);
+}
+
 /* === FAQ accordion === */
 .questions__items .item h2:after {
   background-image: none !important;
@@ -386,5 +513,122 @@ section {
 @media (max-width: 743px) {
   section {
     padding: 40px 0;
+  }
+}
+
+/* === Integrations page fixes === */
+.integrations-top {
+  padding-top: 95px;
+}
+
+.integrations-api .svg svg:nth-of-type(2) {
+  top: 0;
+}
+
+/* === Integrations n8n section === */
+.integrations-n8n {
+  padding: 80px 0 60px;
+}
+
+.integrations-n8n__wrapper {
+  background: var(--color-white);
+  border-radius: 20px;
+  padding: 60px 50px;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.06);
+}
+
+.integrations-n8n__header {
+  text-align: center;
+  margin-bottom: 50px;
+}
+
+.integrations-n8n__header h2 {
+  margin-bottom: 20px;
+}
+
+.integrations-n8n__header p {
+  color: #5a5565;
+  max-width: 620px;
+  margin: 0 auto;
+}
+
+.integrations-n8n__features {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 40px;
+  margin-bottom: 50px;
+}
+
+.integrations-n8n__feature {
+  text-align: center;
+}
+
+.integrations-n8n__icon {
+  margin-bottom: 20px;
+  display: flex;
+  justify-content: center;
+}
+
+.integrations-n8n__feature h5 {
+  margin-bottom: 12px;
+  color: var(--color-text);
+}
+
+.integrations-n8n__feature p {
+  color: #5a5565;
+}
+
+.integrations-n8n__summary {
+  background: var(--color-bg);
+  border-radius: 16px;
+  padding: 30px 40px;
+  text-align: center;
+}
+
+.integrations-n8n__summary p {
+  color: #5a5565;
+  margin-bottom: 24px;
+}
+
+.integrations-n8n__badges {
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.integrations-n8n__badge {
+  display: inline-block;
+  padding: 8px 20px;
+  border-radius: 30px;
+  font-family: var(--font-family);
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 0.3px;
+}
+
+.integrations-n8n__badge--included {
+  background: #d9b062;
+  color: var(--color-white);
+}
+
+.integrations-n8n__badge--optional {
+  background: transparent;
+  border: 1.5px solid #d9b062;
+  color: #d9b062;
+}
+
+@media (max-width: 991px) {
+  .integrations-n8n__features {
+    grid-template-columns: 1fr;
+    gap: 30px;
+  }
+
+  .integrations-n8n__wrapper {
+    padding: 40px 30px;
+  }
+
+  .integrations-n8n__summary {
+    padding: 24px 20px;
   }
 }

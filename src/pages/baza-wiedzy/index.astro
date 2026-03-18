@@ -6,7 +6,7 @@ const articles = await getCollection('baza-wiedzy');
 const featured = articles[0];
 ---
 
-<BaseLayout title="Baza wiedzy">
+<BaseLayout title="Baza wiedzy o platformie B2B" description="Artykuły i poradniki o platformach B2B, e-commerce B2B, wdrożeniach i cyfrowej transformacji sprzedaży. Baza wiedzy WiseB2B.">
 
 <div class="knowledge-bases-top">
   <div class="knowledge-bases-top__bg"></div>
@@ -21,7 +21,7 @@ const featured = articles[0];
     <div class="row knowledge-bases-top__wrapper lm-observer">
       <div class="col-md-12 offset-xmd-1 col-xmd-5 col-xl-4 offset-xl-2">
         <div class="knowledge-bases-top__img">
-          <img fetchpriority="high" width="448" height="298" src={featured.data.image} class="attachment-knowledge-bases-top size-knowledge-bases-top wp-post-image" alt="" />
+          <img fetchpriority="high" width="448" height="298" src={featured.data.image} class="attachment-knowledge-bases-top size-knowledge-bases-top wp-post-image" alt={featured.data.title} />
         </div>
       </div>
       <div class="col-md-10 offset-md-1 offset-xmd-0 col-xmd-5">
@@ -58,7 +58,7 @@ const featured = articles[0];
               <a class="item lm-observer" href={`/baza-wiedzy/${article.id}/`}
                  data-category={article.data.category.toLowerCase().replace(/\s+/g, '-').normalize('NFD').replace(/[\u0300-\u036f]/g, '')}>
                 <div class="image">
-                  <img loading="lazy" width="632" height="421" src={article.data.image} class="attachment-box-posts size-box-posts wp-post-image" alt="" />
+                  <img loading="lazy" width="632" height="421" src={article.data.image} class="attachment-box-posts size-box-posts wp-post-image" alt={article.data.title} />
                 </div>
                 <div class="content">
                   <p class="item_category p_regular_3">{article.data.category}</p>

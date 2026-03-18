@@ -16,6 +16,14 @@ const bazaWiedzy = defineCollection({
   }),
 });
 
+const funkcjonalnosci = defineCollection({
+  loader: glob({ pattern: '**/*.md', base: './src/content/funkcjonalnosci' }),
+  schema: z.object({
+    title: z.string(),
+  }),
+});
+
 export const collections = {
   'baza-wiedzy': bazaWiedzy,
+  'funkcjonalnosci': funkcjonalnosci,
 };

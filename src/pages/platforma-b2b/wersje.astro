@@ -2,16 +2,16 @@
 import BaseLayout from '../../layouts/BaseLayout.astro';
 ---
 
-<BaseLayout title="Wersje platformy B2B">
+<BaseLayout title="Plany WiseB2B Cloud – plany i cennik" description="Indywidualne plany platformy B2B dostosowane do Twoich potrzeb. Porównaj wersje Start, Professional i Enterprise WiseB2B.">
 
 <div class="price-list-plans">
   <div class="container">
     <div class="row">
       <div class="col-lg-8 offset-lg-2">
         <div class="content lm-observer">
-          <h1 class="p_regular_3">Wersje platformy B2B</h1>
-          <h2 class="h2_semi">Indywidualne plany, dostosowane do Twoich potrzeb.</h2>
-          <p class="p_regular_1 description">W zależności od sytuacji Twojej firmy, możesz wybrać jedną z trzech wersji WiseB2B.</p>
+          <h1 class="p_regular_3">Plany WiseB2B Cloud</h1>
+          <h2 class="h2_semi">Funkcjonalność platformy dostosowana do Twoich potrzeb.</h2>
+          <p class="p_regular_1 description">W zależności od sytuacji Twojej firmy, możesz wybrać jednen z trzech planów WiseB2B.</p>
         </div>
       </div>
     </div>
@@ -39,13 +39,18 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
             </div>
             <p class="p_semi_2 price-list-plans__list-header">Najważniejsze funkcje:</p>
             <ul class="price-list-plans__list">
-              <li class="label_regular">Zaawansowana wyszukiwarka produktów</li>
-              <li class="label_regular">Obsługa procesu zakupu klienta</li>
-              <li class="label_regular">Wsparcie zakupowe handlowca</li>
-              <li class="label_regular">Baza wiedzy i edukacja, CMS</li>
-              <li class="label_regular">Standardowy integrator ERP</li>
-              <li class="label_regular">Admin API</li>
+              <li class="label_regular">Wyszukiwarka produktów z synonimami</li>
+              <li class="label_regular">Indywidualne cenniki i promocje</li>
+              <li class="label_regular">Proces zakupowy B2B (wielokoszyki, listy, import)</li>
+              <li class="label_regular">Wsparcie handlowca w zakupach klienta</li>
+              <li class="label_regular">CMS, baza wiedzy i aktualności</li>
+              <li class="label_regular">Hosting w WiseB2B Cloud</li>
             </ul>
+            <div class="plan__monthly-price">
+              <span class="plan__monthly-label">Cena od</span>
+              <span class="plan__monthly-amount">1 990 PLN</span>
+              <span class="plan__monthly-period">netto / miesiąc</span>
+            </div>
             <div class="price-list-plans__button">
               <a class="wise-button" href="#price-functions">Porównaj możliwości</a>
             </div>
@@ -56,7 +61,7 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
               <img width="64" height="64" src="/images/Group-554.jpg" alt="Professional" />
               <h3 class="h3_semi name">Professional</h3>
             </div>
-            <p class="p_regular_3 plan__description">Jeśli masz już doświadczenie w sprzedaży internetowej B2B, potrzebujesz precyzyjnie odwzorować swoją ofertę dla poszczególnych klientów, aby osiągnąć nawet 90% sprzedaży za pomocą eCommerce – wersja Proffesional to rozwiązanie dla Ciebie.</p>
+            <p class="p_regular_3 plan__description">Jeśli masz już doświadczenie w sprzedaży internetowej B2B, potrzebujesz precyzyjnie odwzorować swoją ofertę dla poszczególnych klientów, aby osiągnąć nawet 90% sprzedaży za pomocą eCommerce – wersja Professional to rozwiązanie dla Ciebie.</p>
             <div class="plan__price">
               <div class="plan__price-product box">
                 <span class="label_regular">Produkty</span>
@@ -71,12 +76,18 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
             </div>
             <p class="p_semi_2 price-list-plans__list-header">Najważniejsze funkcje:</p>
             <ul class="price-list-plans__list">
-              <li class="label_regular">Cenniki wielowalutowe, promocje wiązane</li>
-              <li class="label_regular">Dane marketingowe produktów, sprzedaż według opakowań</li>
-              <li class="label_regular">Rozbudowane wsparcie zakupowe handlowca</li>
-              <li class="label_regular">Dokumenty handlowe</li>
+              <li class="label_regular">Dokumenty handlowe (faktury, dostawy, rozrachunki)</li>
               <li class="label_regular">Zwroty i reklamacje</li>
+              <li class="label_regular">Płatności elektroniczne i integracje kurierskie</li>
+              <li class="label_regular">Feedy produktowe (Shopify, Ceneo, IAI)</li>
+              <li class="label_regular">Admin API i Client API</li>
+              <li class="label_regular">Środowisko testowe, n8n, wtyczki własne</li>
             </ul>
+            <div class="plan__monthly-price">
+              <span class="plan__monthly-label">Cena od</span>
+              <span class="plan__monthly-amount">3 490 PLN</span>
+              <span class="plan__monthly-period">netto / miesiąc</span>
+            </div>
             <div class="price-list-plans__button">
               <a class="wise-button" href="#price-functions">Porównaj możliwości</a>
             </div>
@@ -100,17 +111,96 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
             </div>
             <p class="p_semi_2 price-list-plans__list-header">Najważniejsze funkcje:</p>
             <ul class="price-list-plans__list">
-              <li class="label_regular">Zaawansowane dostępności towarów</li>
-              <li class="label_regular">Wyszukiwarka według strategii sprzedażowej</li>
-              <li class="label_regular">Sprzedaż eksportowa</li>
-              <li class="label_regular">Client API</li>
+              <li class="label_regular">Sprzedaż zagraniczna i cenniki wielowalutowe</li>
+              <li class="label_regular">Panel handlowca z ofertowaniem</li>
+              <li class="label_regular">Agent AI klienta</li>
+              <li class="label_regular">MultiStore (wiele sklepów, jeden backend)</li>
+              <li class="label_regular">Oferty dedykowane dla klientów</li>
+              <li class="label_regular">Dynamiczny ranking produktów</li>
               <li class="label_regular">Dostęp do kodu źródłowego</li>
-              <li class="label_regular">Centra kosztowe</li>
-              <li class="label_regular">Optymalizator zakupów</li>
             </ul>
+            <div class="plan__monthly-price">
+              <span class="plan__monthly-label">Cena od</span>
+              <span class="plan__monthly-amount">6 990 PLN</span>
+              <span class="plan__monthly-period">netto / miesiąc</span>
+            </div>
             <div class="price-list-plans__button">
               <a class="wise-button" href="#price-functions">Porównaj możliwości</a>
             </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="cloud-includes">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-10 offset-lg-1 col-xl-8 offset-xl-2">
+        <div class="cloud-includes__header lm-observer">
+          <h3 class="h3_semi">Co zawiera usługa WiseB2B Cloud?</h3>
+          <p class="p_regular_2">Każdy plan WiseB2B Cloud to kompletne środowisko do prowadzenia handlu B2B online — bez konieczności zarządzania infrastrukturą IT.</p>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-lg-10 offset-lg-1">
+        <div class="cloud-includes__grid">
+
+          <div class="cloud-includes__item lm-observer">
+            <div class="cloud-includes__icon">
+              <svg width="40" height="40" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M20 6H4V18H20V6Z" stroke="#d9b062" stroke-width="1.5"/><path d="M12 10V14M10 12H14" stroke="#d9b062" stroke-width="1.5" stroke-linecap="round"/></svg>
+            </div>
+            <h5 class="h5_semi">Środowisko produkcyjne</h5>
+            <p class="p_regular_3">Hosting platformy w chmurze z automatyczną instalacją aktualizacji do nowych wersji. Skalowalna infrastruktura, backup danych i monitoring dostępności — bez angażowania Twojego IT.</p>
+            <span class="cloud-includes__badge">Wszystkie plany</span>
+          </div>
+
+          <div class="cloud-includes__item lm-observer">
+            <div class="cloud-includes__icon">
+              <svg width="40" height="40" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M4 6H20V18H4V6Z" stroke="#d9b062" stroke-width="1.5"/><path d="M4 6L12 13L20 6" stroke="#d9b062" stroke-width="1.5"/></svg>
+            </div>
+            <h5 class="h5_semi">Środowisko testowe</h5>
+            <p class="p_regular_3">Osobna instancja platformy z danymi z produkcji, synchronizowanymi co noc. Bezpieczne testowanie nowych funkcji, konfiguracji i integracji bez ryzyka dla środowiska produkcyjnego.</p>
+            <span class="cloud-includes__badge">Professional i Enterprise</span>
+          </div>
+
+          <div class="cloud-includes__item lm-observer">
+            <div class="cloud-includes__icon">
+              <svg width="40" height="40" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M12 3V21M3 12H21" stroke="#d9b062" stroke-width="1.5" stroke-linecap="round"/><path d="M8 8L3 12L8 16" stroke="#d9b062" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/><path d="M16 8L21 12L16 16" stroke="#d9b062" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </div>
+            <h5 class="h5_semi">n8n — automatyzacja procesów</h5>
+            <p class="p_regular_3">Wizualne środowisko do automatyzacji i synchronizacji platformy z systemami zewnętrznymi (ERP, CRM, email, SMS) — bez konieczności programowania. Setki gotowych integracji.</p>
+            <span class="cloud-includes__badge">Professional i Enterprise</span>
+          </div>
+
+          <div class="cloud-includes__item lm-observer">
+            <div class="cloud-includes__icon">
+              <svg width="40" height="40" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M9 3H4V9H9V3Z" stroke="#d9b062" stroke-width="1.5"/><path d="M20 3H15V9H20V3Z" stroke="#d9b062" stroke-width="1.5"/><path d="M9 15H4V21H9V15Z" stroke="#d9b062" stroke-width="1.5"/><path d="M20 15H15V21H20V15Z" stroke="#d9b062" stroke-width="1.5"/></svg>
+            </div>
+            <h5 class="h5_semi">Aktualizacje i nowe wersje</h5>
+            <p class="p_regular_3">Regularne aktualizacje platformy z nowymi funkcjami i poprawkami bezpieczeństwa. Dzięki architekturze pluginowej aktualizacja nie narusza Twoich indywidualnych modyfikacji.</p>
+            <span class="cloud-includes__badge">Wszystkie plany</span>
+          </div>
+
+          <div class="cloud-includes__item lm-observer">
+            <div class="cloud-includes__icon">
+              <svg width="40" height="40" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M12 2L3 7V12C3 17.25 6.75 21.5 12 22C17.25 21.5 21 17.25 21 12V7L12 2Z" stroke="#d9b062" stroke-width="1.5" stroke-linejoin="round"/><path d="M9 12L11 14L15 10" stroke="#d9b062" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </div>
+            <h5 class="h5_semi">Bezpieczeństwo i SLA</h5>
+            <p class="p_regular_3">Profesjonalne zarządzanie infrastrukturą, backup danych, monitoring 24/7 i gwarantowana dostępność. Brak opłat GMV — płacisz tylko za plan, niezależnie od obrotów.</p>
+            <span class="cloud-includes__badge">Wszystkie plany</span>
+          </div>
+
+          <div class="cloud-includes__item lm-observer">
+            <div class="cloud-includes__icon">
+              <svg width="40" height="40" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M4 19H20V5H4V19Z" stroke="#d9b062" stroke-width="1.5"/><path d="M4 9H20" stroke="#d9b062" stroke-width="1.5"/><path d="M8 5V2M16 5V2" stroke="#d9b062" stroke-width="1.5" stroke-linecap="round"/></svg>
+            </div>
+            <h5 class="h5_semi">SaaS lub OnPremise</h5>
+            <p class="p_regular_3">Sam wybierasz model korzystania z systemu. Możliwość instalacji lokalnej (OnPremise) dla firm z restrykcyjnymi wymaganiami bezpieczeństwa lub compliance.</p>
+            <span class="cloud-includes__badge">Professional i Enterprise</span>
           </div>
 
         </div>
@@ -812,11 +902,47 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
               <a class="wise-button wise-button--wise-harvest" href="/prezentacja-produktowa/">Zamów demo</a>
             </div>
           </div>
-          <img width="478" height="378" src="/images/Ellipse-149.png" alt="" />
+          <img width="478" height="378" src="/images/Ellipse-149.png" alt="Ekspert WiseB2B" />
         </div>
       </div>
     </div>
   </div>
 </div>
+
+<script>
+  // Accordion for price-functions sections
+  document.querySelectorAll('.price-functions .element h5').forEach(h5 => {
+    h5.addEventListener('click', () => {
+      h5.closest('.element').classList.toggle('show');
+    });
+  });
+
+  // "Rozwiń wszystkie" / "Zwiń wszystkie"
+  const actionEl = document.querySelector('.price-functions__action');
+  if (actionEl) {
+    const hideBtn = actionEl.querySelector('.hide');
+    const showBtn = actionEl.querySelector('.show');
+    const elements = document.querySelectorAll('.price-functions .element');
+
+    showBtn.addEventListener('click', () => {
+      elements.forEach(el => el.classList.add('show'));
+      showBtn.style.display = 'none';
+      hideBtn.style.display = 'inline';
+    });
+
+    hideBtn.addEventListener('click', () => {
+      elements.forEach(el => el.classList.remove('show'));
+      hideBtn.style.display = 'none';
+      showBtn.style.display = 'inline';
+    });
+  }
+
+  // FAQ accordion for questions section
+  document.querySelectorAll('.questions__items .item h2').forEach(h2 => {
+    h2.addEventListener('click', () => {
+      h2.closest('.item').classList.toggle('show');
+    });
+  });
+</script>
 
 </BaseLayout>

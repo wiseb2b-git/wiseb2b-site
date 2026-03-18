@@ -110,3 +110,4 @@ npm run preview  # podgląd buildu
 - Przy nowych podstronach: kopiować HTML z oryginału, używać oryginalnych klas CSS
 - Przy problemach z CSS: szukać w theme-inline.css, otree.css i styles.min.css (w tej kolejności)
 - Nowe overrides dodawać do `src/styles/global.css`, nie modyfikować oryginalnych plików CSS
+- staraj się używać techpage zamiast playwright jeśli to wystarcza, bo jest znacznie szybsze. 

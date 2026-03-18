@@ -7,9 +7,63 @@ import '../styles/global.css';
 interface Props {
   title: string;
   description?: string;
+  ogImage?: string;
+  noindex?: boolean;
 }
 
-const { title, description = 'WiseB2B - eCommerce B2B Platform' } = Astro.props;
+const {
+  title,
+  description = 'Platforma B2B dla firm handlowych i produkcyjnych. Zwiększ sprzedaż i obniż koszty obsługi procesu sprzedaży z WiseB2B.',
+  ogImage = '/images/wiseb2b-og.png',
+  noindex = false,
+} = Astro.props;
+
+const siteUrl = 'https://wiseb2b.eu';
+const canonicalUrl = new URL(Astro.url.pathname, siteUrl).href;
+const fullTitle = title === 'Strona główna' ? 'WiseB2B – eCommerce B2B Platform' : `${title} | WiseB2B`;
+const ogImageUrl = ogImage.startsWith('http') ? ogImage : new URL(ogImage, siteUrl).href;
+
+const breadcrumbItems = [];
+const pathParts = Astro.url.pathname.split('/').filter(Boolean);
+let currentPath = '';
+breadcrumbItems.push({ name: 'Strona główna', url: siteUrl + '/' });
+for (const part of pathParts) {
+  currentPath += '/' + part;
+  const name = part.replace(/-/g, ' ').replace(/\b\w/g, c => c.toUpperCase());
+  breadcrumbItems.push({ name, url: siteUrl + currentPath + '/' });
+}
+
+const jsonLd = {
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "WebSite",
+      "@id": siteUrl + "/#website",
+      "url": siteUrl + "/",
+      "name": "WiseB2B",
+      "description": "Platforma B2B dla firm handlowych i produkcyjnych",
+      "inLanguage": "pl-PL",
+    },
+    {
+      "@type": "WebPage",
+      "@id": canonicalUrl + "#webpage",
+      "url": canonicalUrl,
+      "name": fullTitle,
+      "description": description,
+      "isPartOf": { "@id": siteUrl + "/#website" },
+      "inLanguage": "pl-PL",
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": breadcrumbItems.map((item, i) => ({
+        "@type": "ListItem",
+        "position": i + 1,
+        "name": item.name,
+        "item": item.url,
+      })),
+    },
+  ],
+};
 ---
 
 <!doctype html>
@@ -18,6 +72,27 @@ const { title, description = 'WiseB2B - eCommerce B2B Platform' } = Astro.props;
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1, minimum-scale=1, user-scalable=no" />
     <meta name="description" content={description} />
+    {noindex && <meta name="robots" content="noindex, nofollow" />}
+    <link rel="canonical" href={canonicalUrl} />
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content={canonicalUrl} />
+    <meta property="og:title" content={fullTitle} />
+    <meta property="og:description" content={description} />
+    <meta property="og:image" content={ogImageUrl} />
+    <meta property="og:locale" content="pl_PL" />
+    <meta property="og:site_name" content="WiseB2B" />
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={fullTitle} />
+    <meta name="twitter:description" content={description} />
+    <meta name="twitter:image" content={ogImageUrl} />
+
+    <!-- JSON-LD Structured Data -->
+    <script type="application/ld+json" set:html={JSON.stringify(jsonLd)} />
+
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Sora:wght@300;400;600;700&display=swap" rel="stylesheet" />
@@ -28,7 +103,7 @@ const { title, description = 'WiseB2B - eCommerce B2B Platform' } = Astro.props;
     <link rel="stylesheet" href="/css/theme-inline.css" />
     <link rel="stylesheet" href="/css/otree.css" />
     <link rel="stylesheet" href="/css/styles.min.css" />
-    <title>{title} - WiseB2B</title>
+    <title>{fullTitle}</title>
   </head>
   <body>
     <Header />

@@ -1120,6 +1120,15 @@ section {
   }
 }
 
+/* === "Dlaczego WiseB2B" — always show text, no collapse === */
+.main-believe .box-believe-desc p {
+  height: auto !important;
+  opacity: 1 !important;
+}
+.main-believe .box-believe-desc .btn-believe {
+  display: none !important;
+}
+
 /* === Cookie bar fix — original CSS uses top/right without position === */
 .cookie-info {
   display: none;

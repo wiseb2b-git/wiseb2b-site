@@ -45,8 +45,8 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
     <!-- Cecha 1: B2B first — image right -->
     <div class="row" style="margin-bottom: 100px;">
       <div class="col-lg-10 offset-lg-1 col-xl-8 offset-xl-2 p-xl-0">
-        <div style="display:flex; align-items:center; gap:40px;">
-          <div style="flex:7; min-width:0; display:flex; flex-direction:column; justify-content:center;">
+        <div class="feature-row" style="display:flex; align-items:center; gap:40px;">
+          <div class="feature-row__text" style="flex:7; min-width:0; display:flex; flex-direction:column; justify-content:center;">
             <ul class="list list--left" style="margin-top:0;">
               <li class="lm-observer">
                 <img loading="lazy" width="40" height="40" src="/images/np_ecommerce_4557208_000000-1.png" class="icon" alt="Ikona eCommerce B2B" />
@@ -57,7 +57,7 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
               </li>
             </ul>
           </div>
-          <div class="lm-observer" style="flex:5; min-width:0;">
+          <div class="feature-row__img lm-observer" style="flex:5; min-width:0;">
             <img loading="lazy" src="/images/iStock-1039579142.jpg" style="width:100%; height:auto; border-radius:16px; display:block;" alt="Platforma B2B stworzona dla handlu" />
           </div>
         </div>
@@ -67,11 +67,11 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
     <!-- Cecha 2: Panel Handlowca — image left -->
     <div class="row" style="margin-bottom: 100px;">
       <div class="col-lg-10 offset-lg-1 col-xl-8 offset-xl-2 p-xl-0">
-        <div style="display:flex; align-items:center; gap:40px;">
-          <div class="lm-observer" style="flex:5; min-width:0;">
+        <div class="feature-row feature-row--reverse" style="display:flex; align-items:center; gap:40px;">
+          <div class="feature-row__img lm-observer" style="flex:5; min-width:0;">
             <img loading="lazy" src="/images/pexels-fauxels-3182826-1.jpeg" style="width:100%; height:auto; border-radius:16px; display:block;" alt="Panel Handlowca Sales CRM" />
           </div>
-          <div style="flex:7; min-width:0; display:flex; flex-direction:column; justify-content:center;">
+          <div class="feature-row__text" style="flex:7; min-width:0; display:flex; flex-direction:column; justify-content:center;">
             <ul class="list list--right" style="margin-top:0;">
               <li class="lm-observer">
                 <img loading="lazy" width="40" height="40" src="/images/np_suitcase_4525556_000000-1.png" class="icon" alt="Ikona panelu handlowca" />
@@ -89,8 +89,8 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
     <!-- Cecha 3: Agenci AI — image right -->
     <div class="row" style="margin-bottom: 100px;">
       <div class="col-lg-10 offset-lg-1 col-xl-8 offset-xl-2 p-xl-0">
-        <div style="display:flex; align-items:center; gap:40px;">
-          <div style="flex:7; min-width:0; display:flex; flex-direction:column; justify-content:center;">
+        <div class="feature-row" style="display:flex; align-items:center; gap:40px;">
+          <div class="feature-row__text" style="flex:7; min-width:0; display:flex; flex-direction:column; justify-content:center;">
             <ul class="list list--left" style="margin-top:0;">
               <li class="lm-observer">
                 <img loading="lazy" width="40" height="40" src="/images/np_operation_2998632_000000-1.png" class="icon" alt="Ikona agentów AI" />
@@ -101,7 +101,7 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
               </li>
             </ul>
           </div>
-          <div class="lm-observer" style="flex:5; min-width:0;">
+          <div class="feature-row__img lm-observer" style="flex:5; min-width:0;">
             <img loading="lazy" src="/images/startup-gcc67d2922_640.jpg" style="width:100%; height:auto; border-radius:16px; display:block;" alt="Agenci AI w platformie B2B" />
           </div>
         </div>
@@ -111,11 +111,11 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
     <!-- Cecha 4: Kod źródłowy — image left -->
     <div class="row" style="margin-bottom: 100px;">
       <div class="col-lg-10 offset-lg-1 col-xl-8 offset-xl-2 p-xl-0">
-        <div style="display:flex; align-items:center; gap:40px;">
-          <div class="lm-observer" style="flex:5; min-width:0;">
+        <div class="feature-row feature-row--reverse" style="display:flex; align-items:center; gap:40px;">
+          <div class="feature-row__img lm-observer" style="flex:5; min-width:0;">
             <img loading="lazy" src="/images/lg-screen-office-view.png" style="width:100%; height:auto; border-radius:16px; display:block;" alt="Kod źródłowy niezależność" />
           </div>
-          <div style="flex:7; min-width:0; display:flex; flex-direction:column; justify-content:center;">
+          <div class="feature-row__text" style="flex:7; min-width:0; display:flex; flex-direction:column; justify-content:center;">
             <ul class="list list--right" style="margin-top:0;">
               <li class="lm-observer">
                 <img loading="lazy" width="40" height="40" src="/images/np_server_1122156_000000-1.png" class="icon" alt="Ikona kodu źródłowego" />

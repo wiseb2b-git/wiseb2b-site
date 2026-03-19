@@ -76,21 +76,99 @@ import BaseLayout from '../layouts/BaseLayout.astro';
               <div class="logo-item"><img width="140" height="50" src="/images/logo-momenti.jpg" alt="Momenti" /></div>
               <div class="logo-item"><img width="140" height="50" src="/images/logo-tedmark.jpg" alt="TedMark" /></div>
               <div class="logo-item"><img width="140" height="50" src="/images/logo-intermal.png" alt="Intermal" /></div>
-              <!-- Zestaw 2 (duplikat dla płynnej pętli) -->
-              <div class="logo-item"><img width="152" height="44" src="/images/triplexLogo.jpg" alt="Triplex" /></div>
-              <div class="logo-item"><img width="68" height="68" src="/images/candelluxLogo.jpg" alt="Candellux" /></div>
-              <div class="logo-item"><img width="132" height="50" src="/images/raw_pol_logo.jpg" alt="Raw-Pol" /></div>
-              <div class="logo-item"><img width="169" height="32" src="/images/logo_lobos.png" alt="Łobos" /></div>
-              <div class="logo-item"><img width="140" height="50" src="/images/logo-vmp.jpg" alt="VMP" /></div>
-              <div class="logo-item"><img width="140" height="50" src="/images/logo-momenti.jpg" alt="Momenti" /></div>
-              <div class="logo-item"><img width="140" height="50" src="/images/logo-tedmark.jpg" alt="TedMark" /></div>
-              <div class="logo-item"><img width="140" height="50" src="/images/logo-intermal.png" alt="Intermal" /></div>
             </div>
           </div>
         </div>
       </div>
     </div>
   </section>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const marquee = document.querySelector('.logos-marquee');
+      const track = document.querySelector('.logos-marquee-track');
+      if (!marquee || !track) return;
+
+      let isDragging = false;
+      let startX = 0;
+      let frozenX = 0;
+
+      function getTranslateX() {
+        const matrix = new DOMMatrix(getComputedStyle(track).transform);
+        return matrix.m41;
+      }
+
+      function freezeTrack() {
+        frozenX = getTranslateX();
+        // Kill animation so inline transform works
+        track.classList.add('dragging');
+        track.style.transform = `translateX(${frozenX}px)`;
+      }
+
+      function syncAndResume() {
+        const halfWidth = track.scrollWidth / 2;
+        // Normalize to 0..-halfWidth range
+        let normalized = frozenX % halfWidth;
+        if (normalized > 0) normalized -= halfWidth;
+        const progress = Math.abs(normalized) / halfWidth;
+        // Clear inline styles, restore animation from current spot
+        track.style.transform = '';
+        track.style.animation = 'none';
+        // Force reflow so browser registers the reset
+        void track.offsetWidth;
+        track.style.animation = '';
+        track.style.animationDelay = `${-progress * 30}s`;
+        track.classList.remove('dragging');
+      }
+
+      // Mouse: click+hold to pause & drag
+      marquee.addEventListener('mousedown', (e) => {
+        isDragging = true;
+        startX = e.clientX;
+        freezeTrack();
+        marquee.classList.add('is-dragging');
+        e.preventDefault();
+      });
+
+      window.addEventListener('mousemove', (e) => {
+        if (!isDragging) return;
+        const dx = e.clientX - startX;
+        startX = e.clientX;
+        frozenX += dx;
+        track.style.transform = `translateX(${frozenX}px)`;
+      });
+
+      window.addEventListener('mouseup', () => {
+        if (!isDragging) return;
+        isDragging = false;
+        marquee.classList.remove('is-dragging');
+        syncAndResume();
+      });
+
+      // Touch: tap+hold to pause & drag
+      marquee.addEventListener('touchstart', (e) => {
+        isDragging = true;
+        startX = e.touches[0].clientX;
+        freezeTrack();
+        marquee.classList.add('is-dragging');
+      }, { passive: true });
+
+      marquee.addEventListener('touchmove', (e) => {
+        if (!isDragging) return;
+        const dx = e.touches[0].clientX - startX;
+        startX = e.touches[0].clientX;
+        frozenX += dx;
+        track.style.transform = `translateX(${frozenX}px)`;
+      }, { passive: true });
+
+      marquee.addEventListener('touchend', () => {
+        if (!isDragging) return;
+        isDragging = false;
+        marquee.classList.remove('is-dragging');
+        syncAndResume();
+      });
+    });
+  </script>
 
   <!-- MAIN CLAIM -->
   <section class="main-claim">

@@ -240,6 +240,10 @@ section {
   overflow: hidden;
   position: relative;
   padding: 20px 0 10px;
+  cursor: grab;
+}
+.main-partners-logos .logos-marquee.is-dragging {
+  cursor: grabbing;
 }
 .main-partners-logos .logos-marquee::before,
 .main-partners-logos .logos-marquee::after {
@@ -265,8 +269,8 @@ section {
   width: max-content;
   animation: logos-scroll 30s linear infinite;
 }
-.main-partners-logos .logos-marquee-track:hover {
-  animation-play-state: paused;
+.main-partners-logos .logos-marquee-track.dragging {
+  animation: none !important;
 }
 .main-partners-logos .logo-item {
   flex: 0 0 auto;
@@ -285,28 +289,15 @@ section {
   filter: grayscale(100%);
   opacity: 0.7;
   transition: filter 0.3s, opacity 0.3s;
+  pointer-events: none;
 }
-.main-partners-logos .logo-item img:hover {
+.main-partners-logos .logo-item:hover img {
   filter: grayscale(0%);
   opacity: 1;
 }
 @keyframes logos-scroll {
   0% { transform: translateX(0); }
   100% { transform: translateX(-50%); }
-}
-
-@media screen and (max-width: 991px) {
-  .main-partners-logos .logos-marquee {
-    overflow-x: auto;
-    -webkit-overflow-scrolling: touch;
-  }
-  .main-partners-logos .logos-marquee-track {
-    animation: none;
-  }
-  .main-partners-logos .logos-marquee::before,
-  .main-partners-logos .logos-marquee::after {
-    display: none;
-  }
 }
 
 /* === Sekcja "WiseB2B daje więcej" === */
@@ -352,12 +343,41 @@ section {
 }
 @media (max-width: 743px) {
   .wise-more-row {
-    flex-wrap: wrap;
-    gap: 16px;
+    flex-direction: column !important;
+    align-items: flex-start !important;
+    gap: 12px;
     padding: 20px 20px;
   }
   .wise-more-row__name {
     width: auto;
+    order: 1;
+  }
+  .wise-more-row__icon {
+    order: 0;
+  }
+  .wise-more-row__desc {
+    order: 2;
+    width: 100%;
+  }
+}
+
+/* === Sekcja Główne cechy — mobile stack (image on top) === */
+@media (max-width: 743px) {
+  .feature-row {
+    flex-direction: column !important;
+    gap: 24px !important;
+  }
+  .feature-row__img {
+    order: -1 !important;
+    flex: none !important;
+    width: 100% !important;
+  }
+  .feature-row__text {
+    flex: none !important;
+    width: 100% !important;
+  }
+  .feature-row--reverse .feature-row__img {
+    order: -1 !important;
   }
 }
 
@@ -1098,6 +1118,17 @@ section {
   body.no-scroll {
     overflow: hidden;
   }
+}
+
+/* === Cookie bar fix — original CSS uses top/right without position === */
+.cookie-info {
+  display: none;
+}
+.cookie-info-inner {
+  position: relative;
+}
+.cookie-info-header-close {
+  position: absolute;
 }
 
 /* === Footer bottom bar === */

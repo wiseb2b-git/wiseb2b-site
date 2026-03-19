@@ -32,3 +32,6 @@ pnpm-debug.log*
 # Temporary screenshots
 *.png
 !public/**/*.png
+
+# Local Netlify folder
+.netlify

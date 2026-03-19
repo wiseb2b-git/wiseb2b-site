@@ -12,9 +12,14 @@
     "astro": "astro"
   },
   "dependencies": {
+    "@astrojs/netlify": "^7.0.3",
     "@astrojs/sitemap": "^3.7.1",
     "astro": "^6.0.4",
+    "nodemailer": "^8.0.3",
     "pdf-lib": "^1.17.1",
     "sharp": "^0.34.5"
+  },
+  "devDependencies": {
+    "@types/nodemailer": "^7.0.11"
   }
 }

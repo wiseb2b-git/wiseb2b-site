@@ -13,7 +13,7 @@ Strona marketingowa firmy WiseB2B (platforma e-Commerce B2B) migrowana z WordPre
 Katalog `.knowledge/` zawiera materiały z NotebookLM — wiedzę biznesową o produkcie WiseB2B (opisy funkcji, wartości, USP, grupy docelowe, messaging). Przy tworzeniu i edycji treści na stronach należy czerpać z tych materiałów, aby zapewnić spójność komunikacji marketingowej.
 
 ## Stos technologiczny
-- **Astro 6** (SSG, `trailingSlash: 'always'`)
+- **Astro 6** (server mode z prerenderem, `trailingSlash: 'always'`, adapter: `@astrojs/netlify`)
 - **Astro Content Collections** — blog w `src/content/baza-wiedzy/*.md`
 - **Brak frameworka JS** — czysty HTML/CSS, skrypty inline
 - Font: **Sora** (Google Fonts, wagi 300, 400, 600, 700)
@@ -55,7 +55,8 @@ WordPress CSS odwołuje się do `/wp-content/themes/wiseb2b/assets/...`. Zamiast
 - `src/pages/wsparcie.astro` — wsparcie
 - `src/pages/wdrozenia.astro` — wdrożenia
 - `src/pages/o-nas.astro` — o nas
-- `src/pages/prezentacja-produktowa.astro` — formularz demo
+- `src/pages/prezentacja-produktowa.astro` — formularz demo (POST do `/api/contact/`)
+- `src/pages/api/contact.ts` — serverless endpoint wysyłki maili przez SMTP (nodemailer)
 - `src/pages/fundusze-europejskie.astro` — fundusze EU
 - `src/pages/platforma-b2b/` — index, funkcje, wersje, integracje, proces-wdrozenia, bezpieczna-migracja
 - `src/pages/dla-kogo/` — index, dla-dystrybutorow, dla-producentow
@@ -98,6 +99,19 @@ W katalogu głównym projektu: `tmp_*.html`, `tmp_*.json`, `extract*.cjs`, `debu
 - **Sticky header**: osobne CSS overrides dla `.header--sticky` (77px) vs normalny (97px)
 - **WordPress asset paths**: CSS odwołuje się do `/wp-content/...` — naprawiamy overrides w global.css, nie modyfikujemy oryginalnych CSS
 
+## Formularze i e-mail
+Formularz na stronie prezentacja-produktowa POST-uje na `/api/contact/` (Astro server endpoint). Endpoint wysyła maile przez SMTP za pomocą nodemailer. Strona działa w trybie `output: 'server'` z adapterem `@astrojs/netlify`, ale wszystkie strony mają `export const prerender = true` i są generowane jako statyczne HTML. Tylko endpoint API działa jako serverless function.
+
+Zmienne środowiskowe w `.env` (lokalnie) i w panelu hostingu (produkcja):
+- `SMTP_HOST=mail.wiseb2b.eu`
+- `SMTP_PORT=25`
+- `SMTP_USER=healthchecks@wiseb2b.eu`
+- `SMTP_PASS` - hasło do konta SMTP
+- `MAIL_TO=office@wiseb2b.eu`
+- `MAIL_FROM=healthchecks@wiseb2b.eu`
+
+Formularz ma zabezpieczenie honeypot (ukryte pole `bot-field`).
+
 ## Polecenia
 ```bash
 npm run dev      # dev server
@@ -106,7 +120,7 @@ npm run preview  # podgląd buildu
 ```
 
 ## Zasady pracy
-- **Nie pushować automatycznie na git** — zawsze najpierw testować lokalnie
+- **Nie pushować automatycznie na git** —  praca z gitem tylko na wyrażne polecenie operatora.
 - Przy nowych podstronach: kopiować HTML z oryginału, używać oryginalnych klas CSS
 - Przy problemach z CSS: szukać w theme-inline.css, otree.css i styles.min.css (w tej kolejności)
 - Nowe overrides dodawać do `src/styles/global.css`, nie modyfikować oryginalnych plików CSS

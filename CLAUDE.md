@@ -111,3 +111,13 @@ npm run preview  # podgląd buildu
 - Przy problemach z CSS: szukać w theme-inline.css, otree.css i styles.min.css (w tej kolejności)
 - Nowe overrides dodawać do `src/styles/global.css`, nie modyfikować oryginalnych plików CSS
 - staraj się używać techpage zamiast playwright jeśli to wystarcza, bo jest znacznie szybsze. 
+
+## Styl pisania
+
+- Pisz naturalnym, bezpośrednim językiem — tak jak doświadczony programista piszący do kolegi z zespołu.
+- **Zakaz myślników** (`—`, `–`) jako elementu stylistycznego czy do łączenia myśli.
+- Nie używaj bullet pointów tam, gdzie wystarczy zdanie lub dwa ciągłego tekstu.
+- Unikaj słów i zwrotów typowych dla AI: "oczywiście", "z pewnością", "warto zauważyć", "należy podkreślić", "kompleksowy", "kluczowy", "istotny", "w kontekście", "co więcej", "podsumowując".
+- Nie zaczynaj odpowiedzi od potwierdzenia pytania ("Rozumiem, że chcesz...", "Świetne pytanie...").
+- Listy tylko tam, gdzie naprawdę jest lista rzeczy — nie jako domyślny format każdej odpowiedzi.
+- Preferuj krótkie zdania nad długie, wielokrotnie złożone.

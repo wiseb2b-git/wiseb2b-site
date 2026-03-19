@@ -84,9 +84,10 @@ import BaseLayout from '../layouts/BaseLayout.astro';
   <div class="presentation-form__popup">
     <h3 class="h3_semi">Zarezerwuj prezentację:</h3>
 
-    <form id="presentation-form__popup" action="#" method="post">
+    <form id="presentation-form__popup" name="contact" method="POST" data-netlify="true" data-netlify-honeypot="bot-field">
 
       <input type="hidden" name="form_name" id="presentation-form-name" />
+      <p class="hidden" style="display:none;"><label>Nie wypełniaj: <input name="bot-field" /></label></p>
 
       <svg class="presentation-form__close" width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
         <circle cx="16" cy="16" r="16" fill="#5A5565"/>
@@ -229,11 +230,35 @@ import BaseLayout from '../layouts/BaseLayout.astro';
         }
 
         if (valid) {
-          const responseOk = form.querySelector('.response__ok');
-          if (responseOk) {
-            responseOk.textContent = 'Dziękujemy! Skontaktujemy się z Tobą wkrótce.';
-            responseOk.style.display = 'block';
-          }
+          const formData = new FormData(form);
+          fetch('/', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+            body: new URLSearchParams(formData).toString()
+          })
+          .then(response => {
+            const responseOk = form.querySelector('.response__ok');
+            const responseError = form.querySelector('.response__error');
+            if (response.ok) {
+              if (responseOk) {
+                responseOk.textContent = 'Dziękujemy! Skontaktujemy się z Tobą wkrótce.';
+                responseOk.style.display = 'block';
+              }
+              form.reset();
+            } else {
+              if (responseError) {
+                responseError.textContent = 'Wystąpił błąd. Spróbuj ponownie później.';
+                responseError.style.display = 'block';
+              }
+            }
+          })
+          .catch(() => {
+            const responseError = form.querySelector('.response__error');
+            if (responseError) {
+              responseError.textContent = 'Wystąpił błąd. Spróbuj ponownie później.';
+              responseError.style.display = 'block';
+            }
+          });
         }
       });
     }

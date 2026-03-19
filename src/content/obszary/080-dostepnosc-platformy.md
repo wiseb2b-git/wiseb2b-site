@@ -13,7 +13,7 @@ modules:
     professional: included
     enterprise: included
   - name: "MultiStore"
-    description: "Wiele sklepów na jednym backendzie — różne produkty, cenniki, języki i fronty"
+    description: "Wiele sklepów na jednym backendzie: różne produkty, cenniki, języki i fronty"
     starter: unavailable
     professional: unavailable
     enterprise: included

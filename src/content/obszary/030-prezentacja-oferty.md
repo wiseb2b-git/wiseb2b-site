@@ -18,7 +18,7 @@ modules:
     professional: unavailable
     enterprise: optional
   - name: "Wyszukiwanie z TypeSense"
-    description: "Alternatywa dla Elasticsearch — szybkie wyszukiwanie z automatyczną korektą zapytań"
+    description: "Alternatywa dla Elasticsearch. Szybkie wyszukiwanie z automatyczną korektą zapytań"
     starter: unavailable
     professional: unavailable
     enterprise: optional

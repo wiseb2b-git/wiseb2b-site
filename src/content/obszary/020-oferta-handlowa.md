@@ -28,7 +28,7 @@ modules:
     professional: included
     enterprise: included
   - name: "Feedy produktowe dla klientów"
-    description: "Eksport oferty w formatach Shopify, Ceneo, IAI — do importu do sklepów klientów"
+    description: "Eksport oferty w formatach Shopify, Ceneo, IAI do importu do sklepów klientów"
     starter: optional
     professional: included
     enterprise: included

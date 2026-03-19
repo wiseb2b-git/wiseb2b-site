@@ -8,7 +8,7 @@ modules:
     professional: included
     enterprise: included
   - name: "Wielokoszyki"
-    description: "Wiele koszyków dla jednego użytkownika — do organizacji zakupów wg projektów lub priorytetów"
+    description: "Wiele koszyków dla jednego użytkownika do organizacji zakupów wg projektów lub priorytetów"
     starter: included
     professional: included
     enterprise: included
@@ -18,7 +18,7 @@ modules:
     professional: included
     enterprise: included
   - name: "Import zamówienia"
-    description: "Import koszyka z pliku CSV lub Excel — idealne przy dużych zamówieniach"
+    description: "Import koszyka z pliku CSV lub Excel, idealne przy dużych zamówieniach"
     starter: included
     professional: included
     enterprise: included

@@ -1,6 +1,6 @@
 ---
 title: "Czołowy dystrybutor pirotechniki postawił na WiseB2B"
-description: "Case study wdrożenia platformy B2B WiseB2B w firmie Triplex — czołowym dystrybutorze pirotechniki w Polsce i Europie."
+description: "Case study wdrożenia platformy B2B WiseB2B w firmie Triplex, czołowym dystrybutorze pirotechniki w Polsce i Europie."
 clientLogo: "/case-study/triplex/triplex-logo-156x44.png"
 mainImage: "/case-study/triplex/browser-blender-4-811x608.png"
 galleryImages:

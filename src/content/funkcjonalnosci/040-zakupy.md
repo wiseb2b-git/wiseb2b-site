@@ -2,7 +2,7 @@
 title: "Zakupy"
 ---
 
-Zakupy za pomocą WiseB2B są proste i intuicyjne. Tradycyjne kompletowanie koszyka, tworzenie wielokoszyków, korzystanie z list zakupowych czy import zamówień – każdy preferowany przez klienta sposób składania zamówienia jest w pełni wspierany. Co więcej, rozwiązanie pozwala na obsługę specyficznych potrzeb, takich jak zarządzanie miejscami powstawania kosztów czy sprzedaż zagraniczna.
+Zakupy za pomocą WiseB2B są proste i intuicyjne. Tradycyjne kompletowanie koszyka, tworzenie wielokoszyków, korzystanie z list zakupowych czy import zamówień. Każdy preferowany przez klienta sposób składania zamówienia jest w pełni wspierany. Rozwiązanie pozwala też na obsługę specyficznych potrzeb, takich jak zarządzanie miejscami powstawania kosztów czy sprzedaż zagraniczna.
 
 - kompletowanie koszyków zamówień,
 - potwierdzanie dostępności on-line w momencie złożenia zamówienia,

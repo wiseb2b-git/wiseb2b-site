@@ -967,6 +967,9 @@ section {
   .header.menu-mobile-open .header__right .wise-button {
     display: block;
   }
+  body.no-scroll .top-header-bar {
+    display: none;
+  }
   .header.menu-mobile-open .header__right {
     position: fixed;
     top: 0;

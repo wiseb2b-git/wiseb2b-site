@@ -995,17 +995,17 @@ section {
   }
   .header.menu-mobile-open .header__right .nav-menu li,
   .header.menu-mobile-open .header__right .secondary-menu li {
-    margin: 16px 0;
+    margin: 8px 0;
   }
   .header.menu-mobile-open .header__right .nav-menu li a,
   .header.menu-mobile-open .header__right .secondary-menu li a {
-    font-size: 2.4rem;
-    line-height: 3.6rem;
+    font-size: 1.8rem;
+    line-height: 2.8rem;
     color: #312b3f;
     text-decoration: none;
   }
   .header.menu-mobile-open .header__right .wise-button {
-    margin-top: 24px;
+    margin-top: 16px;
   }
   .header.menu-mobile-open .mobile-menu-btn {
     position: fixed;

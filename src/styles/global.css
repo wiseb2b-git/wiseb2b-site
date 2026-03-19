@@ -101,8 +101,12 @@ button {
   background-image: url("/images/cta-support.png") !important;
 }
 
-.header .nav-menu li.submenu a:before {
+.header .nav-menu li.submenu > a:before {
   content: url("/svg/arrow-menu.svg") !important;
+}
+/* Hide mobile submenus on desktop */
+.mobile-submenu {
+  display: none;
 }
 
 /* Fix: szerokość nagłówka w sekcji CTA branże */
@@ -995,8 +999,9 @@ section {
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center;
-    padding: 20px;
+    justify-content: flex-start;
+    padding: 70px 20px 20px;
+    overflow-y: auto;
   }
   .header.menu-mobile-open .header__right .nav-menu,
   .header.menu-mobile-open .header__right .secondary-menu {
@@ -1006,17 +1011,24 @@ section {
     list-style: none;
     padding: 0;
     margin: 0;
+    width: 100%;
+    flex-shrink: 0;
+    flex-grow: 0;
   }
-  .header.menu-mobile-open .header__right .nav-menu li,
-  .header.menu-mobile-open .header__right .secondary-menu li {
-    margin: 8px 0;
+  .header.menu-mobile-open .header__right .nav-menu > li,
+  .header.menu-mobile-open .header__right .secondary-menu > li {
+    margin: 4px 0 !important;
+    padding: 0 !important;
   }
-  .header.menu-mobile-open .header__right .nav-menu li a,
-  .header.menu-mobile-open .header__right .secondary-menu li a {
-    font-size: 1.8rem;
-    line-height: 2.8rem;
+  .header.menu-mobile-open .header__right .nav-menu > li > a,
+  .header.menu-mobile-open .header__right .secondary-menu > li > a {
+    font-size: 1.8rem !important;
+    line-height: 2.4rem !important;
+    padding: 6px 0 !important;
+    height: auto !important;
     color: #312b3f;
     text-decoration: none;
+    display: inline-block;
   }
   .header.menu-mobile-open .header__right .wise-button {
     margin-top: 16px;
@@ -1029,6 +1041,59 @@ section {
   }
   .header .submenu-box {
     display: none !important;
+  }
+  .header .nav-menu li.submenu > a:before {
+    display: none !important;
+  }
+  /* Mobile submenu: hidden by default, shown on toggle */
+  .mobile-submenu {
+    display: none !important;
+    list-style: none !important;
+    padding: 4px 0 0 0 !important;
+    margin: 0 !important;
+  }
+  .mobile-sub-open > .mobile-submenu {
+    display: flex !important;
+    flex-direction: column;
+    align-items: center;
+    gap: 0;
+    padding-top: 2px !important;
+    padding-bottom: 4px !important;
+  }
+  .mobile-submenu li {
+    margin: 1px 0 !important;
+  }
+  .header .nav-menu .mobile-submenu li a {
+    font-size: 1.4rem !important;
+    line-height: 2rem !important;
+    height: auto !important;
+    padding: 4px 0 !important;
+    color: #6e6a78 !important;
+    font-weight: 400 !important;
+    display: inline-block !important;
+  }
+  .mobile-submenu li a:before,
+  .mobile-submenu li a::before,
+  .mobile-submenu li a:after,
+  .mobile-submenu li a::after {
+    display: none !important;
+    content: none !important;
+  }
+  /* Arrow indicator for items with submenu */
+  .header.menu-mobile-open .nav-menu li.submenu > a::after {
+    content: '';
+    display: inline-block;
+    width: 7px;
+    height: 7px;
+    border-right: 2px solid #312b3f;
+    border-bottom: 2px solid #312b3f;
+    transform: rotate(45deg);
+    margin-left: 8px;
+    vertical-align: middle;
+    transition: transform 0.2s;
+  }
+  .header.menu-mobile-open .nav-menu li.submenu.mobile-sub-open > a::after {
+    transform: rotate(-135deg);
   }
   body.no-scroll {
     overflow: hidden;

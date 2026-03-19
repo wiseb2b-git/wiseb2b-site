@@ -291,6 +291,20 @@ section {
   100% { transform: translateX(-50%); }
 }
 
+@media screen and (max-width: 991px) {
+  .main-partners-logos .logos-marquee {
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+  .main-partners-logos .logos-marquee-track {
+    animation: none;
+  }
+  .main-partners-logos .logos-marquee::before,
+  .main-partners-logos .logos-marquee::after {
+    display: none;
+  }
+}
+
 /* === Sekcja "WiseB2B daje więcej" === */
 .wise-more-table {
   margin-top: 40px;

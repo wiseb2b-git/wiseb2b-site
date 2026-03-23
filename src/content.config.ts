@@ -73,9 +73,25 @@ const obszary = defineCollection({
   }),
 });
 
+const partnerzy = defineCollection({
+  loader: glob({ pattern: '**/*.md', base: './src/content/partnerzy' }),
+  schema: z.object({
+    name: z.string(),
+    logo: z.string(),
+    website: z.string().url(),
+    phone: z.string().optional(),
+    email: z.string().email().optional(),
+    linkedin: z.string().url().optional(),
+    specialization: z.array(z.string()),
+    shortDescription: z.string(),
+    order: z.number().optional(),
+  }),
+});
+
 export const collections = {
   'baza-wiedzy': bazaWiedzy,
   'case-study': caseStudy,
   'funkcjonalnosci': funkcjonalnosci,
   'obszary': obszary,
+  'partnerzy': partnerzy,
 };

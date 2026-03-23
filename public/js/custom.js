@@ -32,9 +32,11 @@ window.addEventListener("resize", () => {
 
 function hideBoxDesc(descFeature){
   descFeature.classList.remove('active');
-  fakeBtn.remove();
+  const fakeBtn = document.getElementById("fakeBtn");
+  if (fakeBtn) { fakeBtn.remove(); }
   body.classList.remove("no-scroll");
   head.classList.remove("after");
+  if(mainF){ mainF.classList.remove("after"); }
 }
 
 function showBoxDesc(descFeature){
@@ -55,7 +57,7 @@ function showBoxDesc(descFeature){
   }
 
   if (descFeature.classList.contains("active")) {
-    hideBoxDesc();
+    hideBoxDesc(descFeature);
   } else {
     if ( window.screen.width < 992 ) { body.classList.add("no-scroll"); }
     head.classList.add("after");

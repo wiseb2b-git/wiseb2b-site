@@ -1,0 +1,202 @@
+---
+export const prerender = true;
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import { getCollection } from 'astro:content';
+
+const partners = (await getCollection('partnerzy')).sort((a, b) => (a.data.order ?? 99) - (b.data.order ?? 99));
+---
+
+<BaseLayout title="Partnerzy wdrożeniowi WiseB2B" description="Poznaj naszych certyfikowanych partnerów wdrożeniowych. Doświadczone firmy IT i agencje eCommerce, które pomagają w pełnym wykorzystaniu platformy WiseB2B.">
+
+<!-- HERO -->
+<div class="functions-images">
+  <div class="functions-images__bg"></div>
+  <div class="functions-images__lines"></div>
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-10 offset-lg-1 col-xl-8 offset-xl-2 p-xl-0">
+        <div class="functions-images__wrapper">
+          <img width="333" height="222" src="/images/iStock-1039579142.jpg" class="image image--small image--left" alt="Współpraca z partnerami WiseB2B" />
+          <div class="image__wrapper">
+            <img width="590" height="393" src="/images/iStock-669887502.jpg" class="image image--center" alt="Partnerzy wdrożeniowi WiseB2B" />
+          </div>
+          <img width="333" height="222" src="/images/iStock-1303454308.jpg" class="image image--small image--right" alt="Zespół partnerski eCommerce B2B" />
+          <div class="icon">
+            <img width="44" height="44" src="/images/np_operation_2998632_000000-1.png" alt="Ikona partnerstwa" />
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- INTRO -->
+<div class="supports-logos" style="margin-top:398px;">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 offset-lg-2">
+        <h1 class="h2_semi" style="text-align:center;">Partnerzy wdrożeniowi</h1>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-lg-6 offset-lg-3">
+        <p class="p_regular_2 description">Nasi partnerzy wdrożeniowi to doświadczone firmy IT i&nbsp;agencje eCommerce, które pomagają klientom w&nbsp;pełnym wykorzystaniu platformy WiseB2B. Każdy partner posiada potwierdzone kompetencje w&nbsp;zakresie wdrożeń B2B.</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- PARTNER GRID -->
+<div class="articles-filter-categories" style="padding-bottom:80px;">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-12 col-xl-10 offset-xl-1">
+        <div class="box-posts partner-grid">
+
+          {partners.map((partner) => (
+            <a class="item" href={`/partnerzy/${partner.id}/`}>
+              <div class="image partner-logo-box">
+                <img loading="lazy" src={partner.data.logo} alt={partner.data.name} class="partner-logo-img" />
+              </div>
+              <div class="content">
+                <p class="item_category p_regular_3">{partner.data.specialization.join(' · ')}</p>
+                <h2 class="title p_semi_1">{partner.data.name}</h2>
+                <p class="excerpt p_regular_3">{partner.data.shortDescription}</p>
+              </div>
+            </a>
+          ))}
+
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- DLACZEGO WARTO -->
+<div class="supports-logos">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 offset-lg-2">
+        <h2 class="h2_semi">Dlaczego warto zostać partnerem WiseB2B?</h2>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-lg-10 offset-lg-1 col-xl-10 offset-xl-1 p-xl-0">
+        <div class="boxes">
+          <div class="box" style="width: calc(100% / 3);">
+            <div class="box__icon partner-icon">
+              <img width="31" height="31" src="/images/np_sale_3972942.png" class="attachment-logos size-logos" alt="Wartość dla klientów" />
+            </div>
+            <div class="box__content">
+              <p class="p_semi_2 box__content-header">Dawaj więcej wartości swoim Klientom</p>
+              <p class="p_regular_3 box__content-description">Oferuj klientom platformę, która realnie zwiększa przychody i&nbsp;usprawnia procesy sprzedażowe w&nbsp;kanale B2B.</p>
+            </div>
+          </div>
+          <div class="box" style="width: calc(100% / 3);">
+            <div class="box__icon partner-icon">
+              <img width="31" height="31" src="/images/np_settings_746615.png" class="attachment-logos size-logos" alt="Lepsze rozwiązania" />
+            </div>
+            <div class="box__content">
+              <p class="p_semi_2 box__content-header">Oferuj lepsze rozwiązania</p>
+              <p class="p_regular_3 box__content-description">Panel Handlowca i&nbsp;Agent AI to funkcje, które wyróżniają WiseB2B na tle konkurencji i&nbsp;dają Twoim klientom przewagę.</p>
+            </div>
+          </div>
+          <div class="box" style="width: calc(100% / 3);">
+            <div class="box__icon partner-icon">
+              <img width="31" height="31" src="/images/np_function_1286758_000000-1.png" class="attachment-logos size-logos" alt="Otwarty kod" />
+            </div>
+            <div class="box__content">
+              <p class="p_semi_2 box__content-header">Otwarty kod źródłowy</p>
+              <p class="p_regular_3 box__content-description">Pełna niezależność i&nbsp;swoboda działania. Brak vendor lock-in oznacza, że Ty i&nbsp;Twoi klienci macie pełną kontrolę nad platformą.</p>
+            </div>
+          </div>
+        </div>
+        <div class="boxes" style="margin-top:20px;">
+          <div class="box" style="width: calc(100% / 3);">
+            <div class="box__icon partner-icon">
+              <img width="31" height="31" src="/images/np_ecommerce_4557208_000000-1.png" class="attachment-logos size-logos" alt="Platforma demo" />
+            </div>
+            <div class="box__content">
+              <p class="p_semi_2 box__content-header">Dostęp do platformy i&nbsp;szkoleń</p>
+              <p class="p_regular_3 box__content-description">Otrzymasz pełny dostęp do platformy WiseB2B, dokumentacji technicznej i&nbsp;materiałów szkoleniowych.</p>
+            </div>
+          </div>
+          <div class="box" style="width: calc(100% / 3);">
+            <div class="box__icon partner-icon">
+              <img width="31" height="31" src="/images/np_suitcase_4525556_000000-1.png" class="attachment-logos size-logos" alt="Wsparcie techniczne" />
+            </div>
+            <div class="box__content">
+              <p class="p_semi_2 box__content-header">Wsparcie zespołu WiseB2B</p>
+              <p class="p_regular_3 box__content-description">Nasz zespół zapewni Ci pomoc techniczną i&nbsp;merytoryczną na każdym etapie wdrożenia klienta.</p>
+            </div>
+          </div>
+          <div class="box" style="width: calc(100% / 3);">
+            <div class="box__icon partner-icon">
+              <img width="31" height="31" src="/images/np_operation_2998632_000000-1.png" class="attachment-logos size-logos" alt="Marketing" />
+            </div>
+            <div class="box__content">
+              <p class="p_semi_2 box__content-header">Wspólne działania marketingowe</p>
+              <p class="p_regular_3 box__content-description">Promujemy naszych partnerów na stronie, w&nbsp;materiałach marketingowych i&nbsp;podczas wydarzeń branżowych.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- CTA -->
+<section class="call-expert" style="margin-top:60px;">
+  <div class="container">
+    <div class="row">
+      <div class="col-xl-8 offset-xl-2 col-lg-10 offset-lg-1">
+        <div class="call-expert__wrapper">
+          <h2 class="h2_semi">Chcesz zostać partnerem WiseB2B?</h2>
+          <p class="p_regular_2" style="margin-top:12px;color:#b0adb5;">Dołącz do naszej sieci partnerów wdrożeniowych i&nbsp;rozwijaj swój biznes razem z&nbsp;WiseB2B.</p>
+        </div>
+        <div class="call-expert__button">
+          <a class="wise-button wise-button--wise-harvest" href="/prezentacja-produktowa/">Skontaktuj się z nami</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+</BaseLayout>
+
+<style>
+  .partner-logo-box {
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    padding: 32px 24px !important;
+    background: #f8f8fa !important;
+    min-height: 140px;
+    border-radius: 0 !important;
+    overflow: visible !important;
+  }
+
+  .partner-logo-img {
+    max-height: 60px !important;
+    max-width: 180px !important;
+    width: auto !important;
+    height: auto !important;
+    object-fit: contain !important;
+  }
+
+  .partner-icon {
+    width: 56px;
+    height: 56px;
+    border-radius: 50%;
+    background: #f5a623;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .partner-icon img {
+    filter: brightness(0) invert(1);
+    width: 26px;
+    height: 26px;
+  }
+</style>

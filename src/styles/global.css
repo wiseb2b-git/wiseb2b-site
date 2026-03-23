@@ -84,6 +84,11 @@ button {
   z-index: 150 !important;
 }
 
+/* When a feature card is open on mobile, lower header z-index so the card overlay is accessible */
+.header.after {
+  z-index: 99 !important;
+}
+
 .top-header-bar {
   z-index: 151;
   position: relative;

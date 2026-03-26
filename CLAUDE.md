@@ -86,6 +86,7 @@ WordPress CSS odwołuje się do `/wp-content/themes/wiseb2b/assets/...`. Zamiast
 4. **SVG**: `public/svg/` — logo, ikony, strzałka menu
 5. **JS**: `public/js/` — wow.min.js, swiper-bundle.min.js, custom.js (showText, animacje hero)
 6. **Artykuły bloga**: wyekstrahowane skryptem `extract_final2.cjs` z pobranych HTML-i artykułów (`tmp_article_*.html`)
+7. **Print screeny**: `.knowledge/screenshots` - tutaj są zdjęcia printscreen z platformy WiseB2B
 
 ## Pliki tymczasowe do usunięcia
 W katalogu głównym projektu: `tmp_*.html`, `tmp_*.json`, `extract*.cjs`, `debug_article.cjs` — skrypty ekstrakcji, już niepotrzebne.

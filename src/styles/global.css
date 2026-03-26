@@ -1168,3 +1168,276 @@ section {
   font-size: 1.2rem;
   line-height: 1.5rem;
 }
+
+/* ===== Agent AI Page ===== */
+
+.agent-ai-hero {
+  background: linear-gradient(135deg, #1a1a2e 0%, #312b3f 100%);
+  padding: 100px 0 80px;
+  text-align: center;
+}
+.agent-ai-hero__content h1 {
+  color: #fff;
+  margin-bottom: 24px;
+}
+.agent-ai-hero__content p {
+  color: rgba(255,255,255,0.8);
+  max-width: 700px;
+  margin: 0 auto 40px;
+}
+
+/* Video section */
+.agent-ai-video {
+  padding: 60px 0 80px;
+  background: #fff;
+}
+.agent-ai-video__embed {
+  position: relative;
+  padding-bottom: 56.25%;
+  border-radius: 16px;
+  overflow: hidden;
+  background: #000;
+  cursor: pointer;
+  box-shadow: 0 8px 40px rgba(0,0,0,0.12);
+}
+.agent-ai-video__poster {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.agent-ai-video__play-btn {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 2;
+  transition: transform 0.2s ease;
+}
+.agent-ai-video__embed:hover .agent-ai-video__play-btn {
+  transform: translate(-50%, -50%) scale(1.1);
+}
+
+/* Features grid */
+.agent-ai-features {
+  padding: 80px 0;
+  background: #f3f6fa;
+}
+.agent-ai-features__heading {
+  text-align: center;
+  margin-bottom: 50px;
+}
+.agent-ai-features__grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 30px;
+}
+.agent-ai-feature-card {
+  background: #fff;
+  border-radius: 16px;
+  padding: 36px 28px;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.06);
+}
+.agent-ai-feature-card__icon {
+  width: 56px;
+  height: 56px;
+  background: #f3f6fa;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+.agent-ai-feature-card h3 {
+  margin-bottom: 12px;
+}
+
+/* Use Cases */
+.agent-ai-usecases {
+  padding: 80px 0;
+  background: #fff;
+}
+.agent-ai-usecases__heading {
+  text-align: center;
+  margin-bottom: 60px;
+}
+.agent-ai-usecase {
+  display: flex;
+  align-items: center;
+  gap: 50px;
+  margin-bottom: 80px;
+}
+.agent-ai-usecase--reverse {
+  flex-direction: row-reverse;
+}
+.agent-ai-usecase__text {
+  flex: 1;
+  min-width: 0;
+}
+.agent-ai-usecase__text h3 {
+  margin-bottom: 16px;
+}
+.agent-ai-usecase__label {
+  color: #d9b062;
+  margin-bottom: 8px;
+}
+.agent-ai-usecase__visual {
+  flex: 1;
+  min-width: 0;
+}
+.agent-ai-usecase__split {
+  display: flex;
+  gap: 16px;
+}
+
+/* Laptop mockup images */
+.agent-ai-mockup-img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* Why table */
+.agent-ai-why {
+  padding: 80px 0;
+  background: #f3f6fa;
+}
+.agent-ai-why__heading {
+  text-align: center;
+  margin-bottom: 40px;
+}
+.agent-ai-why__table {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.06);
+}
+.agent-ai-why__row {
+  display: flex;
+  background: #fff;
+  border-bottom: 1px solid #eee;
+}
+.agent-ai-why__row:last-child {
+  border-bottom: none;
+}
+.agent-ai-why__cell--feature {
+  flex: 0 0 260px;
+  padding: 28px 24px;
+  background: #312b3f;
+  display: flex;
+  align-items: center;
+}
+.agent-ai-why__cell--feature p {
+  color: #fff;
+}
+.agent-ai-why__cell--benefit {
+  flex: 1;
+  padding: 28px 32px;
+  display: flex;
+  align-items: center;
+}
+
+/* Proof section */
+.agent-ai-proof {
+  padding: 80px 0;
+  background: #fff;
+}
+.agent-ai-proof__content {
+  text-align: center;
+  max-width: 700px;
+  margin: 0 auto;
+}
+.agent-ai-proof__content h2 {
+  margin-bottom: 24px;
+}
+.agent-ai-proof__content strong {
+  color: #d9b062;
+  font-weight: 700;
+}
+
+/* Submenu 3-column layout — wider box to fit descriptions */
+#technologia.submenu-box {
+  width: 1200px;
+}
+#technologia .submenu-box__content {
+  padding: 24px 36px 16px;
+  align-items: flex-start;
+}
+#technologia .submenu-box__footer {
+  padding: 14px 36px;
+}
+#technologia .submenu-box__left {
+  width: 22%;
+}
+#technologia .submenu-box__right {
+  width: 78%;
+  gap: 8px 0;
+  grid-template-rows: auto;
+}
+#technologia .submenu-box__right .item {
+  padding: 10px 12px;
+}
+.submenu-box__right--3col {
+  display: grid !important;
+  grid-template-columns: repeat(3, 1fr) !important;
+  grid-template-rows: auto !important;
+  align-items: start !important;
+  gap: 0 20px !important;
+}
+.submenu-box__right--3col .submenu-box__col {
+  display: flex;
+  flex-direction: column;
+}
+.submenu-box__right--3col .submenu-box__col .item {
+  width: 100%;
+}
+
+/* Agent AI responsive */
+@media (max-width: 991px) {
+  .agent-ai-hero {
+    padding: 70px 0 60px;
+  }
+  .agent-ai-features__grid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+  .agent-ai-usecase,
+  .agent-ai-usecase--reverse {
+    flex-direction: column;
+    gap: 30px;
+  }
+  .agent-ai-why__row {
+    flex-direction: column;
+  }
+  .agent-ai-why__cell--feature {
+    flex: none;
+    padding: 20px 24px;
+  }
+  .agent-ai-why__cell--benefit {
+    padding: 20px 24px;
+  }
+  .agent-ai-usecase__split {
+    flex-direction: column;
+  }
+  .submenu-box__right--3col {
+    grid-template-columns: 1fr !important;
+  }
+}
+@media (max-width: 743px) {
+  .agent-ai-hero {
+    padding: 50px 0 40px;
+  }
+  .agent-ai-features,
+  .agent-ai-usecases,
+  .agent-ai-why,
+  .agent-ai-proof {
+    padding: 50px 0;
+  }
+  .agent-ai-usecase {
+    margin-bottom: 50px;
+  }
+}

@@ -29,6 +29,8 @@
 /* === Base === */
 html {
   scroll-behavior: smooth;
+  -webkit-text-size-adjust: 100%;
+  text-size-adjust: 100%;
 }
 
 body {
@@ -1439,5 +1441,30 @@ section {
   }
   .agent-ai-usecase {
     margin-bottom: 50px;
+  }
+
+  /* Compact cookie bar on mobile to keep hero CTA above the fold */
+  .cookie-info {
+    padding: 6px 8px;
+    font-size: 1.1rem;
+    margin-bottom: 8px;
+    margin-right: 8px;
+    width: calc(100% - 16px);
+  }
+  .cookie-info-inner {
+    padding-right: 34px;
+  }
+  .cookie-info-content {
+    min-height: 0;
+    line-height: 1.35em;
+  }
+  .cookie-info-header-close {
+    width: 30px;
+    height: 30px;
+    top: calc(50% - 15px);
+  }
+  .cookie-info-header-close a {
+    width: 24px;
+    height: 24px;
   }
 }

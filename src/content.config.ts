@@ -42,6 +42,7 @@ const bazaWiedzy = defineCollection({
     category: z.string(),
     image: z.string(),
     date: z.string(),
+    dateModified: z.string().optional(),
     author: z.string().optional(),
     authorJob: z.string().optional(),
     authorImage: z.string().optional(),

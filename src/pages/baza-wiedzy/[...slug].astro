@@ -14,7 +14,7 @@ export async function getStaticPaths() {
 
 const { article } = Astro.props;
 const { Content } = await render(article);
-const { title, description, image, category, date, author, authorJob, authorImage, authorBio } = article.data;
+const { title, description, image, category, date, dateModified, author, authorJob, authorImage, authorBio } = article.data;
 
 const allArticles = await getCollection('baza-wiedzy');
 const otherSlugs = allArticles.filter((a) => a.id !== article.id).slice(0, 3).map((a) => a.id);
@@ -22,7 +22,7 @@ const otherSlugs = allArticles.filter((a) => a.id !== article.id).slice(0, 3).ma
 const formattedDate = new Date(date).toLocaleDateString('pl-PL', { year: 'numeric', month: 'long', day: 'numeric' });
 ---
 
-<BaseLayout title={title} description={description}>
+<BaseLayout title={title} description={description} article={{ headline: title, image, datePublished: date, dateModified, authorName: author }}>
 
 <div class="mceContentBody">
   <div class="container">

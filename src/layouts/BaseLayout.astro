@@ -9,6 +9,13 @@ interface Props {
   description?: string;
   ogImage?: string;
   noindex?: boolean;
+  article?: {
+    headline: string;
+    image: string;
+    datePublished: string;
+    dateModified?: string;
+    authorName?: string;
+  };
 }
 
 const {
@@ -16,6 +23,7 @@ const {
   description = 'Platforma B2B dla firm handlowych i produkcyjnych. Zwiększ sprzedaż i obniż koszty obsługi procesu sprzedaży z WiseB2B.',
   ogImage = '/images/wiseb2b-og.png',
   noindex = false,
+  article,
 } = Astro.props;
 
 const siteUrl = 'https://wiseb2b.eu';
@@ -33,36 +41,89 @@ for (const part of pathParts) {
   breadcrumbItems.push({ name, url: siteUrl + currentPath + '/' });
 }
 
+const isPlatformPage = Astro.url.pathname.startsWith('/platforma-b2b/') || Astro.url.pathname === '/platforma-b2b';
+const absoluteImage = (src: string) => src.startsWith('http') ? src : new URL(src, siteUrl).href;
+
+const graph: any[] = [
+  {
+    "@type": "Organization",
+    "@id": siteUrl + "/#organization",
+    "name": "WiseB2B",
+    "url": siteUrl + "/",
+    "logo": {
+      "@type": "ImageObject",
+      "url": siteUrl + "/svg/logo-wiseb2b_black.svg",
+    },
+    "sameAs": [
+      "https://www.linkedin.com/company/wiseb2b/",
+      "https://www.facebook.com/wiseb2b",
+    ],
+  },
+  {
+    "@type": "WebSite",
+    "@id": siteUrl + "/#website",
+    "url": siteUrl + "/",
+    "name": "WiseB2B",
+    "description": "Platforma B2B dla firm handlowych i produkcyjnych",
+    "inLanguage": "pl-PL",
+    "publisher": { "@id": siteUrl + "/#organization" },
+  },
+  {
+    "@type": "WebPage",
+    "@id": canonicalUrl + "#webpage",
+    "url": canonicalUrl,
+    "name": fullTitle,
+    "description": description,
+    "isPartOf": { "@id": siteUrl + "/#website" },
+    "inLanguage": "pl-PL",
+  },
+  {
+    "@type": "BreadcrumbList",
+    "itemListElement": breadcrumbItems.map((item, i) => ({
+      "@type": "ListItem",
+      "position": i + 1,
+      "name": item.name,
+      "item": item.url,
+    })),
+  },
+];
+
+if (isPlatformPage) {
+  graph.push({
+    "@type": "SoftwareApplication",
+    "@id": siteUrl + "/#software",
+    "name": "WiseB2B",
+    "url": siteUrl + "/platforma-b2b/",
+    "applicationCategory": "BusinessApplication",
+    "operatingSystem": "Web",
+    "publisher": { "@id": siteUrl + "/#organization" },
+    "offers": {
+      "@type": "Offer",
+      "price": "0",
+      "priceCurrency": "PLN",
+    },
+  });
+}
+
+if (article) {
+  graph.push({
+    "@type": "Article",
+    "headline": article.headline,
+    "image": absoluteImage(article.image),
+    "datePublished": article.datePublished,
+    "dateModified": article.dateModified || article.datePublished,
+    "author": {
+      "@type": "Person",
+      "name": article.authorName || "WiseB2B",
+    },
+    "publisher": { "@id": siteUrl + "/#organization" },
+    "mainEntityOfPage": canonicalUrl,
+  });
+}
+
 const jsonLd = {
   "@context": "https://schema.org",
-  "@graph": [
-    {
-      "@type": "WebSite",
-      "@id": siteUrl + "/#website",
-      "url": siteUrl + "/",
-      "name": "WiseB2B",
-      "description": "Platforma B2B dla firm handlowych i produkcyjnych",
-      "inLanguage": "pl-PL",
-    },
-    {
-      "@type": "WebPage",
-      "@id": canonicalUrl + "#webpage",
-      "url": canonicalUrl,
-      "name": fullTitle,
-      "description": description,
-      "isPartOf": { "@id": siteUrl + "/#website" },
-      "inLanguage": "pl-PL",
-    },
-    {
-      "@type": "BreadcrumbList",
-      "itemListElement": breadcrumbItems.map((item, i) => ({
-        "@type": "ListItem",
-        "position": i + 1,
-        "name": item.name,
-        "item": item.url,
-      })),
-    },
-  ],
+  "@graph": graph,
 };
 ---
 
@@ -71,6 +132,8 @@ const jsonLd = {
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1, minimum-scale=1, user-scalable=no" />
+    {Astro.url.pathname === '/' && <link rel="preload" as="image" href="/images/bg-desktop-main-head.webp" type="image/webp" fetchpriority="high" media="(min-width: 768px)" />}
+    {Astro.url.pathname === '/' && <link rel="preload" as="image" href="/images/bg-mobile-main-head.webp" type="image/webp" media="(max-width: 767px)" />}
     <meta name="description" content={description} />
     {noindex && <meta name="robots" content="noindex, nofollow" />}
     <link rel="canonical" href={canonicalUrl} />

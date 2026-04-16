@@ -45,9 +45,9 @@ Trzy plany abonamentowe: Starter, Professional, Enterprise. Stała miesięczna o
 ## Artykuły z bazy wiedzy
 
 - Dedykowana czy gotowa platforma B2B: https://wiseb2b.eu/baza-wiedzy/dedykowana-czy-gotowa-platforma-b2b-na-co-sie-zdecydowac/
-- Platforma B2B a Marketplace: https://wiseb2b.eu/baza-wiedzy/platforma-b2b-a-marketplace-co-wybrac-i-dlaczego/
-- AI w eCommerce B2B: https://wiseb2b.eu/baza-wiedzy/ai-w-ecommerce-b2b-jak-agenci-ai-zmieniaja-obsluge-klienta/
-- Integracja platformy B2B z ERP: https://wiseb2b.eu/baza-wiedzy/integracja-platformy-b2b-z-erp-dlaczego-to-fundament-twojej-sprzedazy-online/
+- E-commerce w modelu B2B: https://wiseb2b.eu/baza-wiedzy/e-commerce-w-modelu-b2b/
+- Jak wybrać najlepszą platformę B2B: https://wiseb2b.eu/baza-wiedzy/jak-wybrac-najlepsza-platforme-b2b/
+- Korzyści z wdrożenia platformy B2B: https://wiseb2b.eu/baza-wiedzy/korzysci-z-wdrozenia-platformy-b2b/
 
 ## Kontakt
 

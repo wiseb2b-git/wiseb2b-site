@@ -9,14 +9,27 @@ interface Props {
   description?: string;
   ogImage?: string;
   noindex?: boolean;
+  webPageType?: string;
   article?: {
     headline: string;
     image: string;
     datePublished: string;
     dateModified?: string;
     authorName?: string;
+    authorJob?: string;
+    description?: string;
   };
   faq?: Array<{ question: string; answer: string }>;
+  review?: {
+    text: string;
+    author: string;
+    role: string;
+  };
+  service?: {
+    name: string;
+    serviceType: string;
+    description: string;
+  };
 }
 
 const {
@@ -24,8 +37,11 @@ const {
   description = 'Platforma B2B dla firm handlowych i produkcyjnych. Zwiększ sprzedaż i obniż koszty obsługi procesu sprzedaży z WiseB2B.',
   ogImage = '/images/wiseb2b-og.png',
   noindex = false,
+  webPageType,
   article,
   faq,
+  review,
+  service,
 } = Astro.props;
 
 const siteUrl = 'https://wiseb2b.eu';
@@ -67,15 +83,38 @@ for (const part of pathParts) {
 const isPlatformPage = Astro.url.pathname.startsWith('/platforma-b2b/') || Astro.url.pathname === '/platforma-b2b';
 const absoluteImage = (src: string) => src.startsWith('http') ? src : new URL(src, siteUrl).href;
 
+const hasBreadcrumb = breadcrumbItems.length > 1;
+
+const webPageNode: any = {
+  "@type": webPageType || "WebPage",
+  "@id": canonicalUrl + "#webpage",
+  "url": canonicalUrl,
+  "name": fullTitle,
+  "description": description,
+  "isPartOf": { "@id": siteUrl + "/#website" },
+  "inLanguage": "pl-PL",
+};
+if (hasBreadcrumb) {
+  webPageNode["breadcrumb"] = { "@id": canonicalUrl + "#breadcrumb" };
+}
+
 const graph: any[] = [
   {
     "@type": "Organization",
     "@id": siteUrl + "/#organization",
     "name": "WiseB2B",
     "url": siteUrl + "/",
+    "description": "Platforma eCommerce B2B dla firm handlowych i produkcyjnych. Łączy sklep B2B, Panel Handlowca i Agentów AI w jednym środowisku.",
     "logo": {
       "@type": "ImageObject",
       "url": siteUrl + "/svg/logo-wiseb2b_black.svg",
+    },
+    "contactPoint": {
+      "@type": "ContactPoint",
+      "contactType": "sales",
+      "telephone": "+48717847933",
+      "url": siteUrl + "/prezentacja-produktowa/",
+      "availableLanguage": "Polish",
     },
     "sameAs": [
       "https://www.linkedin.com/company/wiseb2b/",
@@ -91,25 +130,21 @@ const graph: any[] = [
     "inLanguage": "pl-PL",
     "publisher": { "@id": siteUrl + "/#organization" },
   },
-  {
-    "@type": "WebPage",
-    "@id": canonicalUrl + "#webpage",
-    "url": canonicalUrl,
-    "name": fullTitle,
-    "description": description,
-    "isPartOf": { "@id": siteUrl + "/#website" },
-    "inLanguage": "pl-PL",
-  },
-  {
+  webPageNode,
+];
+
+if (hasBreadcrumb) {
+  graph.push({
     "@type": "BreadcrumbList",
+    "@id": canonicalUrl + "#breadcrumb",
     "itemListElement": breadcrumbItems.map((item, i) => ({
       "@type": "ListItem",
       "position": i + 1,
       "name": item.name,
       "item": item.url,
     })),
-  },
-];
+  });
+}
 
 if (isPlatformPage) {
   graph.push({
@@ -119,11 +154,23 @@ if (isPlatformPage) {
     "url": siteUrl + "/platforma-b2b/",
     "applicationCategory": "BusinessApplication",
     "operatingSystem": "Web",
+    "description": "Platforma eCommerce B2B łącząca sklep B2B, Panel Handlowca i Agenta AI. Przeznaczona dla dystrybutorów, hurtowni i producentów.",
+    "inLanguage": "pl-PL",
     "publisher": { "@id": siteUrl + "/#organization" },
+    "featureList": [
+      "Sklep B2B z katalogiem produktów i grupami klientów",
+      "Panel Handlowca (Sales CRM)",
+      "Agent AI do obsługi zamówień",
+      "Integracja z systemami ERP",
+      "Dostęp do kodu źródłowego",
+      "Architektura pluginowa bez vendor-lock"
+    ],
     "offers": {
       "@type": "AggregateOffer",
       "url": siteUrl + "/platforma-b2b/pakiety-obszary-moduly/",
       "priceCurrency": "PLN",
+      "lowPrice": "0",
+      "offerCount": "3",
       "availability": "https://schema.org/OnlineOnly",
     },
   });
@@ -144,18 +191,55 @@ if (faq && faq.length > 0) {
 }
 
 if (article) {
+  const authorName = article.authorName || "WiseB2B";
+  const authorSlug = authorName.toLowerCase().replace(/\s+/g, '-').normalize("NFD").replace(/[\u0300-\u036f]/g, "");
+  const authorNode: any = {
+    "@type": "Person",
+    "@id": siteUrl + "/#author-" + authorSlug,
+    "name": authorName,
+  };
+  if (article.authorJob) {
+    authorNode["jobTitle"] = article.authorJob;
+  }
   graph.push({
-    "@type": "Article",
+    "@type": "BlogPosting",
+    "@id": canonicalUrl + "#article",
     "headline": article.headline,
+    "description": article.description || description,
     "image": absoluteImage(article.image),
     "datePublished": article.datePublished,
     "dateModified": article.dateModified || article.datePublished,
-    "author": {
-      "@type": "Person",
-      "name": article.authorName || "WiseB2B",
-    },
+    "inLanguage": "pl-PL",
+    "author": authorNode,
     "publisher": { "@id": siteUrl + "/#organization" },
     "mainEntityOfPage": canonicalUrl,
+  });
+}
+
+if (review) {
+  graph.push({
+    "@type": "Review",
+    "reviewBody": review.text,
+    "author": {
+      "@type": "Person",
+      "name": review.author,
+      "jobTitle": review.role,
+    },
+    "itemReviewed": { "@id": siteUrl + "/#software" },
+  });
+}
+
+if (service) {
+  graph.push({
+    "@type": "Service",
+    "@id": canonicalUrl + "#service",
+    "name": service.name,
+    "serviceType": service.serviceType,
+    "description": service.description,
+    "provider": { "@id": siteUrl + "/#organization" },
+    "areaServed": { "@type": "Country", "name": "Polska" },
+    "url": canonicalUrl,
+    "inLanguage": "pl-PL",
   });
 }
 

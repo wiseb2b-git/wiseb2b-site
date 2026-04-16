@@ -13,5 +13,9 @@ export default defineConfig({
     filter: (page) =>
       !page.includes('/prezentacja-produktowa/') &&
       !page.includes('/fundusze-europejskie/'),
+    serialize(item) {
+      item.lastmod = new Date().toISOString();
+      return item;
+    },
   })],
 });

@@ -4,7 +4,7 @@ description: "O tym, że e-Commerce w modelu B2B i B2C istotnie się od siebie r
 category: "Dystrybucja i Handel"
 image: "/images/student-gf2aecdbed_640.jpg"
 date: "2023-06-12"
-dateModified: "2026-04-15"
+dateModified: "2026-03-10"
 author: "Julia Wlazło"
 authorJob: "Content Manager"
 authorImage: "/images/author-julia.jpg"

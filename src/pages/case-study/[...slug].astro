@@ -12,10 +12,15 @@ export async function getStaticPaths() {
 }
 
 const { study } = Astro.props;
-const { title, description, clientLogo, mainImage, galleryImages, info, about, functions, stats, quote } = study.data;
+const { title, description, clientLogo, mainImage, galleryImages, info, about, functions, stats, quote, date } = study.data;
 ---
 
-<BaseLayout title={title} description={description}>
+<BaseLayout
+  title={title}
+  description={description}
+  article={{ headline: title, image: mainImage, datePublished: date, description, authorName: "WiseB2B" }}
+  review={quote ? { text: quote.text, author: quote.author, role: quote.role } : undefined}
+>
 
 <article class="article">
   <div class="container">

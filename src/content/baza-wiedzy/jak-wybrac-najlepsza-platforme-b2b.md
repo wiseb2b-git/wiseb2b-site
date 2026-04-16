@@ -4,7 +4,7 @@ description: "Wybór platformy e-Commerce B2B to decyzja na lata. Zobacz, jak us
 category: "Dystrybucja i Handel"
 image: "/images/people-gac9f90525_640.jpg"
 date: "2024-02-05"
-dateModified: "2026-04-15"
+dateModified: "2026-04-02"
 author: "Julia Wlazło"
 authorJob: "Content Manager"
 authorImage: "/images/author-julia.jpg"

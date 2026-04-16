@@ -20,9 +20,17 @@ const allArticles = await getCollection('baza-wiedzy');
 const otherSlugs = allArticles.filter((a) => a.id !== article.id).slice(0, 3).map((a) => a.id);
 
 const formattedDate = new Date(date).toLocaleDateString('pl-PL', { year: 'numeric', month: 'long', day: 'numeric' });
+
+function extractFaq(body: string): Array<{question: string; answer: string}> {
+  const faqSection = body.split(/^## Najcz[eę]stsze pytania/m)[1];
+  if (!faqSection) return [];
+  const matches = [...faqSection.matchAll(/^### (.+?)\n\n([\s\S]+?)(?=\n###|\n##|$)/gm)];
+  return matches.map(m => ({ question: m[1].trim(), answer: m[2].trim() }));
+}
+const faqItems = extractFaq(article.body || '');
 ---
 
-<BaseLayout title={title} description={description} article={{ headline: title, image, datePublished: date, dateModified, authorName: author }}>
+<BaseLayout title={title} description={description} article={{ headline: title, image, datePublished: date, dateModified, authorName: author, authorJob, description }} faq={faqItems.length > 0 ? faqItems : undefined}>
 
 <div class="mceContentBody">
   <div class="container">

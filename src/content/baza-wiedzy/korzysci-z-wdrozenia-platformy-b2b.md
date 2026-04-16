@@ -4,7 +4,7 @@ description: "Dobrze dobrana platforma e-Commerce B2B zmienia ekonomikę sprzeda
 category: "Korzyści"
 image: "/images/mockup-of-a-man-using-a-macbook-on-a-wooden-desk.png"
 date: "2023-09-18"
-dateModified: "2026-04-15"
+dateModified: "2026-03-18"
 author: "Julia Wlazło"
 authorJob: "Content Manager"
 authorImage: "/images/author-julia.jpg"

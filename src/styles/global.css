@@ -1069,6 +1069,9 @@ section {
   .header .submenu-box {
     display: none !important;
   }
+  #technologia.submenu-box {
+    width: auto;
+  }
   .header .nav-menu li.submenu > a:before {
     display: none !important;
   }
@@ -1544,5 +1547,17 @@ section {
     width: 320px;
     left: 0;
     transform: translateX(0);
+  }
+}
+
+/* Cookie bar — mniejszy na mobile */
+@media (max-width: 768px) {
+  body .cookie-info {
+    padding: 6px;
+    font-size: 1.2rem;
+  }
+  body .cookie-info-content {
+    font-size: 1.1rem;
+    line-height: 1.4;
   }
 }

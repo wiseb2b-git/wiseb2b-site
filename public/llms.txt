@@ -1,0 +1,58 @@
+# WiseB2B
+
+> WiseB2B to platforma eCommerce B2B dla polskich firm handlowych i produkcyjnych. Łączy sklep B2B, Panel Handlowca (Sales CRM) i Agentów AI w jednym środowisku. Dostępna w modelu SaaS (WiseB2B Cloud) oraz OnPremise z pełnym dostępem do kodu źródłowego.
+
+## Główne elementy platformy
+
+- **eCommerce B2B**: Pełna platforma zakupowa B2B z obsługą grup klientów, hierarchii cenników, kredytu kupieckiego, autoryzacji zamówień, sub-kont i miejsc odbioru.
+- **Agenci AI**: Autonomiczni agenci realizujący operacje zakupowe na polecenie użytkownika (wyszukiwanie produktów, budowanie koszyków, import zamówień z plików, sprawdzanie statusów).
+- **Panel Handlowca**: Wbudowany moduł Sales CRM integrujący sprzedaż online i offline. Ofertowanie, monitorowanie zakupów, analiza marży, cele sprzedażowe.
+- **Client API**: Unikalna funkcja umożliwiająca klientom biznesowym integrację ich systemów zakupowych (ERP, procurement) bezpośrednio z platformą sprzedażową.
+
+## Wyróżniki
+
+- Zaprojektowana od podstaw dla B2B (nie adaptacja platformy B2C)
+- Dostęp do kodu źródłowego (brak vendor-lock)
+- Brak prowizji od wartości transakcji (GMV)
+- Modułowa architektura pluginowa (customizacje nie kolidują z kodem standardowym)
+- Gotowe integracje z polskimi systemami ERP (Teneum, Comarch XL, eNova, Subiekt)
+
+## Grupa docelowa
+
+Polskie firmy handlowe i produkcyjne prowadzące sprzedaż B2B: dystrybutorzy, hurtownie, producenci z własnymi kanałami sprzedaży. Obroty roczne od ok. 20 mln zł, kilkuset lub więcej klientów biznesowych.
+
+## Plany cenowe
+
+Trzy plany abonamentowe: Starter, Professional, Enterprise. Stała miesięczna opłata niezależna od wolumenu sprzedaży.
+
+## Kluczowe strony
+
+- Platforma B2B: https://wiseb2b.eu/platforma-b2b/
+- Funkcje: https://wiseb2b.eu/platforma-b2b/funkcje/
+- Agent AI: https://wiseb2b.eu/platforma-b2b/agent-ai/
+- Panel Handlowca: https://wiseb2b.eu/platforma-b2b/panel-handlowca/
+- Plany i moduły: https://wiseb2b.eu/platforma-b2b/pakiety-obszary-moduly/
+- Integracje: https://wiseb2b.eu/platforma-b2b/integracje/
+- Proces wdrożenia: https://wiseb2b.eu/platforma-b2b/proces-wdrozenia/
+- Dla dystrybutorów: https://wiseb2b.eu/dla-kogo/dla-dystrybutorow/
+- Dla producentów: https://wiseb2b.eu/dla-kogo/dla-producentow/
+- Baza wiedzy: https://wiseb2b.eu/baza-wiedzy/
+- Wsparcie: https://wiseb2b.eu/wsparcie/
+- Wdrożenia / case study: https://wiseb2b.eu/wdrozenia/
+- O nas: https://wiseb2b.eu/o-nas/
+- Kontakt / demo: https://wiseb2b.eu/prezentacja-produktowa/
+
+## Artykuły z bazy wiedzy
+
+- Dedykowana czy gotowa platforma B2B: https://wiseb2b.eu/baza-wiedzy/dedykowana-czy-gotowa-platforma-b2b-na-co-sie-zdecydowac/
+- Platforma B2B a Marketplace: https://wiseb2b.eu/baza-wiedzy/platforma-b2b-a-marketplace-co-wybrac-i-dlaczego/
+- AI w eCommerce B2B: https://wiseb2b.eu/baza-wiedzy/ai-w-ecommerce-b2b-jak-agenci-ai-zmieniaja-obsluge-klienta/
+- Integracja platformy B2B z ERP: https://wiseb2b.eu/baza-wiedzy/integracja-platformy-b2b-z-erp-dlaczego-to-fundament-twojej-sprzedazy-online/
+
+## Kontakt
+
+- Strona: https://wiseb2b.eu
+- Telefon: +48 71 78 47 933
+- Email: kontakt@wiseb2b.eu
+- LinkedIn: https://www.linkedin.com/company/wiseb2b/
+- Facebook: https://www.facebook.com/wiseb2b

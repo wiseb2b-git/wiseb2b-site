@@ -16,6 +16,7 @@ interface Props {
     dateModified?: string;
     authorName?: string;
   };
+  faq?: Array<{ question: string; answer: string }>;
 }
 
 const {
@@ -24,6 +25,7 @@ const {
   ogImage = '/images/wiseb2b-og.png',
   noindex = false,
   article,
+  faq,
 } = Astro.props;
 
 const siteUrl = 'https://wiseb2b.eu';
@@ -31,13 +33,34 @@ const canonicalUrl = new URL(Astro.url.pathname, siteUrl).href;
 const fullTitle = title === 'Strona główna' ? 'WiseB2B – eCommerce B2B Platform' : `${title} | WiseB2B`;
 const ogImageUrl = ogImage.startsWith('http') ? ogImage : new URL(ogImage, siteUrl).href;
 
+const breadcrumbLabels: Record<string, string> = {
+  'platforma-b2b': 'Platforma B2B',
+  'pakiety-obszary-moduly': 'Pakiety, obszary i moduły',
+  'dla-kogo': 'Dla kogo',
+  'dla-dystrybutorow': 'Dla dystrybutorów',
+  'dla-producentow': 'Dla producentów',
+  'baza-wiedzy': 'Baza wiedzy',
+  'bezpieczna-migracja': 'Bezpieczna migracja',
+  'proces-wdrozenia': 'Proces wdrożenia',
+  'agent-ai': 'Agent AI',
+  'panel-handlowca': 'Panel Handlowca',
+  'case-study': 'Case study',
+  'wsparcie': 'Wsparcie',
+  'wdrozenia': 'Wdrożenia',
+  'o-nas': 'O nas',
+  'prezentacja-produktowa': 'Prezentacja produktowa',
+  'fundusze-europejskie': 'Fundusze europejskie',
+  'partnerzy': 'Partnerzy',
+  'funkcje': 'Funkcje',
+  'integracje': 'Integracje',
+};
 const breadcrumbItems = [];
 const pathParts = Astro.url.pathname.split('/').filter(Boolean);
 let currentPath = '';
 breadcrumbItems.push({ name: 'Strona główna', url: siteUrl + '/' });
 for (const part of pathParts) {
   currentPath += '/' + part;
-  const name = part.replace(/-/g, ' ').replace(/\b\w/g, c => c.toUpperCase());
+  const name = breadcrumbLabels[part] || part.replace(/-/g, ' ').replace(/\b\w/g, c => c.toUpperCase());
   breadcrumbItems.push({ name, url: siteUrl + currentPath + '/' });
 }
 
@@ -98,10 +121,25 @@ if (isPlatformPage) {
     "operatingSystem": "Web",
     "publisher": { "@id": siteUrl + "/#organization" },
     "offers": {
-      "@type": "Offer",
-      "price": "0",
+      "@type": "AggregateOffer",
+      "url": siteUrl + "/platforma-b2b/pakiety-obszary-moduly/",
       "priceCurrency": "PLN",
+      "availability": "https://schema.org/OnlineOnly",
     },
+  });
+}
+
+if (faq && faq.length > 0) {
+  graph.push({
+    "@type": "FAQPage",
+    "mainEntity": faq.map(item => ({
+      "@type": "Question",
+      "name": item.question,
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": item.answer,
+      },
+    })),
   });
 }
 
@@ -131,7 +169,7 @@ const jsonLd = {
 <html lang="pl">
   <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1, minimum-scale=1, user-scalable=no" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     {Astro.url.pathname === '/' && <link rel="preload" as="image" href="/images/bg-desktop-main-head.webp" type="image/webp" fetchpriority="high" media="(min-width: 768px)" />}
     {Astro.url.pathname === '/' && <link rel="preload" as="image" href="/images/bg-mobile-main-head.webp" type="image/webp" media="(max-width: 767px)" />}
     <meta name="description" content={description} />
@@ -144,6 +182,8 @@ const jsonLd = {
     <meta property="og:title" content={fullTitle} />
     <meta property="og:description" content={description} />
     <meta property="og:image" content={ogImageUrl} />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
     <meta property="og:locale" content="pl_PL" />
     <meta property="og:site_name" content="WiseB2B" />
 
@@ -221,8 +261,8 @@ const jsonLd = {
         lmObserver.observe(el);
       });
     </script>
-    <script is:inline src="/js/wow.min.js"></script>
-    <script is:inline src="/js/swiper-bundle.min.js"></script>
-    <script is:inline src="/js/custom.js"></script>
+    <script defer src="/js/wow.min.js"></script>
+    <script defer src="/js/swiper-bundle.min.js"></script>
+    <script defer src="/js/custom.js"></script>
   </body>
 </html>

@@ -1,9 +1,44 @@
 ---
 export const prerender = true;
 import BaseLayout from '../../layouts/BaseLayout.astro';
+
+const faqData = [
+  {
+    question: "Czym wyróżnia się WiseB2B na tle innych platform B2B?",
+    answer: "WiseB2B to jedyna platforma Commerce B2B łącząca cztery elementy, których nie znajdziesz razem w żadnym innym rozwiązaniu: agentów AI realizujących realne operacje zakupowe, wbudowany Panel Handlowca (Sales CRM) integrujący sprzedaż online i offline, dostęp do kodu źródłowego eliminujący vendor-lock oraz modułową architekturę pluginów umożliwiającą rozwój bez ryzyka utraty customizacji przy aktualizacjach."
+  },
+  {
+    question: "Jak działają agenci AI w platformie WiseB2B?",
+    answer: "Agenci AI w WiseB2B to autonomiczni agenci wykonujący złożone operacje na polecenie użytkownika. Klient może poprosić agenta o wyszukanie produktów, zbudowanie koszyka zakupowego, import zamówienia z pliku Excel czy PDF, sprawdzenie statusu dostawy lub porównanie produktów. Agent AI dla administratora wspiera operacje masowe, np. hurtową aktualizację cenników czy zarządzanie katalogiem."
+  },
+  {
+    question: "Co to jest Panel Handlowca i jak wspiera sprzedaż?",
+    answer: "Panel Handlowca to wbudowany moduł Sales CRM, który zastępuje potrzebę korzystania z osobnego systemu CRM. Handlowiec ma w jednym miejscu dostęp do przygotowywania ofert indywidualnych, monitorowania zakupów klientów, analizy marży i trendów zakupowych, definiowania celów sprzedażowych oraz obsługi zdarzeń i zadań. Panel Handlowca operuje na tych samych cenach i warunkach co platforma eCommerce."
+  },
+  {
+    question: "Czy WiseB2B daje dostęp do kodu źródłowego?",
+    answer: "Tak. WiseB2B udostępnia kod źródłowy, co daje pełną niezależność technologiczną. Rozwojem platformy może zająć się Twój własny zespół IT, dowolna agencja lub Partnerzy Wdrożeniowi WiseB2B. Modułowa architektura oparta na pluginach sprawia, że customizacje nie kolidują z kodem standardowym — aktualizacje nie psują rozszerzeń."
+  },
+  {
+    question: "Czym WiseB2B różni się od Magento, PrestaShop i platform SaaS?",
+    answer: "Magento i PrestaShop to platformy e-Commerce stworzone dla sprzedaży detalicznej (B2C), wymagające kosztownej rozbudowy dla procesów B2B. WiseB2B zostało zaprojektowane od podstaw dla B2B, więc funkcje takie jak grupy klientów, hierarchie cennikowe czy kredyt kupiecki są dostępne od razu. W porównaniu z platformami SaaS, WiseB2B oferuje dostęp do kodu źródłowego, brak opłat GMV i możliwość instalacji OnPremise."
+  },
+  {
+    question: "Czy WiseB2B pobiera prowizję od wartości transakcji (GMV)?",
+    answer: "Nie. Platforma działa w modelu abonamentowym z trzema planami (Starter, Professional, Enterprise). Płacisz stałą miesięczną opłatę niezależnie od tego, ile sprzedajesz. Nie ma ukrytych prowizji od obrotu ani dodatkowych opłat rosnących wraz z sukcesem."
+  },
+  {
+    question: "Co to jest Client API i jak mogą z niego korzystać moi klienci?",
+    answer: "Client API umożliwia Twoim klientom biznesowym zintegrowanie ich własnych systemów zakupowych (ERP, system zamówień, platforma procurement) bezpośrednio z Twoją platformą sprzedażową. Klient może składać zamówienia, sprawdzać stany magazynowe i pobierać faktury bez konieczności logowania się do sklepu — wszystko dzieje się automatycznie między systemami."
+  },
+  {
+    question: "Dla jakich firm jest WiseB2B — czy moja firma się kwalifikuje?",
+    answer: "WiseB2B jest przeznaczone dla polskich firm handlowych i produkcyjnych prowadzących sprzedaż B2B — przede wszystkim dystrybutorów, hurtowni i producentów z własnymi kanałami sprzedaży. Platforma sprawdza się najlepiej w firmach o rocznych obrotach od ok. 20 mln zł, posiadających kilkuset lub więcej klientów biznesowych."
+  },
+];
 ---
 
-<BaseLayout title="Platforma B2B – Platforma handlowa i sprzedażowa B2B – dedykowane rozwiązanie" description="Poznaj możliwości WiseB2B – platformy e-Commerce B2B dla firm handlowych i produkcyjnych. Zwiększ sprzedaż i obniż koszty obsługi procesu sprzedaży.">
+<BaseLayout title="Platforma B2B dla firm handlowych i produkcyjnych" description="Poznaj możliwości WiseB2B – platformy e-Commerce B2B dla firm handlowych i produkcyjnych. Zwiększ sprzedaż i obniż koszty obsługi procesu sprzedaży." faq={faqData}>
 
 <div class="functions-images">
   <div class="functions-images__bg"></div>

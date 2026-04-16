@@ -9,5 +9,9 @@ export default defineConfig({
   trailingSlash: 'always',
   output: 'server',
   adapter: netlify(),
-  integrations: [sitemap()],
+  integrations: [sitemap({
+    filter: (page) =>
+      !page.includes('/prezentacja-produktowa/') &&
+      !page.includes('/fundusze-europejskie/'),
+  })],
 });

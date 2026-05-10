@@ -1493,11 +1493,9 @@ section {
 }
 
 /* === SEO: Hero CTA button === */
-.hero-cta {
-  margin-top: 2rem;
-}
-.hero-cta a {
+a.hero-cta {
   display: inline-block;
+  margin-top: 2rem;
   background-color: #312B3F;
   color: #fff;
   padding: 14px 40px;
@@ -1506,9 +1504,10 @@ section {
   font-weight: 600;
   font-size: 1.4rem;
   letter-spacing: 0.05em;
+  text-decoration: none;
   transition: background-color 0.3s ease;
 }
-.hero-cta:hover a {
+a.hero-cta:hover {
   background-color: #d9b062;
   color: #312B3F;
 }

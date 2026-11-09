@@ -1,0 +1,332 @@
+---
+export const prerender = true;
+import BaseLayout from '../layouts/BaseLayout.astro';
+import CtaBlock from '../components/CtaBlock.astro';
+import { getCollection, render } from 'astro:content';
+
+const funkcjonalnosci = await getCollection('funkcjonalnosci');
+funkcjonalnosci.sort((a, b) => a.id.localeCompare(b.id));
+const renderedFunkcjonalnosci = await Promise.all(
+  funkcjonalnosci.map(async (f, index) => {
+    const { Content } = await render(f);
+    return { ...f, Content, index };
+  })
+);
+---
+
+<BaseLayout title="Funkcje platformy B2B" description="Zaawansowane funkcje platformy B2B, odpowiadające na potrzeby klientów, handlowców i właścicieli. Poznaj możliwości WiseB2B.">
+<section class="page-hero">
+  <div class="container">
+    <span class="page-hero__badge">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 12c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm0 2c-3.34 0-10 1.68-10 5v3h20v-3c0-3.32-6.66-5-10-5z"/></svg>
+      Funkcje platformy
+    </span>
+    <h1 class="lm-observer">Platforma eCommerce B2B dla firm handlowych i&nbsp;produkcyjnych, łącząca sklep B2B, Panel Handlowca i&nbsp;Agenta AI w&nbsp;jednym środowisku.</h1>
+    <div class="page-hero__actions lm-observer">
+      <a class="wise-button wise-button--wise-harvest" href="/zamow-demo/">Zamów demo</a>
+    </div>
+  </div>
+</section>
+
+<div class="functions-box-white-bg">
+  <div class="container">
+    <div class="row">
+      <div class="col-12">
+        <div class="functions-box-white-bg__wrap">
+          <h2 class="h2_semi functions-box-white-bg__header lm-observer">Zaawansowane funkcje platformy B2B, odpowiadające na potrzeby: </h2>
+          <div class="functions-box-white-bg__wrapper">
+            <div class="item lm-observer">
+              <span class="icon-purple-badge">
+                <svg class="icon" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 1 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-4 0v-.09a1.65 1.65 0 0 0-1.08-1.51 1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 1 1-2.83-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1 0-4h.09a1.65 1.65 0 0 0 1.51-1.08 1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 1 1 2.83-2.83l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 4 0v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 1 1 2.83 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 0 4h-.09a1.65 1.65 0 0 0-1.51 1z"/></svg>
+              </span>
+              <p class="p_semi_2 item_header">Klienta</p>
+              <p class="p_regular_3 item__description">Zawsze dostępna oferta, dopasowana do indywidualnych potrzeb i preferencji sprawi, że Twoi klienci będą kupowali więcej. </p>
+            </div>
+            <div class="item lm-observer">
+              <span class="icon-purple-badge">
+                <svg class="icon" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="16" rx="2"/><path d="M3 10h18M9 10v10"/></svg>
+              </span>
+              <p class="p_semi_2 item_header">Właściciela</p>
+              <p class="p_regular_3 item__description">Dzięki WiseB2B w pełni scyfryzujesz proces sprzedaży, jednocześnie obniżając jego koszty i zwiększając wartość transakcji.</p>
+            </div>
+            <div class="item lm-observer">
+              <span class="icon-purple-badge">
+                <svg class="icon" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M18 8c0 4.5-6 12-6 12S6 12.5 6 8a6 6 0 1 1 12 0z"/><circle cx="12" cy="8" r="2.2"/></svg>
+              </span>
+              <p class="p_semi_2 item_header">Działu sprzedaży</p>
+              <p class="p_regular_3 item__description">Odciążeni z powtarzalnych i&nbsp;monotonnych czynności handlowcy, będą mogli skoncentrować się na budowaniu relacji z kluczowymi klientami i&nbsp;docieraniu do nowych.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="functions-cards functions-cards--dark">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-10 offset-lg-1 col-xl-8 offset-xl-2 p-xl-0">
+        <h2 class="h2_semi functions-cards__heading lm-observer">Pełne wsparcie procesu zakupowego Twojego klienta</h2>
+        <div class="functions-cards__grid">
+          <div class="functions-cards__item lm-observer">
+            <span class="icon-purple-badge">
+              <svg class="icon" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="7" rx="1.5"/><rect x="14" y="3" width="7" height="7" rx="1.5"/><rect x="3" y="14" width="7" height="7" rx="1.5"/><rect x="14" y="14" width="7" height="7" rx="1.5"/></svg>
+            </span>
+            <p class="p_semi_2">Zawsze dostępne centrum klienta biznesowego</p>
+            <p class="p_regular_3">WiseB2B to jedna platforma, na której Twój klient zrobi zakupy z każdego miejsca, o każdej porze, zyska dostęp do pełnej dokumentacji i faktur, zweryfikuje status reklamacji i&nbsp;zwrotów, a nawet poszerzy swoją wiedzę o produktach, usługach i&nbsp;branży.</p>
+          </div>
+          <div class="functions-cards__item lm-observer">
+            <span class="icon-purple-badge">
+              <svg class="icon" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2 3 7v6c0 5 3.8 8.6 9 9 5.2-.4 9-4 9-9V7l-9-5z"/><circle cx="12" cy="10" r="2.4"/></svg>
+            </span>
+            <p class="p_semi_2">Indywidualne podejście do klienta</p>
+            <p class="p_regular_3">Twoi klienci oczekują od platformy B2B takiej samej jakości obsługi, jakiej doświadczają przy bezpośrednim kontakcie z handlowcem. Twoi klienci mogą skorzystać z&nbsp;indywidualnych cenników, promocji dostosowanych do nawyków zakupowych czy&nbsp;spersonalizowanych rabatów.</p>
+          </div>
+          <div class="functions-cards__item lm-observer">
+            <span class="icon-purple-badge">
+              <svg class="icon" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="16" rx="2"/><path d="M3 9h18M8 3v3M16 3v3"/></svg>
+            </span>
+            <p class="p_semi_2">Przejrzysta i intuicyjna oferta</p>
+            <p class="p_regular_3">Nieważne jak rozbudowany katalog produktowy posiadasz, dzięki WiseB2B zaprezentujesz go swojemu klientowi w&nbsp;sposób przejrzysty. Rozwiązanie pozwala na intuicyjne poruszanie się po złożonych drzewach asortymentowych dzięki zaawansowanym mechanizmom filtrowania.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="functions-cards functions-cards--panel">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-10 offset-lg-1 col-xl-8 offset-xl-2 p-xl-0">
+        <h2 class="h2_semi functions-cards__heading lm-observer">Większa wartość zamówień od&nbsp;obecnych klientów</h2>
+        <div class="functions-table lm-observer">
+          <div class="functions-table__cell">
+            <p class="p_semi_2">Większa wartość zamówień od&nbsp;obecnych klientów</p>
+            <p class="p_regular_3">Twój Klient kupuje zawsze te same produkty o&nbsp;tej samej wartości? Wykorzystaj mechanizmy automatycznego reagowania na zachowania klienta w czasie rzeczywistym, dzięki którym zwiększysz wartość zamówień. Promocje celowane, oferty okresowe dostosowane do&nbsp;pogody, sezonowości czy nadzwyczajnych okazji &ndash; to narzędzia, dzięki którym zmotywujesz klientów do większych zakupów.</p>
+          </div>
+          <div class="functions-table__cell">
+            <p class="p_semi_2">Lepsza oferta dzięki optymalizacji procesu zakupowego</p>
+            <p class="p_regular_3">Co gdyby Twoi klienci kupowali więcej i&nbsp;częściej, jednocześnie oszczędzając możliwie dużo na każdej transakcji? Tak działa optymalizator zakupów w&nbsp;WiseB2B, sugerując najkorzystniejsze promocje, ilości potrzebne do osiągnięcia lepszej ceny czy produkty komplementarne.</p>
+          </div>
+          <div class="functions-table__cell">
+            <p class="p_semi_2">Platforma, która nadąży za rozwojem Twojego biznesu</p>
+            <p class="p_regular_3">Rozważasz wejście na nowe rynki, uruchomienie sprzedaży zagranicznej czy może zastanawiasz się nad wdrożeniem sprzedaży z oddziałów? Dzięki WiseB2B ewolucja Twojego modelu biznesowego znajdzie wierne odzwierciedlenie w kanale e-Commerce.</p>
+          </div>
+          <div class="functions-table__cell">
+            <p class="p_semi_2">Skuteczne dotarcie do nowych odbiorców</p>
+            <p class="p_regular_3">Ciągle szukasz nowych klientów. A oni szukają Twoich produktów, zwykle za pomocą wyszukiwarek internetowych. Odpowiednio przygotowany pod kątem wyszukiwarek profil otwarty Twojej platformy B2B pozwoli Ci pozyskiwać nowych odbiorców w sposób pasywny.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="functions-cards">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-10 offset-lg-1 col-xl-8 offset-xl-2 p-xl-0">
+        <h2 class="h2_semi functions-cards__heading lm-observer">Dział sprzedaży w nowej roli</h2>
+        <div class="functions-cards__grid">
+          <div class="functions-cards__item lm-observer">
+            <span class="icon-purple-badge">
+              <svg class="icon" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M18 8c0 4.5-6 12-6 12S6 12.5 6 8a6 6 0 1 1 12 0z"/><circle cx="12" cy="8" r="2.2"/></svg>
+            </span>
+            <p class="p_semi_2">Budowanie wartościowych relacji</p>
+            <p class="p_regular_3">Dzięki temu, że większość sprzedaży przeniesiesz na WiseB2B, Twoi handlowcy będą mogli skupić się na budowaniu relacji z kluczowymi klientami i&nbsp;pozyskiwaniu nowych. Platforma podpowie im najlepszy w danym momencie rabat czy promocję na podstawie faktycznych danych.</p>
+          </div>
+          <div class="functions-cards__item lm-observer">
+            <span class="icon-purple-badge">
+              <svg class="icon" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7l9 6 9-6"/></svg>
+            </span>
+            <p class="p_semi_2">Odciążenie z czasochłonnej komunikacji</p>
+            <p class="p_regular_3">Odpowiadanie na pytania o produkty, dostępność, ceny czy status realizacji zamówienia to żmudne zajęcie. Możesz od niego uwolnić swoich sprzedawców, automatyzując komunikację w zakresie rutynowych działań.</p>
+          </div>
+          <div class="functions-cards__item lm-observer">
+            <span class="icon-purple-badge">
+              <svg class="icon" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="7" rx="1.5"/><rect x="14" y="3" width="7" height="7" rx="1.5"/><rect x="3" y="14" width="7" height="7" rx="1.5"/><path d="M17.5 14v7M14 17.5h7"/></svg>
+            </span>
+            <p class="p_semi_2">Centrum wiedzy o kliencie</p>
+            <p class="p_regular_3">WiseB2B stanie się dla Twoich sprzedawców miejscem, w którym znajdą całą historię zakupów poszczególnych klientów oraz dane na temat najczęściej zamawianych produktów i&nbsp;promocji, z&nbsp;których korzystają.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="functionalities">
+  <div class="container">
+    <div class="row">
+      <div class="col-12">
+        <h2 class="h2_semi">Poznaj funkcjonalności</h2>
+        <div class="functionalities__wrapper">
+          {renderedFunkcjonalnosci.map(({ data, Content, index }) => (
+            <>
+              <div class="item lm-observer" data-popup={`popup-${index}`}>
+                <p class="p_semi_1">{data.title}</p>
+                <span class="link_regular">Szczegóły</span>
+              </div>
+              <div class="item-popup" id={`popup-${index}`}>
+                <div class="item-popup__head">
+                  <h5 class="h5_semi">{data.title}</h5>
+                  <svg class="popup-close" width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M1 1L17 17M17 1L1 17" stroke="white" stroke-width="2"/>
+                  </svg>
+                </div>
+                <div class="item-popup__content">
+                  <Content />
+                </div>
+              </div>
+            </>
+          ))}
+          <svg class="functionalities__prev functionalities__arrow" width="58" height="58" viewBox="0 0 58 58" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <circle r="29" transform="matrix(-1 0 0 1 29 29)" fill="#20262e"/>
+            <path d="M35 17L22 29.5L35 42" stroke="white"/>
+          </svg>
+          <svg class="functionalities__next functionalities__arrow" width="58" height="58" viewBox="0 0 58 58" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <circle cx="29" cy="29" r="29" fill="#20262e"/>
+            <path d="M23 17L36 29.5L23 42" stroke="white"/>
+          </svg>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="functions-compare-cta" style="background:#F7F5FA;padding:60px 0;">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-10 offset-lg-1 col-xl-8 offset-xl-2">
+        <div class="lm-observer" style="text-align:center;">
+          <h3 class="h3_semi" style="margin-bottom:16px;">Sprawdź, które funkcje są dostępne w Twoim pakiecie</h3>
+          <p class="p_regular_2" style="margin-bottom:32px;max-width:640px;margin-left:auto;margin-right:auto;">Porównaj pakiety i moduły WiseB2B, aby wybrać rozwiązanie najlepiej dopasowane do potrzeb Twojej firmy.</p>
+          <a class="wise-button wise-button--wise-harvest" href="/plany-wiseb2b/#price-functions">Porównaj pakiety i moduły</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="overlay--functionalities"></div>
+
+<section class="call-expert">
+  <div class="container">
+    <div class="row">
+      <div class="col-xl-8 offset-xl-2 col-lg-10 offset-lg-1">
+        <div class="call-expert__wrapper">
+          <h2 class="h2_semi">Potrzebujesz szczegółowych informacji?</h2>
+          <p class="p_regular_2" style="color:#fff;">Porozmawiaj z nami</p>
+          <div class="call-expert__button">
+            <a class="wise-button wise-button--wise-harvest" href="/zamow-demo/">Porozmawiaj</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="questions">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-12">
+        <div class="questions__wrapper">
+          <h3 class="h3_semi">Najczęściej zadawane pytania</h3>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-lg-10 offset-lg-1 col-xl-8 offset-xl-2">
+        <div class="questions__items">
+          <div class="item">
+            <h2 class="h5_semi">Czym różnią się funkcje platformy WiseB2B od standardowego sklepu internetowego?</h2>
+            <p class="p_regular_3">WiseB2B zostało zaprojektowane od podstaw z myślą o handlu B2B: grupy klientów, indywidualne cenniki, kredyt kupiecki, sub-konta i procesy akceptacji zamówień to funkcje, których próżno szukać w typowym sklepie B2C. Do tego dochodzi Panel Handlowca i Agent AI wspierający obsługę klienta.</p>
+          </div>
+          <div class="item">
+            <h2 class="h5_semi">Czy mogę wdrożyć tylko część funkcji, które są dla mnie istotne?</h2>
+            <p class="p_regular_3">Tak. Platforma ma budowę modułową, więc możesz zacząć od funkcji kluczowych dla Twojego biznesu, a kolejne wdrażać etapami wraz z rozwojem sprzedaży. Sprawdź, które funkcje są dostępne w poszczególnych pakietach WiseB2B.</p>
+          </div>
+          <div class="item">
+            <h2 class="h5_semi">Czy funkcje platformy można dostosować do specyfiki mojej branży?</h2>
+            <p class="p_regular_3">Tak. Dzięki dostępowi do kodu źródłowego i modułowej architekturze pluginów funkcje WiseB2B można rozwijać i dostosowywać do specyfiki Twojej branży bez ryzyka utraty customizacji przy kolejnych aktualizacjach.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<script is:inline>
+(function() {
+  const items = document.querySelectorAll('.functionalities__wrapper .item[data-popup]');
+  const popups = document.querySelectorAll('.functionalities__wrapper .item-popup');
+  const overlay = document.querySelector('.overlay--functionalities');
+  const prevBtn = document.querySelector('.functionalities__prev');
+  const nextBtn = document.querySelector('.functionalities__next');
+  let currentIndex = -1;
+  function getPopupIds() {
+    return Array.from(popups).map(p => p.id);
+  }
+  function showPopup(id) {
+    const ids = getPopupIds();
+    currentIndex = ids.indexOf(id);
+    popups.forEach(p => p.classList.remove('show'));
+    const popup = document.getElementById(id);
+    if (popup) {
+      popup.classList.add('show');
+      overlay.style.display = 'block';
+      prevBtn.style.display = 'block';
+      nextBtn.style.display = 'block';
+    }
+  }
+  function hideAll() {
+    popups.forEach(p => p.classList.remove('show'));
+    overlay.style.display = 'none';
+    prevBtn.style.display = 'none';
+    nextBtn.style.display = 'none';
+    currentIndex = -1;
+  }
+  items.forEach(item => {
+    item.addEventListener('click', () => {
+      showPopup(item.getAttribute('data-popup'));
+    });
+  });
+  document.querySelectorAll('.item-popup__head .popup-close').forEach(btn => {
+    btn.addEventListener('click', hideAll);
+  });
+  overlay.addEventListener('click', hideAll);
+  prevBtn.addEventListener('click', () => {
+    const ids = getPopupIds();
+    if (currentIndex > 0) {
+      showPopup(ids[currentIndex - 1]);
+    } else {
+      showPopup(ids[ids.length - 1]);
+    }
+  });
+  nextBtn.addEventListener('click', () => {
+    const ids = getPopupIds();
+    if (currentIndex < ids.length - 1) {
+      showPopup(ids[currentIndex + 1]);
+    } else {
+      showPopup(ids[0]);
+    }
+  });
+  document.addEventListener('keydown', (e) => {
+    if (currentIndex === -1) return;
+    if (e.key === 'Escape') hideAll();
+    if (e.key === 'ArrowLeft') prevBtn.click();
+    if (e.key === 'ArrowRight') nextBtn.click();
+  });
+})();
+</script>
+<script>
+document.querySelectorAll('.questions__items .item h2').forEach(h2 => {
+  h2.addEventListener('click', () => {
+    h2.closest('.item').classList.toggle('show');
+  });
+});
+</script>
+<CtaBlock showPresentation={true} />
+</BaseLayout>

@@ -1,85 +1,79 @@
 ---
 export const prerender = true;
 import BaseLayout from '../layouts/BaseLayout.astro';
+import CtaBlock from '../components/CtaBlock.astro';
+import { getCollection } from 'astro:content';
+
+const articles = await getCollection('baza-wiedzy');
+const sortedArticles = articles.sort((a, b) => new Date(b.data.date).getTime() - new Date(a.data.date).getTime()).slice(0, 4);
 ---
 
-<BaseLayout title="Strona główna" description="WiseB2B – platforma eCommerce B2B dla firm handlowych i produkcyjnych. Zwiększ sprzedaż, obniż koszty obsługi i realizuj swoją strategię sprzedaży online.">
+<BaseLayout title="WiseB2B – Platforma eCommerce B2B" description="WiseB2B – platforma eCommerce B2B dla firm handlowych i produkcyjnych. Zwiększ sprzedaż, obniż koszty obsługi i realizuj swoją strategię sprzedaży online.">
 
-  <!-- HERO - main-head -->
-  <section class="main-head">
-    <div class="main-head-desktop-bg animated fadeIn">
-      <img src="/images/bg-desktop-main-head.webp" alt="WiseB2B eCommerce B2B Platform - tło hero" fetchpriority="high" loading="eager" decoding="async" />
-    </div>
-    <div class="main-head-mobile-bg animated fadeIn">
-      <img src="/images/bg-mobile-main-head.webp" alt="WiseB2B eCommerce B2B Platform - tło hero mobilne" loading="eager" decoding="async" />
-    </div>
-    <div class="main-head-content">
-      <div class="main-head-container container">
-        <div class="main-head-container-desc">
-          <div class="animated fadeInLeft">
-            <h1>Commerce B2B Platform</h1>
-            <p class="title-main">
-              <span class="text-head">Realizuj <i>swoją</i><br> strategię sprzedaży </span> <span class="text-head">Skaluj <i>swój</i><br> biznes </span> <span class="text-head">Wejdź na <i>wyższy</i><br> poziom e-Commerce</span>
-            <p class="yellow-text">z #wiseB2B</p>
-            <p class="hero-lead animated fadeIn">Platforma eCommerce B2B dla firm handlowych i produkcyjnych, łącząca sklep B2B, Panel Handlowca i Agenta AI w jednym środowisku.</p>
-            <a href="/prezentacja-produktowa/" class="btn-anim-puls animated fadeInUp hero-cta">ZAMÓW DEMO</a>
-          </div>
+  <!-- HERO -->
+  <section class="hp-hero">
+    <div class="hp-hero__inner">
+      <div class="hp-hero__grid-bg" aria-hidden="true"></div>
+
+      <span class="hp-hero__pill hp-hero__pill--float-left">
+        <span class="hp-hero__pill-icon"><svg width="14" height="14" viewBox="0 0 24 24" fill="#fff"><path d="M4 16V4H2V2h3a1 1 0 0 1 1 1v12h12.438l2-8H8V5h13.72a1 1 0 0 1 .97 1.243l-2.5 10a1 1 0 0 1-.97.757H5a1 1 0 0 1-1-1zm2 7a2 2 0 1 1 0-4 2 2 0 0 1 0 4zm12 0a2 2 0 1 1 0-4 2 2 0 0 1 0 4z"/></svg></span>
+        Platforma e-commerce B2B
+      </span>
+      <span class="hp-hero__pill hp-hero__pill--float-center hp-hero__pill--active">
+        <span class="hp-hero__pill-icon"><svg width="14" height="14" viewBox="0 0 24 24" fill="#fff"><path d="M13 10h7l-9 13v-9H4l9-13v9z"/></svg></span>
+        Commerce B2B Platform
+      </span>
+      <span class="hp-hero__pill hp-hero__pill--float-right">
+        <span class="hp-hero__pill-icon"><svg width="14" height="14" viewBox="0 0 24 24" fill="#fff"><path d="M12 14v2a6 6 0 0 0-6 6H4a8 8 0 0 1 8-8zm0-1c-3.315 0-6-2.685-6-6s2.685-6 6-6 6 2.685 6 6-2.685 6-6 6zm9 4h1v5h-8v-5h1v-1a3 3 0 0 1 6 0v1zm-2 0v-1a1 1 0 0 0-2 0v1h2z"/></svg></span>
+        Panel handlowca
+      </span>
+
+      <div class="hp-hero__content">
+        <span class="hp-hero__badge hp-hero__badge--left lm-observer">
+          <span class="hp-hero__pill-icon"><svg width="14" height="14" viewBox="0 0 24 24" fill="#fff"><path d="M13 10h7l-9 13v-9H4l9-13v9z"/></svg></span>
+          Praktyczne wykorzystanie AI
+        </span>
+        <span class="hp-hero__badge hp-hero__badge--right lm-observer">
+          <span class="hp-hero__pill-icon"><svg width="14" height="14" viewBox="0 0 24 24" fill="#fff"><path d="M12 22C6.477 22 2 17.523 2 12S6.477 2 12 2s10 4.477 10 10-4.477 10-10 10zm-1-11H7v2h4v4l5-5-5-5v4z"/></svg></span>
+          Mądre dopasowywanie
+        </span>
+        <h1 class="lm-observer">Wejdź na wyższy poziom e-commerce z <span class="hp-hero__hashtag">#wiseB2B</span></h1>
+        <p class="hp-hero__lead lm-observer">Platforma eCommerce B2B dla firm handlowych i produkcyjnych, łącząca sklep B2B, Panel Handlowca i Agenta AI w jednym środowisku.</p>
+        <div class="hp-hero__actions">
+          <a href="/zamow-demo/" class="btn btn--primary">Zamów demo</a>
         </div>
-        <div class="main-head-container-image">
-          <div class="main-logo-image">
-            <figure>
-              <img width="209" height="56" src="/svg/logo-wiseb2b_black.svg" alt="Logo WiseB2B" />
-            </figure>
-          </div>
-          <div class="puls animated fadeIn">
-            <div class="ring"></div>
-            <div class="ring"></div>
-            <div class="ring"></div>
-          </div>
-          <div class="main-logo-icon first-icon animated zoomIn">
-            <figure class="box-icon">
-              <img width="96" height="96" src="/svg/ways-company.svg" alt="Strategia sprzedaży" />
-            </figure>
-          </div>
-          <div class="main-logo-icon second-icon animated zoomIn">
-            <figure class="box-icon">
-              <img width="82" height="83" src="/svg/arrow-money.svg" alt="Zwiększanie przychodów" />
-            </figure>
-          </div>
-          <div class="main-logo-icon third-icon animated zoomIn">
-            <figure class="box-icon">
-              <img width="74" height="74" src="/svg/evolution.svg" alt="Rozwój i skalowanie" />
-            </figure>
-          </div>
-          <div class="main-logo-icon fourth-icon animated zoomIn">
-            <figure class="box-icon">
-              <img width="96" height="96" src="/svg/net.svg" alt="Integracje i ekosystem" />
-            </figure>
-          </div>
+      </div>
+
+      <div class="hp-hero__dashboard-wrap">
+        <div class="hp-hero__dashboard lm-observer">
+          <img src="/images/dashboard-hero.png" alt="Dashboard WiseB2B - widok panelu zarządzania" width="1120" height="547" loading="eager" fetchpriority="high" />
         </div>
       </div>
     </div>
   </section>
 
-  <!-- ZAUFALI NAM - main-partners-logos -->
-  <section class="main-partners-logos">
+  <!-- ZAUFALI NAM -->
+  <section class="hp-trust">
     <div class="container">
-      <div class="row"><div class="col-lg-12"><h2 class="wow fadeIn" data-wow-delay="0.15s">Zaufali nam</h2></div></div>
-      <div class="row">
-        <div class="col-12">
-          <div class="logos-marquee wow fadeIn" data-wow-delay="0.45s">
-            <div class="logos-marquee-track">
-              <!-- Zestaw 1 -->
-              <div class="logo-item"><img width="152" height="44" src="/images/triplexLogo.jpg" alt="Triplex" /></div>
-              <div class="logo-item"><img width="68" height="68" src="/images/candelluxLogo.jpg" alt="Candellux" /></div>
-              <div class="logo-item"><img width="132" height="50" src="/images/raw_pol_logo.jpg" alt="Raw-Pol" /></div>
-              <div class="logo-item"><img width="169" height="32" src="/images/logo_lobos.png" alt="Łobos" /></div>
-              <div class="logo-item"><img width="140" height="50" src="/images/logo-vmp.jpg" alt="VMP" /></div>
-              <div class="logo-item"><img width="140" height="50" src="/images/logo-momenti.jpg" alt="Momenti" /></div>
-              <div class="logo-item"><img width="140" height="50" src="/images/logo-tedmark.jpg" alt="TedMark" /></div>
-              <div class="logo-item"><img width="140" height="50" src="/images/logo-intermal.png" alt="Intermal" /></div>
-            </div>
-          </div>
+      <h2 class="hp-trust__title lm-observer">Zaufali nam</h2>
+      <div class="logos-marquee">
+        <div class="logos-marquee-track">
+          <div class="logo-item"><img width="152" height="44" src="/images/triplexLogo.jpg" alt="Triplex" /></div>
+          <div class="logo-item"><img width="68" height="68" src="/images/candelluxLogo.jpg" alt="Candellux" /></div>
+          <div class="logo-item"><img width="132" height="50" src="/images/raw_pol_logo.jpg" alt="Raw-Pol" /></div>
+          <div class="logo-item"><img width="169" height="32" src="/images/logo_lobos.png" alt="Łobos" /></div>
+          <div class="logo-item"><img width="140" height="50" src="/images/logo-vmp.jpg" alt="VMP" /></div>
+          <div class="logo-item"><img width="140" height="50" src="/images/logo-momenti.jpg" alt="Momenti" /></div>
+          <div class="logo-item"><img width="140" height="50" src="/images/logo-tedmark.jpg" alt="TedMark" /></div>
+          <div class="logo-item"><img width="140" height="50" src="/images/logo-intermal.png" alt="Intermal" /></div>
+          <div class="logo-item"><img width="152" height="44" src="/images/triplexLogo.jpg" alt="Triplex" /></div>
+          <div class="logo-item"><img width="68" height="68" src="/images/candelluxLogo.jpg" alt="Candellux" /></div>
+          <div class="logo-item"><img width="132" height="50" src="/images/raw_pol_logo.jpg" alt="Raw-Pol" /></div>
+          <div class="logo-item"><img width="169" height="32" src="/images/logo_lobos.png" alt="Łobos" /></div>
+          <div class="logo-item"><img width="140" height="50" src="/images/logo-vmp.jpg" alt="VMP" /></div>
+          <div class="logo-item"><img width="140" height="50" src="/images/logo-momenti.jpg" alt="Momenti" /></div>
+          <div class="logo-item"><img width="140" height="50" src="/images/logo-tedmark.jpg" alt="TedMark" /></div>
+          <div class="logo-item"><img width="140" height="50" src="/images/logo-intermal.png" alt="Intermal" /></div>
         </div>
       </div>
     </div>
@@ -102,28 +96,23 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 
       function freezeTrack() {
         frozenX = getTranslateX();
-        // Kill animation so inline transform works
         track.classList.add('dragging');
         track.style.transform = `translateX(${frozenX}px)`;
       }
 
       function syncAndResume() {
         const halfWidth = track.scrollWidth / 2;
-        // Normalize to 0..-halfWidth range
         let normalized = frozenX % halfWidth;
         if (normalized > 0) normalized -= halfWidth;
         const progress = Math.abs(normalized) / halfWidth;
-        // Clear inline styles, restore animation from current spot
         track.style.transform = '';
         track.style.animation = 'none';
-        // Force reflow so browser registers the reset
         void track.offsetWidth;
         track.style.animation = '';
         track.style.animationDelay = `${-progress * 30}s`;
         track.classList.remove('dragging');
       }
 
-      // Mouse: click+hold to pause & drag
       marquee.addEventListener('mousedown', (e) => {
         isDragging = true;
         startX = e.clientX;
@@ -131,7 +120,6 @@ import BaseLayout from '../layouts/BaseLayout.astro';
         marquee.classList.add('is-dragging');
         e.preventDefault();
       });
-
       window.addEventListener('mousemove', (e) => {
         if (!isDragging) return;
         const dx = e.clientX - startX;
@@ -139,22 +127,18 @@ import BaseLayout from '../layouts/BaseLayout.astro';
         frozenX += dx;
         track.style.transform = `translateX(${frozenX}px)`;
       });
-
       window.addEventListener('mouseup', () => {
         if (!isDragging) return;
         isDragging = false;
         marquee.classList.remove('is-dragging');
         syncAndResume();
       });
-
-      // Touch: tap+hold to pause & drag
       marquee.addEventListener('touchstart', (e) => {
         isDragging = true;
         startX = e.touches[0].clientX;
         freezeTrack();
         marquee.classList.add('is-dragging');
       }, { passive: true });
-
       marquee.addEventListener('touchmove', (e) => {
         if (!isDragging) return;
         const dx = e.touches[0].clientX - startX;
@@ -162,7 +146,6 @@ import BaseLayout from '../layouts/BaseLayout.astro';
         frozenX += dx;
         track.style.transform = `translateX(${frozenX}px)`;
       }, { passive: true });
-
       marquee.addEventListener('touchend', () => {
         if (!isDragging) return;
         isDragging = false;
@@ -172,593 +155,230 @@ import BaseLayout from '../layouts/BaseLayout.astro';
     });
   </script>
 
-  <!-- MAIN CLAIM -->
-  <section class="main-claim">
+  <!-- DLACZEGO WISEB2B -->
+  <section class="hp-why">
     <div class="container">
-      <div class="main-claim-inner wow fadeIn" data-wow-duration="1s">
-        <h2 class="main-claim-heading">
-          Jedyna platforma <span class="main-claim-highlight">Commerce B2B</span><br/>
-          z użytecznym AI, Panelem Handlowca i otwartym kodem
-        </h2>
-        <div class="main-claim-line"></div>
+      <div class="hp-why__logo lm-observer">
+        <img src="/svg/logo-wiseb2b.svg" alt="WiseB2B" width="75" height="20" />
+      </div>
+      <h2 class="hp-section-title lm-observer">Dlaczego WiseB2B?</h2>
+      <p class="hp-section-subtitle lm-observer">Platforma stworzona z myślą o specyfice handlu B2B</p>
+
+      <div class="hp-why__grid">
+        <div class="hp-why__card lm-observer">
+          <div class="hp-why__icon">
+            <svg width="28" height="28" viewBox="0 0 30 30" fill="var(--color-primary-500)"><path d="M14.9995 0.625L20.282 8.35428L29.2654 10.9897L23.5468 18.4021L23.8162 27.7603L14.9995 24.6121L6.18271 27.7603L6.45224 18.4021L0.733643 10.9897L9.717 8.35428L14.9995 0.625ZM12.4995 15H9.99949C9.99949 17.7614 12.2381 20 14.9995 20C17.6772 20 19.8634 17.895 19.9934 15.2495L19.9995 15H17.4995C17.4995 16.3807 16.3803 17.5 14.9995 17.5C13.6815 17.5 12.6018 16.4801 12.5064 15.1866L12.4995 15Z"/></svg>
+          </div>
+          <h3>Sukces wymaga wyróżnienia i perfekcji</h3>
+          <p>Możesz swoim klientom zaoferować ponadprzeciętną jakość obsługi dostosowaną do Twojej branży, potrzeb i sytuacji Twoich klientów. Stwórz dla nich przyjazne doświadczenia zakupowe.</p>
+        </div>
+
+        <div class="hp-why__card lm-observer">
+          <div class="hp-why__icon">
+            <svg width="28" height="28" viewBox="0 0 30 30" fill="var(--color-primary-500)"><path d="M20.5005 26.2501H17.8076L15.3076 20.0001H7.19239L4.69239 26.2501H1.99951L10 6.25001H12.5L20.5005 26.2501ZM26.25 15.0001V26.2501H23.75V15.0001H26.25ZM8.19214 17.5001H14.3079L11.25 9.85597L8.19214 17.5001ZM24.4116 2.89918C24.6323 2.36695 25.3677 2.36693 25.5884 2.89918L25.9045 3.66335C26.4444 4.96685 27.4519 6.00772 28.7183 6.57106L29.6143 6.97022C30.1278 7.19857 30.1278 7.94548 29.6143 8.17383L28.6658 8.5962C27.4312 9.1453 26.4417 10.1493 25.8924 11.4099L25.5835 12.1167C25.3579 12.6344 24.642 12.6344 24.4165 12.1167L24.1076 11.4099C23.5583 10.1493 22.5689 9.1453 21.3342 8.5962L20.3845 8.17383C19.8717 7.94527 19.8717 7.19873 20.3845 6.97022L21.2817 6.57106C22.548 6.00772 23.5556 4.96685 24.0955 3.66335L24.4116 2.89918Z"/></svg>
+          </div>
+          <h3>AI działający w praktyce</h3>
+          <p>AI, które naprawdę zmienia obsługę klienta. Dopasowanie produktów, obsługa koszyków, zamówień, sprawne wsparcie w zakupach to mniej maili i spraw w Twoim BOK.</p>
+        </div>
+
+        <div class="hp-why__card lm-observer">
+          <div class="hp-why__icon">
+            <svg width="28" height="28" viewBox="0 0 30 30" fill="var(--color-primary-500)"><path d="M7.50586 11.25H24.9289L25.5539 8.75H10.0059V6.25H27.1549C27.8453 6.25 28.4049 6.80965 28.4049 7.5C28.4049 7.6022 28.3924 7.70402 28.3675 7.80317L25.2425 20.3031C25.1035 20.8596 24.6035 21.25 24.0299 21.25H6.25586C5.56551 21.25 5.00586 20.6904 5.00586 20V5H2.50586V2.5H6.25586C6.94622 2.5 7.50586 3.05965 7.50586 3.75V11.25ZM7.50586 28.75C6.12515 28.75 5.00586 27.6308 5.00586 26.25C5.00586 24.8692 6.12515 23.75 7.50586 23.75C8.88657 23.75 10.0059 24.8692 10.0059 26.25C10.0059 27.6308 8.88657 28.75 7.50586 28.75ZM22.5059 28.75C21.1251 28.75 20.0059 27.6308 20.0059 26.25C20.0059 24.8692 21.1251 23.75 22.5059 23.75C23.8866 23.75 25.0059 24.8692 25.0059 26.25C25.0059 27.6308 23.8866 28.75 22.5059 28.75Z"/></svg>
+          </div>
+          <h3>Platforma projektowana dla B2B</h3>
+          <p>Od samego początku projektowana jako platforma B2B, z natywną obsługą złożoności procesów handlowych. Pracy wdrożeniowej jest znacznie mniej.</p>
+        </div>
+
+        <div class="hp-why__card lm-observer">
+          <div class="hp-why__icon">
+            <svg width="28" height="28" viewBox="0 0 52 52" fill="var(--color-primary-500)"><path d="M11.3399 16.7481C14.4149 11.8869 19.8324 8.66665 26.0004 8.66665C32.1685 8.66665 37.586 11.8869 40.6612 16.7481L44.3233 14.4315C40.4874 8.36762 33.7159 4.33331 26.0004 4.33331C18.2851 4.33331 11.5135 8.36762 7.67771 14.4315L11.3399 16.7481ZM26.0004 43.3333C19.8324 43.3333 14.4149 40.1132 11.3399 35.2519L7.67771 37.5685C11.5135 43.6323 18.2851 47.6666 26.0004 47.6666C33.7159 47.6666 40.4874 43.6323 44.3233 37.5685L40.6612 35.2519C37.586 40.1132 32.1685 43.3333 26.0004 43.3333ZM26 26C29.59 26 32.5 23.0899 32.5 19.5C32.5 15.9101 29.59 13 26 13C22.4101 13 19.5 15.9101 19.5 19.5C19.5 23.0899 22.4101 26 26 26ZM26 28.1666C30.7864 28.1666 34.6667 32.0469 34.6667 36.8333H17.3333C17.3333 32.0469 21.2135 28.1666 26 28.1666ZM13 26C13 29.5899 10.0898 32.5 6.5 32.5C2.91016 32.5 0 29.5899 0 26C0 22.41 2.91016 19.5 6.5 19.5C10.0898 19.5 13 22.41 13 26ZM45.5 32.5C49.09 32.5 52 29.5899 52 26C52 22.41 49.09 19.5 45.5 19.5C41.9101 19.5 39 22.41 39 26C39 29.5899 41.9101 32.5 45.5 32.5Z"/></svg>
+          </div>
+          <h3>Spójna obsługa klienta online i offline</h3>
+          <p>Jedyna platforma B2B z modułami dla handlowców. Kalendarze spotkań, ofertowanie, baza klientów i pełna komunikacja w jednym miejscu.</p>
+        </div>
+
+        <div class="hp-why__card lm-observer">
+          <div class="hp-why__icon">
+            <svg width="28" height="28" viewBox="0 0 30 30" fill="var(--color-primary-500)"><path d="M5 22.5V17.875C5 16.8395 4.16054 16 3.125 16H2.5V14H3.125C4.16054 14 5 13.1605 5 12.125V7.5C5 5.42894 6.67894 3.75 8.75 3.75H10V6.25H8.75C8.05965 6.25 7.5 6.80965 7.5 7.5V12.625C7.5 13.7323 6.7801 14.6715 5.78279 15C6.7801 15.3285 7.5 16.2677 7.5 17.375V22.5C7.5 23.1904 8.05965 23.75 8.75 23.75H10V26.25H8.75C6.67894 26.25 5 24.5711 5 22.5ZM25 17.875V22.5C25 24.5711 23.3211 26.25 21.25 26.25H20V23.75H21.25C21.9404 23.75 22.5 23.1904 22.5 22.5V17.375C22.5 16.2677 23.2199 15.3285 24.2173 15C23.2199 14.6715 22.5 13.7323 22.5 12.625V7.5C22.5 6.80965 21.9404 6.25 21.25 6.25H20V3.75H21.25C23.3211 3.75 25 5.42894 25 7.5V12.125C25 13.1605 25.8395 14 26.875 14H27.5V16H26.875C25.8395 16 25 16.8395 25 17.875Z"/></svg>
+          </div>
+          <h3>Niezależność to podstawa bezpieczeństwa</h3>
+          <p>Rozwiązanie otwarte na wsparcie niezależnych agencji. SaaS lub instalacja na swoich serwerach z dostępem do kodu źródłowego.</p>
+        </div>
+
       </div>
     </div>
   </section>
 
-  <!-- FEATURES - main-feature -->
-  <section class="main-feature">
-    <div class="main-feature-container container">
-      <div class="main-feature-title">
-        <div class="box-img-logo wow fadeIn" data-wow-delay=".25s">
-          <img class="logo" src="/svg/logo-wiseb2b_black.svg" alt="WiseB2B" />
-        </div>
-        <h2 class="wow fadeIn" data-wow-delay=".3525s">Commerce B2B Platform</h2>
-      </div>
-      <div class="main-feature-wrapper">
-        <div class="main-feature-box-tool wow fadeIn" data-wow-duration="0.5s">
-          <div class="main-circle">
-            <div class="image-tool">
-              <img src="/svg/icon-tools.svg" alt="Narzędzia platformy B2B" />
-            </div>
-          </div>
-          <div class="puls wow fadeIn">
-            <div class="ring"></div>
-            <div class="ring"></div>
-            <div class="ring"></div>
-          </div>
-          <div class="arrows">
-            <svg class="left-top-arrow" width="104" height="49" viewBox="0 0 104 49" fill="none"
-                xmlns="http://www.w3.org/2000/svg">
-                <path class="first"
-                    d="M11.0618 12.8586C16.3096 17.7424 22.0032 22.1196 28.0675 25.9323C34.1924 29.7576 39.4332 32.0574 39.6884 31.6363C39.9436 31.2151 35.2531 28.1093 29.7301 23.8517C24.2152 19.6074 18.9221 15.0801 13.8718 10.2878C10.6738 7.27746 8.90876 5.58321 7.75703 4.72731L9.47877 4.68134L13.6912 4.68264C16.3894 4.70582 18.8296 4.71584 20.8843 4.68999C24.9927 4.64906 27.56 4.45389 27.5873 4.04408C27.6147 3.63428 25.096 3.07439 20.9831 2.5832C18.9321 2.3381 16.4915 2.10016 13.7547 1.91063C12.3947 1.78408 10.9497 1.75814 9.4512 1.72723C8.69558 1.72203 7.91853 1.71483 7.10536 1.74769C6.60575 1.77716 4.34559 1.80558 3.85907 3.20353C3.78951 3.37068 3.69953 3.52509 3.63968 3.70399L3.5227 4.14886C3.50168 4.37478 3.48464 4.55766 3.40136 4.75608C3.36432 5.15413 3.27575 5.52568 3.23101 5.89046C3.16194 6.63277 3.09587 7.34281 3.03081 8.04209C2.90068 9.44064 2.92748 10.7779 2.92816 12.0475C2.94023 14.5878 3.0523 16.8662 3.19839 18.7787C3.50128 22.6049 3.97343 24.9601 4.4165 24.9579C4.85956 24.9557 5.19756 22.5999 5.48566 18.8071C5.60829 16.9087 5.74155 14.664 5.90952 12.1621C6.02464 10.925 6.07078 9.61625 6.18419 8.28125L6.22523 7.84016C7.72841 9.60194 9.33712 11.27 11.0424 12.8351"
-                    fill="#A2B4C6" />
-                <path class="second"
-                    d="M44.2148 34.065C43.8824 34.62 45.2005 35.8929 47.1982 36.8275C49.196 37.7621 53.3994 39.0213 53.6716 38.4173C53.9438 37.8132 50.2411 35.6999 48.3087 34.7605C46.3762 33.8212 44.5483 33.4992 44.2148 34.065Z"
-                    fill="#A2B4C6" />
-                <path class="third"
-                    d="M58.5299 40.302C58.3242 40.7712 59.9234 41.8098 62.1349 42.5364C64.3464 43.263 68.8469 44.1158 68.9913 43.6084C69.1357 43.101 64.9302 41.5161 62.7732 40.7836C60.6163 40.0512 58.7258 39.8211 58.4977 40.299"
-                    fill="#A2B4C6" />
-                <path class="fourth"
-                    d="M72.8491 44.5208C72.7498 44.8913 74.527 45.6427 76.8394 46.0965C79.1519 46.5504 83.7821 46.9378 83.8298 46.5408C83.8776 46.1437 79.3958 45.2059 77.1399 44.7247C74.884 44.2435 72.9484 44.1502 72.8384 44.5198"
-                    fill="#A2B4C6" />
-                <path class="fifth"
-                    d="M92.8253 46.9108C90.4787 46.8226 88.576 46.8409 88.552 47.0991C88.5279 47.3573 90.4141 47.7498 92.8034 47.8419C94.2705 47.9008 95.7397 47.8817 97.205 47.7849C98.0902 47.7989 98.9709 47.6529 99.805 47.354C98.948 47.1609 98.0699 47.0792 97.192 47.1109L92.837 46.901"
-                    fill="#A2B4C6" />
-            </svg>
-            <svg class="left-bottom-arrow" width="108" height="68" viewBox="0 0 108 68" fill="none"
-                xmlns="http://www.w3.org/2000/svg">
-                <path class="first"
-                    d="M17.2284 54.0321C21.3028 48.1338 25.9215 42.6343 31.0237 37.6064C36.1824 32.5531 40.8058 29.1799 41.1456 29.5363C41.4854 29.8927 37.5728 33.9347 33.0949 39.2807C28.6221 44.6119 24.4267 50.1718 20.5255 55.9383C18.05 59.5661 16.6907 61.6003 15.75 62.6839L17.4414 62.3585L21.5549 61.4511C24.185 60.848 26.5659 60.3133 28.578 59.8966C32.599 59.0528 35.1482 58.6912 35.2631 59.0855C35.3779 59.4799 33.0387 60.5684 29.1277 61.9328C27.1774 62.6134 24.8451 63.3707 22.2132 64.1445C20.9123 64.5607 19.5067 64.8968 18.0499 65.2494C17.3131 65.417 16.5558 65.5911 15.7546 65.734C15.2603 65.8127 13.0469 66.2711 12.2711 65.0105C12.1672 64.8622 12.0461 64.7308 11.9492 64.569L11.7393 64.1597C11.6701 63.9436 11.6141 63.7686 11.4901 63.5928C11.3683 63.212 11.2019 62.8682 11.0798 62.5216C10.8526 61.8115 10.6354 61.1323 10.4214 60.4634C9.9935 59.1256 9.73203 57.8139 9.45958 56.5738C8.92492 54.0904 8.54429 51.8413 8.27556 49.942C7.74833 46.1403 7.7028 43.7387 8.13596 43.6455C8.56912 43.5523 9.40597 45.7803 10.5032 49.4223C11.0313 51.2499 11.6443 53.4134 12.3465 55.8206C12.725 57.004 13.0516 58.2722 13.4495 59.5515L13.5845 59.9734C14.6735 57.9296 15.8858 55.9545 17.2145 54.0593"
-                    fill="#A2B4C6" />
-                <path class="second"
-                    d="M45.0431 26.1907C44.599 25.7201 45.6125 24.1935 47.3624 22.8511C49.1123 21.5086 52.9465 19.3747 53.3422 19.906C53.738 20.4374 50.5766 23.2977 48.8914 24.6308C47.2063 25.9638 45.4904 26.6715 45.0431 26.1907Z"
-                    fill="#A2B4C6" />
-                <path class="third"
-                    d="M57.6817 17.0204C57.3799 16.6065 58.7183 15.2482 60.7217 14.0629C62.7251 12.8775 66.9368 11.0766 67.187 11.5411C67.4372 12.0056 63.671 14.4581 61.7221 15.6373C59.7732 16.8165 57.9765 17.4479 57.651 17.0303"
-                    fill="#A2B4C6" />
-                <path class="fourth"
-                    d="M70.7581 9.82018C70.5814 9.47966 72.1554 8.36365 74.3161 7.42295C76.4768 6.48225 80.9153 5.10793 81.0473 5.48542C81.1793 5.86291 77.0042 7.74286 74.9046 8.69805C72.805 9.65324 70.9348 10.1607 70.7479 9.82345"
-                    fill="#A2B4C6" />
-                <path class="fifth"
-                    d="M89.7527 3.18918C87.48 3.77999 85.6179 4.17144 85.5389 3.92446C85.4599 3.67747 87.2174 2.88841 89.531 2.2845C90.9511 1.91144 92.3901 1.61401 93.8418 1.39344C94.7033 1.18935 95.5948 1.14243 96.4737 1.25493C95.6783 1.6278 94.8383 1.8965 93.9742 2.05442L89.7662 3.19621"
-                    fill="#A2B4C6" />
-            </svg>
-            <svg class="right-top-arrow" width="103" height="94" viewBox="0 0 103 94" fill="none"
-                xmlns="http://www.w3.org/2000/svg">
-                <path class="first"
-                    d="M89.2431 27.1512C82.0753 27.2718 74.9377 28.0666 67.9246 29.5251C60.8589 31.0166 55.4882 32.9941 55.5964 33.4745C55.7046 33.9549 61.2378 32.9398 68.1696 32.1771C75.0863 31.4105 82.0394 31.0016 89.0014 30.952C93.3931 30.9032 95.8397 30.8998 97.263 30.7178L96.0544 31.9449L93.0186 34.8652C91.0585 36.7197 89.2934 38.4047 87.831 39.8482C84.8994 42.7268 83.1851 44.6478 83.4496 44.962C83.7141 45.2762 85.917 43.9329 89.2209 41.4346C90.8686 40.1888 92.792 38.6677 94.8952 36.9064C95.9628 36.0544 97.0218 35.071 98.1229 34.0541C98.6709 33.5338 99.2357 33.0002 99.7988 32.4126C100.138 32.0449 101.747 30.457 101.128 29.1124C101.062 28.9438 101.02 28.7701 100.939 28.5997L100.715 28.1981C100.573 28.0207 100.459 27.8772 100.381 27.6764C100.132 27.364 99.938 27.0349 99.7172 26.741C99.2522 26.1583 98.8074 25.6009 98.3694 25.052C97.4932 23.9541 96.5466 23.0093 95.6656 22.095C93.8953 20.2731 92.2345 18.7094 90.8029 17.4328C87.9314 14.8862 85.9579 13.5167 85.6402 13.8256C85.3225 14.1344 86.7127 16.0661 89.1354 18.9985C90.3635 20.4513 91.8242 22.1609 93.4381 24.08C94.2132 25.0511 95.0875 26.026 95.9316 27.0665L96.2079 27.4128C93.9031 27.1859 91.5873 27.0997 89.2734 27.1547"
-                    fill="#A2B4C6" />
-                <path class="second"
-                    d="M50.6511 34.8636C50.5058 34.2332 48.6733 34.2302 46.5859 34.9422C44.4985 35.6543 40.5968 37.662 40.8195 38.286C41.0423 38.91 45.1755 37.8648 47.2193 37.2015C49.263 36.5381 50.8032 35.5025 50.6511 34.8636Z"
-                    fill="#A2B4C6" />
-                <path class="third"
-                    d="M36.0126 40.2971C35.8354 39.8165 33.9629 40.1772 31.8657 41.1873C29.7685 42.1975 25.9346 44.704 26.1824 45.1698C26.4303 45.6355 30.5594 43.861 32.6213 42.8928C34.6832 41.9247 36.2049 40.7795 36.0378 40.277"
-                    fill="#A2B4C6" />
-                <path class="fourth"
-                    d="M22.7698 47.1878C22.5844 46.852 20.7829 47.5431 18.8021 48.8198C16.8213 50.0965 13.2167 53.0283 13.4576 53.3475C13.6986 53.6666 17.5779 51.2343 19.537 50.0165C21.496 48.7988 22.9552 47.5237 22.7782 47.1812"
-                    fill="#A2B4C6" />
-                <path class="fifth"
-                    d="M6.72024 59.3192C8.47196 57.7554 9.83017 56.4227 9.66842 56.22C9.50668 56.0173 7.87555 57.0425 6.09021 58.6331C4.99241 59.6081 3.94709 60.6407 2.95862 61.7266C2.31112 62.3304 1.77782 63.0463 1.38416 63.8401C2.13545 63.385 2.8248 62.8348 3.43531 62.2033L6.71859 59.3343"
-                    fill="#A2B4C6" />
-            </svg>
-            <svg class="right-bottom-arrow" width="101" height="40" viewBox="0 0 101 40" fill="none"
-                xmlns="http://www.w3.org/2000/svg">
-                <path class="first"
-                    d="M91.692 28.6224C86.0645 24.1814 80.0338 20.2817 73.6797 16.9746C67.264 13.66 61.8536 11.7939 61.6334 12.2345C61.4133 12.675 66.3408 15.3892 72.1917 19.1836C78.0334 22.9654 83.6771 27.0474 89.1003 31.4131C92.5325 34.1535 94.4294 35.6986 95.6469 36.4581L93.9346 36.6439L89.736 36.9851C87.0449 37.1814 84.6119 37.3698 82.5662 37.5626C78.4747 37.9374 75.9318 38.3407 75.9379 38.7514C75.9439 39.162 78.4998 39.5153 82.639 39.6705C84.7032 39.748 87.155 39.7867 89.8981 39.7531C91.2639 39.7686 92.7062 39.677 94.2023 39.586C94.9559 39.5297 95.7309 39.4737 96.5387 39.3748C97.0343 39.3048 99.2846 39.0927 99.6559 37.6599C99.7116 37.4876 99.7888 37.3264 99.8339 37.1432L99.9143 36.6903C99.9169 36.4634 99.919 36.2798 99.9859 36.0752C99.9904 35.6755 100.048 35.298 100.063 34.9308C100.072 34.1853 100.08 33.4722 100.088 32.77C100.104 31.3655 99.9686 30.0349 99.8646 28.7695C99.6461 26.2386 99.3491 23.9769 99.048 22.0825C98.435 18.2937 97.773 15.9846 97.3315 16.0228C96.8901 16.061 96.7448 18.4365 96.766 22.2402C96.7981 24.1423 96.8478 26.3904 96.8838 28.8976C96.8697 30.1401 96.9301 31.4482 96.9256 32.788L96.9206 33.231C95.2791 31.5973 93.5401 30.0655 91.7132 28.6443"
-                    fill="#A2B4C6" />
-                <path class="second"
-                    d="M56.9246 10.1817C57.2109 9.60151 55.7936 8.44003 53.7265 7.67094C51.6594 6.90185 47.3675 5.98857 47.1453 6.61275C46.9231 7.23692 50.7853 9.04214 52.7878 9.8213C54.7902 10.6005 56.6382 10.7728 56.9246 10.1817Z"
-                    fill="#A2B4C6" />
-                <path class="third"
-                    d="M42.1496 5.12932C42.3165 4.64498 40.6381 3.73984 38.3749 3.19543C36.1116 2.65101 31.5567 2.16695 31.454 2.68443C31.3513 3.20192 35.6718 4.43968 37.8812 4.99429C40.0905 5.54889 41.9934 5.62458 42.1819 5.12968"
-                    fill="#A2B4C6" />
-                <path class="fourth"
-                    d="M27.5349 2.08878C27.6037 1.71138 25.7713 1.10704 23.4296 0.842668C21.0879 0.578299 16.4415 0.568638 16.4262 0.968257C16.4109 1.36788 20.9541 1.93823 23.2417 2.2344C25.5293 2.53056 27.466 2.46618 27.5456 2.0889"
-                    fill="#A2B4C6" />
-                <path class="fifth"
-                    d="M7.43047 1.33091C9.77639 1.22794 11.6714 1.05502 11.6743 0.795727C11.6773 0.536431 9.76546 0.298555 7.37652 0.401029C5.90951 0.461653 4.4467 0.600105 2.99421 0.815789C2.11076 0.873816 1.24487 1.09087 0.437819 1.45662C1.30761 1.57937 2.18951 1.58941 3.06188 1.48649L7.4196 1.3416"
-                    fill="#A2B4C6" />
-            </svg>
-          </div>
-        </div>
+  <!-- CASE STUDY -->
+  <section class="hp-case">
+    <div class="container">
+      <h2 class="hp-section-title lm-observer">Case study</h2>
+      <p class="hp-section-subtitle lm-observer">Sprawdź, jak nasi klienci rozwijają sprzedaż B2B</p>
 
-        <!-- Card 1: Portfolio funkcjonalności B2B -->
-        <div class="main-feature-container-cards  left-top">
-          <div class="main-feature-card wow   fadeInRight" data-wow-duration=".6s" data-wow-delay="0">
-            <div class="main-feature-box">
-              <div class="image-box">
-                <svg class="bg-card bg-card-1" viewBox="0 0 157 112" fill="none"
-                    xmlns="http://www.w3.org/2000/svg">
-                    <path class="wave-first wave-1"
-                        d="M100.76 51.0436C106.754 93.5961 101.848 121.339 62.5085 126.88C23.1687 132.421 -13.5816 102.418 -19.5756 59.8654C-30.6781 -18.9541 84.8818 -27.5548 124.222 -33.0962C163.562 -38.6376 94.7664 8.49097 100.76 51.0436Z"
-                        fill="url(#paint0_linear_17_115)" fill-opacity="0.3" />
-                    <path class="wave-second wave-1"
-                        d="M90.3901 56.2403C90.3901 99.213 81.6625 126 41.9343 126C2.20609 126 -30 91.1638 -30 48.1911C-30 -31.4065 85.6299 -23.8045 125.358 -23.8045C165.086 -23.8045 90.3901 13.2676 90.3901 56.2403Z"
-                        fill="url(#paint1_linear_17_115)" />
-                    <circle class="first-circle" opacity="0.2" cx="37.4688" cy="81.2604" r="20.3125"
-                        fill="#F7F7F7" />
-                    <circle class="second-circle" opacity="0.2" cx="75.3594" cy="25.6615" r="12.8906"
-                        fill="#F7F7F7" />
-                    <circle class="third-circle" opacity="0.2" cx="37.5991" cy="29.5677" r="5.07812"
-                        fill="#F7F7F7" />
-                    <defs>
-                        <linearGradient id="paint0_linear_17_115" x1="-8.72258" y1="136.914" x2="174.579"
-                            y2="34.9166" gradientUnits="userSpaceOnUse">
-                            <stop stop-color="#000428" />
-                            <stop offset="1" stop-color="#004E92" />
-                        </linearGradient>
-                        <linearGradient id="paint1_linear_17_115" x1="-30" y1="126" x2="165.737"
-                            y2="50.5674" gradientUnits="userSpaceOnUse">
-                            <stop stop-color="#000428" />
-                            <stop offset="1" stop-color="#004E92" />
-                        </linearGradient>
-                    </defs>
-                </svg>
-                <div class="box-icon">
-                  <img loading="lazy" width="50" height="50" src="/svg/feature-icon-first.svg" class="img-icon" alt="Ikona platformy eCommerce B2B" />
-                </div>
-              </div>
-              <button class="card-title">
-                <h4>Platforma eCommerce B2B</h4>
-              </button>
-              <div class="bg-after-box"></div>
-            </div>
-            <div class="card-desc">
-              <button class="btn-close-card"><img src="/svg/btn-close.svg"></button>
-              <p>Pełen zestaw gotowych modułów dla handlu i dystrybucji dedykowanych specyfice i złożoności relacji B2B.</p>
-              <a href="/platforma-b2b/funkcje/" class="show-more">PRZEJDŹ DO SZCZEGÓŁÓW</a>
-            </div>
-          </div>
+      <div class="hp-case__inner lm-observer">
+        <div class="hp-case__visual">
+          <img src="/case-study/triplex/browser-blender-4-811x608.png" alt="Sklep B2B Triplex na platformie WiseB2B" width="811" height="608" loading="lazy" />
         </div>
-
-        <!-- Card 2: Praktyczne wykorzystanie AI -->
-        <div class="main-feature-container-cards  left-bottom">
-          <div class="main-feature-card wow   fadeInRight" data-wow-duration=".6s" data-wow-delay=".5s">
-            <div class="main-feature-box">
-              <div class="image-box">
-                <svg class="bg-card bg-card-1" viewBox="0 0 157 112" fill="none"
-                    xmlns="http://www.w3.org/2000/svg">
-                    <path class="wave-first wave-1"
-                        d="M100.76 51.0436C106.754 93.5961 101.848 121.339 62.5085 126.88C23.1687 132.421 -13.5816 102.418 -19.5756 59.8654C-30.6781 -18.9541 84.8818 -27.5548 124.222 -33.0962C163.562 -38.6376 94.7664 8.49097 100.76 51.0436Z"
-                        fill="url(#paint0_linear_17_115)" fill-opacity="0.3" />
-                    <path class="wave-second wave-1"
-                        d="M90.3901 56.2403C90.3901 99.213 81.6625 126 41.9343 126C2.20609 126 -30 91.1638 -30 48.1911C-30 -31.4065 85.6299 -23.8045 125.358 -23.8045C165.086 -23.8045 90.3901 13.2676 90.3901 56.2403Z"
-                        fill="url(#paint1_linear_17_115)" />
-                    <circle class="first-circle" opacity="0.2" cx="37.4688" cy="81.2604" r="20.3125"
-                        fill="#F7F7F7" />
-                    <circle class="second-circle" opacity="0.2" cx="75.3594" cy="25.6615" r="12.8906"
-                        fill="#F7F7F7" />
-                    <circle class="third-circle" opacity="0.2" cx="37.5991" cy="29.5677" r="5.07812"
-                        fill="#F7F7F7" />
-                    <defs>
-                        <linearGradient id="paint0_linear_17_115" x1="-8.72258" y1="136.914" x2="174.579"
-                            y2="34.9166" gradientUnits="userSpaceOnUse">
-                            <stop stop-color="#000428" />
-                            <stop offset="1" stop-color="#004E92" />
-                        </linearGradient>
-                        <linearGradient id="paint1_linear_17_115" x1="-30" y1="126" x2="165.737"
-                            y2="50.5674" gradientUnits="userSpaceOnUse">
-                            <stop stop-color="#000428" />
-                            <stop offset="1" stop-color="#004E92" />
-                        </linearGradient>
-                    </defs>
-                </svg>
-                <div class="box-icon">
-                  <svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg" class="img-icon">
-                    <path d="M20 4C18.9 4 18 4.9 18 6V7.1C14.1 7.9 11 11.3 11 15.5V16H9C7.9 16 7 16.9 7 18C7 19.1 7.9 20 9 20H11V22C11 26.2 14.1 29.6 18 30.4V32H15C13.9 32 13 32.9 13 34C13 35.1 13.9 36 15 36H25C26.1 36 27 35.1 27 34C27 32.9 26.1 32 25 32H22V30.4C25.9 29.6 29 26.2 29 22V20H31C32.1 20 33 19.1 33 18C33 16.9 32.1 16 31 16H29V15.5C29 11.3 25.9 7.9 22 7.1V6C22 4.9 21.1 4 20 4ZM16 16C16 15.4 16.4 15 17 15H23C23.6 15 24 15.4 24 16C24 16.6 23.6 17 23 17H17C16.4 17 16 16.6 16 16ZM16 20C16 19.4 16.4 19 17 19H23C23.6 19 24 19.4 24 20C24 20.6 23.6 21 23 21H17C16.4 21 16 20.6 16 20ZM17 23H23C23.6 23 24 23.4 24 24C24 24.6 23.6 25 23 25H17C16.4 25 16 24.6 16 24C16 23.4 16.4 23 17 23Z" fill="white"/>
-                  </svg>
-                </div>
-              </div>
-              <button class="card-title">
-                <h4>Praktyczne wykorzystanie AI</h4>
-              </button>
-              <div class="bg-after-box"></div>
+        <div class="hp-case__content">
+          <div class="hp-case__logo">
+            <img src="/images/triplexLogo.jpg" alt="Triplex" width="152" height="44" />
+          </div>
+          <h3>Czołowy dystrybutor pirotechniki postawił na WiseB2B</h3>
+          <div class="hp-case__stats">
+            <div class="hp-case__stat">
+              <span class="hp-case__stat-value">46,36 %</span>
+              <span class="hp-case__stat-label">zamówień pochodzących z platformy B2B</span>
             </div>
-            <div class="card-desc">
-              <button class="btn-close-card"><img src="/svg/btn-close.svg"></button>
-              <p>Technologie AI stanowią dzisiaj podstawę wzrostu efektywności. WiseB2B wykorzystuje te możliwości, zarówno przy obsłudze klienta, jak i szybkim procesie wdrożenia na nowy poziom efektywności.</p>
-              <a href="/platforma-b2b/agent-ai/" class="show-more">PRZEJDŹ DO SZCZEGÓŁÓW</a>
+            <div class="hp-case__stat">
+              <span class="hp-case__stat-value">49,55 %</span>
+              <span class="hp-case__stat-label">obrotu wygenerowanego poprzez platformę B2B</span>
+            </div>
+            <div class="hp-case__stat">
+              <span class="hp-case__stat-value">36,43 %</span>
+              <span class="hp-case__stat-label">klientów korzystających z platformy B2B</span>
             </div>
           </div>
-        </div>
-
-        <!-- Card 3: Panel Handlowca - sales CRM -->
-        <div class="main-feature-container-cards  right-top">
-          <div class="main-feature-card wow   fadeInLeft" data-wow-duration=".6s" data-wow-delay=".25s">
-            <div class="main-feature-box">
-              <div class="image-box">
-                <svg class="bg-card bg-card-1" viewBox="0 0 157 112" fill="none"
-                    xmlns="http://www.w3.org/2000/svg">
-                    <path class="wave-first wave-1"
-                        d="M100.76 51.0436C106.754 93.5961 101.848 121.339 62.5085 126.88C23.1687 132.421 -13.5816 102.418 -19.5756 59.8654C-30.6781 -18.9541 84.8818 -27.5548 124.222 -33.0962C163.562 -38.6376 94.7664 8.49097 100.76 51.0436Z"
-                        fill="url(#paint0_linear_17_115)" fill-opacity="0.3" />
-                    <path class="wave-second wave-1"
-                        d="M90.3901 56.2403C90.3901 99.213 81.6625 126 41.9343 126C2.20609 126 -30 91.1638 -30 48.1911C-30 -31.4065 85.6299 -23.8045 125.358 -23.8045C165.086 -23.8045 90.3901 13.2676 90.3901 56.2403Z"
-                        fill="url(#paint1_linear_17_115)" />
-                    <circle class="first-circle" opacity="0.2" cx="37.4688" cy="81.2604" r="20.3125"
-                        fill="#F7F7F7" />
-                    <circle class="second-circle" opacity="0.2" cx="75.3594" cy="25.6615" r="12.8906"
-                        fill="#F7F7F7" />
-                    <circle class="third-circle" opacity="0.2" cx="37.5991" cy="29.5677" r="5.07812"
-                        fill="#F7F7F7" />
-                    <defs>
-                        <linearGradient id="paint0_linear_17_115" x1="-8.72258" y1="136.914" x2="174.579"
-                            y2="34.9166" gradientUnits="userSpaceOnUse">
-                            <stop stop-color="#000428" />
-                            <stop offset="1" stop-color="#004E92" />
-                        </linearGradient>
-                        <linearGradient id="paint1_linear_17_115" x1="-30" y1="126" x2="165.737"
-                            y2="50.5674" gradientUnits="userSpaceOnUse">
-                            <stop stop-color="#000428" />
-                            <stop offset="1" stop-color="#004E92" />
-                        </linearGradient>
-                    </defs>
-                </svg>
-                <div class="box-icon">
-                  <svg width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg" class="img-icon">
-                    <path d="M24 8C21.8 8 20 9.8 20 12C20 14.2 21.8 16 24 16C26.2 16 28 14.2 28 12C28 9.8 26.2 8 24 8Z" fill="white"/>
-                    <path d="M36 14C34.3 14 33 15.3 33 17C33 18.7 34.3 20 36 20C37.7 20 39 18.7 39 17C39 15.3 37.7 14 36 14Z" fill="white"/>
-                    <path d="M12 14C10.3 14 9 15.3 9 17C9 18.7 10.3 20 12 20C13.7 20 15 18.7 15 17C15 15.3 13.7 14 12 14Z" fill="white"/>
-                    <path d="M18 18H30C31.1 18 32 18.9 32 20V28C32 29.1 31.1 30 30 30H18C16.9 30 16 29.1 16 28V20C16 18.9 16.9 18 18 18ZM20 22V24H28V22H20ZM20 26V27H25V26H20Z" fill="white"/>
-                    <path d="M8 22H14V28H8C6.9 28 6 27.1 6 26V24C6 22.9 6.9 22 8 22Z" fill="white"/>
-                    <path d="M34 22H40C41.1 22 42 22.9 42 24V26C42 27.1 41.1 28 40 28H34V22Z" fill="white"/>
-                    <path d="M19 32H29L31 38C31.4 39.2 30.5 40 29.3 40H18.7C17.5 40 16.6 39.2 17 38L19 32Z" fill="white"/>
-                  </svg>
-                </div>
-              </div>
-              <button class="card-title">
-                <h4>Panel Handlowca - sales CRM</h4>
-              </button>
-              <div class="bg-after-box"></div>
-            </div>
-            <div class="card-desc">
-              <button class="btn-close-card"><img src="/svg/btn-close.svg"></button>
-              <p>Spraw, aby obsługa Twojego klienta była zintegrowana, aby off-line i on-line mogły ze sobą płynnie współistnieć i współpracować.</p>
-              <a href="/platforma-b2b/panel-handlowca/" class="show-more">PRZEJDŹ DO SZCZEGÓŁÓW</a>
-            </div>
-          </div>
-        </div>
-
-        <!-- Card 4: Mądre dopasowanie -->
-        <div class="main-feature-container-cards  right-bottom">
-          <div class="main-feature-card wow   fadeInLeft" data-wow-duration=".6s" data-wow-delay=".75s">
-            <div class="main-feature-box">
-              <div class="image-box">
-                <svg class="bg-card bg-card-1" viewBox="0 0 157 112" fill="none"
-                    xmlns="http://www.w3.org/2000/svg">
-                    <path class="wave-first wave-1"
-                        d="M100.76 51.0436C106.754 93.5961 101.848 121.339 62.5085 126.88C23.1687 132.421 -13.5816 102.418 -19.5756 59.8654C-30.6781 -18.9541 84.8818 -27.5548 124.222 -33.0962C163.562 -38.6376 94.7664 8.49097 100.76 51.0436Z"
-                        fill="url(#paint0_linear_17_115)" fill-opacity="0.3" />
-                    <path class="wave-second wave-1"
-                        d="M90.3901 56.2403C90.3901 99.213 81.6625 126 41.9343 126C2.20609 126 -30 91.1638 -30 48.1911C-30 -31.4065 85.6299 -23.8045 125.358 -23.8045C165.086 -23.8045 90.3901 13.2676 90.3901 56.2403Z"
-                        fill="url(#paint1_linear_17_115)" />
-                    <circle class="first-circle" opacity="0.2" cx="37.4688" cy="81.2604" r="20.3125"
-                        fill="#F7F7F7" />
-                    <circle class="second-circle" opacity="0.2" cx="75.3594" cy="25.6615" r="12.8906"
-                        fill="#F7F7F7" />
-                    <circle class="third-circle" opacity="0.2" cx="37.5991" cy="29.5677" r="5.07812"
-                        fill="#F7F7F7" />
-                    <defs>
-                        <linearGradient id="paint0_linear_17_115" x1="-8.72258" y1="136.914" x2="174.579"
-                            y2="34.9166" gradientUnits="userSpaceOnUse">
-                            <stop stop-color="#000428" />
-                            <stop offset="1" stop-color="#004E92" />
-                        </linearGradient>
-                        <linearGradient id="paint1_linear_17_115" x1="-30" y1="126" x2="165.737"
-                            y2="50.5674" gradientUnits="userSpaceOnUse">
-                            <stop stop-color="#000428" />
-                            <stop offset="1" stop-color="#004E92" />
-                        </linearGradient>
-                    </defs>
-                </svg>
-                <div class="box-icon">
-                  <img loading="lazy" width="40" height="40" src="/svg/feature-madra.svg" class="img-icon" alt="Ikona mądrego dopasowania" />
-                </div>
-              </div>
-              <button class="card-title">
-                <h4>Mądre dopasowanie</h4>
-              </button>
-              <div class="bg-after-box"></div>
-            </div>
-            <div class="card-desc">
-              <button class="btn-close-card"><img src="/svg/btn-close.svg"></button>
-              <p>Zaczyna się od pomysłu, czym i jak się wyróżnić, aby rozwijać rynek. Platforma eCommerce B2B wspiera strategię w wielu obszarach. Castomizacja procesów i dopasowanie jest koniecznością.</p>
-              <a href="/wsparcie/" class="show-more">PRZEJDŹ DO SZCZEGÓŁÓW</a>
-            </div>
-          </div>
+          <a href="/case-study/triplex/" class="btn btn--dark">Przejdź do szczegółów</a>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- WIERZYMY - main-believe -->
-  <section class="main-believe">
-    <div class="top-rings">
-      <div class="container-rings">
-        <div class="ring"></div>
-        <div class="ring"></div>
-        <div class="ring"></div>
+  <!-- FUNKCJONALNOŚCI -->
+  <section class="hp-features">
+    <div class="hp-features__showcase lm-observer">
+      <h2 class="hp-section-title">Funkcjonalności</h2>
+      <p class="hp-section-subtitle">Sprawdź, co oferuje platforma WiseB2B</p>
+
+      <div class="hp-features__slider swiper">
+        <div class="swiper-wrapper">
+          <div class="swiper-slide">
+            <div class="hp-features__card">
+              <div class="hp-features__card-img">
+                <img src="/images/dashboard-hero.png" alt="Agent AI w działaniu" width="1328" height="649" loading="lazy" />
+              </div>
+              <div class="hp-features__card-body">
+                <h3>Zobacz Agenta AI w działaniu!</h3>
+                <p>Znajdź produkt, złóż zamówienie i uzyskaj wsparcie bez przeszukiwania katalogów. Agent AI rozumie Twoje potrzeby i pomaga realizować zakupy sprawniej.</p>
+                <a href="/agent-ai/" class="btn btn--primary">Dowiedz się więcej</a>
+              </div>
+            </div>
+          </div>
+          <div class="swiper-slide">
+            <div class="hp-features__card">
+              <div class="hp-features__card-img">
+                <img src="/images/panel-handlowca-dashboard.png" alt="Panel Handlowca WiseB2B" width="968" height="791" loading="lazy" />
+              </div>
+              <div class="hp-features__card-body">
+                <h3>Twój zespół sprzedaży zasługuje na lepsze narzędzie</h3>
+                <p>Panel Handlowca WiseB2B to jedno środowisko pracy dla Handlowca z Klientem. Koniec z przełączaniem się między CRM, mailem i ERP-em.</p>
+                <a href="/panel-handlowca/" class="btn btn--primary">Dowiedz się więcej</a>
+              </div>
+            </div>
+          </div>
+          <div class="swiper-slide">
+            <div class="hp-features__card">
+              <div class="hp-features__card-img">
+                <img src="/images/Dashboard-1.png" alt="Platforma Commerce B2B WiseB2B" width="1328" height="649" loading="lazy" />
+              </div>
+              <div class="hp-features__card-body">
+                <h3>Jedyna platforma Commerce B2B z użytecznym AI</h3>
+                <p>Panel Handlowca i otwarty kod w jednym środowisku. Platforma projektowana od podstaw pod złożoność procesów handlu B2B.</p>
+                <a href="/platforma-commerce-b2b/" class="btn btn--primary">Dowiedz się więcej</a>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="hp-features__nav hp-features__nav--prev" aria-label="Poprzedni slajd">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M15 18l-6-6 6-6" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </div>
+        <div class="hp-features__nav hp-features__nav--next" aria-label="Następny slajd">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M9 6l6 6-6 6" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </div>
+        <div class="hp-features__pagination swiper-pagination"></div>
       </div>
     </div>
-    <div class="bottom-rings">
-      <div class="container-rings">
-        <div class="ring"></div>
-        <div class="ring"></div>
-        <div class="ring"></div>
+  </section>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      if (typeof Swiper === 'undefined') return;
+      new Swiper('.hp-features__slider', {
+        loop: true,
+        autoplay: { delay: 6000, disableOnInteraction: false },
+        navigation: {
+          nextEl: '.hp-features__nav--next',
+          prevEl: '.hp-features__nav--prev',
+        },
+        pagination: {
+          el: '.hp-features__pagination',
+          clickable: true,
+        },
+      });
+    });
+  </script>
+
+  <!-- BLOG -->
+  <section class="hp-blog">
+    <div class="container">
+      <h2 class="hp-section-title lm-observer">Mogą Cię zainteresować</h2>
+      <p class="hp-section-subtitle lm-observer">Artykuły o eCommerce B2B i platformie WiseB2B</p>
+
+      <div class="hp-blog__grid">
+        {sortedArticles.map((article) => (
+          <a href={`/baza-wiedzy/${article.id}/`} class="hp-blog__card lm-observer">
+            <div class="hp-blog__card-img">
+              {article.data.image && <img src={article.data.image} alt={article.data.title} width="376" height="250" loading="lazy" />}
+              <span class="hp-blog__card-cat">{article.data.category}</span>
+            </div>
+            <div class="hp-blog__card-body">
+              <h3>{article.data.title}</h3>
+            </div>
+          </a>
+        ))}
+      </div>
+      <div class="hp-blog__more">
+        <a href="/baza-wiedzy/" class="btn btn--dark">Sprawdź więcej</a>
       </div>
     </div>
-    <div class="main-believe-container container">
-      <div class="main-believe-box">
-        <h2 class="wow fadeIn" data-wow-delay="0.3s">Dlaczego WiseB2B?</h2>
+  </section>
 
-        <div class="box-believe-point ">
-          <div class="box-believe-icon wow fadeIn" data-wow-delay="0.5s">
-            <img loading="lazy" width="47" height="60" src="/svg/first-icon-believe-1.svg" class="believe-icon wow zoomIn" alt="AI w praktyce" />
-          </div>
-          <div class="box-believe-desc">
-            <h4 class="wow fadeInRight" data-wow-delay="0.6s">AI działający w praktyce</h4>
-            <p class="wow fadeInRight" data-wow-delay="0.7s">WiseB2B oferuje nowoczesne narzędzie Agentów AI, które zupełnie zmienia doświadczenia zakupowe klientów. Dopasowanie produktów, obsługa całych koszyków, zamówień, sprawne wsparcie w zakupach to mniej maili i spraw w Twoim BOK.</p>
-          </div>
-        </div>
-
-        <div class="box-believe-point ">
-          <div class="box-believe-icon wow fadeIn" data-wow-delay="0.8s">
-            <img loading="lazy" width="45" height="60" src="/svg/second-icon-believe.svg" class="believe-icon wow zoomIn" alt="Obsługa klienta online i offline" />
-          </div>
-          <div class="box-believe-desc">
-            <h4 class="wow fadeInRight" data-wow-delay="0.9s">Spójna obsługa klienta online i offline</h4>
-            <p class="wow fadeInRight" data-wow-delay="1s">WiseB2B to jedyna platforma dla B2B, która oferuje również moduły dla pracy handlowców. Kalendarze spotkań, ofertowanie, nadzór nad swoją bazą klientów, oraz pełna komunikacja z klientem — wszystko w jednym miejscu. Nie potrzebujesz osobnego systemu CRM, aby sprawnie obsługiwać klientów. Monitorowanie procesów handlowych nigdy nie było takie łatwe.</p>
-          </div>
-        </div>
+  <!-- PARTNERSTWO -->
+  <section class="hp-partner">
+    <div class="hp-partner__inner lm-observer">
+      <div class="hp-partner__image">
+        <img src="/images/team-partnership.jpg" alt="Zespół WiseB2B" width="575" height="575" loading="lazy" />
       </div>
-
-      <div class="main-believe-box">
-        <div class="box-believe-point ">
-          <div class="box-believe-icon wow fadeIn" data-wow-delay="0.3s">
-            <img loading="lazy" width="60" height="60" src="/svg/fourtrh-icon-believe.svg" class="believe-icon wow zoomIn" alt="Wyróżnienie i perfekcja" />
-          </div>
-          <div class="box-believe-desc">
-            <h4 class="wow fadeInRight" data-wow-delay="0.4s">Sukces wymaga wyróżnienia i perfekcji</h4>
-            <p class="wow fadeInRight" data-wow-delay="0.5s">Możesz swoim klientom zaoferować ponadprzeciętną jakość obsługi. I to dostosowaną do Twojej branży, potrzeb i sytuacji Twoich klientów. Stwórz dla nich przyjazne doświadczenia zakupowe. WiseB2B to technologia przygotowana do rozszerzeń i indywidualnej rozbudowy, umożliwi Ci perfekcyjne dostosowanie procesu obsługi do ich potrzeb.</p>
-          </div>
-        </div>
-
-        <div class="box-believe-point ">
-          <div class="box-believe-icon wow fadeIn" data-wow-delay="0.6s">
-            <img loading="lazy" width="60" height="60" src="/svg/firth-icon-believe.svg" class="believe-icon wow zoomIn" alt="Platforma projektowana dla B2B" />
-          </div>
-          <div class="box-believe-desc">
-            <h4 class="wow fadeInRight" data-wow-delay="0.7s">Platforma projektowana dla B2B</h4>
-            <p class="wow fadeInRight" data-wow-delay="0.8s">Wiele rozwiązań dostępnych na rynku ewoluowało z platform B2C. Dodatkowe moduły, rozszerzenia, łatki. WiseB2B od samego początku projektowane jest jako platforma B2B, z całą obsługą złożoności procesów handlowych w B2B. Dzięki natywnej obsłudze B2B pracy wdrożeniowej jest znacznie mniej.</p>
-          </div>
-        </div>
-
-        <div class="box-believe-point ">
-          <div class="box-believe-icon wow fadeIn" data-wow-delay="0.9s">
-            <img loading="lazy" width="60" height="60" src="/svg/third-icon-believe.svg" class="believe-icon wow zoomIn" alt="Niezależność i bezpieczeństwo" />
-          </div>
-          <div class="box-believe-desc">
-            <h4 class="wow fadeInRight" data-wow-delay="1s">Niezależność to podstawa bezpieczeństwa</h4>
-            <p class="wow fadeInRight" data-wow-delay="1.1s">Oprogramowanie SaaS to wygoda, ale często też ograniczenie. WiseB2B jest rozwiązaniem otwartym na wsparcie niezależnych agencji i dostawców usług. Możesz korzystać SaaS, ale też zainstalować je na swoich serwerach. Możesz mieć dostęp do kodu źródłowego. Jesteś bezpieczny i niezależny.</p>
-          </div>
+      <div class="hp-partner__card">
+        <div class="hp-partner__content">
+          <h2>Nasze rozwiązanie jest wdrażane w kooperacji z czołowymi firmami oferującymi rozwiązania <span>eCommerce</span></h2>
+          <p>Łączymy ponad 25 lat doświadczenia tworzenia produktów usprawniających pracę firm i automatyzujących procesy w przedsiębiorstwach.</p>
+          <a href="/o-nas/" class="btn btn--outline-light">Poznaj nasz zespół</a>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- CASE STUDY - main-case-study -->
-  <section class="main-case-study">
-    <div class="swiper myCaseStudy swiper-case-study">
-      <div class="swiper-wrapper swiper-wrapper-case-study">
-        <div class="swiper-slide swiper-slide-case-study">
-          <div class="container-case-study ">
-            <h2 class="wow fadeIn" data-wow-delay="0.2s">Case study</h2>
-            <div class="box-logo mobile wow zoomIn" data-wow-delay="0.3s">
-              <img loading="lazy" width="152" height="44" src="/images/triplexLogo.jpg" class="img-logo" alt="Logo Triplex" />
-            </div>
-            <h3 class="mobile wow fadeIn" data-wow-delay="0.5s">Czołowy dystrybutor pirotechniki postawił na WiseB2B</h3>
-            <div class="box-image-product">
-              <div class="first-bg">
-                <img class="bg-product wow zoomIn" data-wow-delay="0.2s" src="/svg/BG.svg" alt="Tło case study" />
-              </div>
-              <img loading="lazy" width="682" height="566" src="/svg/desktop-product.svg" class="img-product wow perspectiveLeftReturn" alt="Podgląd platformy WiseB2B na ekranie komputera" data-wow-delay="" />
-            </div>
-          </div>
-          <div class="container-case-study second  wow fadeInRight" data-wow-delay="0.1s">
-            <div class="box-logo desktop">
-              <img loading="lazy" width="152" height="44" src="/images/triplexLogo.jpg" class="img-logo" alt="Logo Triplex" />
-            </div>
-            <h3 class="desktop wow fadeIn" data-wow-delay="0.2s">Czołowy dystrybutor pirotechniki postawił na WiseB2B</h3>
-            <div class="case-study-cards wow fadeIn" data-wow-delay="0.3s">
-              <div class="study-card first wow fadeIn" data-wow-delay="0.4s">
-                <h3 class="num-proc wow fadeInRight" data-wow-delay="0.5s">46,36%</h3>
-                <p class="wow fadeInUp" data-wow-delay="0.6s">zamówień pochodzących z platformy B2B</p>
-              </div>
-              <div class="study-card first wow fadeIn" data-wow-delay="0.4s">
-                <h3 class="num-proc wow fadeInRight" data-wow-delay="0.5s">49,55%</h3>
-                <p class="wow fadeInUp" data-wow-delay="0.6s">obrotu wygenerowanego poprzez platformę B2B</p>
-              </div>
-              <div class="study-card first wow fadeIn" data-wow-delay="0.4s">
-                <h3 class="num-proc wow fadeInRight" data-wow-delay="0.5s">34,43%</h3>
-                <p class="wow fadeInUp" data-wow-delay="0.6s">klientów korzystających z platformy B2B</p>
-              </div>
-              <div class="study-card last wow fadeInRight" data-wow-delay=".8s">
-                <a href="/case-study/triplex/" class="btn-study-card btn-anim-puls">
-                   PRZEJDŹ DO SZCZEGÓŁÓW
-                </a>
-              </div>
-            </div>
-          </div>
+  <!-- TESTIMONIALE -->
+  <section class="hp-testimonials">
+    <div class="container">
+      <h2 class="hp-section-title lm-observer">Wspaniali Klienci</h2>
+      <p class="hp-section-subtitle lm-observer">Co mówią o nas nasi klienci</p>
+
+      <div class="hp-testimonials__card lm-observer">
+        <img src="/svg/double-quotes-r.svg" alt="" class="hp-testimonials__quote hp-testimonials__quote--right" width="80" height="80" />
+        <blockquote>
+          Jesteśmy w branży 30 lat, nasi klienci również &ndash; baliśmy się na początku, że klienci przyzwyczajeni do exceli i telefonu nie będą chcieli składać zamówień przez platformę B2B. Ale reakcje są inne &ndash; klienci są zachwyceni. Takie zmiany też dobrze wpływają na wizerunek branży i przyciągają młode pokolenie. Bardzo pozytywnie oceniam zmiany, jakie wniosła platforma B2B wdrożona przez Sente.
+        </blockquote>
+        <div class="hp-testimonials__author">
+          <p class="hp-testimonials__author-name">Iwona Blachaja</p>
+          <p class="hp-testimonials__author-site">www.triplex.pl</p>
         </div>
-      </div>
-      <div class="swiper-button-next swiper-button-next-case-study wow fadeIn" data-wow-delay="1s"></div>
-      <div class="swiper-pagination swiper-pagination-case-study wow fadeIn" data-wow-delay="1s"></div>
-      <div class="swiper-button-prev swiper-button-prev-case-study  wow fadeIn" data-wow-delay="1s"></div>
-    </div>
-  </section>
-
-  <!-- BLOG - main-post -->
-  <section class="main-post">
-    <div class="main-post-container">
-      <h3 class="wow fadeIn" data-wow-delay="0.75s">Mogą Cię zainteresować</h3>
-      <div class="container-posts">
-        <div class="swiper myCategory wow fadeIn" data-wow-delay="1.25s">
-          <div class="swiper-wrapper swiper-wrapper-category">
-            <div class="swiper-slide swiper-slide-category">
-              <button type="button" class="btn-category active" id="btn-all-posts" data-cat="all">
-                Wszystko
-              </button>
-            </div>
-            <div class="swiper-slide swiper-slide-category">
-              <button type="button" class="btn-category" id="btn-dystrybucja-i-handel" data-cat="5">
-                Dystrybucja i Handel
-              </button>
-            </div>
-            <div class="swiper-slide swiper-slide-category">
-              <button type="button" class="btn-category" id="btn-funkcje" data-cat="16">
-                Funkcje
-              </button>
-            </div>
-            <div class="swiper-slide swiper-slide-category">
-              <button type="button" class="btn-category" id="btn-korzysci" data-cat="15">
-                Korzyści
-              </button>
-            </div>
-          </div>
-          <div class="swiper-scrollbar"></div>
-        </div>
-        <div class="swiper myPosts">
-          <div class="swiper-wrapper swiper-wrapper-post">
-            <div class="swiper-slide swiper-slide-post" data-cats="16">
-              <div class="card function wow zoomIn" data-wow-delay="0.5s" id="post-0">
-                <div class="card-image wow fadeInDown" data-wow-duration="2s" data-wow-delay="0.75s">
-                  <div class="tag-category">
-                    <p>Funkcje</p>
-                  </div>
-                  <img loading="lazy" width="376" height="250" src="/images/startup-gcc67d2922_640.jpg" alt="Dedykowana czy gotowa platforma B2B" />
-                </div>
-                <div class="card-desc wow fadeInUp" data-wow-delay="0.5s">
-                  <p>NOWY WPIS</p>
-                  <h5>Dedykowana czy gotowa platforma B2B – na co się zdecydować?</h5>
-                  <button class="btn-card">
-                    <a href="/baza-wiedzy/dedykowana-czy-gotowa-platforma-b2b-na-co-sie-zdecydowac/">DOWIEDZ SIĘ WIĘCEJ</a>
-                  </button>
-                </div>
-              </div>
-            </div>
-
-            <div class="swiper-slide swiper-slide-post" data-cats="5">
-              <div class="card function wow zoomIn" data-wow-delay="0.5s" id="post-1">
-                <div class="card-image wow fadeInDown" data-wow-duration="2s" data-wow-delay="0.75s">
-                  <div class="tag-category">
-                    <p>Dystrybucja i Handel</p>
-                  </div>
-                  <img loading="lazy" width="376" height="250" src="/images/student-gf2aecdbed_640.jpg" alt="E-commerce w modelu B2B" />
-                </div>
-                <div class="card-desc wow fadeInUp" data-wow-delay="0.5s">
-                  <p>NOWY WPIS</p>
-                  <h5>E-commerce w modelu B2B</h5>
-                  <button class="btn-card">
-                    <a href="/baza-wiedzy/e-commerce-w-modelu-b2b/">DOWIEDZ SIĘ WIĘCEJ</a>
-                  </button>
-                </div>
-              </div>
-            </div>
-
-            <div class="swiper-slide swiper-slide-post" data-cats="15">
-              <div class="card function wow zoomIn" data-wow-delay="0.5s" id="post-2">
-                <div class="card-image wow fadeInDown" data-wow-duration="2s" data-wow-delay="0.75s">
-                  <div class="tag-category">
-                    <p>Korzyści</p>
-                  </div>
-                  <img loading="lazy" width="293" height="250" src="/images/mockup-of-a-man-using-a-macbook-on-a-wooden-desk.png" alt="Korzyści z wdrożenia platformy B2B" />
-                </div>
-                <div class="card-desc wow fadeInUp" data-wow-delay="0.5s">
-                  <p>NOWY WPIS</p>
-                  <h5>Korzyści z wdrożenia platformy B2B</h5>
-                  <button class="btn-card">
-                    <a href="/baza-wiedzy/korzysci-z-wdrozenia-platformy-b2b/">DOWIEDZ SIĘ WIĘCEJ</a>
-                  </button>
-                </div>
-              </div>
-            </div>
-
-            <div class="swiper-slide swiper-slide-post" data-cats="5">
-              <div class="card function wow zoomIn" data-wow-delay="0.5s" id="post-3">
-                <div class="card-image wow fadeInDown" data-wow-duration="2s" data-wow-delay="0.75s">
-                  <div class="tag-category">
-                    <p>Dystrybucja i Handel</p>
-                  </div>
-                  <img loading="lazy" width="376" height="250" src="/images/people-gac9f90525_640.jpg" alt="Jak wybrać najlepszą platformę B2B" />
-                </div>
-                <div class="card-desc wow fadeInUp" data-wow-delay="0.5s">
-                  <p>NOWY WPIS</p>
-                  <h5>Jak wybrać najlepszą platformę B2B?</h5>
-                  <button class="btn-card">
-                    <a href="/baza-wiedzy/jak-wybrac-najlepsza-platforme-b2b/">DOWIEDZ SIĘ WIĘCEJ</a>
-                  </button>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
+        <img src="/svg/double-quotes-l.svg" alt="" class="hp-testimonials__quote hp-testimonials__quote--left" width="80" height="80" />
       </div>
     </div>
   </section>
 
-  <!-- LIDER - main-lider -->
-  <section class="main-lider">
-    <div class="main-info-lider container">
-      <div class="info-container-lider wow fadeInLeft" data-wow-delay="0.1s">
-        <figure class="info-container-lider-image">
-          <img loading="lazy" width="685" height="690" src="/images/Jakub_Czyzkowski.jpg" class="lider-image" alt="Jakub Czyżkowski - CEO WiseB2B" />
-        </figure>
-        <div class="info-container-lider-desc wow fadeInUp" data-wow-delay="0.1s">
-          <p class="name-lider">Jakub Czyżkowski</p>
-          <p class="role-lider">CEO</p>
-        </div>
-      </div>
-      <div class="info-container wow fadeInRight" data-wow-delay="0.1s">
-        <div class="info-box">
-          <figure class="info-container-image wow zoomIn" data-wow-delay="0.25s">
-            <img loading="lazy" width="93" height="93" src="/svg/main-lider-tool.svg" class="info-image" alt="Ponad 25 lat doświadczenia" />
-          </figure>
-          <div class="info-container-desc wow fadeInRight" data-wow-delay="0.3s">
-            <p>Łączymy ponad 25 lat doświadczenia tworzenia produktów usprawniających pracę firm i automatyzujących procesy w przedsiebiorstwach</p>
-            <button class="wow fadeInUp btn-anim-puls" data-wow-delay="0.4s"><a href="/o-nas/">POZNAJ NASZ ZESPÓŁ</a></button>
-          </div>
-        </div>
-        <div class="info-box">
-          <figure class="info-container-image wow zoomIn" data-wow-delay="1.25s">
-            <img loading="lazy" width="90" height="93" src="/svg/main-lider-file.svg" class="info-image" alt="Dziesiątki wdrożeń B2B" />
-          </figure>
-          <div class="info-container-desc wow fadeInRight" data-wow-delay="1.3s">
-            <p>Nasze rozwiązanie jest wdrazane w kooperacji z czołowymi firmami oferującymi rozwiązania<br />
-eCommerce</p>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
+  <CtaBlock />
 
 </BaseLayout>

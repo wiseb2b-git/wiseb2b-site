@@ -5,9 +5,10 @@ interface Props {
   slugs?: string[];
   limit?: number;
   showButton?: boolean;
+  subtitle?: string;
 }
 
-const { slugs, limit = 3, showButton = true } = Astro.props;
+const { slugs, limit = 3, showButton = true, subtitle = 'Artykuły o eCommerce B2B i platformie WiseB2B' } = Astro.props;
 
 const allArticles = await getCollection('baza-wiedzy');
 let articles;
@@ -26,6 +27,7 @@ if (slugs && slugs.length > 0) {
       <div class="col-xl-10 offset-xl-1 col-lg-12">
         <div class="knowledge-bases__wrapper">
           <h2 class="h2_semi">Baza wiedzy</h2>
+          {subtitle && <p class="knowledge-bases__subtitle p_regular_2">{subtitle}</p>}
           <div class="box-posts">
             {articles.map((article) => (
               <a class="item lm-observer" href={`/baza-wiedzy/${article!.id}/`}>

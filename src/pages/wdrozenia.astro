@@ -1,53 +1,51 @@
 ---
 export const prerender = true;
 import BaseLayout from '../layouts/BaseLayout.astro';
+import CtaBlock from '../components/CtaBlock.astro';
 ---
 
 <BaseLayout title="Wdrożenia platformy B2B – przykłady realizacji" description="Przykłady wdrożeń platformy B2B WiseB2B. Wspieramy firmy dystrybucyjne i produkcyjne w cyfrowej transformacji sprzedaży." service={{ name: "Wdrożenie platformy B2B WiseB2B", serviceType: "Wdrożenie oprogramowania B2B", description: "Kompleksowe wdrożenie platformy eCommerce B2B dla firm handlowych i produkcyjnych. Obejmuje analizę wymagań, konfigurację, integrację z ERP i szkolenia." }}>
+
+<section class="demo-hero">
+  <div class="container">
+    <span class="demo-hero__badge">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M13 10h7l-9 13v-9H4l9-13v9z"/></svg>
+      Wdrożenie
+    </span>
+    <h1 class="lm-observer">Zobacz, jak firmy rozwijają sprzedaż B2B z WiseB2B</h1>
+    <p class="demo-hero__lead lm-observer">Poznaj przykłady wdrożeń WiseB2B u producentów i dystrybutorów, którzy przenieśli sprzedaż hurtową do kanału cyfrowego.</p>
+    <div class="demo-hero__actions">
+      <a href="/zamow-demo/" class="btn btn--primary">Zamów demo</a>
+    </div>
+  </div>
+</section>
 
 <div class="implementation-lic">
   <div class="container">
     <div class="row">
       <div class="col-lg-10 offset-lg-1">
-        <h1 class="h2_semi lm-observer">Przykłady wdrożeń platformy B2B</h1>
 
         <div class="items lm-observer">
           <div class="item">
-            <div class="item__logo d-none d-lg-block">
-              <img width="74" height="21" src="/images/triplex-logo.png" class="attachment-implementation-logo size-implementation-logo" alt="Logo Triplex" />
-            </div>
             <div class="item__image">
-              <img width="333" height="130" src="/images/AdobeStock_284274614-900x350.jpeg" class="attachment-functions-images-small size-functions-images-small" alt="Wdrożenie platformy B2B w firmie dystrybucyjnej" />
+              <img width="811" height="608" src="/case-study/triplex/browser-blender-4-811x608.png" class="attachment-functions-images-small size-functions-images-small" alt="Wdrożenie platformy B2B w firmie dystrybucyjnej" />
             </div>
             <div class="item__content">
-              <img width="74" height="21" src="/images/triplex-logo.png" class="d-block d-lg-none" alt="Logo Triplex" />
-              <h4 class="h4_semi">Czołowy dystrybutor pirotechniki postawił na WiseB2B</h4>
+              <img width="74" height="21" src="/images/triplex-logo.png" class="item__content-logo" alt="Logo Triplex" />
+              <h2 class="h3_semi">Jak Triplex usprawnił obsługę zamówień B2B?</h2>
               <p class="p_regular_3 description">Triplex, jeden z czołowych dystrybutorów artykułów pirotechnicznych w Polsce i Europie, wdrożył platformę WiseB2B, aby przenieść większość sprzedaży do kanału cyfrowego. Dzięki platformie klienci mogą składać zamówienia o każdej porze, a handlowcy zostali odciążeni z powtarzalnych czynności.</p>
-              <a class="p_regular_3" href="/case-study/triplex/" >
-                Przeczytaj case study
-                <svg width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <path d="M4.5 2.25L8.25 6L4.5 9.75" stroke="#C6973D" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/>
-                </svg>
-              </a>
+              <a class="btn btn--dark" href="/case-study/triplex/">Przeczytaj case study</a>
             </div>
           </div>
-          <div class="item">
-            <div class="item__logo d-none d-lg-block">
-              <img width="74" height="21" src="/case-study/vmp/vmp-logo.png" class="attachment-implementation-logo size-implementation-logo" alt="Logo VMP Group" />
-            </div>
+          <div class="item item--reverse">
             <div class="item__image">
-              <img width="333" height="130" src="/case-study/vmp/vmp-banner.png" class="attachment-functions-images-small size-functions-images-small" alt="Wdrożenie platformy B2B dla dystrybutora bielizny" />
+              <img width="1456" height="706" src="/case-study/vmp/vmp-homepage.png" class="attachment-functions-images-small size-functions-images-small" alt="Wdrożenie platformy B2B dla dystrybutora bielizny" />
             </div>
             <div class="item__content">
-              <img width="74" height="21" src="/case-study/vmp/vmp-logo.png" class="d-block d-lg-none" alt="Logo VMP Group" />
-              <h4 class="h4_semi">Platforma B2B dla lidera dystrybucji bielizny w Europie</h4>
-              <p class="p_regular_3 description">VMP Group, dystrybutor bielizny i odzieży premium z katalogiem ponad 86 000 indeksów, wdrożył WiseB2B aby zastąpić przestarzały system B2B. Platforma obsługuje 13 rynków zagranicznych, automatyzuje zwroty i integruje się z ERP — skracając czas obsługi zamówień o 60%.</p>
-              <a class="p_regular_3" href="/case-study/vmp/" >
-                Przeczytaj case study
-                <svg width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <path d="M4.5 2.25L8.25 6L4.5 9.75" stroke="#C6973D" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/>
-                </svg>
-              </a>
+              <img width="74" height="21" src="/case-study/vmp/vmp-logo.png" class="item__content-logo" alt="Logo VMP Group" />
+              <h2 class="h3_semi">Jak VMP Group zdigitalizował sprzedaż w 13 krajach?</h2>
+              <p class="p_regular_3 description">VMP Group, dystrybutor bielizny i odzieży premium z katalogiem ponad 86 000 indeksów, wdrożył WiseB2B aby zastąpić przestarzały system B2B. Platforma obsługuje 13 rynków zagranicznych, automatyzuje zwroty i integruje się z ERP, skracając czas obsługi zamówień o 60%.</p>
+              <a class="btn btn--dark" href="/case-study/vmp/">Przeczytaj case study</a>
             </div>
           </div>
         </div>
@@ -134,7 +132,7 @@ import BaseLayout from '../layouts/BaseLayout.astro';
             <div class="content">
               <p class="item_category p_regular_3">Korzyści</p>
               <h2 class="title p_semi_1">Korzyści z wdrożenia platformy B2B</h2>
-              <p class="excerpt p_regular_3">O tym, że e-Commerce w modelu B2B i B2C istotnie się od siebie różni, chyba nie trzeba nikogo przekonywać. E-transakcje z udziałem klienta detalicznego z reguły są szybkie, ale to właśnie sprzedaż dla firm pozwala osiągać większe zyski. Czym charakteryzuje się branża e-Commerce w modelu B2B? Jak jeszcze różni się od B2C?</p>
+              <p class="excerpt p_regular_3">Dobrze dobrana platforma e-Commerce B2B zmienia ekonomikę sprzedaży: odciąża dział handlowy, obniża koszt obsługi zamówienia, skraca czas odpowiedzi klienta i otwiera nowe ścieżki wzrostu. Sprawdź, jakie korzyści przynosi wdrożenie platformy B2B w firmie handlowej lub produkcyjnej.</p>
             </div>
           </a>
         </div>
@@ -210,4 +208,5 @@ document.addEventListener('DOMContentLoaded', function() {
 });
 </script>
 
+<CtaBlock showPresentation={true} />
 </BaseLayout>

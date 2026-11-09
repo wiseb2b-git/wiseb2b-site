@@ -1,0 +1,179 @@
+---
+export const prerender = true;
+import BaseLayout from '../layouts/BaseLayout.astro';
+import CtaBlock from '../components/CtaBlock.astro';
+---
+
+<BaseLayout title="Zamów demo WiseB2B" description="Zarezerwuj prezentację produktową WiseB2B. Porozmawiamy o Twoich potrzebach i pokażemy możliwości platformy B2B." webPageType="ContactPage">
+
+<div class="overlay"></div>
+
+<section class="demo-hero">
+  <div class="container">
+    <span class="demo-hero__badge">
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M12 12c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm0 2c-3.33 0-10 1.67-10 5v3h20v-3c0-3.33-6.67-5-10-5z"/></svg>
+      Zamów demo
+    </span>
+    <h1 class="lm-observer">Zarezerwuj około <span>60 minut</span> w wygodnym dla Ciebie momencie.</h1>
+    <p class="demo-hero__lead lm-observer">Platforma eCommerce B2B dla firm handlowych i produkcyjnych, łącząca sklep B2B, Panel Handlowca i Agenta AI w jednym środowisku.</p>
+    <div class="demo-hero__actions">
+      <span class="btn btn--primary js-presentation-contact-us-top">Skonsultuj się z nami</span>
+      <span class="demo-hero__or">lub</span>
+      <span class="btn btn--light js-presentation-form-call">Umów się na prezentację</span>
+    </div>
+  </div>
+</section>
+
+<section class="demo-agenda">
+  <div class="container">
+    <div class="demo-agenda__inner lm-observer">
+      <div class="demo-agenda__image">
+        <img src="/images/prezentacja-produktowa-hero.jpg" alt="Prezentacja produktowa WiseB2B" width="500" height="400" loading="lazy" />
+      </div>
+      <div class="demo-agenda__content">
+        <h2>Czego możesz się spodziewać po naszym spotkaniu?</h2>
+        <p>Wysłuchamy Twoich potrzeb i odpowiemy na wszelkie pytania. Podzielimy się swoim doświadczeniem z procesów transformacji sprzedaży w firmach handlowych i produkcyjnych.</p>
+        <h3>To czas dla Ciebie. Porozmawiamy o najważniejszych dla Ciebie tematach, a także:</h3>
+        <ul class="demo-agenda__list">
+          <li>
+            <svg width="20" height="20" viewBox="0 0 20 20" fill="none"><circle cx="10" cy="10" r="10" fill="var(--color-primary-500)"/><path d="M8.6 14.8L4.3 10.5 6.6 8.2 8.6 10.5 14.2 5.9 15.8 7.6 8.6 14.8Z" fill="white"/></svg>
+            Porozmawiamy o aktualnej sytuacji Twojej firmy, wyzwaniach i celach w obszarze sprzedaży.
+          </li>
+          <li>
+            <svg width="20" height="20" viewBox="0 0 20 20" fill="none"><circle cx="10" cy="10" r="10" fill="var(--color-primary-500)"/><path d="M8.6 14.8L4.3 10.5 6.6 8.2 8.6 10.5 14.2 5.9 15.8 7.6 8.6 14.8Z" fill="white"/></svg>
+            Przybliżymy możliwości WiseB2B i efekty wdrożeń.
+          </li>
+          <li>
+            <svg width="20" height="20" viewBox="0 0 20 20" fill="none"><circle cx="10" cy="10" r="10" fill="var(--color-primary-500)"/><path d="M8.6 14.8L4.3 10.5 6.6 8.2 8.6 10.5 14.2 5.9 15.8 7.6 8.6 14.8Z" fill="white"/></svg>
+            Wyjaśnimy jak działa integracja z systemem ERP.
+          </li>
+          <li>
+            <svg width="20" height="20" viewBox="0 0 20 20" fill="none"><circle cx="10" cy="10" r="10" fill="var(--color-primary-500)"/><path d="M8.6 14.8L4.3 10.5 6.6 8.2 8.6 10.5 14.2 5.9 15.8 7.6 8.6 14.8Z" fill="white"/></svg>
+            Opowiemy o wersjach WiseB2B i omówimy, która z nich byłaby najlepsza dla Twojego biznesu.
+          </li>
+          <li>
+            <svg width="20" height="20" viewBox="0 0 20 20" fill="none"><circle cx="10" cy="10" r="10" fill="var(--color-primary-500)"/><path d="M8.6 14.8L4.3 10.5 6.6 8.2 8.6 10.5 14.2 5.9 15.8 7.6 8.6 14.8Z" fill="white"/></svg>
+            Odpowiemy na wszystkie Twoje pytania i wątpliwości.
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="presentation-form__popup">
+  <h3>Zarezerwuj prezentację:</h3>
+  <form id="presentation-form__popup" name="contact" method="POST" action="/api/contact/">
+    <input type="hidden" name="form_name" id="presentation-form-name" />
+    <p style="display:none;"><label>Nie wypełniaj: <input name="bot-field" /></label></p>
+
+    <button type="button" class="presentation-form__close" aria-label="Zamknij">
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+    </button>
+
+    <div class="presentation-form__fields">
+      <div class="form-field">
+        <label>Imię i nazwisko</label>
+        <input type="text" name="name" placeholder="np. Adam Kowalski" autocomplete="name" />
+        <span class="form-field__error">To pole jest wymagane</span>
+      </div>
+      <div class="form-field">
+        <label>Adres e-mail<span>*</span></label>
+        <input type="email" name="email" placeholder="przykład@mail.pl" autocomplete="email" />
+        <span class="form-field__error">To pole jest wymagane</span>
+      </div>
+      <div class="form-field">
+        <label>Telefon</label>
+        <input type="tel" name="phone" placeholder="np. +48 500 001 002" autocomplete="tel" />
+      </div>
+      <div class="form-field form-field--checkbox">
+        <label>
+          <input type="checkbox" name="policy" />
+          <span>Zapoznałem się z polityką prywatności i wyrażam zgodę na przetwarzanie moich danych osobowych<span>*</span></span>
+        </label>
+        <span class="form-field__error">To pole jest wymagane</span>
+      </div>
+      <button type="submit" class="btn btn--primary">Porozmawiajmy</button>
+      <div class="form-response">
+        <p class="form-response__ok" style="display:none"></p>
+        <p class="form-response__error" style="display:none"></p>
+      </div>
+    </div>
+  </form>
+</div>
+
+<CtaBlock showPresentation={true} presentationTriggersPopup={true} />
+
+</BaseLayout>
+
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    const popup = document.querySelector('.presentation-form__popup');
+    const overlay = document.querySelector('.overlay');
+    const popupHeading = popup?.querySelector('h3');
+    const formNameInput = document.getElementById('presentation-form-name');
+
+    function openPopup(heading) {
+      const form = document.getElementById('presentation-form__popup');
+      if (form) form.reset();
+      if (popupHeading) popupHeading.textContent = heading;
+      if (formNameInput) formNameInput.value = heading;
+      if (overlay) overlay.style.display = 'block';
+      if (popup) popup.style.display = 'flex';
+    }
+
+    function closePopup() {
+      if (popup) popup.style.display = 'none';
+      if (overlay) overlay.style.display = 'none';
+    }
+
+    document.querySelectorAll('.js-presentation-form-call').forEach(btn => {
+      btn.addEventListener('click', () => openPopup('Zarezerwuj prezentację:'));
+    });
+    document.querySelectorAll('.js-presentation-contact-us-top').forEach(btn => {
+      btn.addEventListener('click', () => openPopup('Chcę się skonsultować z ekspertem:'));
+    });
+
+    popup?.querySelector('.presentation-form__close')?.addEventListener('click', closePopup);
+    overlay?.addEventListener('click', closePopup);
+
+    const form = document.getElementById('presentation-form__popup');
+    if (form) {
+      form.addEventListener('submit', (e) => {
+        e.preventDefault();
+        let valid = true;
+        const email = form.querySelector('input[name="email"]');
+        const policy = form.querySelector('input[name="policy"]');
+
+        form.querySelectorAll('.form-field').forEach(f => f.classList.remove('has-error'));
+
+        if (!email?.value.trim() || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email.value)) {
+          email?.closest('.form-field')?.classList.add('has-error');
+          valid = false;
+        }
+        if (!policy?.checked) {
+          policy?.closest('.form-field')?.classList.add('has-error');
+          valid = false;
+        }
+
+        if (valid) {
+          fetch('/api/contact/', { method: 'POST', body: new FormData(form) })
+            .then(r => {
+              if (r.ok) {
+                form.querySelector('.form-response__ok').textContent = 'Dziękujemy! Skontaktujemy się z Tobą wkrótce.';
+                form.querySelector('.form-response__ok').style.display = 'block';
+                form.reset();
+              } else {
+                form.querySelector('.form-response__error').textContent = 'Wystąpił błąd. Spróbuj ponownie później.';
+                form.querySelector('.form-response__error').style.display = 'block';
+              }
+            })
+            .catch(() => {
+              form.querySelector('.form-response__error').textContent = 'Wystąpił błąd. Spróbuj ponownie później.';
+              form.querySelector('.form-response__error').style.display = 'block';
+            });
+        }
+      });
+    }
+  });
+</script>

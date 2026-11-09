@@ -1,2 +1,27 @@
-/platforma-b2b/wersje/                  /platforma-b2b/pakiety-obszary-moduly/  301
-/platforma-b2b/pakiety_obszary_moduly/  /platforma-b2b/pakiety-obszary-moduly/  301
+# Flat URL migration (old nested → new flat)
+/platforma-b2b/                         /platforma-commerce-b2b/      301
+/platforma-b2b/agent-ai/                /agent-ai/                    301
+/platforma-b2b/panel-handlowca/         /panel-handlowca/             301
+/platforma-b2b/funkcje/                 /funkcje/                     301
+/platforma-b2b/integracje/              /integracje/                  301
+/platforma-b2b/proces-wdrozenia/        /proces-wdrozenia/            301
+/platforma-b2b/bezpieczna-migracja/     /bezpieczna-migracja/         301
+/platforma-b2b/pakiety-obszary-moduly/  /plany-wiseb2b/               301
+/platforma-b2b/wersje/                  /plany-wiseb2b/               301
+/platforma-b2b/pakiety_obszary_moduly/  /plany-wiseb2b/               301
+
+# Dla kogo
+/dla-kogo/                              /dla-dystrybutorow/           301
+/dla-kogo/dla-dystrybutorow/            /dla-dystrybutorow/           301
+/dla-kogo/dla-producentow/              /dla-producentow/             301
+
+# Wsparcie / Partnerzy
+/wsparcie/                              /zespol-wiseb2b/              301
+/partnerzy/                             /partnerzy-wdrozeniowi/       301
+
+# Prezentacja → Zamów demo
+/prezentacja-produktowa/                /zamow-demo/                  301
+
+# Case study (flat → dynamic collection route)
+/case-study-triplex/                    /case-study/triplex/          301
+/case-study-vmp/                        /case-study/vmp/              301

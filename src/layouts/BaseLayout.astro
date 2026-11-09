@@ -2,6 +2,7 @@
 import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
 import CookieBar from '../components/CookieBar.astro';
+import '../styles/tokens.css';
 import '../styles/global.css';
 
 interface Props {
@@ -50,25 +51,24 @@ const fullTitle = title === 'Strona główna' ? 'WiseB2B – eCommerce B2B Platf
 const ogImageUrl = ogImage.startsWith('http') ? ogImage : new URL(ogImage, siteUrl).href;
 
 const breadcrumbLabels: Record<string, string> = {
-  'platforma-b2b': 'Platforma B2B',
-  'pakiety-obszary-moduly': 'Pakiety, obszary i moduły',
-  'dla-kogo': 'Dla kogo',
-  'dla-dystrybutorow': 'Dla dystrybutorów',
-  'dla-producentow': 'Dla producentów',
-  'baza-wiedzy': 'Baza wiedzy',
-  'bezpieczna-migracja': 'Bezpieczna migracja',
-  'proces-wdrozenia': 'Proces wdrożenia',
+  'platforma-commerce-b2b': 'Platforma Commerce B2B',
   'agent-ai': 'Agent AI',
   'panel-handlowca': 'Panel Handlowca',
-  'case-study': 'Case study',
-  'wsparcie': 'Wsparcie',
-  'wdrozenia': 'Wdrożenia',
-  'o-nas': 'O nas',
-  'prezentacja-produktowa': 'Prezentacja produktowa',
-  'fundusze-europejskie': 'Fundusze europejskie',
-  'partnerzy': 'Partnerzy',
   'funkcje': 'Funkcje',
   'integracje': 'Integracje',
+  'proces-wdrozenia': 'Proces wdrożenia',
+  'bezpieczna-migracja': 'Bezpieczna migracja',
+  'plany-wiseb2b': 'Plany WiseB2B',
+  'dla-dystrybutorow': 'Dla dystrybutorów',
+  'dla-producentow': 'Dla producentów',
+  'zespol-wiseb2b': 'Zespół WiseB2B',
+  'partnerzy-wdrozeniowi': 'Partnerzy wdrożeniowi',
+  'wdrozenia': 'Wdrożenia',
+  'o-nas': 'O nas',
+  'zamow-demo': 'Zamów demo',
+  'baza-wiedzy': 'Baza wiedzy',
+  'case-study': 'Case study',
+  'fundusze-europejskie': 'Fundusze europejskie',
 };
 const breadcrumbItems = [];
 const pathParts = Astro.url.pathname.split('/').filter(Boolean);
@@ -80,7 +80,8 @@ for (const part of pathParts) {
   breadcrumbItems.push({ name, url: siteUrl + currentPath + '/' });
 }
 
-const isPlatformPage = Astro.url.pathname.startsWith('/platforma-b2b/') || Astro.url.pathname === '/platforma-b2b';
+const platformPaths = ['/platforma-commerce-b2b', '/agent-ai', '/panel-handlowca', '/funkcje', '/integracje', '/proces-wdrozenia', '/bezpieczna-migracja', '/plany-wiseb2b'];
+const isPlatformPage = platformPaths.some(p => Astro.url.pathname.startsWith(p));
 const absoluteImage = (src: string) => src.startsWith('http') ? src : new URL(src, siteUrl).href;
 
 const hasBreadcrumb = breadcrumbItems.length > 1;
@@ -113,7 +114,7 @@ const graph: any[] = [
       "@type": "ContactPoint",
       "contactType": "sales",
       "telephone": "+48717847933",
-      "url": siteUrl + "/prezentacja-produktowa/",
+      "url": siteUrl + "/zamow-demo/",
       "availableLanguage": "Polish",
     },
     "sameAs": [
@@ -151,7 +152,7 @@ if (isPlatformPage) {
     "@type": "SoftwareApplication",
     "@id": siteUrl + "/#software",
     "name": "WiseB2B",
-    "url": siteUrl + "/platforma-b2b/",
+    "url": siteUrl + "/platforma-commerce-b2b/",
     "applicationCategory": "BusinessApplication",
     "operatingSystem": "Web",
     "description": "Platforma eCommerce B2B łącząca sklep B2B, Panel Handlowca i Agenta AI. Przeznaczona dla dystrybutorów, hurtowni i producentów.",
@@ -167,7 +168,7 @@ if (isPlatformPage) {
     ],
     "offers": {
       "@type": "AggregateOffer",
-      "url": siteUrl + "/platforma-b2b/pakiety-obszary-moduly/",
+      "url": siteUrl + "/plany-wiseb2b/",
       "priceCurrency": "PLN",
       "lowPrice": "0",
       "offerCount": "3",
@@ -254,8 +255,6 @@ const jsonLd = {
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    {Astro.url.pathname === '/' && <link rel="preload" as="image" href="/images/bg-desktop-main-head.webp" type="image/webp" fetchpriority="high" media="(min-width: 768px)" />}
-    {Astro.url.pathname === '/' && <link rel="preload" as="image" href="/images/bg-mobile-main-head.webp" type="image/webp" media="(max-width: 767px)" />}
     <meta name="description" content={description} />
     {noindex && <meta name="robots" content="noindex, nofollow" />}
     <link rel="canonical" href={canonicalUrl} />
@@ -311,14 +310,10 @@ const jsonLd = {
 
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=Sora:wght@300;400;600;700&display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
     <link rel="icon" type="image/svg+xml" href="/svg/logo-wiseb2b.svg" />
     <link rel="stylesheet" href="/css/bootstrap-grid.min.css" />
     <link rel="stylesheet" href="/css/swiper-bundle.min.css" />
-    <link rel="stylesheet" href="/css/slick.min.css" />
-    <link rel="stylesheet" href="/css/theme-inline.css" />
-    <link rel="stylesheet" href="/css/otree.css" />
-    <link rel="stylesheet" href="/css/styles.min.css" />
     <title>{fullTitle}</title>
   </head>
   <body>
@@ -345,7 +340,6 @@ const jsonLd = {
         lmObserver.observe(el);
       });
     </script>
-    <script defer src="/js/wow.min.js"></script>
     <script defer src="/js/swiper-bundle.min.js"></script>
     <script defer src="/js/custom.js"></script>
   </body>

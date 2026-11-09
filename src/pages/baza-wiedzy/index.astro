@@ -1,39 +1,23 @@
 ---
 export const prerender = true;
 import BaseLayout from '../../layouts/BaseLayout.astro';
+import CtaBlock from '../../components/CtaBlock.astro';
 import { getCollection } from 'astro:content';
 
 const articles = await getCollection('baza-wiedzy');
-const featured = articles[0];
 ---
 
 <BaseLayout title="Baza wiedzy o platformie B2B" description="Artykuły i poradniki o platformach B2B, e-commerce B2B, wdrożeniach i cyfrowej transformacji sprzedaży. Baza wiedzy WiseB2B.">
 
-<div class="knowledge-bases-top">
-  <div class="knowledge-bases-top__bg"></div>
+<section class="page-hero">
   <div class="container">
-    <div class="row">
-      <div class="col-lg-6 offset-lg-3">
-        <h1 class="h2_semi kb-title">Baza wiedzy o platformie B2B</h1>
-      </div>
-    </div>
-
-    <div class="row knowledge-bases-top__wrapper lm-observer">
-      <div class="col-md-12 offset-xmd-1 col-xmd-5 col-xl-4 offset-xl-2">
-        <div class="knowledge-bases-top__img">
-          <img fetchpriority="high" width="448" height="298" src={featured.data.image} class="attachment-knowledge-bases-top size-knowledge-bases-top wp-post-image" alt={featured.data.title} />
-        </div>
-      </div>
-      <div class="col-md-10 offset-md-1 offset-xmd-0 col-xmd-5">
-        <a class="knowledge-bases-top__content" href={`/baza-wiedzy/${featured.id}/`}>
-          <p class="item_category p_regular_3">{featured.data.category}</p>
-          <h4 class="title h4_semi">{featured.data.title}</h4>
-          <p class="excerpt p_regular_3">{featured.data.description}</p>
-        </a>
-      </div>
-    </div>
+    <span class="page-hero__badge">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M4 4h6v6H4V4zm10 0h6v6h-6V4zM4 14h6v6H4v-6zm10 0h6v6h-6v-6z"/></svg>
+      Baza wiedzy
+    </span>
+    <h1 class="lm-observer">Baza wiedzy o platformie <span>B2B</span></h1>
   </div>
-</div>
+</section>
 
 <div class="articles-filter-categories">
   <div class="container">
@@ -52,7 +36,7 @@ const featured = articles[0];
     <div id="posts-list-wrapper">
       <div class="row">
         <div class="col-lg-12 col-xl-10 offset-xl-1">
-          <div class="box-posts">
+          <div class="box-posts box-posts--4col">
 
             {articles.map((article) => (
               <a class="item lm-observer" href={`/baza-wiedzy/${article.id}/`}
@@ -81,19 +65,21 @@ const featured = articles[0];
   </div>
 </div>
 
-<div class="cta-expert">
+<section class="call-expert">
   <div class="container">
     <div class="row">
-      <div class="col-lg-6 offset-lg-3 lm-observer">
-        <h2 class="h2_semi">Doświadczenie i efekty naszej pracy pomagają tworzyć nam powyższe treści. Ale każdy biznes jest inny.</h2>
-        <p class="p_regular_1">Chętnie poznamy Twoje wyzwania i oczekiwania.</p>
-        <div class="cta-expert__buttons">
-          <a class="wise-button wise-button--wise-harvest" href="/prezentacja-produktowa/">Skontaktuj się z nami</a>
+      <div class="col-xl-8 offset-xl-2 col-lg-10 offset-lg-1">
+        <div class="call-expert__wrapper lm-observer">
+          <h2 class="h2_semi">Potrzebujesz szczegółowych informacji?</h2>
+          <p class="job p_regular_1">Porozmawiaj z nami</p>
+          <div class="call-expert__button">
+            <a class="wise-button wise-button--wise-harvest" href="/zamow-demo/">Porozmawiaj</a>
+          </div>
         </div>
       </div>
     </div>
   </div>
-</div>
+</section>
 
 <script is:inline>
   document.querySelectorAll('.categories__list li').forEach(function(li) {
@@ -112,4 +98,5 @@ const featured = articles[0];
   });
 </script>
 
+<CtaBlock showPresentation={true} />
 </BaseLayout>

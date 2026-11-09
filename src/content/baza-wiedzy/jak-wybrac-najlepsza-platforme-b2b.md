@@ -7,7 +7,7 @@ date: "2024-02-05"
 dateModified: "2026-04-02"
 author: "Julia Wlazło"
 authorJob: "Content Manager"
-authorImage: "/images/author-julia.jpg"
+authorImage: "/images/author-julia.svg"
 authorBio: "Od lat zajmuje się komunikacją i treściami dla branży B2B. W WiseB2B odpowiada za bazę wiedzy i materiały edukacyjne o platformach sprzedażowych dla firm handlowych i produkcyjnych."
 ---
 

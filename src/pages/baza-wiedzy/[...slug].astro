@@ -32,24 +32,32 @@ const faqItems = extractFaq(article.body || '');
 
 <BaseLayout title={title} description={description} article={{ headline: title, image, datePublished: date, dateModified, authorName: author, authorJob, description }} faq={faqItems.length > 0 ? faqItems : undefined}>
 
+<section class="single-hero">
+  <div class="container">
+    <div class="single-hero__meta lm-observer">
+      <span class="single-hero__meta-pill">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M4 4h6v6H4V4zm10 0h6v6h-6V4zM4 14h6v6H4v-6zm10 0h6v6h-6v-6z"/></svg>
+        {category}
+      </span>
+      {author && (
+        <span class="single-hero__meta-pill">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M12 12c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm0 2c-3.34 0-10 1.68-10 5v3h20v-3c0-3.32-6.66-5-10-5z"/></svg>
+          {author}
+        </span>
+      )}
+      <span class="single-hero__meta-pill">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M7 2v2H5a2 2 0 0 0-2 2v2h18V6a2 2 0 0 0-2-2h-2V2h-2v2H9V2H7zM3 10v10a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V10H3z"/></svg>
+        {formattedDate}
+      </span>
+    </div>
+    <h1 class="single-hero__title lm-observer">{title}</h1>
+  </div>
+</section>
+
 <div class="mceContentBody">
   <div class="container">
     <div class="row">
       <div class="col-xl-8 offset-xl-2 col-lg-10 offset-lg-1">
-
-        <!-- Meta: category, author, date -->
-        <div class="single-meta" style="margin-top: 40px; display: flex; align-items: center; gap: 20px; flex-wrap: wrap;">
-          <span class="p_regular_3" style="color: #d9b062;">{category}</span>
-          {author && (
-            <span class="p_regular_3" style="color: #5a5565;">
-              {author}
-            </span>
-          )}
-          <span class="p_regular_3" style="color: #a5a5af;">{formattedDate}</span>
-        </div>
-
-        <!-- Title -->
-        <h1 class="h2_semi" style="margin-top: 20px; font-size: 4rem; line-height: 5rem;">{title}</h1>
 
         <!-- Featured image -->
         <div class="single-image">
@@ -71,10 +79,10 @@ const faqItems = extractFaq(article.body || '');
                 <img width="64" height="64" src={authorImage} alt={author} style="border-radius: 50%; width: 64px; height: 64px; object-fit: cover;" />
               )}
               <p class="name p_semi_2">{author}</p>
-              {authorJob && <p class="job p_regular_3" style="color: #5a5565;">{authorJob}</p>}
+              {authorJob && <p class="job p_regular_3" style="color: var(--color-dark-300);">{authorJob}</p>}
             </div>
             {authorBio && (
-              <div class="single-author-bottom__desc p_regular_3" style="color: #5a5565;">
+              <div class="single-author-bottom__desc p_regular_3" style="color: var(--color-dark-300);">
                 {authorBio}
               </div>
             )}
@@ -88,18 +96,20 @@ const faqItems = extractFaq(article.body || '');
 
 <ArticleCards slugs={otherSlugs} showButton={true} />
 
-<div class="cta-expert">
+<section class="call-expert">
   <div class="container">
     <div class="row">
-      <div class="col-lg-6 offset-lg-3 lm-observer">
-        <h2 class="h2_semi">Doświadczenie i efekty naszej pracy pomagają tworzyć nam powyższe treści. Ale każdy biznes jest inny.</h2>
-        <p class="p_regular_1">Chętnie poznamy Twoje wyzwania i oczekiwania.</p>
-        <div class="cta-expert__buttons">
-          <a class="wise-button wise-button--wise-harvest" href="/prezentacja-produktowa/">Skontaktuj się z nami</a>
+      <div class="col-xl-8 offset-xl-2 col-lg-10 offset-lg-1">
+        <div class="call-expert__wrapper lm-observer">
+          <h2 class="h2_semi">Potrzebujesz szczegółowych informacji?</h2>
+          <p class="job p_regular_1">Porozmawiaj z nami</p>
+          <div class="call-expert__button">
+            <a class="wise-button wise-button--wise-harvest" href="/zamow-demo/">Porozmawiaj</a>
+          </div>
         </div>
       </div>
     </div>
   </div>
-</div>
+</section>
 
 </BaseLayout>

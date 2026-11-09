@@ -35,3 +35,18 @@ pnpm-debug.log*
 
 # Local Netlify folder
 .netlify
+
+# Figma renders (local audit artifacts)
+figma-renders/
+
+# Grida/Figma conversion output
+*.grida1
+
+# Local resources (WP offline copy, Figma source file)
+wp/
+*.fig
+
+# Local audit / test artifacts
+wiseb2b.eu-audit/
+test-results/
+playwright-report/

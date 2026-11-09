@@ -1,123 +1,201 @@
 # WiseB2B Site — migracja WordPress → Astro
 
 ## Co to jest
-Strona marketingowa firmy WiseB2B (platforma e-Commerce B2B) migrowana z WordPressa (wiseb2b.eu) do Astro SSG. Cel: wierna kopia wizualna oryginału, łatwiejsze utrzymanie, możliwość edycji treści przez marketing via GitHub.
+Strona marketingowa firmy WiseB2B (platforma e-Commerce B2B). Źródłem prawdy wizualnej jest plik Figma (`WiseB2B.eu.fig`) oraz aktualny WordPress (`wiseb2b.eu`). Cel: odwzorowanie nowego Key Visual z Figma/WP w Astro SSG.
+
+## Stan projektu
+Migracja jest w trakcie. Struktura stron, routing, redirecty, design tokens, header, footer i komponenty są gotowe. Strony mają treść i layout, ale **wizualnie nie odpowiadają Figma/WP**. Główne zadanie: przejść stronę po stronie i doprowadzić wygląd do zgodności z nowym KV z Figmy.
+
+Co zrobione:
+- Nowy design system (tokeny w `src/styles/tokens.css`, font Inter, paleta fioletowa `#512da8`)
+- Wszystkie strony istnieją pod nowymi flat URL-ami (21 stron .astro)
+- Redirecty 301 w `public/_redirects` (stare nested URL-e → nowe flat)
+- Header, Footer, CtaBlock, CookieBar, ArticleCards jako komponenty
+- Content Collections: baza-wiedzy (4), funkcjonalnosci (16), obszary (13), case-study (2), partnerzy (2)
+- CSS: `global.css` (4533 linii) zawiera wszystkie style. Stare WP CSS (otree, theme-inline, styles.min) usunięte
+- Animacje: IntersectionObserver (`.lm-observer`) i Swiper.js zachowane, WOW.js usunięty
+
+Co wymaga pracy:
+- Homepage hero i sekcje nie odpowiadają Figma (user zgłosił: "wygląda zupełnie inaczej niż na projekcie Figma")
+- Każda strona wymaga audytu wizualnego i porównania z Figma/WP
+- Responsive (mobile, tablet) do przetestowania
+- Formularze, Lighthouse, structured data do weryfikacji
 
 ## Lokalizacja
 - Projekt: `C:\projects\wiseb2_site`
 - GitHub: `https://github.com/wiseb2b-git/wiseb2b-site.git` (publiczne)
 - Netlify: auto-deploy z GitHub
-- Oryginalna strona: `https://wiseb2b.eu`
+- Aktualna strona WP: `https://wiseb2b.eu`
 
-## Wiedza biznesowa
-Katalog `.knowledge/` zawiera materiały z NotebookLM — wiedzę biznesową o produkcie WiseB2B (opisy funkcji, wartości, USP, grupy docelowe, messaging). Przy tworzeniu i edycji treści na stronach należy czerpać z tych materiałów, aby zapewnić spójność komunikacji marketingowej.
+## Zasoby do pracy (LOKALNE, nie używaj MCP)
+
+### Plik Figma (źródło prawdy wizualnej)
+- Plik: `WiseB2B.eu.fig` (13MB, w katalogu głównym projektu)
+- Format: ZIP z `canvas.fig` (binary fig-kiwi v106), `thumbnail.png`, `meta.json`, `images/`
+- Konwersja do JSON: `npx @grida/refig convert "C:\projects\wiseb2_site\WiseB2B.eu.fig" -o OUTPUT.grida1 --preserve-figma-ids`
+- Wynik: plik `.grida1` (17MB, 25909 nodów, 1 strona). Hierarchia: `document.links['scene-1']` zawiera 25 top-level frame'ów, `document.links['NODE_ID']` zawiera dzieci danego noda, `document.nodes['NODE_ID']` zawiera właściwości (kolory, fonty, wymiary, tekst)
+- Renderowanie node'a do PNG: `npx @grida/refig "WiseB2B.eu.fig" --node "NODE_ID" --format png -o output.png`
+- Figma file key (do MCP, gdyby lokalnie nie wystarczyło): `qlBg9CuuhhtG6zaaSLf8Qv`
+
+**Mapa stron w Figma (node ID):**
+
+| Node ID | Nazwa | URL |
+|---|---|---|
+| `1:2` | [Desktop] Home | `/` |
+| `35:2` | [Desktop] About | `/o-nas/` |
+| `51:2` | [Desktop] Implementations | `/wdrozenia/` |
+| `51:875` | [Desktop] Support > Partners | `/partnerzy-wdrozeniowi/` |
+| `51:1818` | [Desktop] Support > Team | `/zespol-wiseb2b/` |
+| `61:2815` | [Desktop] For whom > For producers | `/dla-producentow/` |
+| `68:124` | [Desktop] For whom > For distributors | `/dla-dystrybutorow/` |
+| `68:1210` | [Desktop] For whom > Safe migration | `/bezpieczna-migracja/` |
+| `95:64` | [Desktop] B2B Platform > Commerce B2B | `/platforma-commerce-b2b/` |
+| `117:384` | [Desktop] B2B Platform > AI Agent | `/agent-ai/` |
+| `119:1488` | [Desktop] B2B Platform > Merchant panel | `/panel-handlowca/` |
+| `125:2482` | [Desktop] B2B Platform > Plans | `/plany-wiseb2b/` |
+| `141:3840` | [Desktop] B2B Platform > Features | `/funkcje/` |
+| `150:237` | [Desktop] B2B Platform > Integration | `/integracje/` |
+| `160:1295` | [Desktop] B2B Platform > Implementation process | `/proces-wdrozenia/` |
+| `160:2284` | [Desktop] Request Demo | `/zamow-demo/` |
+| `160:3209` | [Desktop] Knowledge base | `/baza-wiedzy/` |
+| `160:4116` | [Desktop] Knowledge base > Entry | `/baza-wiedzy/[slug]/` |
+
+### Lokalny WordPress (offline kopia)
+- Katalog: `wp/` (pełna kopia WP, Elementor theme `hello-elementor`)
+- Uwaga: Elementor trzyma treść w bazie, nie w plikach. Do treści używaj `curl` na `wiseb2b.eu` (strona jest live)
+- Assety WP: `wp/wp-content/uploads/2026/05/` (608 plików) i `06/` (105 plików). Screenshoty aplikacji, loga, SVG ikony (Remix Icon, MIT), tła, dekoracje, zdjęcia stockowe
+- GIF-y demo: `wp/lp/gifs/` i `wp/lp/funkcjonalnosc/gifs/`
+- Przykład pobrania HTML strony: `curl -s -L "https://wiseb2b.eu/podstrona/"`
+
+### Wiedza biznesowa
+Katalog `.knowledge/` zawiera materiały z NotebookLM (opisy funkcji, wartości, USP, grupy docelowe, messaging). Przy tworzeniu treści czerpać z tych materiałów. `.knowledge/screenshots` zawiera printscreeny z platformy WiseB2B.
 
 ## Stos technologiczny
-- **Astro 6** (SSG, `trailingSlash: 'always'`)
-- **Astro Content Collections** — blog w `src/content/baza-wiedzy/*.md`
-- **Brak frameworka JS** — czysty HTML/CSS, skrypty inline
-- Font: **Sora** (Google Fonts, wagi 300, 400, 600, 700)
+- **Astro 6** z SSR (`output: 'server'`), strony mają `export const prerender = true`
+- **Astro Content Collections** (5 kolekcji, patrz niżej)
+- Czysty HTML/CSS, skrypty inline, brak frameworka JS
+- Font: **Inter** (Google Fonts, wagi 400, 500, 600, 700)
 - Node.js >= 22.12.0
 
-## Architektura CSS — KLUCZOWE
-Strona używa **4 oryginalnych plików CSS z WordPressa** + 1 własny override. Kolejność ładowania ma znaczenie!
+## Architektura CSS
+Stare pliki WP CSS zostały usunięte. Zostały tylko:
 
-1. `public/css/bootstrap-grid.min.css` — grid, kontener (max-width: 1220px na >=1280px)
-2. `public/css/swiper-bundle.min.css` — karuzele
-3. `public/css/slick.min.css` — slidery
-4. `public/css/theme-inline.css` (90KB) — wyekstrahowany z inline `<style>` WordPressa. Zawiera: header, submenu, single-post layout, knowledge-bases-top, footer, single-author-bottom
-5. `public/css/otree.css` (134KB) — motyw WiseB2B: animacje, keyframes, specyficzne style stron
-6. `public/css/styles.min.css` (203KB) — dodatkowe style: box-posts, page-entry-content (h1-h5, p, ul, ol, a, table), single-content-white, articles-filter, knowledge-bases
-7. `src/styles/global.css` — **nasz plik z overrides** (reset, zmienne, z-index fix, ścieżki do assetów, lm-observer animacje, zmniejszone menu/pasek EU)
+1. `public/css/bootstrap-grid.min.css` — grid, `.container` (max-width via `--container-max-width: 1140px`)
+2. `public/css/swiper-bundle.min.css` — karuzele Swiper.js
+3. `src/styles/tokens.css` — design tokens (kolory, fonty, spacing, radius, shadows, z-index)
+4. `src/styles/global.css` (4533 linii) — wszystkie style strony: reset, typografia, header, footer, sekcje stron, komponenty, responsive
 
-**WAŻNE**: `global.css` importowany przez Astro jako `import` pojawia się w `<head>` PO linkach do CSS. Dlatego może nadpisywać style z plików 1-6. Nie definiujemy tu `.container` — to robi bootstrap-grid.
+`global.css` importowany przez Astro pojawia się w `<head>` PO linkach do CSS. Nie definiować `.container` (robi to bootstrap-grid).
 
-### Ścieżki assetów — overrides w global.css
-WordPress CSS odwołuje się do `/wp-content/themes/wiseb2b/assets/...`. Zamiast modyfikować oryginalne CSS, dodajemy overrides:
-- `.support-cta__data` → `url("/images/cta-support.png")`
-- `.header .nav-menu li.submenu a:before` → `url("/svg/arrow-menu.svg")`
-
-## Animacje — dwa systemy
-1. **WOW.js** (`public/js/wow.min.js`) — klasa `.wow` na elementach, triggeruje animacje przy scrollu. Na hero strony głównej użyto klasy `animated` (bez `wow`) żeby animacja grała od razu.
-2. **IntersectionObserver** — klasa `.lm-observer` (opacity 0→1). Skrypt w `BaseLayout.astro`. Używane na wielu podstronach (Wsparcie, Wdrożenia, Baza wiedzy).
+## Animacje
+- **IntersectionObserver** — klasa `.lm-observer` (opacity 0→1), skrypt w `BaseLayout.astro`
+- **Swiper.js** — karuzele testimoniali, bloga (`public/js/swiper-bundle.min.js`)
+- `public/js/custom.js` — showText, animacje hero
 
 ## Struktura plików
 
 ### Layouty i komponenty
-- `src/layouts/BaseLayout.astro` — główny layout, ładuje CSS, JS, IntersectionObserver
-- `src/components/Header.astro` — menu z submenu popupami (hover), sticky header, mobile hamburger
-- `src/components/Footer.astro` — stopka (bez scoped CSS, korzysta z globalnych)
+- `src/layouts/BaseLayout.astro` — główny layout, CSS, JS, IntersectionObserver, structured data
+- `src/components/Header.astro` — nawigacja z submenu (hover), sticky, mobile hamburger
+- `src/components/Footer.astro` — stopka (bez scoped CSS, globalne klasy)
+- `src/components/CtaBlock.astro` — blok CTA z formularzami (na każdej stronie przed footerem)
 - `src/components/CookieBar.astro` — pasek cookies
-- `src/components/ArticleCards.astro` — reużywalny komponent listy artykułów z kolekcji
+- `src/components/ArticleCards.astro` — lista artykułów z kolekcji
 
-### Strony
-- `src/pages/index.astro` — strona główna z hero, animacjami WOW.js
-- `src/pages/wsparcie.astro` — wsparcie
-- `src/pages/wdrozenia.astro` — wdrożenia
-- `src/pages/o-nas.astro` — o nas
-- `src/pages/prezentacja-produktowa.astro` — formularz demo
-- `src/pages/fundusze-europejskie.astro` — fundusze EU
-- `src/pages/platforma-b2b/` — index, funkcje, wersje, integracje, proces-wdrozenia, bezpieczna-migracja
-- `src/pages/dla-kogo/` — index, dla-dystrybutorow, dla-producentow
-- `src/pages/baza-wiedzy/index.astro` — listing artykułów (z Content Collection)
-- `src/pages/baza-wiedzy/[...slug].astro` — strona pojedynczego artykułu
+### Strony (21 plików .astro)
+```
+src/pages/index.astro                 /
+src/pages/platforma-commerce-b2b.astro /platforma-commerce-b2b/
+src/pages/agent-ai.astro              /agent-ai/
+src/pages/panel-handlowca.astro       /panel-handlowca/
+src/pages/funkcje.astro               /funkcje/
+src/pages/integracje.astro            /integracje/
+src/pages/proces-wdrozenia.astro      /proces-wdrozenia/
+src/pages/bezpieczna-migracja.astro   /bezpieczna-migracja/
+src/pages/plany-wiseb2b.astro         /plany-wiseb2b/
+src/pages/dla-dystrybutorow.astro     /dla-dystrybutorow/
+src/pages/dla-producentow.astro       /dla-producentow/
+src/pages/zespol-wiseb2b.astro        /zespol-wiseb2b/
+src/pages/partnerzy-wdrozeniowi.astro /partnerzy-wdrozeniowi/
+src/pages/wdrozenia.astro             /wdrozenia/
+src/pages/o-nas.astro                 /o-nas/
+src/pages/zamow-demo.astro            /zamow-demo/
+src/pages/case-study-triplex.astro    /case-study-triplex/
+src/pages/case-study-vmp.astro        /case-study-vmp/
+src/pages/fundusze-europejskie.astro  /fundusze-europejskie/
+src/pages/baza-wiedzy/index.astro     /baza-wiedzy/
+src/pages/baza-wiedzy/[...slug].astro /baza-wiedzy/[slug]/
+```
 
-### Blog (Content Collections)
-- `src/content.config.ts` — schemat kolekcji `baza-wiedzy`
-- `src/content/baza-wiedzy/*.md` — artykuły w markdown z frontmatter:
-  ```yaml
-  title, description, category, image, date, author, authorJob, authorImage, authorBio (opcjonalne)
-  ```
-- Aby dodać artykuł: stworzyć plik `.md` w `src/content/baza-wiedzy/`, push na GitHub → Netlify przebuduje
-- Aby wyświetlić artykuły na podstronie: `<ArticleCards slugs={['slug1','slug2']} />`
+### Content Collections
+- `src/content/baza-wiedzy/` (4 artykuły .md)
+- `src/content/funkcjonalnosci/` (16 wpisów, popup grid na `/funkcje/`)
+- `src/content/obszary/` (13 wpisów, tabela porównawcza na `/plany-wiseb2b/`)
+- `src/content/case-study/` (2: triplex, vmp)
+- `src/content/partnerzy/` (2: satisfly, sente)
 
-### Style artykułu
-- Strona listingu (`/baza-wiedzy/`) — fioletowe hero (`.knowledge-bases-top`), lista z filtrowaniem kategorii
-- Strona artykułu (`/baza-wiedzy/[slug]/`) — BEZ fioletowego hero, jasne tło, meta (kategoria, autor, data), tytuł, obrazek (`.single-image`), treść w `.single-content`, sekcja autora (`.single-author-bottom`)
+## Nawigacja (z WP, zaimplementowana w Header.astro)
+```
+Platforma B2B ▾
+  Platforma Commerce B2B    → /platforma-commerce-b2b/
+  Agent AI                  → /agent-ai/
+  Panel Handlowca           → /panel-handlowca/
+  Funkcje                   → /funkcje/
+  Integracje                → /integracje/
+  Proces wdrożenia          → /proces-wdrozenia/
+  Bezpieczna migracja       → /bezpieczna-migracja/
 
-## Skąd brać oryginalne treści i grafiki
-1. **Teksty stron**: skopiowane z `https://wiseb2b.eu/[podstrona]/` — pobierano HTML przez curl, wycinano treść
-2. **CSS**: pobrane z oryginalnej strony:
-   - `otree.css` z `/wp-content/themes/wiseb2b/otree/styles/style.css`
-   - `styles.min.css` z `/wp-content/themes/wiseb2b/assets/css/styles.min.css`
-   - `theme-inline.css` wyekstrahowany z inline `<style>` w `<head>` strony głównej
-   - `bootstrap-grid.min.css` z `/wp-content/themes/wiseb2b/assets/css/bootstrap-grid.min.css`
-3. **Grafiki**: `public/images/` — pobrane z `wiseb2b.eu/wp-content/uploads/...`
-4. **SVG**: `public/svg/` — logo, ikony, strzałka menu
-5. **JS**: `public/js/` — wow.min.js, swiper-bundle.min.js, custom.js (showText, animacje hero)
-6. **Artykuły bloga**: wyekstrahowane skryptem `extract_final2.cjs` z pobranych HTML-i artykułów (`tmp_article_*.html`)
-7. **Print screeny**: `.knowledge/screenshots` - tutaj są zdjęcia printscreen z platformy WiseB2B
+Dla kogo? ▾
+  Dla dystrybutorów         → /dla-dystrybutorow/
+  Dla producentów           → /dla-producentow/
 
-## Pliki tymczasowe do usunięcia
-W katalogu głównym projektu: `tmp_*.html`, `tmp_*.json`, `extract*.cjs`, `debug_article.cjs` — skrypty ekstrakcji, już niepotrzebne.
+Plany WiseB2B Cloud         → /plany-wiseb2b/
 
-## Znane problemy / pułapki
-- **Nie definiować `.container`** w global.css — bootstrap-grid to robi, a Astro import nadpisuje
-- **Scoped CSS w komponentach** psuje style — Header i Footer MUSZĄ używać globalnych klas bez `<style>`
-- **Hero animacje** na stronie głównej: klasa `animated` (nie `wow`) żeby grały bez scrollu
-- **Z-index**: header=150, top-header-bar=151 (feature boxy mają z-index:100)
-- **Sticky header**: osobne CSS overrides dla `.header--sticky` (77px) vs normalny (97px)
-- **WordPress asset paths**: CSS odwołuje się do `/wp-content/...` — naprawiamy overrides w global.css, nie modyfikujemy oryginalnych CSS
+Wsparcie ▾
+  Zespół WiseB2B            → /zespol-wiseb2b/
+  Partnerzy wdrożeniowi     → /partnerzy-wdrozeniowi/
+
+Wdrożenia                   → /wdrozenia/
+O nas                       → /o-nas/
+Baza wiedzy                 → /baza-wiedzy/
+[CTA] Zamów demo            → /zamow-demo/
+```
+
+## Wzorce wizualne z Figma (nowy KV)
+- Header: biały, logo wise + B2B (wersja kolorowa `logo-wiseb2b.svg`), nawigacja ciemna (`#20262e`), CTA "Zamów demo" w `#512da8`
+- Hero sekcje: ciemne tło z dekoracyjnym SVG (siatka linii), biały tekst, fioletowy CTA pill, badge "Commerce B2B Platform" z ikoną błyskawicy, screenshot dashboardu na dole
+- Font: Inter (Manrope w Figma, ale Inter w tokenach. W WP: Roboto/Manrope mieszanka)
+- Karty: biały bg, border `#cccfd5`, border-radius, lekki cień
+- Sekcje na ciemnym tle: `#20262e`, border-radius 20px
+- Newsletter/CTA bar: gradient fioletowy
+- Footer: ciemny, 4 kolumny, ikony LinkedIn+Facebook
+- Pasek funduszy EU na górze strony: zachowany
 
 ## Polecenia
 ```bash
-npm run dev      # dev server
+npm run dev      # dev server (SSR mode, prerendered pages mogą zwracać 404)
 npm run build    # produkcyjny build do dist/
-npm run preview  # podgląd buildu
+npm run preview  # podgląd buildu (TUTAJ testować, wszystkie strony działają)
 ```
+
+## Znane problemy / pułapki
+- **Dev server vs preview**: W trybie SSR (`npm run dev`) strony z `prerender = true` mogą zwracać 404. Do testowania używać `npm run build && npm run preview`
+- **Nie definiować `.container`** w global.css (robi to bootstrap-grid)
+- **Scoped CSS w komponentach** psuje style. Header i Footer używają globalnych klas
+- **Z-index**: header=150, top-header-bar=151, mobile-menu=200, cookie=250, modal=300
+- **Sticky header**: osobne overrides dla `.header--sticky`
 
 ## Zasady pracy
 - **Nie pushować automatycznie na git** — zawsze najpierw testować lokalnie
-- Przy nowych podstronach: kopiować HTML z oryginału, używać oryginalnych klas CSS
-- Przy problemach z CSS: szukać w theme-inline.css, otree.css i styles.min.css (w tej kolejności)
-- Nowe overrides dodawać do `src/styles/global.css`, nie modyfikować oryginalnych plików CSS
-- staraj się używać techpage zamiast playwright jeśli to wystarcza, bo jest znacznie szybsze. 
+- Nowe style dodawać do `src/styles/global.css`, nie tworzyć nowych plików CSS
+- Przy pracy nad stroną: porównywać z Figma (konwertować node do JSON/PNG) i z WP (curl HTML)
+- Zawsze najpierw szukać zasobów lokalnie (wp/wp-content/uploads, WiseB2B.eu.fig), potem dopiero sięgać do MCP/sieci
+- Używać techpage zamiast playwright jeśli wystarcza (szybsze)
 
 ## Styl pisania
-- Pisz naturalnym, bezpośrednim językiem — tak jak doświadczony programista piszący do kolegi z zespołu.
-- **Zakaz myślników** (`—`, `–`) jako elementu stylistycznego czy do łączenia myśli.
-- Nie używaj bullet pointów tam, gdzie wystarczy zdanie lub dwa ciągłego tekstu.
-- Unikaj słów i zwrotów typowych dla AI: "oczywiście", "z pewnością", "warto zauważyć", "należy podkreślić", "kompleksowy", "kluczowy", "istotny", "w kontekście", "co więcej", "podsumowując".
-- Nie zaczynaj odpowiedzi od potwierdzenia pytania ("Rozumiem, że chcesz...", "Świetne pytanie...").
-- Listy tylko tam, gdzie naprawdę jest lista rzeczy — nie jako domyślny format każdej odpowiedzi.
-- Preferuj krótkie zdania nad długie, wielokrotnie złożone.
+- Pisz naturalnym, bezpośrednim językiem, jak programista do kolegi z zespołu
+- **Zakaz myślników** (`—`, `–`) jako elementu stylistycznego
+- Nie używaj bullet pointów tam, gdzie wystarczy zdanie lub dwa
+- Unikaj słów typowych dla AI: "oczywiście", "z pewnością", "warto zauważyć", "należy podkreślić", "kompleksowy", "kluczowy", "istotny", "w kontekście", "co więcej", "podsumowując"
+- Nie zaczynaj odpowiedzi od potwierdzenia pytania
+- Preferuj krótkie zdania nad wielokrotnie złożone

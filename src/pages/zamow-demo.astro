@@ -4,7 +4,7 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 import CtaBlock from '../components/CtaBlock.astro';
 ---
 
-<BaseLayout title="Zamów demo WiseB2B" description="Zarezerwuj prezentację produktową WiseB2B. Porozmawiamy o Twoich potrzebach i pokażemy możliwości platformy B2B." webPageType="ContactPage">
+<BaseLayout title="Zamów demo: 30 minut z konsultantem WiseB2B" description="Zobacz platformę Commerce B2B na żywo, na scenariuszach z Twojej firmy. 30 minut z konsultantem, który zna handel B2B i integracje z ERP." webPageType="ContactPage">
 
 <div class="overlay"></div>
 
@@ -14,12 +14,12 @@ import CtaBlock from '../components/CtaBlock.astro';
       <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M12 12c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm0 2c-3.33 0-10 1.67-10 5v3h20v-3c0-3.33-6.67-5-10-5z"/></svg>
       Zamów demo
     </span>
-    <h1 class="lm-observer">Zarezerwuj około <span>60 minut</span> w wygodnym dla Ciebie momencie.</h1>
-    <p class="demo-hero__lead lm-observer">Platforma eCommerce B2B dla firm handlowych i produkcyjnych, łącząca sklep B2B, Panel Handlowca i Agenta AI w jednym środowisku.</p>
+    <h1 class="lm-observer">Zobacz WiseB2B na swoich procesach w <span>30 minut</span></h1>
+    <p class="demo-hero__lead lm-observer">Pokażemy platformę na żywo, na scenariuszach z Twojej firmy. Zobaczysz, jak Twój klient zamawia sam na warunkach z ERP, a handlowiec widzi wszystko w Panelu Handlowca.</p>
     <div class="demo-hero__actions">
-      <span class="btn btn--primary js-presentation-contact-us-top">Skonsultuj się z nami</span>
+      <span class="btn btn--primary js-presentation-form-call">Umów się na prezentację</span>
       <span class="demo-hero__or">lub</span>
-      <span class="btn btn--light js-presentation-form-call">Umów się na prezentację</span>
+      <span class="btn btn--light js-presentation-contact-us-top">Skonsultuj się z nami</span>
     </div>
   </div>
 </section>
@@ -28,36 +28,93 @@ import CtaBlock from '../components/CtaBlock.astro';
   <div class="container">
     <div class="demo-agenda__inner lm-observer">
       <div class="demo-agenda__image">
-        <img src="/images/prezentacja-produktowa-hero.jpg" alt="Prezentacja produktowa WiseB2B" width="500" height="400" loading="lazy" />
+        <img src="/images/prezentacja-produktowa-hero.jpg" alt="Prezentacja platformy WiseB2B" width="500" height="400" loading="lazy" />
       </div>
       <div class="demo-agenda__content">
-        <h2>Czego możesz się spodziewać po naszym spotkaniu?</h2>
-        <p>Wysłuchamy Twoich potrzeb i odpowiemy na wszelkie pytania. Podzielimy się swoim doświadczeniem z procesów transformacji sprzedaży w firmach handlowych i produkcyjnych.</p>
-        <h3>To czas dla Ciebie. Porozmawiamy o najważniejszych dla Ciebie tematach, a także:</h3>
+        <h2>Jak wygląda 30 minut z konsultantem</h2>
+        <p>To czas dla Ciebie. Rozmawiasz z konsultantem, który zna handel B2B od strony handlowca, magazynu i ERP. Możesz przyjść z osobą od IT lub ERP, jeśli chcesz od razu omówić integrację.</p>
+        <h3>Na spotkaniu:</h3>
         <ul class="demo-agenda__list">
           <li>
             <svg width="20" height="20" viewBox="0 0 20 20" fill="none"><circle cx="10" cy="10" r="10" fill="var(--color-primary-500)"/><path d="M8.6 14.8L4.3 10.5 6.6 8.2 8.6 10.5 14.2 5.9 15.8 7.6 8.6 14.8Z" fill="white"/></svg>
-            Porozmawiamy o aktualnej sytuacji Twojej firmy, wyzwaniach i celach w obszarze sprzedaży.
+            Pytamy, jak dziś sprzedajesz: ilu masz stałych klientów, jak przychodzą zamówienia i z jakiego ERP korzystasz.
           </li>
           <li>
             <svg width="20" height="20" viewBox="0 0 20 20" fill="none"><circle cx="10" cy="10" r="10" fill="var(--color-primary-500)"/><path d="M8.6 14.8L4.3 10.5 6.6 8.2 8.6 10.5 14.2 5.9 15.8 7.6 8.6 14.8Z" fill="white"/></svg>
-            Przybliżymy możliwości WiseB2B i efekty wdrożeń.
+            Pokazujemy platformę na żywo, na scenariuszach z Twojej firmy: cennik indywidualny, zamówienie z maila zamienione przez Agenta AI w koszyk, Panel Handlowca.
           </li>
           <li>
             <svg width="20" height="20" viewBox="0 0 20 20" fill="none"><circle cx="10" cy="10" r="10" fill="var(--color-primary-500)"/><path d="M8.6 14.8L4.3 10.5 6.6 8.2 8.6 10.5 14.2 5.9 15.8 7.6 8.6 14.8Z" fill="white"/></svg>
-            Wyjaśnimy jak działa integracja z systemem ERP.
+            Wyjaśniamy, jak warunki handlowe przechodzą z ERP do platformy.
           </li>
           <li>
             <svg width="20" height="20" viewBox="0 0 20 20" fill="none"><circle cx="10" cy="10" r="10" fill="var(--color-primary-500)"/><path d="M8.6 14.8L4.3 10.5 6.6 8.2 8.6 10.5 14.2 5.9 15.8 7.6 8.6 14.8Z" fill="white"/></svg>
-            Opowiemy o wersjach WiseB2B i omówimy, która z nich byłaby najlepsza dla Twojego biznesu.
+            Mówimy, który plan pasuje do Twojej skali: Start od 1 990 zł, Professional od 3 490 zł albo Enterprise od 6 990 zł netto miesięcznie, bez opłat od obrotu.
           </li>
           <li>
             <svg width="20" height="20" viewBox="0 0 20 20" fill="none"><circle cx="10" cy="10" r="10" fill="var(--color-primary-500)"/><path d="M8.6 14.8L4.3 10.5 6.6 8.2 8.6 10.5 14.2 5.9 15.8 7.6 8.6 14.8Z" fill="white"/></svg>
-            Odpowiemy na wszystkie Twoje pytania i wątpliwości.
+            Jeśli uznamy, że WiseB2B nie pasuje do Twojej sprzedaży, powiemy to wprost.
           </li>
         </ul>
       </div>
     </div>
+  </div>
+</section>
+
+<!-- CO SIĘ DZIEJE PO WYSŁANIU FORMULARZA -->
+<section class="hp-plan">
+  <div class="container">
+    <h2 class="hp-section-title lm-observer">Co się dzieje po wysłaniu formularza</h2>
+    {/* NEED: czas odpowiedzi na zgłoszenie (np. w ciągu 1 dnia roboczego) i forma spotkania (online lub stacjonarnie) */}
+    <ol class="hp-plan__steps">
+      <li class="hp-plan__step lm-observer">
+        <span class="hp-plan__num">1</span>
+        <h3>Ustalamy termin</h3>
+        <p>Konsultant kontaktuje się z Tobą mailem lub telefonicznie. Pyta o branżę i ERP, żeby przygotować scenariusze z Twojej firmy.</p>
+      </li>
+      <li class="hp-plan__step lm-observer">
+        <span class="hp-plan__num">2</span>
+        <h3>Pokaz na Twoich przykładach</h3>
+        <p>30 minut z konsultantem. Platforma na żywo, Twoje pytania i odpowiedź, czy WiseB2B pasuje do Twojej sprzedaży.</p>
+      </li>
+      <li class="hp-plan__step lm-observer">
+        <span class="hp-plan__num">3</span>
+        <h3>Decydujesz o następnym kroku</h3>
+        <p>Jeśli chcesz iść dalej, proponujemy sprint analityczny (od 1 do 4 tygodni). Na koniec wiesz, co wdrażamy, ile to kosztuje i kiedy ruszamy.</p>
+      </li>
+    </ol>
+    <p class="hp-plan__terms lm-observer">Abonament bez prowizji od obrotu. Koszt wdrożenia rozłożony w subskrypcji.</p>
+    <div class="hp-plan__cta">
+      <span class="btn btn--primary js-presentation-form-call">Umów się na prezentację</span>
+    </div>
+  </div>
+</section>
+
+<!-- DOWODY -->
+<section class="hp-case">
+  <div class="container">
+    <h2 class="hp-section-title lm-observer">Co zobaczysz na demo, działa już u klientów</h2>
+    <div class="hp-proof">
+      <div class="hp-proof__card lm-observer">
+        <img src="/images/triplexLogo.jpg" alt="Triplex" width="152" height="44" class="hp-proof__logo" />
+        <p class="hp-proof__desc">Dystrybutor pirotechniki, klienci przez lata zamawiali telefonem i w Excelu</p>
+        <div class="hp-proof__stats">
+          <div><span class="hp-proof__value">49,55%</span><span class="hp-proof__label">obrotu wygenerowanego poprzez platformę B2B</span></div>
+          <div><span class="hp-proof__value">46,36%</span><span class="hp-proof__label">zamówień pochodzących z platformy B2B</span></div>
+        </div>
+        <a href="/case-study/triplex/" class="hp-why__link">Zobacz case study Triplex</a>
+      </div>
+      <div class="hp-proof__card lm-observer">
+        <img src="/images/logo-vmp.jpg" alt="VMP" width="140" height="50" class="hp-proof__logo" />
+        <p class="hp-proof__desc">Hurtownia bielizny, 86 000 indeksów, sprzedaż do sklepów w krajach UE</p>
+        <div class="hp-proof__stats">
+          <div><span class="hp-proof__value">−60%</span><span class="hp-proof__label">czasu obsługi zamówienia</span></div>
+          <div><span class="hp-proof__value">−45%</span><span class="hp-proof__label">zapytań do BOK</span></div>
+        </div>
+        <a href="/case-study/vmp/" class="hp-why__link">Zobacz case study VMP</a>
+      </div>
+    </div>
+    <p class="hp-plan__terms lm-observer">Wolisz napisać od razu? Jakub Czyżkowski, CEO: <a href="mailto:kontakt@wiseb2b.eu">kontakt@wiseb2b.eu</a></p>
   </div>
 </section>
 
@@ -102,7 +159,7 @@ import CtaBlock from '../components/CtaBlock.astro';
   </form>
 </div>
 
-<CtaBlock showPresentation={true} presentationTriggersPopup={true} />
+<CtaBlock />
 
 </BaseLayout>
 

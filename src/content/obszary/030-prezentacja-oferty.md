@@ -3,7 +3,7 @@ title: "Prezentacja oferty"
 order: 30
 modules:
   - name: "Wyszukiwarka z synonimami i priorytetami"
-    description: "Wyszukiwanie po słowach kluczowych z obsługą synonimów, odmian i błędów pisowni"
+    description: "Wyszukiwanie po frazach z obsługą synonimów, odmian i błędów pisowni"
     starter: included
     professional: included
     enterprise: included
@@ -18,7 +18,7 @@ modules:
     professional: unavailable
     enterprise: optional
   - name: "Wyszukiwanie z TypeSense"
-    description: "Alternatywa dla Elasticsearch. Szybkie wyszukiwanie z automatyczną korektą zapytań"
+    description: "Szybkie wyszukiwanie z automatyczną korektą zapytań, alternatywa dla Elasticsearch"
     starter: unavailable
     professional: unavailable
     enterprise: optional

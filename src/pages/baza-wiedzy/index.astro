@@ -7,7 +7,7 @@ import { getCollection } from 'astro:content';
 const articles = await getCollection('baza-wiedzy');
 ---
 
-<BaseLayout title="Baza wiedzy o platformie B2B" description="Artykuły i poradniki o platformach B2B, e-commerce B2B, wdrożeniach i cyfrowej transformacji sprzedaży. Baza wiedzy WiseB2B.">
+<BaseLayout title="Baza wiedzy o platformie B2B" description="Artykuły i poradniki o platformach B2B, eCommerce B2B, wdrożeniach i cyfrowej transformacji sprzedaży. Baza wiedzy WiseB2B.">
 
 <section class="page-hero">
   <div class="container">
@@ -98,5 +98,5 @@ const articles = await getCollection('baza-wiedzy');
   });
 </script>
 
-<CtaBlock showPresentation={true} />
+<CtaBlock />
 </BaseLayout>

@@ -2,9 +2,10 @@
 export const prerender = true;
 import BaseLayout from '../layouts/BaseLayout.astro';
 import CtaBlock from '../components/CtaBlock.astro';
+import ArticleCards from '../components/ArticleCards.astro';
 ---
 
-<BaseLayout title="Platforma sprzedażowa B2B dla dystrybutorów – system B2B dla dystrybutorów" description="Platforma B2B dedykowana firmom dystrybucyjnym. Przenieś 95% sprzedaży do kanału cyfrowego i zwiększ przychody z WiseB2B.">
+<BaseLayout title="Platforma B2B dla dystrybutorów" description="Platforma Commerce B2B dla dystrybutorów. Stali klienci zamawiają sami na warunkach z ERP, a handlowiec zostaje przy kliencie. Zobacz wyniki Triplex i Agrotex.">
 
   <!-- HERO -->
   <section class="text-logos">
@@ -18,8 +19,8 @@ import CtaBlock from '../components/CtaBlock.astro';
               </span>
               Dla dystrybutorów
             </span>
-            <h1 class="text-logos__title">Rozwiązanie dedykowane <span>zwiększaniu sprzedaży B2B </span> przez firmy dystrybucyjne</h1>
-            <p class="desc p_regular_1">Twoja sprzedaż jest skomplikowana, warunki handlowe złożone, a&nbsp;klienci oczekują indywidualnego podejścia i pełnej dostępności? Wiemy, jak przekuć te wyzwania w szanse i w pełni wykorzystać potencjał Twojego biznesu.</p>
+            <h1 class="text-logos__title">Uruchom sprzedaż B2B online <span>bez ryzyka dla relacji</span> z klientami</h1>
+            <p class="desc p_regular_1">Stali klienci zamawiają sami, kiedy chcą, na cenach i warunkach z ERP. Handlowiec widzi każde ich zamówienie i dalej prowadzi relację. Platforma rusza obok telefonu i maila, więc nikt nie musi zmieniać przyzwyczajeń z dnia na dzień.</p>
             <div class="page-hero__actions">
               <a class="wise-button wise-button--wise-harvest" href="/zamow-demo/">Zamów demo</a>
             </div>
@@ -29,7 +30,35 @@ import CtaBlock from '../components/CtaBlock.astro';
     </div>
   </section>
 
-  <!-- SEKCJA 1: Przenieś 95% sprzedaży do kanału cyfrowego -->
+  <!-- STAWKA -->
+  <section class="hp-stakes">
+    <div class="container">
+      <h2 class="hp-stakes__title lm-observer">Boisz się, że klienci, którzy kupują od Ciebie od lat, nie zechcą zamawiać online?</h2>
+      <p class="hp-stakes__text lm-observer">Triplex bał się tego samego. Ich klienci od lat zamawiali telefonem i w Excelu. Dziś prawie połowa obrotu firmy przechodzi przez platformę B2B.</p>
+    </div>
+  </section>
+
+  <!-- DWIE SYTUACJE WEJŚCIA -->
+  <section class="hp-paths">
+    <div class="container">
+      <h2 class="hp-section-title lm-observer">Od czego zaczynasz?</h2>
+      <p class="hp-section-subtitle lm-observer">Dwie sytuacje, z którymi przychodzą do nas dystrybutorzy</p>
+      <div class="hp-paths__grid">
+        <div class="hp-paths__card lm-observer">
+          <h3>Sprzedajesz głównie przez handlowców</h3>
+          <p>Zamówienia przychodzą telefonem, mailem i w Excelu, a handlowiec przepisuje je do ERP. Platforma B2B jest dla Ciebie nowym kanałem, który chcesz sprawdzić bezpiecznie. Zaczynasz od kilku zaufanych klientów. Pozostali zamawiają tak jak dotąd, dopóki sami nie zechcą przejść.</p>
+          <a href="/proces-wdrozenia/" class="btn btn--outline">Jak wygląda wdrożenie</a>
+        </div>
+        <div class="hp-paths__card lm-observer">
+          <h3>Masz platformę B2B, która Cię ogranicza</h3>
+          <p>SaaS nie odwzorowuje Twoich cenników, system dedykowany kosztuje coraz więcej w utrzymaniu, a sklep przerobiony z B2C wymaga ciągłych poprawek. Przenosimy klientów etapami. Stary system działa do pełnego przejścia.</p>
+          <a href="/bezpieczna-migracja/" class="btn btn--outline">Jak wygląda migracja</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- JAK WISEB2B TO ROZWIĄZUJE -->
   <section class="numbers-text">
     <div class="container">
       <div class="row">
@@ -37,80 +66,79 @@ import CtaBlock from '../components/CtaBlock.astro';
           <div class="items">
 
             <div class="item">
-              <h2 class="h2_semi">Przenieś<span> 95% sprzedaży </span> do kanału cyfrowego</h2>
+              <h2 class="h2_semi">Klienci zamawiają sami <span>na Twoich warunkach</span></h2>
               <div class="row">
                 <div class="col-md-6">
                   <div class="box">
-                    <h3 class="p_regular_1">Odwzoruj specyfikę swojej oferty</h3>
-                    <p class="p_regular_3">Warunki handlowe, indywidualny model cennikowy, szeroka oferta produktowa, specyficzne rabaty i promocje &ndash; wszystko, co wyróżnia Twój biznes i za co Twoi klienci wybierają właśnie Twoją firmę, będzie w 100% odwzorowane na platformie B2B.</p>
+                    <h3 class="p_regular_1">Ceny i warunki jak w ERP</h3>
+                    <p class="p_regular_3">Cennik indywidualny, rabat od progu ilościowego, cena według opakowania, kredyt kupiecki, promocja dla wybranej grupy. Klient po zalogowaniu widzi dokładnie to, co masz w ERP. Handlowiec nie musi niczego tłumaczyć ani poprawiać w zamówieniu.</p>
                   </div>
                 </div>
                 <div class="col-md-6">
                   <div class="box box--even">
-                    <h3 class="p_regular_1">Sprzedawaj więcej do obecnych klientów</h3>
-                    <p class="p_regular_3">Dysponujesz określoną bazą stałych klientów, którzy generują określone przychody. Co gdyby średnia wartość ich zakupów wzrosła o 20%, bez potrzeby angażowania czasu Twoich handlowców? Dzięki WiseB2B taki scenariusz stanie się faktem, dzięki wykorzystaniu takich funkcji jak promocje celowane, rabaty indywidualne, sugerowanie produktów komplementarnych czy wartości zakupów, potrzebnych do skorzystania z lepszej ceny.</p>
+                    <h3 class="p_regular_1">Zamówienie z maila trafia do koszyka</h3>
+                    <p class="p_regular_3">Klient wkleja listę z maila, PDF lub Excela, a <a href="/agent-ai/">Agent AI</a> zamienia ją w gotowy koszyk. Duże zamówienie wgrywa z pliku CSV. BOK przestaje przepisywać pozycje ręcznie.</p>
                   </div>
                 </div>
                 <div class="col-md-6">
                   <div class="box">
-                    <h3 class="p_regular_1">Uwolnij potencjał handlowców</h3>
-                    <p class="p_regular_3">Kiedy odciążysz swoich sprzedawców z czasochłonnego i&nbsp;mozolnego przyjmowania zamówień od dziesiątek klientów, będą oni mogli skupić się na zadaniach naprawdę ważnych &ndash; budowaniu relacji z kluczowymi kontrahentami, dbaniu o ich potrzeby i docieraniu do nowych rynków oraz klientów.</p>
+                    <h3 class="p_regular_1">Zamówienia także po godzinach biura</h3>
+                    <p class="p_regular_3">Klient sprawdza stany magazynowe, status zamówienia i faktury wieczorem albo w sobotę, bez telefonu do biura. Rano handlowiec widzi gotowe zamówienia w ERP.</p>
                   </div>
                 </div>
                 <div class="col-md-6">
                   <div class="box box--even">
-                    <h3 class="p_regular_1">Zdobywaj nowych klientów</h3>
-                    <p class="p_regular_3">WiseB2B to nie tylko narzędzie dla Twoich obecnych klientów, ale również źródło pozyskiwania nowych. Dzięki optymalizacji pod kątem pozycjonowania w wyszukiwarkach i dostępowi przez profil otwarty Twoja oferta dotrze do nieograniczonej liczby odbiorców, których będziesz miał okazję przekształcić w&nbsp;klientów.</p>
+                    <h3 class="p_regular_1">Wyszukiwarka z Twoimi priorytetami</h3>
+                    <p class="p_regular_3">Klient szuka po indeksie, nazwie albo parametrze, także w asortymencie z setkami wariantów. Wyniki uwzględniają Twoje priorytety sprzedażowe. Przy produkcie widzi zamienniki i akcesoria, więc częściej dokłada je do koszyka.</p>
                   </div>
                 </div>
               </div>
             </div>
 
-            <!-- SEKCJA 2: Zbuduj lojalność i przywiązanie klientów -->
             <div class="item">
-              <h2 class="h2_semi">Zbuduj <span>lojalność i przywiązanie</span> klientów</h2>
+              <h2 class="h2_semi">Handlowiec <span>zostaje przy kliencie</span></h2>
               <div class="row">
                 <div class="col-md-6">
                   <div class="box">
-                    <h3 class="p_regular_1">Zapewnij dostępność i przejrzystość oferty</h3>
-                    <p class="p_regular_3">Twoi klienci biznesowi chcą robić zakupy wtedy, kiedy mają na&nbsp;to czas, korzystając z intuicyjnych narzędzi, które znają z&nbsp;rynku konsumenckiego. WiseB2B jest zaprojektowane z myślą o&nbsp;potrzebach, przyzwyczajeniach i nawykach osób decyzyjnych w&nbsp;firmach dystrybucyjnych.</p>
+                    <h3 class="p_regular_1">Jeden obraz klienta w Panelu Handlowca</h3>
+                    <p class="p_regular_3">W Panelu Handlowca handlowiec widzi, co klient kupił online i offline, jaki ma limit kupiecki i otwarte oferty. Ofertę przygotowuje w panelu, a klient znajduje ją na swoim koncie zakupowym. Ceny, warunki i stany są te same co w sklepie B2B.</p>
                   </div>
                 </div>
                 <div class="col-md-6">
                   <div class="box box--even">
-                    <h3 class="p_regular_1">Intuicyjność będzie Twoją przewagą</h3>
-                    <p class="p_regular_3">Twoi klienci znajdują błyskawicznie wszystkie potrzebne produkty, po dowolnie zadanych parametrach, a w wynikach wyszukiwania uwzględnione są Twoje priorytety sprzedażowe &ndash; brzmi jak utopijna wizja? Dzięki WiseB2B zapewnisz swoim klientom właśnie takie doświadczenia, zadbasz o szybkie i&nbsp;komfortowe wyszukiwanie produktów, a jednocześnie wesprzesz swoje cele sprzedażowe.</p>
+                    <h3 class="p_regular_1">Sygnał, zanim klient odejdzie</h3>
+                    {/* NEED: potwierdzić, czy monitoring klientów (alert przy spadku zamówień) działa produkcyjnie w Panelu Handlowca */}
+                    <p class="p_regular_3">Gdy stały klient zaczyna kupować mniej albo przestaje się logować, handlowiec dostaje alert. Ma czas zadzwonić, zanim zamówienie trafi gdzie indziej.</p>
                   </div>
                 </div>
                 <div class="col-md-6">
                   <div class="box">
-                    <h3 class="p_regular_1">Zadbaj o indywidualne doświadczenia</h3>
-                    <p class="p_regular_3">Masz wielu klientów, ale zależy Ci, aby każdy z nich czuł się indywidualnie traktowany. WiseB2B dostarcza bogatego wachlarza narzędzi, takich jak indywidualne cenniki, zakresy i&nbsp;dostępności produktów, promocje czy limity kredytowe. Dzięki nim możesz udostępnić swoim klientom jedną platformę, która odpowie na indywidualne potrzeby i specyfikę każdego z nich z&nbsp;osobna.</p>
+                    <h3 class="p_regular_1">Czas na sprzedaż zamiast przepisywania</h3>
+                    <p class="p_regular_3">Powtarzalne zamówienia klienci składają sami. W Agrotex 42% zamówień przechodzi bez weryfikacji handlowca. Zespół zajmuje się klientami, którzy potrzebują rozmowy, i szuka nowych odbiorców.</p>
                   </div>
                 </div>
                 <div class="col-md-6">
                   <div class="box box--even">
-                    <h3 class="p_regular_1">Bądź źródłem wiedzy</h3>
-                    <p class="p_regular_3">Twoja firma funkcjonuje w specyficznej branży i nie chcesz udostępniać wszystkich informacji publicznie? Jednocześnie Twoi klienci pytają Cię o najnowsze produkty lub zmiany w&nbsp;przepisach? Skorzystaj z możliwości wykorzystania platformy B2B jako dedykowanego i ekskluzywnego centrum wiedzy.</p>
+                    <h3 class="p_regular_1">Wiedza dla zalogowanych klientów</h3>
+                    <p class="p_regular_3">Klienci pytają o nowości w ofercie albo zmiany w przepisach? Instrukcje, karty techniczne i komunikaty publikujesz w bazie wiedzy, którą widzą tylko zalogowani klienci. Handlowiec odsyła do niej zamiast pisać ten sam mail kolejny raz.</p>
                   </div>
                 </div>
               </div>
             </div>
 
-            <!-- SEKCJA 3: Realizuj strategię wzrostu bez ograniczeń -->
             <div class="item">
-              <h2 class="h2_semi">Realizuj <span>strategię wzrostu</span> bez ograniczeń</h2>
+              <h2 class="h2_semi">Nowi klienci <span>i stały koszt</span></h2>
               <div class="row">
                 <div class="col-md-6">
                   <div class="box">
-                    <h3 class="p_regular_1">Skorzystaj z wiedzy konsultantów z ponad 25-letnim doświadczeniem</h3>
-                    <p class="p_regular_3">Masz za sobą pierwsze, niekoniecznie udane próby przeniesienia sprzedaży B2B do kanału cyfrowego lub jest to Twoje pierwsze podejście. Niezależnie od sytuacji, stoi przed Tobą duże wyzwanie &ndash; najpierw z przeniesieniem całej oferty i&nbsp;wszystkich warunków handlowych do świata cyfrowego, a&nbsp;następnie dopracowywaniu i&nbsp;rozwijaniu wdrożonego rozwiązania zgodnie z tym, jak będzie zmieniał się Twój biznes i&nbsp;potrzeby Twoich klientów. Mamy dla Ciebie dobrą informację &ndash; nie będziesz w tym procesie sam. Wybierając WiseB2B decydujesz się nie tylko na w pełni funkcjonalne narzędzie, dopasowane do rynku firm dystrybucyjnych. W pakiecie dostajesz również wiedzę i doświadczenie konsultantów, którzy wspierają firmy handlowe w procesach transformacji sprzedaży.</p>
+                    <h3 class="p_regular_1">Oferta widoczna w wyszukiwarce</h3>
+                    <p class="p_regular_3">Profil otwarty pokazuje Twoją ofertę bez logowania, a strony produktów są przygotowane pod wyszukiwarki. Firma, która jeszcze u Ciebie nie kupuje, znajduje produkt i zakłada konto.</p>
                   </div>
                 </div>
                 <div class="col-md-6">
                   <div class="box box--even">
-                    <h3 class="p_regular_1">Rozwijaj platformę zgodnie z potrzebami Twojego biznesu</h3>
-                    <p class="p_regular_3">WiseB2B nigdy nie ograniczy Twojego biznesu &ndash; to nie marketingowy frazes, ale nasza misja, z jaką budujemy to&nbsp;rozwiązanie. Wiemy, jakich funkcji potrzebują firmy dystrybucyjne, aby skutecznie przenosić handel do online i&nbsp;zadbaliśmy o to, aby nasza platforma zapewniała dostęp do każdej z nich. Jednocześnie wiemy, że to w pewnym momencie może być dla Ciebie za mało &ndash; bo wejdziesz na nowy rynek, będziesz chciał przetestować innowacyjny model biznesowy lub zupełnie przedefiniować swoją ofertę. Dlatego tworząc WiseB2B naszym priorytetem było to, aby oprócz bogatej funkcjonalności było ono również otwarte na zmiany, konfigurację i rozbudowywanie. Mamy przekonanie, że takie podejście do budowania cyfrowych narzędzi sprzedaży dla B2B to jedyna słuszna droga i gwarancja bezpieczeństwa na&nbsp;przyszłość.</p>
+                    <h3 class="p_regular_1">Abonament bez prowizji od obrotu</h3>
+                    <p class="p_regular_3">Płacisz stały abonament, bez opłat od obrotu. Każdy klient, który przechodzi na zamówienia online, obniża koszt obsługi jednego zamówienia. W planie Enterprise dostajesz kod źródłowy i wybierasz chmurę albo własne serwery.</p>
                   </div>
                 </div>
               </div>
@@ -119,35 +147,17 @@ import CtaBlock from '../components/CtaBlock.astro';
           </div>
 
           <div class="numbers-text__button">
-            <a class="wise-button wise-button--dark" href="/funkcje/">Wszystkie funkcjonalności</a>
+            <a class="wise-button wise-button--dark" href="/funkcje/">Wszystkie funkcje</a>
           </div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- CTA: Zamów rozmowę z ekspertem -->
-  <section class="call-expert">
-    <div class="container">
-      <div class="row">
-        <div class="col-xl-8 offset-xl-2 col-lg-10 offset-lg-1">
-          <div class="call-expert__wrapper">
-            <h2 class="h2_semi">Potrzebujesz szczegółowych informacji?</h2>
-            <p class="name h5_regular">Jakub Czyżkowski</p>
-            <p class="job p_regular_2">CEO</p>
-            <div class="call-expert__button">
-              <a class="wise-button wise-button--wise-harvest" href="/zamow-demo/">Zamów rozmowę z ekspertem</a>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- CASE STUDY -->
+  <!-- DOWODY -->
   <section class="hp-case hp-case--dark">
     <div class="container">
-      <h2 class="hp-section-title lm-observer">Case study</h2>
+      <h2 class="hp-section-title lm-observer">Wyniki dystrybutorów na WiseB2B</h2>
       <div class="hp-case__inner lm-observer">
         <div class="hp-case__visual">
           <img src="/case-study/triplex/browser-blender-4-811x608.png" alt="Sklep B2B Triplex na platformie WiseB2B" width="811" height="608" loading="lazy" />
@@ -156,75 +166,63 @@ import CtaBlock from '../components/CtaBlock.astro';
           <div class="hp-case__logo">
             <img loading="lazy" width="68" height="68" src="/images/triplex-p-68x68.png" alt="Triplex" />
           </div>
-          <h3>Czołowy dystrybutor pirotechniki postawił na WiseB2B</h3>
+          <h3>Triplex, dystrybutor pirotechniki: klienci przyzwyczajeni do telefonu zamawiają online</h3>
           <div class="hp-case__stats">
             <div class="hp-case__stat">
-              <span class="hp-case__stat-value">46,36 %</span>
-              <span class="hp-case__stat-label">zamówień pochodzących z platformy B2B</span>
-            </div>
-            <div class="hp-case__stat">
-              <span class="hp-case__stat-value">49,55 %</span>
+              <span class="hp-case__stat-value">49,55%</span>
               <span class="hp-case__stat-label">obrotu wygenerowanego poprzez platformę B2B</span>
             </div>
             <div class="hp-case__stat">
-              <span class="hp-case__stat-value">36,43 %</span>
+              <span class="hp-case__stat-value">46,36%</span>
+              <span class="hp-case__stat-label">zamówień pochodzących z platformy B2B</span>
+            </div>
+            <div class="hp-case__stat">
+              <span class="hp-case__stat-value">34,43%</span>
               <span class="hp-case__stat-label">klientów korzystających z platformy B2B</span>
             </div>
           </div>
-          <a class="wise-button wise-button--white-wise" href="/wdrozenia/">Zobacz case study</a>
+          <a class="wise-button wise-button--white-wise" href="/case-study/triplex/">Zobacz case study Triplex</a>
+        </div>
+      </div>
+
+      <div class="hp-proof">
+        <div class="hp-proof__card lm-observer">
+          <img src="/images/logo-agrotex.jpg" alt="Agrotex" width="180" height="28" class="hp-proof__logo" loading="lazy" />
+          <p class="hp-proof__desc">Dystrybutor części do maszyn rolniczych, 120 mln zł obrotu, 840 klientów na platformie</p>
+          <div class="hp-proof__stats">
+            <div><span class="hp-proof__value">42%</span><span class="hp-proof__label">zamówień bez weryfikacji handlowca</span></div>
+            <div><span class="hp-proof__value">+22%</span><span class="hp-proof__label">dostępności produktów dzięki sprzedaży z wielu magazynów</span></div>
+          </div>
+          <a href="/wdrozenia/" class="hp-why__link">Zobacz wszystkie wdrożenia</a>
+        </div>
+        <div class="hp-proof__card lm-observer">
+          <img src="/images/logo-vmp.jpg" alt="VMP" width="140" height="50" class="hp-proof__logo" loading="lazy" />
+          <p class="hp-proof__desc">Bielizna, 86 000 indeksów, sprzedaż do sklepów w krajach UE. Stary system B2B wyłączony po miesiącu.</p>
+          <div class="hp-proof__stats">
+            <div><span class="hp-proof__value">−60%</span><span class="hp-proof__label">czasu obsługi zamówienia</span></div>
+            <div><span class="hp-proof__value">−45%</span><span class="hp-proof__label">zapytań do BOK</span></div>
+          </div>
+          <a href="/case-study/vmp/" class="hp-why__link">Zobacz case study VMP</a>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- BAZA WIEDZY -->
-  <section class="knowledge-bases knowledge-bases--dark">
+  <!-- OPINIA -->
+  <section class="hp-testimonials">
     <div class="container">
-      <div class="row">
-        <div class="col-xl-10 offset-xl-1 col-lg-12">
-          <div class="knowledge-bases__wrapper">
-            <h2 class="h2_semi">Baza wiedzy</h2>
-            <div class="box-posts">
-              <a class="item" href="/baza-wiedzy/e-commerce-w-modelu-b2b/">
-                <div class="image">
-                  <img loading="lazy" width="632" height="421" src="/images/student-gf2aecdbed_640.jpg" alt="E-commerce w modelu B2B" />
-                </div>
-                <div class="content">
-                  <p class="item_category p_regular_3">Dystrybucja i Handel</p>
-                  <h3 class="title p_semi_1">E-commerce w modelu B2B</h3>
-                  <p class="excerpt p_regular_3">O tym, że e-Commerce w modelu B2B i B2C istotnie się od siebie różni, chyba nie trzeba nikogo przekonywać. E-transakcje z udziałem klienta detalicznego z reguły są szybkie, ale to właśnie sprzedaż dla firm pozwala osiągać większe zyski. Czym charakteryzuje się branża e-Commerce w modelu B2B? Jak jeszcze różni się od B2C?</p>
-                  <time class="time p_regular_3">maj 2022</time>
-                </div>
-              </a>
-              <a class="item" href="/baza-wiedzy/korzysci-z-wdrozenia-platformy-b2b/">
-                <div class="image">
-                  <img loading="lazy" width="580" height="495" src="/images/mockup-macbook.png" alt="Korzyści z wdrożenia platformy B2B" />
-                </div>
-                <div class="content">
-                  <p class="item_category p_regular_3">Korzyści</p>
-                  <h3 class="title p_semi_1">Korzyści z wdrożenia platformy B2B</h3>
-                </div>
-              </a>
-              <a class="item" href="/baza-wiedzy/jak-wybrac-najlepsza-platforme-b2b/">
-                <div class="image">
-                  <img loading="lazy" width="632" height="421" src="/images/people-gac9f90525_640.jpg" alt="Jak wybrać najlepszą platformę B2B?" />
-                </div>
-                <div class="content">
-                  <h3 class="title p_semi_1">Jak wybrać najlepszą platformę B2B?</h3>
-                  <p class="excerpt p_regular_3">Platforma e-Commerce B2B to rozwiązanie, które kompleksowo wesprze Ciebie i pracowników działu handlowego w Twojej firmie w obsłudze procesu sprzedaży hurtowej. Głównym celem wdrażania tego typu narzędzi jest zoptymalizowanie procesów biznesowych w taki sposób, aby jak najbardziej ułatwić realizację transakcji zakupowych między przedsiębiorstwami. Jakich korzyści z wdrożenia platformy B2B możesz się spodziewać?</p>
-                  <time class="time p_regular_3">luty 2022</time>
-                </div>
-              </a>
-            </div>
-          </div>
+      <h2 class="hp-section-title lm-observer">Jak zareagowali klienci Triplex</h2>
+      <p class="hp-section-subtitle lm-observer">Triplex, dystrybutor pirotechniki</p>
+      <div class="hp-testimonials__card lm-observer">
+        <img src="/svg/double-quotes-r.svg" alt="" class="hp-testimonials__quote hp-testimonials__quote--right" width="80" height="80" />
+        <blockquote>
+          Jesteśmy w branży 30 lat, nasi klienci również &ndash; baliśmy się na początku, że klienci przyzwyczajeni do exceli i telefonu nie będą chcieli składać zamówień przez platformę B2B. Ale reakcje są inne &ndash; klienci są zachwyceni. Takie zmiany też dobrze wpływają na wizerunek branży i przyciągają młode pokolenie. Bardzo pozytywnie oceniam zmiany, jakie wniosła platforma B2B wdrożona przez Sente.
+        </blockquote>
+        <div class="hp-testimonials__author">
+          <p class="hp-testimonials__author-name">Aneta Siwarga</p>
+          <p class="hp-testimonials__author-site">Prokurent w Triplex</p>
         </div>
-      </div>
-      <div class="row">
-        <div class="col-12">
-          <div class="knowledge-bases__button">
-            <a class="wise-button wise-button--transparent-wise" href="/baza-wiedzy/">Zobacz wszystkie artykuły</a>
-          </div>
-        </div>
+        <img src="/svg/double-quotes-l.svg" alt="" class="hp-testimonials__quote hp-testimonials__quote--left" width="80" height="80" />
       </div>
     </div>
   </section>
@@ -243,16 +241,25 @@ import CtaBlock from '../components/CtaBlock.astro';
         <div class="col-lg-10 offset-lg-1 col-xl-8 offset-xl-2">
           <div class="questions__items">
             <div class="item">
-              <h2 class="h5_semi">Czym charakteryzuje się platforma B2B dla dystrybutorów?</h2>
-              <p class="p_regular_3">Platforma B2B dla dystrybutorów jest dostosowana do klientów z branży handlu i dystrybucji. Katalog produktowy skonstruowany jest w na tyle przejrzysty sposób, że nawet najbardziej złożone drzewa asortymentowe mogą być prezentowane w sposób czytelny i przejrzysty. Rozbudowane mechanizmy filtrowania pozwalają odszukać dokładnie ten produkt, jakiego aktualnie klient potrzebuje, nawet w branżach, gdzie warianty i wersje towarów liczone są w setkach (np. artykuły elektroniczne czy akcesoria automotive).</p>
+              <h2 class="h5_semi">Co, jeśli moi klienci nie będą chcieli zamawiać online?</h2>
+              <p class="p_regular_3">Nie muszą przechodzić od razu. Platforma działa obok telefonu i maila, a handlowiec widzi wszystkie zamówienia w jednym miejscu. Zaczynasz od grupy klientów, którym ufasz, i dokładasz kolejnych. W Triplex z platformy korzysta 34,43% klientów i składają oni 46,36% wszystkich zamówień.</p>
             </div>
             <div class="item">
-              <h2 class="h5_semi">Ile kosztuje wdrożenie platformy B2B dla dystrybutorów?</h2>
-              <p class="p_regular_3">Na koszt wdrożenia platformy B2B dla dystrybutorów wpływ ma skala działania firmy: liczba klientów, liczba produktów oraz specyficzne potrzeby funkcjonalne. To te elementy wpływają na wybór wersji oprogramowania, a te z kolei są zróżnicowane pod kątem cenowym.</p>
+              <h2 class="h5_semi">Czy platforma B2B odbierze pracę moim handlowcom?</h2>
+              <p class="p_regular_3">Zdejmuje z nich przepisywanie zamówień. Relacja z klientem zostaje przy handlowcu. W Agrotex 42% zamówień przechodzi bez weryfikacji handlowca, więc zespół ma czas na rozmowy z klientami i pozyskiwanie nowych. Handlowiec pracuje w Panelu Handlowca na tych samych danych, które widzi klient.</p>
             </div>
             <div class="item">
-              <h2 class="h5_semi">Jak wygląda proces wdrożenia platformy B2B dla dystrybutorów?</h2>
-              <p class="p_regular_3">Wdrożenie platformy B2B dla dystrybutorów zaczyna się od etapu analitycznego, który pozwala zdefiniować cele projektu oraz zidentyfikować indywidualne potrzeby. W kolejnych krokach przeprowadzane są prace wdrożeniowe, integracyjne, a następnie testy przygotowujące do uruchomienia.</p>
+              <h2 class="h5_semi">Ile kosztuje platforma B2B dla dystrybutora?</h2>
+              <p class="p_regular_3">Plan Start kosztuje od 1 990 zł, Professional od 3 490 zł, a Enterprise od 6 990 zł netto miesięcznie. Nie pobieramy opłat od obrotu. Koszt wdrożenia rozkładamy w subskrypcji. Dokładny zakres i cenę znasz po sprincie analitycznym. Szczegóły znajdziesz na stronie <a href="/plany-wiseb2b/">Plany WiseB2B Cloud</a>.</p>
+            </div>
+            <div class="item">
+              <h2 class="h5_semi">Z jakimi systemami ERP się integrujecie?</h2>
+              <p class="p_regular_3">Mamy gotowe integracje z Teneum, Comarch XL i Optima, enova365 oraz Subiektem. Ceny, stany i warunki handlowe płyną z ERP na platformę, a zamówienia wracają do ERP. Inne systemy łączymy przez API. Więcej na stronie <a href="/integracje/">Integracje</a>.</p>
+            </div>
+            <div class="item">
+              <h2 class="h5_semi">Jak długo trwa wdrożenie?</h2>
+              {/* NEED: typowy czas całego wdrożenia dla dystrybutora (od sprintu do uruchomienia) */}
+              <p class="p_regular_3">Zaczynamy od sprintu analitycznego, który trwa od 1 do 4 tygodni. Na jego koniec wiesz, co wdrażamy, ile to kosztuje i kiedy ruszamy. Etapy po sprincie opisujemy na stronie <a href="/proces-wdrozenia/">Proces wdrożenia</a>.</p>
             </div>
           </div>
         </div>
@@ -260,7 +267,56 @@ import CtaBlock from '../components/CtaBlock.astro';
     </div>
   </section>
 
-<CtaBlock showPresentation={true} />
+  <!-- PLAN -->
+  <section class="hp-plan">
+    <div class="container">
+      <h2 class="hp-section-title lm-observer">Jak zaczynamy</h2>
+      <ol class="hp-plan__steps">
+        <li class="hp-plan__step lm-observer">
+          <span class="hp-plan__num">1</span>
+          <h3>Pokaz na Twoich przykładach</h3>
+          <p>30 minut z konsultantem. Platforma na żywo, na scenariuszach z Twojej firmy.</p>
+        </li>
+        <li class="hp-plan__step lm-observer">
+          <span class="hp-plan__num">2</span>
+          <h3>Sprint analityczny</h3>
+          <p>Od 1 do 4 tygodni. Na koniec wiesz, co wdrażamy, ile to kosztuje i kiedy ruszamy.</p>
+        </li>
+        <li class="hp-plan__step lm-observer">
+          <span class="hp-plan__num">3</span>
+          <h3>Uruchomienie obok obecnego procesu</h3>
+          <p>Klienci przechodzą na platformę stopniowo. Telefon, mail i dotychczasowy system działają do końca przejścia.</p>
+        </li>
+      </ol>
+      <p class="hp-plan__terms lm-observer">Abonament bez prowizji od obrotu. Koszt wdrożenia rozłożony w subskrypcji.</p>
+      <div class="hp-plan__cta">
+        <a href="/zamow-demo/" class="btn btn--primary">Zamów demo</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA: rozmowa z ekspertem -->
+  <section class="call-expert">
+    <div class="container">
+      <div class="row">
+        <div class="col-xl-8 offset-xl-2 col-lg-10 offset-lg-1">
+          <div class="call-expert__wrapper">
+            <h2 class="h2_semi">Opowiedz nam, jak dziś przyjmujesz zamówienia</h2>
+            <p class="name h5_regular">Jakub Czyżkowski</p>
+            <p class="job p_regular_2">CEO</p>
+            <div class="call-expert__button">
+              <a class="wise-button wise-button--wise-harvest" href="/zamow-demo/">Zamów rozmowę z ekspertem</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- BAZA WIEDZY -->
+  <ArticleCards slugs={['e-commerce-w-modelu-b2b', 'korzysci-z-wdrozenia-platformy-b2b', 'jak-wybrac-najlepsza-platforme-b2b']} subtitle="Artykuły dla dystrybutorów, którzy planują sprzedaż B2B online" />
+
+<CtaBlock />
 
 <script>
 document.querySelectorAll('.questions__items .item h2').forEach(h2 => {

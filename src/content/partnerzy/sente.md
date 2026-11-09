@@ -8,10 +8,10 @@ linkedin: "https://www.linkedin.com/company/sente-it"
 specialization:
   - "ERP (Teneum ERP)"
   - "WMS z AI"
-  - "Platforma e-Commerce B2B"
+  - "Platforma eCommerce B2B"
   - "CRM"
   - "Systemy dla handlu i dystrybucji"
-shortDescription: "Sente to polska firma IT z 25-letnim doświadczeniem, twórca systemu Teneum ERP. Projektuje i wdraża rozwiązania ERP, WMS z AI oraz platformy e-Commerce B2B dla firm handlowych, dystrybucyjnych i produkcyjnych. Jako partner WiseB2B łączy znajomość procesów B2B z kompetencjami integracyjnymi wypracowanymi w ponad 120 projektach wdrożeniowych."
+shortDescription: "Wrocławski dostawca oprogramowania dla handlu od 25 lat i twórca Teneum ERP. Wspiera WiseB2B w drugiej linii i wdraża platformę u dystrybutorów i producentów, także z integracją z ERP, WMS i kurierami. Zespół Sente wdrożył platformę B2B w Triplexie."
 order: 1
 ---
 
@@ -19,27 +19,27 @@ order: 1
 
 Sente działa na rynku od 2000 roku. Firma powstała we Wrocławiu i dziś liczy ponad 150 specjalistów: konsultantów, wdrożeniowców oraz ekspertów biznesowych z obszarów logistyki, finansów i sprzedaży.
 
-Główna siedziba mieści się we Wrocławiu (ul. Legnicka 51-53), a dodatkowe biura firma prowadzi w Rzeszowie i Starachowicach. Na koncie ma ponad 120 wdrożeń dla średnich i dużych firm w Polsce.
+Główna siedziba mieści się we Wrocławiu (ul. Legnicka 51-53), a dodatkowe biura firma prowadzi w Rzeszowie i Starachowicach. Pracuje dla średnich i dużych firm w Polsce.
 
-Sente rozwija własne oprogramowanie i realizuje projekty dopasowane do specyfiki działalności klienta – szczególnie w obszarze handlu, dystrybucji, e-commerce i produkcji.
+Sente rozwija własne oprogramowanie i realizuje projekty dopasowane do działalności klienta, szczególnie w handlu, dystrybucji, eCommerce i produkcji.
 
 ## Teneum ERP
 
-Flagowy produkt Sente to Teneum ERP – nowoczesny system ERP z elementami sztucznej inteligencji. System działa jako „system nerwowy firmy", integrując wszystkie obszary działalności w jednym środowisku.
+Flagowy produkt Sente to Teneum ERP, system ERP z elementami sztucznej inteligencji. System łączy wszystkie obszary działalności firmy w jednym środowisku.
 
 Teneum ERP składa się z modułów, które można wdrażać pojedynczo lub łączyć w całość:
 
-- **Handel i Dystrybucja** — obsługa sprzedaży, zarządzanie ofertą, cenami i warunkami handlowymi  
-- **Zaopatrzenie (SCM)** — planowanie dostaw i optymalizacja łańcucha supply chain  
-- **Zarządzanie Produkcją** — planowanie i kontrola procesów produkcyjnych  
-- **Finanse i Księgowość** — pełna obsługa finansowo-księgowa  
-- **Zarządzanie Personelem** — kadry i płace  
-- **CRM** — pozyskiwanie klientów, integracja z systemami pre-sale  
-- **Workflow i Dokumenty** — obieg dokumentów, automatyzacja procesów  
-- **Raportowanie i Analizy** — BI i dashboardy operacyjne  
-- **Platforma e-Commerce B2B** — portal kontrahenta z integracją z ERP  
+- **Handel i Dystrybucja**: obsługa sprzedaży, zarządzanie ofertą, cenami i warunkami handlowymi  
+- **Zaopatrzenie (SCM)**: planowanie dostaw i optymalizacja łańcucha supply chain  
+- **Zarządzanie Produkcją**: planowanie i kontrola procesów produkcyjnych  
+- **Finanse i Księgowość**: pełna obsługa finansowo-księgowa  
+- **Zarządzanie Personelem**: kadry i płace  
+- **CRM**: pozyskiwanie klientów, integracja z systemami pre-sale  
+- **Workflow i Dokumenty**: obieg dokumentów, automatyzacja procesów  
+- **Raportowanie i Analizy**: BI i dashboardy operacyjne  
+- **Platforma eCommerce B2B**: portal kontrahenta z integracją z ERP  
 
-Workflow to centralny moduł systemu – konsoliduje zadania użytkownika i na podstawie analizy powtarzalnych czynności podpowiada kolejne kroki.
+Workflow to centralny moduł systemu. Zbiera zadania użytkownika i na podstawie analizy powtarzalnych czynności podpowiada kolejne kroki.
 
 ## Teneum WMS z AI
 
@@ -49,19 +49,19 @@ Teneum WMS automatyzuje procesy od przyjęcia towaru, przez magazynowanie i komp
 
 System integruje się z firmami kurierskimi: FedEx, DPD, GLS, InPost, Schenker, DHL, UPS, Raben i innymi.
 
-## Platforma e-Commerce B2B
+## Platforma eCommerce B2B
 
 Sente oferuje platformę B2B opartą na WiseB2B, umożliwiającą sprzedaż online do klientów biznesowych.
 
 Platforma odwzorowuje złożone warunki handlowe, indywidualne ceny, rabaty i struktury katalogowe. Po integracji z ERP prezentuje dane w pełnej zgodności z polityką handlową firmy.
 
-Zawiera również panel handlowca do obsługi klientów.
+Zawiera również Panel Handlowca do obsługi klientów.
 
 Platforma jest dostosowana do logiki cenowej Teneum ERP, a w przypadku innych systemów wdrożenia realizowane są w oparciu o standard WiseB2B.
 
 ## Obsługiwane branże
 
-Sente realizuje projekty dla czterech głównych sektorów: dystrybucji i handlu, retailu, produkcji oraz e-commerce.
+Sente realizuje projekty dla czterech głównych sektorów: dystrybucji i handlu, retailu, produkcji oraz eCommerce.
 
 Firma ma doświadczenie m.in. w branżach:
 - motoryzacyjnej  
@@ -75,10 +75,10 @@ Firma ma doświadczenie m.in. w branżach:
 
 Sente stosuje dwa podejścia wdrożeniowe:
 
-- **kaskadowe (klasyczne)** — analiza 2–3 miesiące, projekt 5–9 miesięcy  
-- **zwinne (agile)** — krótkie iteracje 2–3 tygodnie (projektowanie, testy, wdrożenie)  
+- **kaskadowe (klasyczne)**: analiza 2–3 miesiące, projekt 5–9 miesięcy  
+- **zwinne (agile)**: krótkie iteracje 2–3 tygodnie (projektowanie, testy, wdrożenie)  
 
-W obu przypadkach kluczowy jest efekt biznesowy: poprawa efektywności, usprawnienie procesów i wzrost wydajności.
+W obu przypadkach liczy się efekt biznesowy: sprawniejsze procesy i większa wydajność zespołu.
 
 ## Wyróżnienia
 
@@ -86,14 +86,14 @@ Sente jest laureatem rankingów Diamenty Forbsa i Gazele Biznesu oraz było wyr�
 
 ## Dlaczego Sente jako partner WiseB2B?
 
-Sente od ponad 25 lat rozwija systemy ERP dla firm handlowych i dystrybucyjnych, co przekłada się na pełne zrozumienie logiki zarządzania ofertą, cenami i procesami sprzedażowymi.
+Sente od 25 lat rozwija oprogramowanie dla firm handlowych i dystrybucyjnych. Zna od środka logikę cenników, rabatów i warunków handlowych, którą platforma B2B musi odwzorować z ERP.
 
 Doświadczenie w budowie własnej platformy B2B pozwala skutecznie integrować system sprzedażowy z backendem. Wdrożenie WiseB2B z Sente zapewnia spójność danych i stabilność operacyjną.
 
-## Specjalizacja w kontekście WiseB2B
+## Co Sente robi przy wdrożeniach WiseB2B
 
 - Wdrożenia WiseB2B z integracją do Teneum ERP i innych systemów ERP  
-- Migracje z istniejących platform e-commerce  
+- Migracje z istniejących platform eCommerce  
 - Projekty z zaawansowaną logiką cenową i warunkami handlowymi  
 - Rozwiązania dla firm z wielokanałową sprzedażą i rozbudowaną dystrybucją  
 - Integracje z WMS, CRM, kurierami i marketplace  

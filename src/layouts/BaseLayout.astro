@@ -35,7 +35,7 @@ interface Props {
 
 const {
   title,
-  description = 'Platforma B2B dla firm handlowych i produkcyjnych. Zwiększ sprzedaż i obniż koszty obsługi procesu sprzedaży z WiseB2B.',
+  description = 'Platforma Commerce B2B dla dystrybutorów i producentów. Samoobsługa klienta, Panel Handlowca i agenci AI na danych z ERP.',
   ogImage = '/images/wiseb2b-og.png',
   noindex = false,
   webPageType,
@@ -47,7 +47,7 @@ const {
 
 const siteUrl = 'https://wiseb2b.eu';
 const canonicalUrl = new URL(Astro.url.pathname, siteUrl).href;
-const fullTitle = title === 'Strona główna' ? 'WiseB2B – eCommerce B2B Platform' : `${title} | WiseB2B`;
+const fullTitle = title === 'Strona główna' ? 'WiseB2B | Platforma Commerce B2B' : `${title} | WiseB2B`;
 const ogImageUrl = ogImage.startsWith('http') ? ogImage : new URL(ogImage, siteUrl).href;
 
 const breadcrumbLabels: Record<string, string> = {
@@ -105,7 +105,7 @@ const graph: any[] = [
     "@id": siteUrl + "/#organization",
     "name": "WiseB2B",
     "url": siteUrl + "/",
-    "description": "Platforma eCommerce B2B dla firm handlowych i produkcyjnych. Łączy sklep B2B, Panel Handlowca i Agentów AI w jednym środowisku.",
+    "description": "Platforma Commerce B2B dla dystrybutorów i producentów. W jednym środowisku łączy samoobsługę klienta, Panel Handlowca i agentów AI.",
     "logo": {
       "@type": "ImageObject",
       "url": siteUrl + "/svg/logo-wiseb2b_black.svg",
@@ -155,7 +155,7 @@ if (isPlatformPage) {
     "url": siteUrl + "/platforma-commerce-b2b/",
     "applicationCategory": "BusinessApplication",
     "operatingSystem": "Web",
-    "description": "Platforma eCommerce B2B łącząca sklep B2B, Panel Handlowca i Agenta AI. Przeznaczona dla dystrybutorów, hurtowni i producentów.",
+    "description": "Platforma Commerce B2B łącząca sklep B2B, Panel Handlowca i agentów AI. Dla dystrybutorów, hurtowni i producentów.",
     "inLanguage": "pl-PL",
     "publisher": { "@id": siteUrl + "/#organization" },
     "featureList": [

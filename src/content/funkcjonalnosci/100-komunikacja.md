@@ -2,9 +2,9 @@
 title: "Komunikacja"
 ---
 
-Integracja w jednym miejscu całej komunikacji o zamówieniach daje gwarancję, że wymiana informacji będzie płynna i zapewni szybkie wyjaśnianie problematycznych kwestii. WiseB2B pozwala na komunikację na temat zamówień z poziomu platformy, jak i integrację z zewnętrznymi systemami chatów. Narzędzie wspiera wysyłanie mailowych powiadomień o ofercie, statusach realizacji zamówień czy poziomie należności.
+Cała komunikacja o zamówieniu jest przy zamówieniu. Klient i Twój zespół wyjaśniają sprawy na platformie, a jeśli używasz zewnętrznego czatu, podłączysz go do WiseB2B. Platforma wysyła powiadomienia mailowe o ofercie, statusach realizacji i należnościach.
 
 - powiadomienia mailowe o ofercie, obsłudze zamówienia, należnościach itp.,
-- alerty aplikacji,
+- alerty w aplikacji,
 - historia komunikacji,
-- integracje z systemami chatów.
+- integracje z systemami czatów.

@@ -3,43 +3,52 @@ export const prerender = true;
 import BaseLayout from '../layouts/BaseLayout.astro';
 import CtaBlock from '../components/CtaBlock.astro';
 
+// FAQ: obiekcje z kontekstu marketingowego (gid360). Jedno źródło dla treści i dla schema.org.
 const faqData = [
   {
-    question: "Czym wyróżnia się WiseB2B na tle innych platform B2B?",
-    answer: "WiseB2B to jedyna platforma Commerce B2B łącząca cztery elementy, których nie znajdziesz razem w żadnym innym rozwiązaniu: agentów AI realizujących realne operacje zakupowe, wbudowany Panel Handlowca (Sales CRM) integrujący sprzedaż online i offline, dostęp do kodu źródłowego eliminujący vendor-lock oraz modułową architekturę pluginów umożliwiającą rozwój bez ryzyka utraty customizacji przy aktualizacjach."
+    question: "Mamy już platformę B2B. Po co zmieniać?",
+    answer: "Sprawdź dwie rzeczy. Czy Twoja platforma odwzorowuje wszystkie warunki handlowe z ERP: cenniki indywidualne, progi ilościowe, limity kupieckie? Czy handlowcy nadal przepisują zamówienia ręcznie? Jeśli na któreś pytanie odpowiadasz źle, WiseB2B przejmie te warunki z ERP 1:1, a stary system działa do czasu pełnego przejścia."
   },
   {
-    question: "Jak działają agenci AI w platformie WiseB2B?",
-    answer: "Agenci AI w WiseB2B to autonomiczni agenci wykonujący złożone operacje na polecenie użytkownika. Klient może poprosić agenta o wyszukanie produktów, zbudowanie koszyka zakupowego, import zamówienia z pliku Excel czy PDF, sprawdzenie statusu dostawy lub porównanie produktów. Agent AI dla administratora wspiera operacje masowe, np. hurtową aktualizację cenników czy zarządzanie katalogiem."
+    question: "Czy nie uzależnię się od kolejnego dostawcy?",
+    answer: "Nie musisz. W planie Enterprise dostajesz kod źródłowy (w Professional jako opcję). Platformę możesz uruchomić w WiseB2B Cloud albo na własnych serwerach. Rozwijać ją może nasz zespół, partner wdrożeniowy, Twój dział IT albo dowolna agencja."
   },
   {
-    question: "Co to jest Panel Handlowca i jak wspiera sprzedaż?",
-    answer: "Panel Handlowca to wbudowany moduł Sales CRM, który zastępuje potrzebę korzystania z osobnego systemu CRM. Handlowiec ma w jednym miejscu dostęp do przygotowywania ofert indywidualnych, monitorowania zakupów klientów, analizy marży i trendów zakupowych, definiowania celów sprzedażowych oraz obsługi zdarzeń i zadań. Panel Handlowca operuje na tych samych cenach i warunkach co platforma eCommerce."
+    question: "Czy pobieracie prowizję od obrotu?",
+    answer: "Nie. Płacisz stały abonament: Start od 1 990 zł, Professional od 3 490 zł, Enterprise od 6 990 zł netto miesięcznie. Koszt wdrożenia rozkładamy w subskrypcji. Gdy sprzedaż przez platformę rośnie, opłata zostaje ta sama."
   },
   {
-    question: "Czy WiseB2B daje dostęp do kodu źródłowego?",
-    answer: "Tak. WiseB2B udostępnia kod źródłowy, co daje pełną niezależność technologiczną. Rozwojem platformy może zająć się Twój własny zespół IT, dowolna agencja lub Partnerzy Wdrożeniowi WiseB2B. Modułowa architektura oparta na pluginach sprawia, że customizacje nie kolidują z kodem standardowym — aktualizacje nie psują rozszerzeń."
+    question: "Czy nie lepiej rozbudować platformę sklepową B2C?",
+    answer: "Platformy B2C trzeba przerabiać pod B2B: grupy klientów, hierarchie cenników, kredyt kupiecki, akceptacje zamówień. Każda taka przeróbka to koszt wdrożenia i utrzymania przy kolejnych aktualizacjach. W WiseB2B te mechanizmy są modułami platformy od pierwszej wersji."
   },
   {
-    question: "Czym WiseB2B różni się od Magento, PrestaShop i platform SaaS?",
-    answer: "Magento i PrestaShop to platformy e-Commerce stworzone dla sprzedaży detalicznej (B2C), wymagające kosztownej rozbudowy dla procesów B2B. WiseB2B zostało zaprojektowane od podstaw dla B2B, więc funkcje takie jak grupy klientów, hierarchie cennikowe czy kredyt kupiecki są dostępne od razu. W porównaniu z platformami SaaS, WiseB2B oferuje dostęp do kodu źródłowego, brak opłat GMV i możliwość instalacji OnPremise."
+    question: "Nie mamy czasu na długie wdrożenie.",
+    answer: "Zaczynamy od sprintu analitycznego, który trwa od 1 do 4 tygodni. Po nim wiesz, co wdrażamy, ile to kosztuje i kiedy ruszamy. Gotowe moduły i integracje z ERP skracają resztę projektu."
   },
   {
-    question: "Czy WiseB2B pobiera prowizję od wartości transakcji (GMV)?",
-    answer: "Nie. Platforma działa w modelu abonamentowym z trzema planami (Starter, Professional, Enterprise). Płacisz stałą miesięczną opłatę niezależnie od tego, ile sprzedajesz. Nie ma ukrytych prowizji od obrotu ani dodatkowych opłat rosnących wraz z sukcesem."
+    question: "A jeśli nasi klienci nie zechcą zamawiać online?",
+    answer: "Triplex, dystrybutor pirotechniki, miał tę samą obawę. Dziś 46,36% zamówień i 49,55% obrotu przechodzi przez platformę B2B. Klienci przechodzą w swoim tempie, a handlowiec nadal może złożyć zamówienie w ich imieniu."
   },
   {
-    question: "Co to jest Client API i jak mogą z niego korzystać moi klienci?",
-    answer: "Client API umożliwia Twoim klientom biznesowym zintegrowanie ich własnych systemów zakupowych (ERP, system zamówień, platforma procurement) bezpośrednio z Twoją platformą sprzedażową. Klient może składać zamówienia, sprawdzać stany magazynowe i pobierać faktury bez konieczności logowania się do sklepu — wszystko dzieje się automatycznie między systemami."
+    question: "Czy wdrożenie zaburzy bieżącą sprzedaż?",
+    answer: "Nowa platforma rusza obok obecnego procesu. Stary system działa do pełnego przejścia. VMP, hurtownia bielizny z 86 000 indeksów, wyłączyła poprzednie rozwiązanie po miesiącu."
   },
   {
-    question: "Dla jakich firm jest WiseB2B — czy moja firma się kwalifikuje?",
-    answer: "WiseB2B jest przeznaczone dla polskich firm handlowych i produkcyjnych prowadzących sprzedaż B2B — przede wszystkim dystrybutorów, hurtowni i producentów z własnymi kanałami sprzedaży. Platforma sprawdza się najlepiej w firmach o rocznych obrotach od ok. 20 mln zł, posiadających kilkuset lub więcej klientów biznesowych."
+    question: "Co dokładnie robią agenci AI?",
+    answer: "Agent klienta wyszukuje produkty, buduje koszyk, sprawdza status zamówienia i zamienia zamówienie z maila, PDF lub Excela w gotowy koszyk. Agent administratora pomaga w konfiguracji i w operacjach masowych, np. aktualizacji cenników i katalogu. Agenci działają na cenach, stanach i uprawnieniach danego użytkownika."
+  },
+  {
+    question: "Co to jest Client API?",
+    answer: "To API dla Twoich klientów biznesowych. Ich system zakupowy składa zamówienia i pobiera cenniki oraz dostępność bezpośrednio z Twojej platformy, bez logowania do sklepu. Client API jest w planach Professional i Enterprise."
+  },
+  {
+    question: "Dla jakich firm jest WiseB2B?",
+    answer: "Dla dystrybutorów od około 20 mln zł obrotu i producentów z własną dystrybucją B2B. Najlepiej sprawdza się, gdy masz co najmniej 100 stałych klientów B2B, 300 transakcji miesięcznie, zespół handlowy z kierownikiem i ERP z naszej listy. WiseB2B nie zastępuje ERP i nie jest sklepem dla klientów detalicznych."
   }
 ];
 ---
 
-<BaseLayout title="Platforma B2B dla firm handlowych i produkcyjnych" description="Poznaj możliwości WiseB2B – platformy e-Commerce B2B dla firm handlowych i produkcyjnych. Zwiększ sprzedaż i obniż koszty obsługi procesu sprzedaży." faq={faqData}>
+<BaseLayout title="Platforma Commerce B2B z agentami AI i Panelem Handlowca" description="Samoobsługa klienta, Panel Handlowca i agenci AI na tych samych danych z ERP. Otwarty kod, chmura lub własne serwery, abonament bez prowizji od obrotu." faq={faqData}>
 
 <div class="supports-logos">
   <div class="container">
@@ -49,66 +58,33 @@ const faqData = [
           <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M13 2 3 14h9l-1 8 10-12h-9l1-8z"/></svg>
           Commerce B2B Platform
         </span>
-        <h1 class="h2_semi lm-observer">Jedyna platforma <span style="color: #AF9ED7">Commerce B2B</span> z użytecznym AI, Panelem Handlowca i otwartym kodem</h1>
+        <h1 class="h2_semi lm-observer">Klient, handlowiec i <span style="color: #AF9ED7">agenci AI</span> pracują na tych samych danych z ERP</h1>
       </div>
     </div>
     <div class="row">
       <div class="col-lg-6 offset-lg-3 col-xl-6 offset-xl-3">
-        <p class="p_regular_2 description lm-observer">Platforma e-Commerce B2B stworzona od podstaw dla firm handlowych i produkcyjnych. Agenci AI, wbudowany Panel Handlowca i dostęp do kodu źródłowego w jednym rozwiązaniu.</p>
+        <p class="p_regular_2 description lm-observer">WiseB2B to platforma Commerce B2B dla dystrybutorów i producentów. Klient zamawia sam na swoich cenach i limitach. Handlowiec widzi to zamówienie w Panelu Handlowca. Zamówienie z maila agent AI zamienia w koszyk.</p>
         <a href="/zamow-demo/" class="wise-button wise-button--wise-harvest lm-observer">Zamów demo</a>
       </div>
     </div>
   </div>
 </div>
 
-<!-- Sekcja Główne cechy platformy -->
+<!-- STAWKA -->
+<section class="hp-stakes">
+  <div class="container">
+    <h2 class="hp-stakes__title lm-observer">Sklep, CRM i Excel to trzy wersje tego samego klienta</h2>
+    <p class="hp-stakes__text lm-observer">Platforma B2B nie zna cennika z ERP, więc handlowiec poprawia ceny ręcznie. CRM nie widzi zamówień online, więc nikt nie zauważa, że klient kupuje coraz mniej. A BOK przepisuje do ERP to, co przyszło mailem.</p>
+  </div>
+</section>
+
+<!-- TEZA KATEGORII: TRZY FILARY I FUNDAMENT -->
 <div class="functions-list-artwork" style="background:#fff; padding-top:60px; padding-bottom:20px; margin-top:0; margin-bottom:0;">
   <div class="container">
-    <!-- Cecha 1: B2B first — image right -->
-    <div class="row" style="margin-bottom: 100px;">
-      <div class="col-lg-10 offset-lg-1 col-xl-8 offset-xl-2 p-xl-0">
-        <div class="feature-row" style="display:flex; align-items:center; gap:40px;">
-          <div class="feature-row__text" style="flex:7; min-width:0; display:flex; flex-direction:column; justify-content:center;">
-            <ul class="list list--left" style="margin-top:0;">
-              <li class="lm-observer">
-                <span class="icon-purple-badge"><img loading="lazy" width="40" height="40" src="/images/np_ecommerce_4557208_000000-1.png" class="icon" alt="Ikona eCommerce B2B" /></span>
-                <div>
-                  <p class="p_semi_2 head">B2B first — platforma stworzona dla B2B, nie adaptowana</p>
-                  <p class="p_regular_3 description">Większość rozwiązań dostępnych na rynku to platformy B2C rozbudowane o moduły dla biznesu. WiseB2B powstało od podstaw z myślą o złożoności relacji handlowych B2B — grupach klientów, hierarchiach cennikowych, kredycie kupieckim, sub-kontach i procesach akceptacji zamówień. Dzięki temu wdrożenie jest szybsze, tańsze i trafia dokładnie w potrzeby Twojej organizacji.</p>
-                </div>
-              </li>
-            </ul>
-          </div>
-          <div class="feature-row__img lm-observer" style="flex:5; min-width:0;">
-            <img loading="lazy" src="/images/iStock-1039579142.jpg" style="width:100%; height:auto; border-radius:16px; display:block;" alt="Platforma B2B stworzona dla handlu" />
-          </div>
-        </div>
-      </div>
-    </div>
+    <h2 class="hp-section-title lm-observer">Jedyna platforma Commerce B2B AI-Native z Panelem Handlowca i otwartym kodem</h2>
+    <p class="hp-section-subtitle lm-observer">Trzy filary na jednym fundamencie: platformie projektowanej od podstaw dla handlu B2B</p>
 
-    <!-- Cecha 2: Panel Handlowca — image left -->
-    <div class="row" style="margin-bottom: 100px;">
-      <div class="col-lg-10 offset-lg-1 col-xl-8 offset-xl-2 p-xl-0">
-        <div class="feature-row feature-row--reverse" style="display:flex; align-items:center; gap:40px;">
-          <div class="feature-row__img lm-observer" style="flex:5; min-width:0;">
-            <img loading="lazy" src="/images/pexels-fauxels-3182826-1.jpeg" style="width:100%; height:auto; border-radius:16px; display:block;" alt="Panel Handlowca Sales CRM" />
-          </div>
-          <div class="feature-row__text" style="flex:7; min-width:0; display:flex; flex-direction:column; justify-content:center;">
-            <ul class="list list--right" style="margin-top:0;">
-              <li class="lm-observer">
-                <span class="icon-purple-badge"><img loading="lazy" width="40" height="40" src="/images/np_suitcase_4525556_000000-1.png" class="icon" alt="Ikona panelu handlowca" /></span>
-                <div>
-                  <p class="p_semi_2 head">Panel Handlowca — sprzedaż online i offline w jednym miejscu</p>
-                  <p class="p_regular_3 description">Zamiast żonglować oddzielnym CRM-em i platformą eCommerce, Twoi handlowcy mają wszystko pod ręką w jednym systemie. Te same ceny, te same warunki, ten sam klient — niezależnie od tego, czy zakup odbywa się online, czy przez telefon. Przygotowywanie ofert, monitorowanie zakupów, reagowanie na spadki sprzedaży — to realne wsparcie nastawione na wzrost marży, nie kolejna warstwa administracji.</p>
-                </div>
-              </li>
-            </ul>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <!-- Cecha 3: Agenci AI — image right -->
+    <!-- Filar 1: Agenci AI (image right) -->
     <div class="row" style="margin-bottom: 100px;">
       <div class="col-lg-10 offset-lg-1 col-xl-8 offset-xl-2 p-xl-0">
         <div class="feature-row" style="display:flex; align-items:center; gap:40px;">
@@ -117,33 +93,82 @@ const faqData = [
               <li class="lm-observer">
                 <span class="icon-purple-badge"><img loading="lazy" width="40" height="40" src="/images/np_operation_2998632_000000-1.png" class="icon" alt="Ikona agentów AI" /></span>
                 <div>
-                  <p class="p_semi_2 head">Agenci AI działający w praktyce — nie tylko asystent, ale realny agent</p>
-                  <p class="p_regular_3 description">WiseB2B to pierwsza platforma Commerce B2B z agentami AI, które naprawdę pracują. Klient może nie tylko wyszukać produkt — może poprosić agenta o zbudowanie całego koszyka, import zamówienia z dowolnego pliku, sprawdzenie statusu dostawy czy porównanie ofert. Mniej maili, mniej telefonów, mniej pracy dla Twojego BOK. Więcej czasu na to, co naprawdę ważne.</p>
+                  <p class="p_semi_2 head">1. Agenci AI wykonują operacje w platformie</p>
+                  <p class="p_regular_3 description">Klient wkleja zamówienie z maila, PDF lub Excela, a agent zamienia je w gotowy koszyk na cenach tego klienta. Ten sam agent wyszukuje produkty i sprawdza status dostawy. Agent administratora hurtowo aktualizuje cenniki i katalog. Z pomocą AI powstają też opisy produktów, treści SEO, tłumaczenia i nowe rozszerzenia platformy.</p>
+                  <a href="/agent-ai/" class="hp-why__link">Zobacz Agenta AI</a>
                 </div>
               </li>
             </ul>
           </div>
           <div class="feature-row__img lm-observer" style="flex:5; min-width:0;">
-            <img loading="lazy" src="/images/startup-gcc67d2922_640.jpg" style="width:100%; height:auto; border-radius:16px; display:block;" alt="Agenci AI w platformie B2B" />
+            <img loading="lazy" src="/images/startup-gcc67d2922_640.jpg" style="width:100%; height:auto; border-radius:16px; display:block;" alt="Agenci AI w platformie Commerce B2B" />
           </div>
         </div>
       </div>
     </div>
 
-    <!-- Cecha 4: Kod źródłowy — image left -->
+    <!-- Filar 2: Panel Handlowca (image left) -->
     <div class="row" style="margin-bottom: 100px;">
       <div class="col-lg-10 offset-lg-1 col-xl-8 offset-xl-2 p-xl-0">
         <div class="feature-row feature-row--reverse" style="display:flex; align-items:center; gap:40px;">
           <div class="feature-row__img lm-observer" style="flex:5; min-width:0;">
-            <img loading="lazy" src="/images/lg-screen-office-view.png" style="width:100%; height:auto; border-radius:16px; display:block;" alt="Kod źródłowy niezależność" />
+            <img loading="lazy" src="/images/pexels-fauxels-3182826-1.jpeg" style="width:100%; height:auto; border-radius:16px; display:block;" alt="Zespół handlowy pracujący w Panelu Handlowca" />
           </div>
           <div class="feature-row__text" style="flex:7; min-width:0; display:flex; flex-direction:column; justify-content:center;">
             <ul class="list list--right" style="margin-top:0;">
               <li class="lm-observer">
+                <span class="icon-purple-badge"><img loading="lazy" width="40" height="40" src="/images/np_suitcase_4525556_000000-1.png" class="icon" alt="Ikona Panelu Handlowca" /></span>
+                <div>
+                  <p class="p_semi_2 head">2. Panel Handlowca łączy sprzedaż online i offline</p>
+                  {/* NEED: potwierdzenie, które funkcje Panelu Handlowca (karta 360°, alert przy spadku zakupów) są dziś produkcyjne */}
+                  <p class="p_regular_3 description">Handlowiec widzi te same ceny, warunki i stany co klient na platformie. W karcie klienta ma zakupy online i offline, otwarte oferty i rozrachunki. Ofertę przygotowuje w panelu, a klient zamienia ją w koszyk jednym kliknięciem. Gdy klient zaczyna kupować mniej, handlowiec dowiaduje się o tym z panelu, a nie z raportu na koniec kwartału.</p>
+                  <a href="/panel-handlowca/" class="hp-why__link">Zobacz Panel Handlowca</a>
+                </div>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Filar 3: Otwarty kod (image right) -->
+    <div class="row" style="margin-bottom: 100px;">
+      <div class="col-lg-10 offset-lg-1 col-xl-8 offset-xl-2 p-xl-0">
+        <div class="feature-row" style="display:flex; align-items:center; gap:40px;">
+          <div class="feature-row__text" style="flex:7; min-width:0; display:flex; flex-direction:column; justify-content:center;">
+            <ul class="list list--left" style="margin-top:0;">
+              <li class="lm-observer">
                 <span class="icon-purple-badge"><img loading="lazy" width="40" height="40" src="/images/np_server_1122156_000000-1.png" class="icon" alt="Ikona kodu źródłowego" /></span>
                 <div>
-                  <p class="p_semi_2 head">Kod źródłowy — Twoja niezależność i bezpieczeństwo</p>
-                  <p class="p_regular_3 description">W odróżnieniu od platform SaaS, z WiseB2B nie jesteś uzależniony od jednego dostawcy. Masz dostęp do kodu źródłowego, więc rozwojem może zająć się Twój własny zespół IT lub dowolna agencja. Modułowa architektura i technologia pluginów sprawia, że aktualizacje nie psują Twoich customizacji. Budujesz na solidnym fundamencie — i ten fundament zawsze jest Twój.</p>
+                  <p class="p_semi_2 head">3. Otwarty kod: platforma zostaje Twoja</p>
+                  <p class="p_regular_3 description">W planie Enterprise dostajesz kod źródłowy, w Professional możesz go dokupić. Platformę uruchamiasz w WiseB2B Cloud albo na własnych serwerach. Rozwijać ją może nasz zespół, partner wdrożeniowy, Twój dział IT albo wybrana agencja. Zmiany powstają jako pluginy, poza kodem standardowym, więc aktualizacja do nowej wersji nie oznacza przepisywania Twoich rozszerzeń.</p>
+                  <a href="/integracje/" class="hp-why__link">Zobacz integracje i technologię</a>
+                </div>
+              </li>
+            </ul>
+          </div>
+          <div class="feature-row__img lm-observer" style="flex:5; min-width:0;">
+            <img loading="lazy" src="/images/lg-screen-office-view.png" style="width:100%; height:auto; border-radius:16px; display:block;" alt="Otwarty kod i niezależność od dostawcy" />
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Fundament: B2B-first (image left) -->
+    <div class="row" style="margin-bottom: 100px;">
+      <div class="col-lg-10 offset-lg-1 col-xl-8 offset-xl-2 p-xl-0">
+        <div class="feature-row feature-row--reverse" style="display:flex; align-items:center; gap:40px;">
+          <div class="feature-row__img lm-observer" style="flex:5; min-width:0;">
+            <img loading="lazy" src="/images/iStock-1039579142.jpg" style="width:100%; height:auto; border-radius:16px; display:block;" alt="Platforma B2B projektowana dla handlu hurtowego" />
+          </div>
+          <div class="feature-row__text" style="flex:7; min-width:0; display:flex; flex-direction:column; justify-content:center;">
+            <ul class="list list--right" style="margin-top:0;">
+              <li class="lm-observer">
+                <span class="icon-purple-badge"><img loading="lazy" width="40" height="40" src="/images/np_ecommerce_4557208_000000-1.png" class="icon" alt="Ikona eCommerce B2B" /></span>
+                <div>
+                  <p class="p_semi_2 head">Fundament: B2B-first, warunki z ERP 1:1</p>
+                  <p class="p_regular_3 description">WiseB2B od początku powstawało dla sprzedaży hurtowej. Cenniki indywidualne, progi ilościowe, kredyt kupiecki, konta zakupowców po stronie klienta i akceptacje zamówień to moduły platformy, a nie przeróbki sklepu detalicznego. Warunki zapisane w ERP widać na platformie tak samo. U Triplex ceny w sklepie B2B liczą się dokładnie jak w Comarch Optima. Całość to 37 modułów w 13 obszarach.</p>
+                  <a href="/funkcje/" class="hp-why__link">Zobacz wszystkie funkcje</a>
                 </div>
               </li>
             </ul>
@@ -154,14 +179,14 @@ const faqData = [
   </div>
 </div>
 
-<!-- Sekcja WiseB2B daje więcej -->
+<!-- Sekcja: co jeszcze jest w platformie -->
 <div class="functions-box-white-bg" style="margin-top:0; margin-bottom:0; background:#f8f7fa; padding:60px 0;">
   <div class="container">
     <div class="row">
       <div class="col-lg-10 offset-lg-1 col-xl-8 offset-xl-2 p-xl-0">
         <div class="functions-box-white-bg__wrap">
           <h2 class="h2_semi lm-observer" style="text-align:center;">
-            Co więcej w wise<img src="/svg/logo-b2b-badge.svg" alt="B2B" style="height:0.8em; width:auto; display:inline-block; vertical-align:middle; margin-left:4px; margin-right:2px; position:relative; top:-0.05em;" /> ?
+            Co jeszcze dostajesz w wise<img src="/svg/logo-b2b-badge.svg" alt="B2B" style="height:0.8em; width:auto; display:inline-block; vertical-align:middle; margin-left:4px; margin-right:2px; position:relative; top:-0.05em;" />
           </h2>
         </div>
         <div class="wise-more-table">
@@ -177,7 +202,8 @@ const faqData = [
               </div>
             </div>
             <div class="wise-more-row__desc">
-              <p class="p_regular_3" style="margin:0;">Twoi klienci mogą zintegrować swoje systemy zakupowe bezpośrednio z Twoją platformą. Client API to unikalna funkcja — nigdzie nie będzie im się kupowało tak wygodnie jak u Ciebie.</p>
+              {/* NEED: dowód na „tego nie daje żaden inny system” (decyzja do zamknięcia, mapa pkt 10.5); do tego czasu bez twierdzenia o unikalności */}
+              <p class="p_regular_3" style="margin:0;">System zakupowy Twojego klienta składa zamówienia i pobiera cenniki bezpośrednio z Twojej platformy. Klient, który zamawia ze swojego ERP, nie musi logować się do sklepu ani przepisywać indeksów.</p>
             </div>
           </div>
 
@@ -192,7 +218,7 @@ const faqData = [
               </div>
             </div>
             <div class="wise-more-row__desc">
-              <p class="p_regular_3" style="margin:0; margin-bottom:12px;">Gotowe integracje z systemami ERP (Teneum, Comarch XL, eNova, Subiekt) oraz platformami integracyjnymi (Aplio) istotnie zmniejszają ryzyka projektu, jego koszty i czas wdrożenia.</p>
+              <p class="p_regular_3" style="margin:0; margin-bottom:12px;">Mamy gotowe integracje z Teneum, Comarch XL, Comarch Optima, enova365 i Subiektem oraz z platformą integracyjną Apilo. Projekt nie zaczyna się od pisania konektora do ERP, więc jest krótszy i tańszy.</p>
               <div style="display:flex; gap:12px; flex-wrap:wrap; align-items:center;">
                 <img loading="lazy" src="/images/erp-logo-1.png" style="height:28px; width:auto; opacity:0.7;" alt="ERP integracja 1" />
                 <img loading="lazy" src="/images/erp-logo-2.png" style="height:28px; width:auto; opacity:0.7;" alt="ERP integracja 2" />
@@ -212,37 +238,37 @@ const faqData = [
               </div>
             </div>
             <div class="wise-more-row__desc">
-              <p class="p_regular_3" style="margin:0;">Mobilna wersja platformy dostarczana jest w standardzie. Twoi klienci mogą składać zamówienia w każdych warunkach — z biura, magazynu czy w trasie.</p>
+              <p class="p_regular_3" style="margin:0;">Wersja mobilna jest w standardzie. Zakupowiec Twojego klienta złoży zamówienie z telefonu, z magazynu albo z trasy.</p>
             </div>
           </div>
 
           <!-- Ekspansja zagraniczna -->
           <div class="wise-more-row lm-observer">
             <div class="wise-more-row__name">
-              <p class="p_semi_2" style="margin:0;">Ekspansja zagraniczna</p>
+              <p class="p_semi_2" style="margin:0;">Sprzedaż zagraniczna</p>
             </div>
             <div class="wise-more-row__icon">
               <div class="wise-more-row__icon-bg">
-                <img src="/svg/icon-ekspansja.svg" width="26" height="26" alt="Ekspansja zagraniczna" />
+                <img src="/svg/icon-ekspansja.svg" width="26" height="26" alt="Sprzedaż zagraniczna" />
               </div>
             </div>
             <div class="wise-more-row__desc">
-              <p class="p_regular_3" style="margin:0;">Wielojęzyczność, wielokrajowość, wielosklepowość i wielowalutowość wbudowane w system. Automatyczna weryfikacja VIES, obsługa stawek VAT i lokalnych metod dostawy — handel z całym światem bez większego wysiłku.</p>
+              <p class="p_regular_3" style="margin:0;">Wiele języków, walut i sklepów na jednym zapleczu. Platforma sama sprawdza numer VAT w VIES i nalicza VAT 0% przy dostawie do innego kraju UE. Tak VMP sprzedaje bieliznę do sklepów w krajach UE.</p>
             </div>
           </div>
 
-          <!-- SEO-friendly -->
+          <!-- SEO -->
           <div class="wise-more-row lm-observer">
             <div class="wise-more-row__name">
-              <p class="p_semi_2" style="margin:0;">SEO-friendly</p>
+              <p class="p_semi_2" style="margin:0;">Profil otwarty i SEO</p>
             </div>
             <div class="wise-more-row__icon">
               <div class="wise-more-row__icon-bg">
-                <img src="/svg/icon-seo.svg" width="26" height="26" alt="SEO-friendly" />
+                <img src="/svg/icon-seo.svg" width="26" height="26" alt="Profil otwarty i SEO" />
               </div>
             </div>
             <div class="wise-more-row__desc">
-              <p class="p_regular_3" style="margin:0;">Platforma B2B to nie tylko obsługa obecnych klientów — to też pozyskiwanie nowych. WiseB2B jest zoptymalizowane pod wyszukiwarki, żeby Twoje produkty i firma były widoczne tam, gdzie szukają Cię potencjalni klienci.</p>
+              <p class="p_regular_3" style="margin:0;">Katalog można pokazać bez logowania, z opisami i nagłówkami SEO. Firma, która szuka Twoich produktów w Google, trafia na Twoją platformę i zostawia prośbę o rejestrację.</p>
             </div>
           </div>
 
@@ -252,7 +278,7 @@ const faqData = [
   </div>
 </div>
 
-<!-- Sekcja Bezpieczeństwo Twojego biznesu -->
+<!-- WARSTWA BEZPIECZEŃSTWA -->
 <div class="functions-box-white-bg" style="background:#fff; margin-top:0; margin-bottom:0; padding:60px 0;">
   <div class="container">
     <div class="row">
@@ -260,7 +286,7 @@ const faqData = [
         <div class="functions-box-white-bg__wrap">
           <h2 class="h2_semi functions-box-white-bg__header lm-observer">Bezpieczeństwo Twojego biznesu</h2>
           <p class="p_regular_2 lm-observer" style="text-align:center; margin-top:16px; max-width:560px; margin-left:auto; margin-right:auto; color:#5a5a72;">
-            WiseB2B to nie tylko technologia — to partner, który dba o Twoją niezależność, zgodność z prawem i stabilność biznesu na każdym etapie.
+            Zmiana sposobu sprzedaży nie może kosztować Cię klientów. Dlatego każdy etap wdrożenia ma ustalony zakres, a stary system działa do końca przejścia.
           </p>
         </div>
       </div>
@@ -272,12 +298,12 @@ const faqData = [
           <div class="about-us-rules__item lm-observer">
             <div class="about-us-rules__icon">
               <div class="about-us-rules__icon-bg">
-                <img src="/svg/icon-no-vendor-lock.svg" width="24" height="24" alt="Bez vendor-lock" />
+                <img src="/svg/icon-no-vendor-lock.svg" width="24" height="24" alt="Bez vendor lock-in" />
               </div>
             </div>
             <div class="about-us-rules__content">
-              <p class="p_semi_1 about-us-rules__content-header">Bez vendor-lock — Twoja niezależność</p>
-              <p class="p_regular_3 about-us-rules__content-desc">WiseB2B dostarcza technologię, ale nie uzależnia Cię od siebie. Wdrożenia może dokonać nasz partner, Twój własny zespół IT lub dowolna agencja. Otwarty kod i sieć niezależnych Partnerów Wdrożeniowych to realna niezależność, nie marketingowa obietnica.</p>
+              <p class="p_semi_1 about-us-rules__content-header">Bez vendor lock-in</p>
+              <p class="p_regular_3 about-us-rules__content-desc">Kod źródłowy, instalacja na własnych serwerach i sieć partnerów wdrożeniowych. Jeśli kiedyś zechcesz zmienić firmę, która rozwija Twoją platformę, platforma zostaje u Ciebie.</p>
             </div>
           </div>
 
@@ -289,43 +315,56 @@ const faqData = [
             </div>
             <div class="about-us-rules__content">
               <p class="p_semi_1 about-us-rules__content-header">Gwarancja zgodności prawnej</p>
-              <p class="p_regular_3 about-us-rules__content-desc">Żadne rozwiązanie OpenSource nie zapewni Ci pewności formalnej i prawnej — ciężar dostosowania zawsze spada na Ciebie. WiseB2B bierze ten ciężar na siebie. Platforma jest aktualizowana zgodnie z obowiązującymi przepisami, abyś Ty mógł skupić się na biznesie.</p>
+              <p class="p_regular_3 about-us-rules__content-desc">GPSR, RODO, Omnibus i opłata SUP są po naszej stronie. Gdy zmieniają się przepisy, aktualizujemy platformę. W rozwiązaniu OpenSource ten obowiązek spada na Ciebie.</p>
             </div>
           </div>
 
           <div class="about-us-rules__item lm-observer">
             <div class="about-us-rules__icon">
               <div class="about-us-rules__icon-bg">
-                <img src="/svg/icon-no-gmv.svg" width="24" height="24" alt="Brak opłat GMV" />
+                <img src="/svg/icon-no-gmv.svg" width="24" height="24" alt="Bez opłat od obrotu" />
               </div>
             </div>
             <div class="about-us-rules__content">
-              <p class="p_semi_1 about-us-rules__content-header">Brak opłat GMV — dożywotnia obietnica</p>
-              <p class="p_regular_3 about-us-rules__content-desc">Nie jesteśmy Twoimi wspólnikami — dostarczamy narzędzia, ale Twój sukces należy do Ciebie. WiseB2B nigdy nie pobiera prowizji od wartości Twoich transakcji. Im więcej sprzedajesz, tym bardziej opłacalne staje się korzystanie z platformy.</p>
+              <p class="p_semi_1 about-us-rules__content-header">Bez opłat od obrotu, na zawsze</p>
+              <p class="p_regular_3 about-us-rules__content-desc">Płacisz stały abonament. Nie pobieramy prowizji od wartości zamówień. Gdy sprzedaż przez platformę rośnie, opłata zostaje ta sama.</p>
             </div>
           </div>
 
           <div class="about-us-rules__item lm-observer">
             <div class="about-us-rules__icon">
               <div class="about-us-rules__icon-bg">
-                <img src="/svg/icon-methodology.svg" width="24" height="24" alt="Metodyka wdrożeniowa" />
+                <img src="/svg/icon-methodology.svg" width="24" height="24" alt="Sprawdzona metodyka wdrożeniowa" />
               </div>
             </div>
             <div class="about-us-rules__content">
-              <p class="p_semi_1 about-us-rules__content-header">Sprawdzona metodyka wdrożeniowa</p>
-              <p class="p_regular_3 about-us-rules__content-desc">WiseB2B to nie tylko technologia — to gotowa metodyka tworzenia specyfikacji wymagań, specyfikacji funkcjonalnej i podziału na zadania wdrożeniowe. Przetestowana w dziesiątkach projektów. Wiesz, czego się spodziewać na każdym etapie i co dostaniesz na końcu.</p>
+              <p class="p_semi_1 about-us-rules__content-header">Sprawdzona metodyka</p>
+              <p class="p_regular_3 about-us-rules__content-desc">Zaczynamy od sprintu analitycznego, który trwa od 1 do 4 tygodni. Kończy się specyfikacją wymagań, specyfikacją funkcjonalną i listą zadań. Wiesz, co dostaniesz, za ile i kiedy.</p>
             </div>
           </div>
 
           <div class="about-us-rules__item lm-observer">
             <div class="about-us-rules__icon">
               <div class="about-us-rules__icon-bg">
-                <img src="/svg/icon-team-support.svg" width="24" height="24" alt="Wsparcie zespołu Sente" />
+                <img src="/svg/icon-integracje.svg" width="24" height="24" alt="Bezpieczna migracja" />
               </div>
             </div>
             <div class="about-us-rules__content">
-              <p class="p_semi_1 about-us-rules__content-header">Zespół ze wsparciem Sente — 25 lat, ~100 projektów</p>
-              <p class="p_regular_3 about-us-rules__content-desc">Za WiseB2B stoi Sente — firma z ponad 25-letnim doświadczeniem w budowaniu rozwiązań IT dla firm handlowych i produkcyjnych. Wiedza zdobyta w około 100 projektach wdrożeniowych nie jest teorią — jest wbudowana w produkt i metodykę, z której korzystasz od pierwszego dnia.</p>
+              <p class="p_semi_1 about-us-rules__content-header">Bezpieczna migracja</p>
+              <p class="p_regular_3 about-us-rules__content-desc">Stary system działa równolegle, dopóki klienci nie przejdą na nową platformę. VMP wyłączyła poprzednie rozwiązanie po miesiącu.</p>
+              <a href="/bezpieczna-migracja/" class="hp-why__link">Jak wygląda migracja</a>
+            </div>
+          </div>
+
+          <div class="about-us-rules__item lm-observer">
+            <div class="about-us-rules__icon">
+              <div class="about-us-rules__icon-bg">
+                <img src="/svg/icon-team-support.svg" width="24" height="24" alt="Zaplecze Sente" />
+              </div>
+            </div>
+            <div class="about-us-rules__content">
+              <p class="p_semi_1 about-us-rules__content-header">Zaplecze Sente</p>
+              <p class="p_regular_3 about-us-rules__content-desc">W drugiej linii stoi Sente, firma, która od 25 lat tworzy oprogramowanie dla handlu i produkcji. Jej doświadczenie z wdrożeń ERP jest w naszej metodyce i w samym produkcie.</p>
             </div>
           </div>
 
@@ -335,8 +374,35 @@ const faqData = [
   </div>
 </div>
 
-<!-- Sekcja Kiedy WiseB2B -->
-<div class="functions-list-artwork" style="background:#fff; margin-top:0; padding-top:60px; padding-bottom:20px; margin-bottom:0;">
+<!-- DOWODY -->
+<section class="hp-case">
+  <div class="container">
+    <h2 class="hp-section-title lm-observer">Co się zmienia po wdrożeniu</h2>
+    <p class="hp-section-subtitle lm-observer">Liczby z wdrożeń platformy WiseB2B</p>
+    <div class="hp-proof">
+      <div class="hp-proof__card lm-observer">
+        <img src="/images/logo-vmp.jpg" alt="VMP" width="140" height="50" class="hp-proof__logo" />
+        <p class="hp-proof__desc">Hurtownia bielizny, 86 000 indeksów, sprzedaż do sklepów w krajach UE, ponad 90% zamówień w dropshippingu</p>
+        <div class="hp-proof__stats">
+          <div><span class="hp-proof__value">−60%</span><span class="hp-proof__label">czasu obsługi zamówienia</span></div>
+          <div><span class="hp-proof__value">−45%</span><span class="hp-proof__label">zapytań do BOK</span></div>
+        </div>
+        <a href="/case-study/vmp/" class="hp-why__link">Zobacz case study VMP</a>
+      </div>
+      <div class="hp-proof__card lm-observer">
+        <img src="/images/logo-agrotex.jpg" alt="Agrotex" width="180" height="28" class="hp-proof__logo" />
+        <p class="hp-proof__desc">Dystrybutor części do maszyn rolniczych, 120 mln zł obrotu, 840 klientów na platformie</p>
+        <div class="hp-proof__stats">
+          <div><span class="hp-proof__value">42%</span><span class="hp-proof__label">zamówień bez weryfikacji handlowca</span></div>
+          <div><span class="hp-proof__value">+22%</span><span class="hp-proof__label">dostępności produktów dzięki sprzedaży z wielu magazynów</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- DLA KOGO -->
+<div class="functions-list-artwork" style="background:#fff; margin-top:0; padding-top:60px; padding-bottom:60px; margin-bottom:0;">
   <div class="container">
     <div class="row lm-observer">
       <div class="col-12">
@@ -349,30 +415,30 @@ const faqData = [
           <div class="row">
             <div class="col-md-5 col-lg-6">
               <div class="image image--left lm-observer">
-                <img loading="lazy" width="490" height="366" src="/images/man-macbook-desk.png" class="attachment-list-artwork size-list-artwork" alt="Biznesmen pracujący na platformie B2B" />
+                <img loading="lazy" width="490" height="366" src="/images/man-macbook-desk.png" class="attachment-list-artwork size-list-artwork" alt="Dyrektor sprzedaży pracujący na platformie B2B" />
               </div>
             </div>
             <div class="col-md-7 col-lg-6">
               <ul class="list list--right">
                 <li class="lm-observer">
-                  <span class="icon-purple-badge"><img loading="lazy" width="54" height="68" src="/images/Group-634.png" class="icon" alt="Ikona rozwoju biznesu" /></span>
+                  <span class="icon-purple-badge"><img loading="lazy" width="54" height="68" src="/images/Group-634.png" class="icon" alt="Ikona stałych klientów" /></span>
                   <div>
-                    <p class="p_semi_2 head">Chcesz obsługiwać większą liczbę klientów</p>
-                    <p class="p_regular_3 description">Przenieś większość sprzedaży do kanału cyfrowego, zadbaj o doświadczenia zakupowe obecnych klientów i pozyskuj nowych.</p>
+                    <p class="p_semi_2 head">Sprzedajesz stałym klientom B2B</p>
+                    <p class="p_regular_3 description">Jesteś dystrybutorem albo producentem z własną dystrybucją. Masz co najmniej 100 stałych klientów i 300 transakcji miesięcznie, a wiele z nich to powtarzalne zamówienia.</p>
                   </div>
                 </li>
                 <li class="lm-observer">
-                  <span class="icon-purple-badge"><img loading="lazy" width="54" height="68" src="/images/Group-634.png" class="icon" alt="Ikona rozwoju biznesu" /></span>
+                  <span class="icon-purple-badge"><img loading="lazy" width="54" height="68" src="/images/Group-634.png" class="icon" alt="Ikona zespołu handlowego" /></span>
                   <div>
-                    <p class="p_semi_2 head">Szukasz doradztwa w&nbsp;rozwoju handlu B2B </p>
-                    <p class="p_regular_3 description">Skorzystaj z doświadczenia konsultantów WiseB2B, którzy od ponad 25 lat wspierają firmy handlowe w&nbsp;zwiększaniu efektywności za pomocą dobranych do potrzeb rozwiązań IT. </p>
+                    <p class="p_semi_2 head">Masz zespół handlowy</p>
+                    <p class="p_regular_3 description">Co najmniej czterech handlowców i kierownika. Chcesz, żeby sprzedawali, zamiast przepisywać zamówienia z maila do ERP.</p>
                   </div>
                 </li>
                 <li class="lm-observer">
-                  <span class="icon-purple-badge"><img loading="lazy" width="54" height="68" src="/images/Group-632.png" class="icon" alt="Ikona optymalizacji kosztów" /></span>
+                  <span class="icon-purple-badge"><img loading="lazy" width="54" height="68" src="/images/Group-632.png" class="icon" alt="Ikona systemu ERP" /></span>
                   <div>
-                    <p class="p_semi_2 head">Zależy Ci na optymalizacji kosztów </p>
-                    <p class="p_regular_3 description">Zwiększ liczbę obsługiwanych klientów i&nbsp;zamówień, redukując koszty obsługi sprzedaży i bez ograniczeń skaluj przychody. </p>
+                    <p class="p_semi_2 head">Warunki handlowe trzymasz w ERP</p>
+                    <p class="p_regular_3 description">Pracujesz na Teneum, Comarch XL, Comarch Optima, enova365 albo Subiekcie. Cenniki i limity z ERP mają działać online bez ręcznego przenoszenia.</p>
                   </div>
                 </li>
               </ul>
@@ -389,10 +455,10 @@ const faqData = [
     <div class="row">
       <div class="col-lg-10 offset-lg-1 col-xl-8 offset-xl-2">
         <div class="price-list-cta-contact__wrapper lm-observer">
-          <h2 class="h2_semi">Przeczytaj więcej o&nbsp;możliwościach WiseB2B dla branż: </h2>
+          <h2 class="h2_semi">Zobacz, jak WiseB2B działa w Twojej branży:</h2>
           <div class="price-list-cta-contact__buttons">
-            <a class="wise-button wise-button--wise-harvest" href="/dla-dystrybutorow/">Dystrybucji i handlu</a>
-            <a class="wise-button wise-button--transparent-light" href="/dla-producentow/">Produkcji</a>
+            <a class="wise-button wise-button--wise-harvest" href="/dla-dystrybutorow/">Dystrybucja i handel</a>
+            <a class="wise-button wise-button--transparent-light" href="/dla-producentow/">Produkcja</a>
           </div>
         </div>
       </div>
@@ -400,15 +466,15 @@ const faqData = [
   </div>
 </div>
 
-<!-- Sekcja Technologia, która daje przewagę -->
+<!-- TECHNOLOGIA (dla IT) -->
 <div class="functions-box-white-bg" style="background:#fff; margin-top:0; padding-top:60px; padding-bottom:60px; margin-bottom:0;">
   <div class="container">
     <div class="row">
       <div class="col-lg-10 offset-lg-1 col-xl-8 offset-xl-2 p-xl-0">
         <div class="functions-box-white-bg__wrap">
-          <h2 class="h2_semi functions-box-white-bg__header lm-observer">Technologia, która daje przewagę</h2>
+          <h2 class="h2_semi functions-box-white-bg__header lm-observer">Dla Twojego działu IT</h2>
         </div>
-        <div class="about-us-rules__items rules-compact" style="padding: 20px 0 20px; grid-template-columns: repeat(2, 1fr);">
+        <div class="about-us-rules__items rules-compact rules-2col" style="padding: 20px 0 20px;">
 
           <div class="about-us-rules__item lm-observer">
             <div class="about-us-rules__icon">
@@ -417,8 +483,8 @@ const faqData = [
               </div>
             </div>
             <div class="about-us-rules__content">
-              <p class="p_semi_1 about-us-rules__content-header">Architektura DDD, headless, API-first</p>
-              <p class="p_regular_3 about-us-rules__content-desc">Modułowa budowa oparta o Domain-Driven Design z podejściem API-first i headless frontend. Rozwój z użyciem narzędzi kodujących AI jest szybki i bardzo efektywny.</p>
+              <p class="p_semi_1 about-us-rules__content-header">DDD, headless, API-first</p>
+              <p class="p_regular_3 about-us-rules__content-desc">Moduły zbudowane według Domain-Driven Design, z API na pierwszym miejscu i frontem oddzielonym od zaplecza. Taki kod dobrze nadaje się do rozwijania z narzędziami AI do programowania.</p>
             </div>
           </div>
 
@@ -429,8 +495,8 @@ const faqData = [
               </div>
             </div>
             <div class="about-us-rules__content">
-              <p class="p_semi_1 about-us-rules__content-header">Technologia pluginów — rozwój bez ryzyka</p>
-              <p class="p_regular_3 about-us-rules__content-desc">37 modułów z możliwością rozbudowy bez ingerencji w kod standardowy. AI wspiera tworzenie pluginów, a aktualizacje nie psują Twoich customizacji.</p>
+              <p class="p_semi_1 about-us-rules__content-header">Rozszerzenia jako pluginy</p>
+              <p class="p_regular_3 about-us-rules__content-desc">Każdy z 37 modułów można rozbudować pluginem bez zmiany kodu standardowego. W planie Enterprise możesz dodać Customization Studio, w którym pluginy powstają z pomocą AI.</p>
             </div>
           </div>
 
@@ -441,20 +507,20 @@ const faqData = [
               </div>
             </div>
             <div class="about-us-rules__content">
-              <p class="p_semi_1 about-us-rules__content-header">WiseB2B Cloud z platformą n8n</p>
-              <p class="p_regular_3 about-us-rules__content-desc">Pełne środowisko handlu cyfrowego z wbudowaną platformą integracji i automatyzacji procesów n8n — bez budowania infrastruktury od zera.</p>
+              <p class="p_semi_1 about-us-rules__content-header">WiseB2B Cloud z n8n</p>
+              <p class="p_regular_3 about-us-rules__content-desc">Hosting z wbudowanym n8n do integracji i automatyzacji. Synchronizację z CRM, mailem czy systemem kurierskim budujesz w edytorze wizualnym, bez stawiania własnej infrastruktury.</p>
             </div>
           </div>
 
           <div class="about-us-rules__item lm-observer">
             <div class="about-us-rules__icon">
               <div class="about-us-rules__icon-bg">
-                <img src="/svg/icon-no-vendor-lock.svg" width="24" height="24" alt="SaaS lub OnPremise" />
+                <img src="/svg/icon-no-vendor-lock.svg" width="24" height="24" alt="Chmura lub on-premise" />
               </div>
             </div>
             <div class="about-us-rules__content">
-              <p class="p_semi_1 about-us-rules__content-header">SaaS lub OnPremise — Ty decydujesz</p>
-              <p class="p_regular_3 about-us-rules__content-desc">Cloud zapewnia wygodę i szybki start, a opcja OnPremise daje pełną kontrolę nad danymi — gdy wymaga tego Twoja polityka bezpieczeństwa.</p>
+              <p class="p_semi_1 about-us-rules__content-header">Chmura albo własne serwery</p>
+              <p class="p_regular_3 about-us-rules__content-desc">WiseB2B Cloud to najszybszy start. Instalacja on-premise (w planach Professional i Enterprise) daje pełną kontrolę nad danymi, gdy wymaga tego Twoja polityka bezpieczeństwa.</p>
             </div>
           </div>
 
@@ -464,6 +530,35 @@ const faqData = [
   </div>
 </div>
 
+<!-- PLAN -->
+<section class="hp-plan">
+  <div class="container">
+    <h2 class="hp-section-title lm-observer">Jak zaczynamy</h2>
+    <ol class="hp-plan__steps">
+      <li class="hp-plan__step lm-observer">
+        <span class="hp-plan__num">1</span>
+        <h3>Pokaz na Twoich przykładach</h3>
+        <p>30 minut z konsultantem. Platforma na żywo, na scenariuszach z Twojej firmy.</p>
+      </li>
+      <li class="hp-plan__step lm-observer">
+        <span class="hp-plan__num">2</span>
+        <h3>Sprint analityczny</h3>
+        <p>Od 1 do 4 tygodni. Na koniec wiesz, co wdrażamy, ile to kosztuje i kiedy ruszamy.</p>
+      </li>
+      <li class="hp-plan__step lm-observer">
+        <span class="hp-plan__num">3</span>
+        <h3>Uruchomienie obok obecnego procesu</h3>
+        <p>Klienci przechodzą na platformę stopniowo. Stary system działa do końca przejścia.</p>
+      </li>
+    </ol>
+    <p class="hp-plan__terms lm-observer">Abonament bez prowizji od obrotu. Koszt wdrożenia rozłożony w subskrypcji. <a href="/plany-wiseb2b/">Zobacz plany</a></p>
+    <div class="hp-plan__cta">
+      <a href="/zamow-demo/" class="btn btn--primary">Zamów demo</a>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
 <div class="questions">
   <div class="container">
     <div class="row">
@@ -476,38 +571,12 @@ const faqData = [
     <div class="row">
       <div class="col-lg-10 offset-lg-1 col-xl-8 offset-xl-2">
         <div class="questions__items">
-          <div class="item lm-observer">
-            <h2 class="h5_semi">Czym wyróżnia się WiseB2B na tle innych platform B2B?</h2>
-            <p class="p_regular_3">WiseB2B to jedyna platforma Commerce B2B łącząca cztery elementy, których nie znajdziesz razem w żadnym innym rozwiązaniu: agentów AI realizujących realne operacje zakupowe, wbudowany Panel Handlowca (Sales CRM) integrujący sprzedaż online i offline, dostęp do kodu źródłowego eliminujący vendor-lock oraz modułową architekturę pluginów umożliwiającą rozwój bez ryzyka utraty customizacji przy aktualizacjach. Dodatkowo WiseB2B nie pobiera prowizji od wartości transakcji (GMV), oferuje Client API pozwalające klientom integrować własne systemy zakupowe oraz gotowe integracje z polskimi systemami ERP. To platforma zaprojektowana od podstaw dla B2B — nie adaptacja sklepu detalicznego.</p>
-          </div>
-          <div class="item lm-observer">
-            <h2 class="h5_semi">Jak działają agenci AI w platformie WiseB2B?</h2>
-            <p class="p_regular_3">Agenci AI w WiseB2B to nie chatboty odpowiadające na proste pytania — to autonomiczni agenci wykonujący złożone operacje na polecenie użytkownika. Klient może poprosić agenta o wyszukanie produktów spełniających określone kryteria, zbudowanie całego koszyka zakupowego, import zamówienia z pliku Excel czy PDF, sprawdzenie statusu dostawy lub porównanie produktów. Agent AI dla administratora wspiera natomiast operacje masowe — np. hurtową aktualizację cenników czy zarządzanie katalogiem. W praktyce oznacza to mniej maili, mniej telefonów do działu obsługi i znacznie szybszą realizację zamówień — zarówno dla Twoich klientów, jak i Twojego zespołu.</p>
-          </div>
-          <div class="item lm-observer">
-            <h2 class="h5_semi">Co to jest Panel Handlowca i jak wspiera sprzedaż?</h2>
-            <p class="p_regular_3">Panel Handlowca to wbudowany moduł Sales CRM, który zastępuje potrzebę korzystania z osobnego systemu CRM. Handlowiec ma w jednym miejscu dostęp do: przygotowywania ofert indywidualnych, monitorowania zakupów klientów i reagowania na spadki, analizy wypracowanej marży i trendów zakupowych, definiowania celów sprzedażowych oraz obsługi zdarzeń i zadań. Kluczowa zaleta — Panel Handlowca operuje na tych samych cenach, warunkach handlowych i dostępnościach co platforma eCommerce. Dzięki temu obsługa klienta online i offline jest w pełni spójna, a handlowiec zamiast administrować transakcjami, skupia się na budowaniu relacji i wzroście marży.</p>
-          </div>
-          <div class="item lm-observer">
-            <h2 class="h5_semi">Czy WiseB2B daje dostęp do kodu źródłowego?</h2>
-            <p class="p_regular_3">Tak. W odróżnieniu od platform SaaS, WiseB2B udostępnia kod źródłowy, co daje Ci pełną niezależność technologiczną. Rozwojem platformy może zająć się Twój własny zespół IT, dowolna agencja lub jeden z Partnerów Wdrożeniowych WiseB2B. Modułowa architektura oparta na pluginach sprawia, że customizacje nie kolidują z kodem standardowym — aktualizacje do nowych wersji nie psują Twoich rozszerzeń. W planie Enterprise dostępne jest dodatkowo Customization Studio, środowisko wspierane przez AI do tworzenia i zarządzania pluginami. To realna niezależność — nie marketingowa obietnica.</p>
-          </div>
-          <div class="item lm-observer">
-            <h2 class="h5_semi">Czym WiseB2B różni się od Magento, PrestaShop i platform SaaS?</h2>
-            <p class="p_regular_3">Magento i PrestaShop to platformy e-Commerce stworzone dla sprzedaży detalicznej (B2C), które wymagają kosztownej rozbudowy, aby obsłużyć złożoność procesów B2B — grup klientów, hierarchii cennikowych, kredytu kupieckiego czy autoryzacji zamówień. WiseB2B zostało zaprojektowane od podstaw dla B2B, więc te funkcje są dostępne od razu, co znacząco obniża koszty i czas wdrożenia. Z kolei w porównaniu z platformami SaaS (np. Shoper B2B) WiseB2B oferuje dostęp do kodu źródłowego, brak opłat GMV, możliwość instalacji OnPremise oraz pełną swobodę customizacji. Połączenie gotowych modułów B2B, agentów AI i Panelu Handlowca w jednym rozwiązaniu jest unikalne na polskim rynku.</p>
-          </div>
-          <div class="item lm-observer">
-            <h2 class="h5_semi">Czy WiseB2B pobiera prowizję od wartości transakcji (GMV)?</h2>
-            <p class="p_regular_3">Nie — i to dożywotnia obietnica WiseB2B. Platforma działa w modelu abonamentowym z trzema planami (Starter, Professional, Enterprise). Płacisz stałą miesięczną opłatę niezależnie od tego, ile sprzedajesz. Nie ma ukrytych prowizji od obrotu, prowizji od liczby transakcji ani dodatkowych opłat rosnących wraz z Twoim sukcesem. Im więcej sprzedajesz, tym bardziej opłacalne staje się korzystanie z platformy. Szczegółowe ceny i porównanie planów znajdziesz na stronie <a href="/plany-wiseb2b/">Plany i moduły</a>.</p>
-          </div>
-          <div class="item lm-observer">
-            <h2 class="h5_semi">Co to jest Client API i jak mogą z niego korzystać moi klienci?</h2>
-            <p class="p_regular_3">Client API to unikalna funkcja WiseB2B, niedostępna w innych platformach B2B. Umożliwia Twoim klientom biznesowym zintegrowanie ich własnych systemów zakupowych (ERP, system zamówień, platforma procurement) bezpośrednio z Twoją platformą sprzedażową. W praktyce oznacza to, że klient może składać zamówienia, sprawdzać stany magazynowe i pobierać faktury bez konieczności logowania się do Twojego sklepu — wszystko dzieje się automatycznie między systemami. To poważna przewaga konkurencyjna: klientowi, który zintegrował się z Tobą przez API, kupuje się u Ciebie najwygodniej ze wszystkich dostawców.</p>
-          </div>
-          <div class="item lm-observer">
-            <h2 class="h5_semi">Dla jakich firm jest WiseB2B — czy moja firma się kwalifikuje?</h2>
-            <p class="p_regular_3">WiseB2B jest przeznaczone dla polskich firm handlowych i produkcyjnych prowadzących sprzedaż B2B — przede wszystkim dystrybutorów, hurtowni i producentów z własnymi kanałami sprzedaży. Platforma sprawdza się najlepiej w firmach o rocznych obrotach od ok. 20 mln zł, posiadających kilkuset lub więcej klientów biznesowych. WiseB2B jest szczególnie dobrym wyborem, jeśli Twoja obecna platforma to rozwiązanie SaaS bez możliwości customizacji, system dedykowany, którego rozwój jest kosztowny, lub platforma B2C rozbudowana o moduły B2B, które nie pokrywają Twoich realnych potrzeb. Szczegóły dopasowania do branż znajdziesz na stronach <a href="/dla-dystrybutorow/">dla dystrybutorów</a> i <a href="/dla-producentow/">dla producentów</a>.</p>
-          </div>
+          {faqData.map((item) => (
+            <div class="item lm-observer">
+              <h2 class="h5_semi">{item.question}</h2>
+              <p class="p_regular_3">{item.answer}</p>
+            </div>
+          ))}
         </div>
       </div>
     </div>
@@ -524,5 +593,5 @@ const faqData = [
   });
 </script>
 
-<CtaBlock showPresentation={true} />
+<CtaBlock />
 </BaseLayout>

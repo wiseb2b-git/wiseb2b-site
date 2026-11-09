@@ -12,8 +12,8 @@ modules:
     starter: unavailable
     professional: optional
     enterprise: included
-  - name: "Development Studio"
-    description: "Środowisko do budowania i generowania własnych pluginów wspierane agentem   AI"
+  - name: "Customization Studio"
+    description: "Środowisko do budowania i generowania własnych pluginów z pomocą agenta AI"
     starter: unavailable
     professional: unavailable
     enterprise: optional

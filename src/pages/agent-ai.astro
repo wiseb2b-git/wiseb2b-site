@@ -4,7 +4,7 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 import CtaBlock from '../components/CtaBlock.astro';
 ---
 
-<BaseLayout title="Agent AI WiseB2B – inteligentna automatyzacja e-Commerce B2B" description="Agent AI WiseB2B to natywny moduł platformy B2B, który automatyzuje procesy, odciąża handlowców i personalizuje doświadczenia zakupowe klientów.">
+<BaseLayout title="Agent AI: zamówienie z maila w gotowym koszyku" description="Agent AI WiseB2B zamienia zamówienie z maila, PDF lub Excela w koszyk na cenach z ERP. Agent administratora robi operacje masowe. Zobacz, jak odciąża BOK.">
 
 <!-- Sekcja 1: Hero -->
 <div class="agent-ai-hero">
@@ -16,9 +16,9 @@ import CtaBlock from '../components/CtaBlock.astro';
             <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l1.8 5.4L19 9l-5.2 1.6L12 16l-1.8-5.4L5 9l5.2-1.6L12 2zM19 14l.9 2.7L22.5 17l-2.6.8L19 20.5l-.9-2.7-2.6-.8 2.6-.8.9-2.7zM5 15l.7 2 2 .7-2 .7-.7 2-.7-2-2-.7 2-.7.7-2z"/></svg>
             Agent AI
           </span>
-          <h1 class="h1_semi">Nowy poziom efektywności e&#8209;Commerce&nbsp;B2B dzięki Agentom&nbsp;AI</h1>
-          <p class="p_regular_1">Przestań traktować sztuczną inteligencję jako ciekawostkę. Wdrażamy narzędzia, które wykonują realną pracę: automatyzują procesy, odciążają handlowców i personalizują doświadczenia zakupowe Twoich klientów.</p>
-          <a class="wise-button wise-button--wise-harvest" href="/zamow-demo/">Zamów demo i sprawdź AI w akcji</a>
+          <h1 class="h1_semi">Zamówienie z&nbsp;maila trafia do koszyka bez przepisywania</h1>
+          <p class="p_regular_1">Klient wkleja listę z&nbsp;maila, PDF lub Excela. Agent AI rozpoznaje indeksy, bierze ceny i&nbsp;stany z&nbsp;Twojego ERP i&nbsp;składa gotowy koszyk. Klient sprawdza go i&nbsp;zamawia, a&nbsp;Twój BOK zajmuje się sprawami, które wymagają człowieka.</p>
+          <a class="wise-button wise-button--wise-harvest" href="/zamow-demo/">Zamów demo</a>
         </div>
       </div>
     </div>
@@ -34,7 +34,7 @@ import CtaBlock from '../components/CtaBlock.astro';
           <div class="agent-ai-video__embed" id="yt-player-wrapper">
             <img
               src="https://img.youtube.com/vi/-l65_JZ0HVg/maxresdefault.jpg"
-              alt="Agent AI WiseB2B – prezentacja wideo"
+              alt="Agent AI WiseB2B, prezentacja wideo"
               class="agent-ai-video__poster"
               id="yt-poster"
               loading="lazy"
@@ -52,37 +52,85 @@ import CtaBlock from '../components/CtaBlock.astro';
   </div>
 </div>
 
-<!-- Sekcja 3: AI, które rozumie Twój biznes -->
+<!-- Sekcja 3: Stawka -->
+<section class="hp-stakes">
+  <div class="container">
+    <h2 class="hp-stakes__title lm-observer">Ile zamówień Twój BOK przepisuje dziś ręcznie?</h2>
+    <p class="hp-stakes__text lm-observer">Klient przysyła listę w&nbsp;mailu, z&nbsp;nazwą produktu zamiast indeksu. Ktoś szuka pozycji w&nbsp;katalogu, sprawdza stan, dzwoni dopytać. Z&nbsp;każdym nowym klientem tej pracy przybywa.</p>
+  </div>
+</section>
+
+<!-- Sekcja 4: Scenariusze -->
+<div class="agent-ai-usecases">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-10 offset-lg-1 col-xl-8 offset-xl-2 p-xl-0">
+        <h2 class="h2_semi agent-ai-usecases__heading lm-observer">Co Agent AI robi za Twój zespół</h2>
+
+        <!-- Scenariusz 1: Email-2-Cart -->
+        <div class="agent-ai-usecase lm-observer">
+          <div class="agent-ai-usecase__text">
+            <span class="team-process__card-icon">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7l9 6 9-6"/></svg>
+            </span>
+            <h3 class="h3_semi">Email-2-Cart: zamówienie z&nbsp;maila, PDF lub Excela</h3>
+            <p class="p_regular_3">Klient wkleja treść maila albo dołącza plik. Agent odczytuje pozycje i&nbsp;dopasowuje je do indeksów z&nbsp;Twojego katalogu, także gdy nazwa jest z&nbsp;błędem. Koszyk powstaje na cenach i&nbsp;warunkach tego klienta. Nikt w&nbsp;firmie nie wpisuje zamówienia ręcznie.</p>
+          </div>
+          <div class="agent-ai-usecase__visual">
+            <img class="agent-ai-mockup-img" src="/images/agent-ai-email-to-cart.png" alt="Email-2-Cart: mail z zamówieniem i koszyk przygotowany przez Agenta AI" loading="lazy" />
+          </div>
+        </div>
+
+        <!-- Scenariusz 2: Kompletacja z doradztwem -->
+        <div class="agent-ai-usecase agent-ai-usecase--reverse lm-observer">
+          <div class="agent-ai-usecase__text">
+            <span class="team-process__card-icon">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="20" r="1.4" fill="currentColor" stroke="none"/><circle cx="17" cy="20" r="1.4" fill="currentColor" stroke="none"/><path d="M2 3h2l2.4 12.2a2 2 0 0 0 2 1.6h8.2a2 2 0 0 0 2-1.6L21 7H6"/></svg>
+            </span>
+            <h3 class="h3_semi">Kompletacja zamówienia z&nbsp;doradztwem</h3>
+            <p class="p_regular_3">Klient opisuje, czego szuka, np. „tylko akumulatorowe” albo „zestaw od jednego producenta”. Agent wyszukuje pasujące produkty i&nbsp;pokazuje je w&nbsp;tabeli do porównania. Wybrane pozycje dodaje do koszyka na prośbę klienta.</p>
+          </div>
+          <div class="agent-ai-usecase__visual">
+            <img class="agent-ai-mockup-img" src="/images/agent-ai-mockup-02.png" alt="Agent AI: wyszukiwanie produktów według opisu klienta i tabela do porównania" loading="lazy" />
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Sekcja 5: AI po stronie administratora -->
 <div class="agent-ai-features">
   <div class="container">
     <div class="row">
       <div class="col-lg-10 offset-lg-1 col-xl-8 offset-xl-2 p-xl-0">
-        <h2 class="h2_semi agent-ai-features__heading lm-observer">Technologia, która daje przewagę</h2>
-        <p class="p_regular_1 agent-ai-features__subheading lm-observer">WiseB2B to nie tylko technologia &mdash; to partner, który dba o Twoją niezależność, zgodność z prawem i stabilność biznesu na każdym etapie.</p>
+        <h2 class="h2_semi agent-ai-features__heading lm-observer">AI pracuje też dla Twojego zespołu</h2>
+        <p class="p_regular_1 agent-ai-features__subheading lm-observer">Agent klienta obsługuje zakupy. Po drugiej stronie AI zdejmuje z&nbsp;administratora i&nbsp;działu produktu powtarzalną pracę przy cennikach i&nbsp;katalogu.</p>
         <div class="agent-ai-features__grid">
 
           <div class="agent-ai-feature-card lm-observer">
             <div class="agent-ai-feature-card__icon">
               <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 15a3 3 0 1 0 0-6 3 3 0 0 0 0 6z"/><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 1 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-4 0v-.09a1.65 1.65 0 0 0-1.08-1.51 1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 1 1-2.83-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1 0-4h.09a1.65 1.65 0 0 0 1.51-1.08 1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 1 1 2.83-2.83l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 4 0v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 1 1 2.83 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 0 4h-.09a1.65 1.65 0 0 0-1.51 1z"/></svg>
             </div>
-            <h3 class="p_semi_2">Zintegrowany, nie doklejony</h3>
-            <p class="p_regular_3">Agent AI to natywny moduł WiseB2B, który operuje na rzeczywistych danych: Twoich cennikach, stanach magazynowych i indywidualnych warunkach handlowych.</p>
+            <h3 class="p_semi_2">Agent administratora</h3>
+            <p class="p_regular_3">Operacje masowe zlecasz zdaniem: zmiana cennika dla grupy produktów, nowa promocja, porządki w&nbsp;kategoriach. Agent wykonuje je w&nbsp;panelu administracyjnym platformy.</p>
           </div>
 
           <div class="agent-ai-feature-card lm-observer">
             <div class="agent-ai-feature-card__icon">
               <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="16" rx="2"/><path d="M3 9h18"/><path d="M8 4v5"/></svg>
             </div>
-            <h3 class="p_semi_2">Nowy interfejs pracy dla użytkownika</h3>
-            <p class="p_regular_3">Narzędzie nie tylko odpowiada na pytania, ale realizuje faktyczne procesy biznesowe, zdejmując ciężar operacyjny z Twojego zespołu.</p>
+            <h3 class="p_semi_2">Opisy produktów i&nbsp;SEO</h3>
+            <p class="p_regular_3">Dla każdego pola w&nbsp;systemie ustawiasz schemat, według którego AI generuje treść: opis, tytuł, meta opis.</p>
           </div>
 
           <div class="agent-ai-feature-card lm-observer">
             <div class="agent-ai-feature-card__icon">
-              <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 21v-6a8 8 0 1 1 16 0v6"/><rect x="1" y="15" width="5" height="6" rx="1.5"/><rect x="18" y="15" width="5" height="6" rx="1.5"/></svg>
+              <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 5h8M8 3v2M5 9c1.5 3 4 5 7 6M11 5c-1 4-3.5 7-7 9"/><path d="M13 21l4-9 4 9M14.5 18h5"/></svg>
             </div>
-            <h3 class="p_semi_2">Wsparcie BOK i Handlowców</h3>
-            <p class="p_regular_3">Redukcja liczby zapytań o dostępność i proste ofertowanie pozwala Twoim ludziom skupić się na budowaniu relacji, a nie obsłudze transakcji.</p>
+            <h3 class="p_semi_2">Tłumaczenia katalogu</h3>
+            <p class="p_regular_3">Gdy sprzedajesz za granicę, AI przygotowuje wersje językowe opisów, a&nbsp;Ty sprawdzasz je przed publikacją.</p>
           </div>
 
         </div>
@@ -91,78 +139,56 @@ import CtaBlock from '../components/CtaBlock.astro';
   </div>
 </div>
 
-<!-- Sekcja 4: Scenariusze efektywności (Use Cases) -->
-<div class="agent-ai-usecases">
-  <div class="container">
-    <div class="row">
-      <div class="col-lg-10 offset-lg-1 col-xl-8 offset-xl-2 p-xl-0">
-        <h2 class="h2_semi agent-ai-usecases__heading lm-observer">Przykładowe scenariusze efektywności</h2>
-
-        <!-- Use Case 1: Wsparcie wyboru i kompletowanie ofert -->
-        <div class="agent-ai-usecase lm-observer">
-          <div class="agent-ai-usecase__text">
-            <span class="team-process__card-icon">
-              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="20" r="1.4" fill="currentColor" stroke="none"/><circle cx="17" cy="20" r="1.4" fill="currentColor" stroke="none"/><path d="M2 3h2l2.4 12.2a2 2 0 0 0 2 1.6h8.2a2 2 0 0 0 2-1.6L21 7H6"/></svg>
-            </span>
-            <h3 class="h3_semi">Kompletacja zamówienia z doradztwem</h3>
-            <p class="p_regular_3">Zaawansowane wyszukiwanie kontekstowe i doradztwo techniczne. Klient precyzuje wymagania (np. „tylko akumulatorowe", „zestaw od jednego producenta"), a Agent błyskawicznie generuje zestawienia w czytelnej formie tabelarycznej.</p>
-          </div>
-          <div class="agent-ai-usecase__visual">
-            <img class="agent-ai-mockup-img" src="/images/agent-ai-mockup-02.png" alt="Agent AI – wyszukiwanie kontekstowe i tabela produktów" loading="lazy" />
-          </div>
-        </div>
-
-        <!-- Use Case 2: Email-to-Cart -->
-        <div class="agent-ai-usecase agent-ai-usecase--reverse lm-observer">
-          <div class="agent-ai-usecase__text">
-            <span class="team-process__card-icon">
-              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7l9 6 9-6"/></svg>
-            </span>
-            <h3 class="h3_semi">Email-2-Cart</h3>
-            <p class="p_regular_3">Przetwarzanie niestrukturyzowanych zapytań i zamówień przesyłanych drogą mailową. Agent analizuje treść maila, identyfikuje indeksy (nawet przy błędnych nazwach) i automatycznie tworzy gotowy koszyk zakupowy. Eliminacja ręcznego wprowadzania zamówień.</p>
-          </div>
-          <div class="agent-ai-usecase__visual">
-            <img class="agent-ai-mockup-img" src="/images/agent-ai-email-to-cart.png" alt="Email-to-Cart: mail z zamówieniem i automatyczna odpowiedź Agenta AI" loading="lazy" />
-          </div>
-        </div>
-
-      </div>
-    </div>
-  </div>
-</div>
-
-<!-- Sekcja 5: Dlaczego WiseB2B AI Agent? -->
+<!-- Sekcja 6: Jak działa Agent AI -->
 <div class="agent-ai-why">
   <div class="container">
     <div class="row">
       <div class="col-lg-10 offset-lg-1 col-xl-8 offset-xl-2 p-xl-0">
-        <h2 class="h2_semi agent-ai-why__heading lm-observer">Dlaczego WiseB2B AI Agent?</h2>
+        <h2 class="h2_semi agent-ai-why__heading lm-observer">Jak Agent AI działa w&nbsp;Twoim sklepie</h2>
         <div class="agent-ai-why__table lm-observer">
 
           <div class="agent-ai-why__row">
             <div class="agent-ai-why__cell agent-ai-why__cell--feature">
-              <p class="p_semi_2">Bezpieczeństwo danych</p>
+              <p class="p_semi_2">Robi to, co klient w&nbsp;sklepie</p>
             </div>
             <div class="agent-ai-why__cell agent-ai-why__cell--benefit">
-              <p class="p_regular_3">Agent korzysta z tych samych metod, co interfejs aplikacji. Ma dostęp tylko do tych danych i operacji, które może wykonać operator, i realizuje te działania symulując działanie użytkownika.</p>
+              <p class="p_regular_3">Dodaje produkty do koszyka, porównuje je, korzysta z&nbsp;list zakupowych, finalizuje zamówienie i&nbsp;sprawdza status realizacji. Klient pisze, czego potrzebuje, a&nbsp;agent wykonuje kolejne kroki.</p>
             </div>
           </div>
 
           <div class="agent-ai-why__row">
             <div class="agent-ai-why__cell agent-ai-why__cell--feature">
-              <p class="p_semi_2">Agent wbudowany w UI</p>
+              <p class="p_semi_2">Pracuje na Twoich danych</p>
             </div>
             <div class="agent-ai-why__cell agent-ai-why__cell--benefit">
-              <p class="p_regular_3">To nie jest dodatkowy skrypt osadzany na stronie, lecz mechanizm wbudowany w interfejs sklepu. To daje zupełnie nowe doświadczenie użytkownikowi.</p>
+              <p class="p_regular_3">Agent jest modułem platformy WiseB2B. Widzi cennik indywidualny klienta, stany magazynowe i&nbsp;warunki handlowe z&nbsp;ERP, te same co w&nbsp;sklepie i&nbsp;w&nbsp;Panelu Handlowca.</p>
             </div>
           </div>
 
           <div class="agent-ai-why__row">
             <div class="agent-ai-why__cell agent-ai-why__cell--feature">
-              <p class="p_semi_2">Nie tylko wyszukiwanie, ale również działanie</p>
+              <p class="p_semi_2">Ma uprawnienia użytkownika</p>
             </div>
             <div class="agent-ai-why__cell agent-ai-why__cell--benefit">
-              <p class="p_regular_3">Agent to nie jest tylko wyszukiwarka czy porównywarka produktów. Wszystko to, co klient może zrobić w sklepie, Agent też potrafi. Dodać produkty do koszyka, porównać produkty, wykorzystać listy zakupowe, sfinalizować zamówienie, sprawdzić stan realizacji zamówienia.</p>
+              <p class="p_regular_3">Agent korzysta z&nbsp;tych samych metod co interfejs aplikacji. Ma dostęp tylko do danych i&nbsp;operacji, które może wykonać zalogowany użytkownik.</p>
+            </div>
+          </div>
+
+          <div class="agent-ai-why__row">
+            <div class="agent-ai-why__cell agent-ai-why__cell--feature">
+              <p class="p_semi_2">Jest wbudowany w&nbsp;interfejs</p>
+            </div>
+            <div class="agent-ai-why__cell agent-ai-why__cell--benefit">
+              <p class="p_regular_3">Klient otwiera agenta przyciskiem „Zapytaj AI” obok wyszukiwarki. Może z&nbsp;nim pracować w&nbsp;oknie, w&nbsp;panelu bocznym albo na pełnym ekranie.</p>
+            </div>
+          </div>
+
+          <div class="agent-ai-why__row">
+            <div class="agent-ai-why__cell agent-ai-why__cell--feature">
+              <p class="p_semi_2">Dostępność w&nbsp;planach</p>
+            </div>
+            <div class="agent-ai-why__cell agent-ai-why__cell--benefit">
+              <p class="p_regular_3">Agent AI klienta jest w&nbsp;planie Enterprise, a&nbsp;w&nbsp;Professional możesz go dodać jako opcję. Agenta administratora i&nbsp;generowanie treści przez AI dołączasz do każdego planu. <a href="/plany-wiseb2b/">Zobacz plany</a></p>
             </div>
           </div>
 
@@ -172,23 +198,30 @@ import CtaBlock from '../components/CtaBlock.astro';
   </div>
 </div>
 
-<!-- Sekcja 6: Potwierdzona skuteczność + Zobacz Agenta AI w działaniu -->
+<!-- Sekcja 7: Dowód VMP + demo -->
 <div class="agent-ai-showcase">
   <div class="container">
     <div class="row">
       <div class="col-lg-10 offset-lg-1 col-xl-8 offset-xl-2 p-xl-0">
         <div class="agent-ai-showcase__grid lm-observer">
           <div class="agent-ai-showcase__visual">
-            <img class="agent-ai-mockup-img" src="/images/agent-ai-01.png" alt="Agent AI WiseB2B – widok interfejsu" loading="lazy" />
+            <img class="agent-ai-mockup-img" src="/images/agent-ai-01.png" alt="Agent AI WiseB2B, widok w sklepie B2B" loading="lazy" />
           </div>
           <div class="agent-ai-showcase__text">
             <div class="agent-ai-showcase__block">
-              <h2 class="h2_semi">Potwierdzona <span class="agent-ai-showcase__accent">skuteczność</span></h2>
-              <p class="p_regular_2">Nasze wdrożenia pokazują, że cyfryzacja kanałów sprzedaży to nie tylko wygoda, ale realne wzrosty. Średnio <strong>80% obrotu</strong> u naszych klientów generowane jest przez platformę B2B, a Agent AI jest kolejnym krokiem w optymalizacji tych wyników poprzez uwalnianie czasu pracy handlowców.</p>
+              <img src="/images/logo-vmp.jpg" alt="VMP" width="140" height="50" class="hp-proof__logo" loading="lazy" />
+              <h2 class="h2_semi">Mniej pracy w&nbsp;BOK u&nbsp;<span class="agent-ai-showcase__accent">VMP</span></h2>
+              <p class="p_regular_2">Hurtownia bielizny z&nbsp;86 000 indeksów sprzedaje do sklepów w&nbsp;krajach UE. Po przejściu na WiseB2B klienci sami składają zamówienia i&nbsp;sprawdzają ich status.</p>
+              {/* NEED: liczby VMP dotyczą całej platformy (samoobsługa + automatyzacja). Brak pomiaru samego Agenta AI. Gdy będzie, podmienić lub dodać. */}
+              <div class="hp-proof__stats">
+                <div><span class="hp-proof__value">−45%</span><span class="hp-proof__label">zapytań do BOK</span></div>
+                <div><span class="hp-proof__value">−60%</span><span class="hp-proof__label">czasu obsługi zamówienia</span></div>
+              </div>
+              <a href="/case-study/vmp/" class="hp-why__link">Zobacz case study VMP</a>
             </div>
             <div class="agent-ai-showcase__block">
-              <h2 class="h2_semi">Zobacz Agenta AI w działaniu</h2>
-              <p class="p_regular_2">Przekonaj się sam, jak Agent AI wspiera codzienną pracę w platformie B2B. Na naszym środowisku demo możesz przetestować jego możliwości bez zobowiązań.</p>
+              <h2 class="h2_semi">Sprawdź agenta na demo</h2>
+              <p class="p_regular_2">Na środowisku demo możesz sam zadać agentowi pytanie, wkleić listę produktów i&nbsp;zobaczyć gotowy koszyk.</p>
               <a class="wise-button wise-button--wise-harvest" href="https://demo.wiseb2b.eu" target="_blank" rel="noopener noreferrer">Przejdź do demo</a>
             </div>
           </div>
@@ -198,7 +231,34 @@ import CtaBlock from '../components/CtaBlock.astro';
   </div>
 </div>
 
-<CtaBlock showPresentation={true} />
+<!-- Sekcja 8: Następny krok -->
+<section class="hp-plan">
+  <div class="container">
+    <h2 class="hp-section-title lm-observer">Jak zaczynamy</h2>
+    <ol class="hp-plan__steps">
+      <li class="hp-plan__step lm-observer">
+        <span class="hp-plan__num">1</span>
+        <h3>Pokaz na Twoich przykładach</h3>
+        <p>30 minut z&nbsp;konsultantem. Przynieś prawdziwy mail z&nbsp;zamówieniem, a&nbsp;agent zamieni go w&nbsp;koszyk na żywo.</p>
+      </li>
+      <li class="hp-plan__step lm-observer">
+        <span class="hp-plan__num">2</span>
+        <h3>Sprint analityczny</h3>
+        <p>Od 1 do 4 tygodni. Na koniec wiesz, co wdrażamy, ile to kosztuje i&nbsp;kiedy ruszamy.</p>
+      </li>
+      <li class="hp-plan__step lm-observer">
+        <span class="hp-plan__num">3</span>
+        <h3>Uruchomienie obok obecnego procesu</h3>
+        <p>Klienci przechodzą na platformę stopniowo. Stary system działa do końca przejścia.</p>
+      </li>
+    </ol>
+    <div class="hp-plan__cta">
+      <a href="/zamow-demo/" class="btn btn--primary">Zamów demo</a>
+    </div>
+  </div>
+</section>
+
+<CtaBlock />
 
 <!-- Lightbox -->
 <div class="agent-ai-lightbox" id="agent-ai-lightbox">

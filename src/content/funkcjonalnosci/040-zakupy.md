@@ -2,10 +2,10 @@
 title: "Zakupy"
 ---
 
-Zakupy za pomocą WiseB2B są proste i intuicyjne. Tradycyjne kompletowanie koszyka, tworzenie wielokoszyków, korzystanie z list zakupowych czy import zamówień. Każdy preferowany przez klienta sposób składania zamówienia jest w pełni wspierany. Rozwiązanie pozwala też na obsługę specyficznych potrzeb, takich jak zarządzanie miejscami powstawania kosztów czy sprzedaż zagraniczna.
+Klient zamawia tak, jak mu wygodnie: kompletuje koszyk, prowadzi kilka koszyków naraz, korzysta z list zakupowych albo importuje zamówienie z Excela. Platforma obsługuje też potrzeby większych firm, takie jak miejsca powstawania kosztów, akceptacje zamówień czy sprzedaż zagraniczna.
 
 - kompletowanie koszyków zamówień,
-- potwierdzanie dostępności on-line w momencie złożenia zamówienia,
+- potwierdzanie dostępności online w momencie złożenia zamówienia,
 - wielokoszyki i zamówienia powtarzalne,
 - punkty odbioru,
 - metody płatności,
@@ -15,7 +15,7 @@ Zakupy za pomocą WiseB2B są proste i intuicyjne. Tradycyjne kompletowanie kosz
 - uprawnienia dla operatorów do składania i akceptacji zamówień,
 - pobieranie danych marketingowych o produktach z poziomu koszyka,
 - miejsca kosztowe klienta (oddziały, działy w firmie klienta),
-- informacja o opakowaniach i ich zawartości (paking lists).
-- sprzedaż zagraniczna UE (WNT i zamówienia walutowe),
+- informacja o opakowaniach i ich zawartości (packing lists),
+- sprzedaż zagraniczna w UE (WDT i zamówienia walutowe),
 - sprzedaż z magazynów centralnych i oddziałowych,
 - sprzedaż eksportowa.

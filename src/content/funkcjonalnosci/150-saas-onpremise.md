@@ -2,4 +2,4 @@
 title: "SaaS/OnPremise"
 ---
 
-WiseB2B oferuje elastyczne modele wdrożenia: SaaS (Software as a Service) oraz OnPremise, z instalacją na serwerach klienta. Wybór modelu zależy od wymagań bezpieczeństwa, infrastruktury IT i preferencji organizacji.
+WiseB2B działa w chmurze (WiseB2B Cloud) albo na serwerach klienta (on-premise). Model wybierasz według wymagań bezpieczeństwa, infrastruktury IT i polityki firmy. Instalacja on-premise jest dostępna w planach Professional i Enterprise.

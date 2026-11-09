@@ -2,8 +2,8 @@
 title: "Wtyczki i moduły dedykowane"
 ---
 
-Lista funkcji i możliwości WiseB2B może być rozbudowywana zgodnie z tym, jakie potrzeby ma konkretny biznes. Możliwości w tym zakresie są nieograniczone. Zaczynając na zleceniu budowania wtyczek konsultantom WiseB2B, przez projektowanie dodatków we własnym zakresie, aż po dostęp do kodu źródłowego – w zależności od wymagań konkretnego biznesu, rozwiązanie może być rozbudowywane w wielu modelach.
+Platformę rozbudowujesz o funkcje, których potrzebuje Twoja firma. Możesz zlecić wtyczkę zespołowi WiseB2B, zbudować ją we własnym zakresie albo, w planie Enterprise, pracować bezpośrednio na kodzie źródłowym.
 
-- możliwość użycia gotowych wtyczek dostępnych na platformie (lub zlecenia budowania wtyczek do zespołu WiseB2B),
-- możłiwość budowania własnych wtyczek i ich instalacji w SaaS,
+- gotowe wtyczki dostępne na platformie lub wtyczki zamówione u zespołu WiseB2B,
+- własne wtyczki instalowane w WiseB2B Cloud,
 - dostęp do kodu źródłowego z możliwością modyfikacji.

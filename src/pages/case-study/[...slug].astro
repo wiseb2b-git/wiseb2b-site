@@ -51,6 +51,7 @@ const { title, description, clientLogo, mainImage, galleryImages, info, about, f
           <img src={clientLogo} alt={`Logo ${title}`} width={clientLogoDims.width} height={clientLogoDims.height} />
         </div>
         <h1>{title}</h1>
+        <p class="case-study-hero__lead">{description}</p>
       </div>
     </div>
   </section>
@@ -72,17 +73,32 @@ const { title, description, clientLogo, mainImage, galleryImages, info, about, f
     </div>
   </section>
 
+  {stats && stats.length > 0 && (
+    <section class="case-study-stats">
+      <div class="container">
+        <div class="case-study-stats__grid lm-observer">
+          {stats.map((stat) => (
+            <div class="case-study-stats__item">
+              <span class="case-study-stats__value">{stat.value}</span>
+              <span class="case-study-stats__label">{stat.label}</span>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+  )}
+
   <section class="case-study-images">
     <div class="container">
       <div class="case-study-images__main lm-observer">
-        <img src={mainImage} alt={`Zrzut ekranu platformy WiseB2B – ${title}`} width={mainImageDims.width} height={mainImageDims.height} />
+        <img src={mainImage} alt={`Zrzut ekranu platformy WiseB2B: ${title}`} width={mainImageDims.width} height={mainImageDims.height} />
       </div>
       {galleryImages && galleryImages.length > 0 && (
         <div class="case-study-images__gallery">
           {galleryImages.map((img, i) => (
             <img
               src={img}
-              alt={`Zrzut ekranu ${i + 1} – ${title}`}
+              alt={`Zrzut ekranu ${i + 1}: ${title}`}
               width={galleryImageDims[i].width}
               height={galleryImageDims[i].height}
               loading="lazy"
@@ -105,7 +121,7 @@ const { title, description, clientLogo, mainImage, galleryImages, info, about, f
 
   <section class="case-study-functions">
     <div class="container">
-      <h2 class="lm-observer">Kluczowe rozwiązania</h2>
+      <h2 class="lm-observer">Co uruchomiliśmy</h2>
       <div class="case-study-functions__grid">
         {functions.map((fn) => (
           <div class="case-study-functions__item lm-observer">
@@ -117,21 +133,6 @@ const { title, description, clientLogo, mainImage, galleryImages, info, about, f
       </div>
     </div>
   </section>
-
-  {stats && stats.length > 0 && (
-    <section class="case-study-stats">
-      <div class="container">
-        <div class="case-study-stats__grid lm-observer">
-          {stats.map((stat) => (
-            <div class="case-study-stats__item">
-              <span class="case-study-stats__value">{stat.value}</span>
-              <span class="case-study-stats__label">{stat.label}</span>
-            </div>
-          ))}
-        </div>
-      </div>
-    </section>
-  )}
 
   {quote && (
     <section class="case-study-quote">
@@ -148,5 +149,16 @@ const { title, description, clientLogo, mainImage, galleryImages, info, about, f
   )}
 </article>
 
-<CtaBlock showPresentation={true} />
+<section class="hp-final">
+  <div class="container">
+    <div class="hp-final__card lm-observer">
+      <h2>Masz podobną sytuację w swojej firmie?</h2>
+      <p>Pokażemy WiseB2B na żywo, na scenariuszach z Twojej firmy. Rozmowa trwa 30 minut.</p>
+      <a href="/zamow-demo/" class="btn btn--light">Zamów demo</a>
+      <p class="hp-final__contact">Więcej wyników klientów znajdziesz na stronie <a href="/wdrozenia/">Wdrożenia</a>.</p>
+    </div>
+  </div>
+</section>
+
+<CtaBlock />
 </BaseLayout>

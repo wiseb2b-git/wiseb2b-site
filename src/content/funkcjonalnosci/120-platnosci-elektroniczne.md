@@ -2,9 +2,9 @@
 title: "Płatności elektroniczne"
 ---
 
-WiseB2B zapewnia wsparcie wszystkich metod płatności, zarówno tych elektronicznych realizowanych w trakcie składania zamówienia, jak i tych dokonywanych na podstawie faktur czy rozrachunków. Ponadto platforma wspiera również zwroty środków oraz integrację z operatorami faktoringu.
+Klient płaci online przy składaniu zamówienia albo później, za fakturę lub rozrachunek. Platforma obsługuje bramki płatności AutoPay i PayU, zwroty środków i integrację z firmami faktoringowymi.
 
 - płatności podczas składania zamówienia,
-- płatności rozrachunków / faktur,
+- płatności rozrachunków i faktur,
 - zwroty,
 - integracja z faktorami.

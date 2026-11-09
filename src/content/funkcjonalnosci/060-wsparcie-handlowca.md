@@ -2,7 +2,7 @@
 title: "Wsparcie handlowca w zakupach"
 ---
 
-Platforma B2B to nie tylko narzędzie dla klientów, ale również wsparcie pracy handlowców. Sprzedawcy mogą w razie potrzeby logować się do profili swoich klientów, kompletować ich zamówienia lub udzielić każdego innego wsparcie, którego potrzebuje klient – czy to w procesie zakupów, czy z pozyskaniem konkretnych danych czy dokumentów. Handlowiec może również sprawdzić należności i limity kredytowe czy analizować statystyki zakupów swoich klientów.
+Z platformy korzysta też Twój handlowiec. Loguje się na konto klienta, kompletuje za niego koszyk albo przekazuje gotowe zamówienie do akceptacji. Sprawdza należności i limit kredytowy klienta, przegląda statystyki jego zakupów i pomaga mu znaleźć potrzebne dane lub dokumenty.
 
 - logowanie do profilu klienta,
 - kompletowanie koszyków,

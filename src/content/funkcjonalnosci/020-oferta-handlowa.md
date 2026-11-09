@@ -2,16 +2,16 @@
 title: "Oferta handlowa"
 ---
 
-Każdy element Twojej oferty handlowej może być precyzyjnie odwzorowany na platformie WiseB2B. Specjalne cenniki dla poszczególnych klientów, jak i ich wielowalutowe wersje, spersonalizowane promocje, limity kredytowe czy indywidualne dostępności towarów – wszystko, co zdefiniujesz w sowim systemie ERP będzie wiernie odwzorowane na platformie B2B.
+Każdy element Twojej oferty handlowej odwzorujesz na platformie WiseB2B. Cenniki dla poszczególnych klientów i ich wersje walutowe, promocje, limity kredytowe i indywidualne dostępności towarów działają na platformie tak, jak zapisałeś je w ERP.
 
 - cenniki indywidualne dla każdego klienta,
 - indywidualne promocje,
 - limity kredytowe,
 - terminy płatności,
-- dostępności towarów (progowe, ilościowe).
+- dostępności towarów (progowe, ilościowe),
 - cenniki wielowalutowe,
 - cenniki według opakowań zbiorczych,
-- dostępności towarów indywidualne,
+- indywidualne dostępności towarów,
 - indywidualny zakres produktów,
-- dostępnośc w punktach odbiorów (sklepów, składów),
+- dostępność w punktach odbioru (sklepach, składach),
 - promocje wiązane.

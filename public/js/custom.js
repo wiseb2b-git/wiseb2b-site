@@ -1,4 +1,4 @@
-new WOW().init({offset:500});
+if (typeof WOW !== "undefined") new WOW().init({offset:500});
 
 window.addEventListener("load", (event) => {
 //Show desc in sectin main feature

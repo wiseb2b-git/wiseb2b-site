@@ -7,7 +7,7 @@ import { getCollection } from 'astro:content';
 const partners = (await getCollection('partnerzy')).sort((a, b) => (a.data.order ?? 99) - (b.data.order ?? 99));
 ---
 
-<BaseLayout title="Partnerzy wdrożeniowi WiseB2B" description="Poznaj naszych certyfikowanych partnerów wdrożeniowych. Doświadczone firmy IT i agencje eCommerce, które pomagają w pełnym wykorzystaniu platformy WiseB2B.">
+<BaseLayout title="Partnerzy wdrożeniowi WiseB2B: Sente i Satisfly" description="Platformę WiseB2B wdrożysz sam, z naszym zespołem albo z partnerem. Poznaj Sente i Satisfly, partnerów wdrożeniowych WiseB2B.">
 
 <!-- HERO -->
 <div class="supports-logos">
@@ -18,12 +18,12 @@ const partners = (await getCollection('partnerzy')).sort((a, b) => (a.data.order
           <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M16 11c1.66 0 2.99-1.34 2.99-3S17.66 5 16 5c-1.66 0-3 1.34-3 3s1.34 3 3 3zm-8 0c1.66 0 2.99-1.34 2.99-3S9.66 5 8 5C6.34 5 5 6.34 5 8s1.34 3 3 3zm0 2c-2.33 0-7 1.17-7 3.5V19h14v-2.5c0-2.33-4.67-3.5-7-3.5zm8 0c-.29 0-.62.02-.97.05 1.16.84 1.97 1.97 1.97 3.45V19h6v-2.5c0-2.33-4.67-3.5-7-3.5z"/></svg>
           Partnerzy
         </span>
-        <h1 class="h2_semi lm-observer">Partnerzy wdrożeniowi</h1>
+        <h1 class="h2_semi lm-observer">Ty wybierasz, kto wdraża Twoją platformę</h1>
       </div>
     </div>
     <div class="row">
       <div class="col-lg-6 offset-lg-3">
-        <p class="p_regular_2 description lm-observer">Nasi partnerzy wdrożeniowi to doświadczone firmy IT i&nbsp;agencje eCommerce, które pomagają klientom w&nbsp;pełnym wykorzystaniu platformy WiseB2B. Każdy partner posiada potwierdzone kompetencje w&nbsp;zakresie wdrożeń B2B.</p>
+        <p class="p_regular_2 description lm-observer">WiseB2B dostarcza technologię. Ty decydujesz, czy wdrażasz sam, z&nbsp;naszym zespołem, czy z&nbsp;partnerem wdrożeniowym. Dzięki dostępowi do kodu źródłowego platformę może dalej rozwijać każdy z&nbsp;nich. Nie jesteś skazany na jednego dostawcę.</p>
         <a href="/zamow-demo/" class="wise-button wise-button--wise-harvest lm-observer">Zamów demo</a>
       </div>
     </div>
@@ -60,8 +60,8 @@ const partners = (await getCollection('partnerzy')).sort((a, b) => (a.data.order
   <div class="container">
     <div class="row">
       <div class="col-lg-8 offset-lg-2" style="text-align:center;">
-        <h2 class="h2_semi">Dlaczego WiseB2B?</h2>
-        <p class="subtitle">Dlaczego warto zostać partnerem</p>
+        <h2 class="h2_semi">Dla firm wdrożeniowych i&nbsp;agencji eCommerce</h2>
+        <p class="subtitle">Co dostajesz jako partner WiseB2B</p>
       </div>
     </div>
     <div class="row">
@@ -72,8 +72,8 @@ const partners = (await getCollection('partnerzy')).sort((a, b) => (a.data.order
               <img width="31" height="31" src="/images/np_sale_3972942.png" class="attachment-logos size-logos" alt="Wartość dla klientów" />
             </div>
             <div class="box__content">
-              <p class="p_semi_2 box__content-header">Dawaj więcej wartości swoim Klientom</p>
-              <p class="p_regular_3 box__content-description">Oferuj klientom platformę, która realnie zwiększa przychody i&nbsp;usprawnia procesy sprzedażowe w&nbsp;kanale B2B.</p>
+              <p class="p_semi_2 box__content-header">Platforma projektowana dla B2B</p>
+              <p class="p_regular_3 box__content-description">Cenniki indywidualne, kredyt kupiecki, sub-konta i&nbsp;akceptacje zamówień działają od startu. Nie przerabiasz sklepu B2C na potrzeby hurtu.</p>
             </div>
           </div>
           <div class="box">
@@ -81,8 +81,8 @@ const partners = (await getCollection('partnerzy')).sort((a, b) => (a.data.order
               <img width="31" height="31" src="/images/np_settings_746615.png" class="attachment-logos size-logos" alt="Lepsze rozwiązania" />
             </div>
             <div class="box__content">
-              <p class="p_semi_2 box__content-header">Oferuj lepsze rozwiązania</p>
-              <p class="p_regular_3 box__content-description">Panel Handlowca i&nbsp;Agent AI to funkcje, które wyróżniają WiseB2B na tle konkurencji i&nbsp;dają Twoim klientom przewagę.</p>
+              <p class="p_semi_2 box__content-header">Agenci AI i&nbsp;Panel Handlowca w&nbsp;standardzie</p>
+              <p class="p_regular_3 box__content-description">Twój klient dostaje agentów AI, którzy zamieniają zamówienie z&nbsp;maila w&nbsp;koszyk, oraz Panel Handlowca na tych samych danych z&nbsp;ERP.</p>
             </div>
           </div>
           <div class="box">
@@ -90,8 +90,8 @@ const partners = (await getCollection('partnerzy')).sort((a, b) => (a.data.order
               <img width="31" height="31" src="/images/np_function_1286758_000000-1.png" class="attachment-logos size-logos" alt="Otwarty kod" />
             </div>
             <div class="box__content">
-              <p class="p_semi_2 box__content-header">Otwarty kod źródłowy</p>
-              <p class="p_regular_3 box__content-description">Pełna niezależność i&nbsp;swoboda działania. Brak vendor lock-in oznacza, że Ty i&nbsp;Twoi klienci macie pełną kontrolę nad platformą.</p>
+              <p class="p_semi_2 box__content-header">Dostęp do kodu źródłowego</p>
+              <p class="p_regular_3 box__content-description">Rozszerzenia piszesz jako wtyczki, więc aktualizacje platformy ich nie psują. Klient nie płaci prowizji od obrotu, co ułatwia rozmowę o&nbsp;kosztach.</p>
             </div>
           </div>
         </div>
@@ -101,8 +101,8 @@ const partners = (await getCollection('partnerzy')).sort((a, b) => (a.data.order
               <img width="31" height="31" src="/images/np_ecommerce_4557208_000000-1.png" class="attachment-logos size-logos" alt="Platforma demo" />
             </div>
             <div class="box__content">
-              <p class="p_semi_2 box__content-header">Dostęp do platformy i&nbsp;szkoleń</p>
-              <p class="p_regular_3 box__content-description">Otrzymasz pełny dostęp do platformy WiseB2B, dokumentacji technicznej i&nbsp;materiałów szkoleniowych.</p>
+              <p class="p_semi_2 box__content-header">Środowisko demo i&nbsp;szkolenia</p>
+              <p class="p_regular_3 box__content-description">Dostajesz środowisko demonstracyjne, dokumentację techniczną i&nbsp;szkolenia z&nbsp;wdrażania i&nbsp;sprzedaży platformy.</p>
             </div>
           </div>
           <div class="box">
@@ -111,7 +111,7 @@ const partners = (await getCollection('partnerzy')).sort((a, b) => (a.data.order
             </div>
             <div class="box__content">
               <p class="p_semi_2 box__content-header">Wsparcie zespołu WiseB2B</p>
-              <p class="p_regular_3 box__content-description">Nasz zespół zapewni Ci pomoc techniczną i&nbsp;merytoryczną na każdym etapie wdrożenia klienta.</p>
+              <p class="p_regular_3 box__content-description">Pomagamy od prezentacji u&nbsp;klienta po uruchomienie platformy, technicznie i&nbsp;merytorycznie.</p>
             </div>
           </div>
           <div class="box">
@@ -120,7 +120,7 @@ const partners = (await getCollection('partnerzy')).sort((a, b) => (a.data.order
             </div>
             <div class="box__content">
               <p class="p_semi_2 box__content-header">Wspólne działania marketingowe</p>
-              <p class="p_regular_3 box__content-description">Promujemy naszych partnerów na stronie, w&nbsp;materiałach marketingowych i&nbsp;podczas wydarzeń branżowych.</p>
+              <p class="p_regular_3 box__content-description">Pokazujemy partnerów na stronie WiseB2B, w&nbsp;materiałach marketingowych i&nbsp;podczas wydarzeń branżowych.</p>
             </div>
           </div>
         </div>
@@ -136,7 +136,8 @@ const partners = (await getCollection('partnerzy')).sort((a, b) => (a.data.order
       <div class="col-xl-8 offset-xl-2 col-lg-10 offset-lg-1">
         <div class="call-expert__wrapper">
           <h2 class="h2_semi">Chcesz zostać partnerem WiseB2B?</h2>
-          <p class="p_regular_2" style="margin-top:12px;color:#dcdae0;">Dołącz do naszej sieci partnerów wdrożeniowych i&nbsp;rozwijaj swój biznes razem z&nbsp;WiseB2B.</p>
+          <p class="p_regular_2" style="margin-top:12px;color:#dcdae0;">Wdrażasz eCommerce dla firm handlowych lub produkcyjnych? Napisz, jakie projekty prowadzisz. Opowiemy, jak wygląda współpraca. Kontakt: <a href="mailto:kontakt@wiseb2b.eu" style="color:#fff;">kontakt@wiseb2b.eu</a></p>
+          {/* NEED: model współpracy partnerskiej (marża lub prowizja, wymagania, proces wejścia) i osobny formularz dla partnerów */}
           <div class="call-expert__button">
             <a class="wise-button wise-button--wise-harvest" href="/zamow-demo/">Skontaktuj się z nami</a>
           </div>
@@ -146,5 +147,5 @@ const partners = (await getCollection('partnerzy')).sort((a, b) => (a.data.order
   </div>
 </section>
 
-<CtaBlock showPresentation={true} />
+<CtaBlock />
 </BaseLayout>

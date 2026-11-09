@@ -2,7 +2,7 @@
 title: "Integracje ERP"
 ---
 
-Integracja WiseB2B z systemem ERP zapewnia pełnie odwzorowanie warunków handlowych, danych o klientach, asortymencie czy promocjach. Rozwiązanie jest integrowane z wybranymi rozwiązaniami ERP oraz może zostać zintegrowane z dowolnym systemem, z którego korzysta Twoja firma.
+Integracja z ERP przenosi na platformę warunki handlowe, dane klientów, asortyment i promocje. Co zapiszesz w ERP, to klient zobaczy online. Mamy gotowe integracje z Teneum, Comarch XL, Comarch Optima, enova365 i Subiektem, a z innym systemem połączymy platformę przez API.
 
-- dedykowany integrator do ERP takich jak COMARCH, Teneum,
+- dedykowany integrator do ERP, np. Teneum, Comarch XL, Comarch Optima, enova365, Subiekt,
 - odwzorowanie reguł handlowych występujących w danym ERP.

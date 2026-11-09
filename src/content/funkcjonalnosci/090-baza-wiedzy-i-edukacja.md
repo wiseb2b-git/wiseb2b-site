@@ -2,11 +2,11 @@
 title: "Baza wiedzy i edukacja"
 ---
 
-WiseB2B to narzędzie, dzięki któremu zwiększysz lojalność i przywiązanie klientów do firmy. W ramach rozwiązania możesz stworzyć rozbudowaną bazę wiedzy o produktach, newsach z branży, zmianach prawnych oraz dzielić się treściami poradnikowymi. Platforma pozwala na tworzenie artykułów, jak i repozytoriów plików. Twój klient w jednym miejscu nie tylko zrobi zakupy i pozyska wszelkie informacje na temat swoich zamówień, ale i poszerzy wiedzę i zwiększy świadomość na temat oferowanych produktów.
+Na platformie zbudujesz bazę wiedzy o produktach, nowościach z branży i zmianach w przepisach. Publikujesz artykuły i poradniki, udostępniasz repozytoria plików. Klient w jednym miejscu zamawia, sprawdza swoje zamówienia i dowiaduje się więcej o Twoich produktach.
 
 - artykuły powiązane z produktami,
 - artykuły powiązane z kategoriami produktów,
-- repozytoria plików, np.: akty prawne, podania, formularze,
+- repozytoria plików, np. akty prawne, podania, formularze,
 - konfiguracja blokowa strony głównej: slidery banerowe, bloki produktowe, kategorie, karuzele, banery,
 - własne podstrony z artykułami,
 - banery kontekstowe,

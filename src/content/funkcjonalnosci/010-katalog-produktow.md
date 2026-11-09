@@ -1,8 +1,8 @@
 ---
-title: "Katalog Produktów"
+title: "Katalog produktów"
 ---
 
-Sposób prezentacji produktów na platformie jest dostosowany do specyfiki handlu B2B. Platforma umożliwia wyświetlanie listy produktów w dwóch widokach: uproszczonym i rozszerzonym. W widoku szczegółów produktu prezentowane są wszelkie parametry ułatwiające zakupy, dobrane w zależności od branży i specyfiki firmy, np. nazwa produktu, kod EAN, podstawowa jednostka sprzedaży, minimalna ilość zakupu, cena netto, opis produktu.
+Katalog pokazuje produkty tak, jak kupuje się je w B2B. Listę produktów klient przegląda w widoku uproszczonym albo rozszerzonym. Na karcie produktu widzi parametry potrzebne do zamówienia, dobrane do Twojej branży: nazwę, kod EAN, jednostkę sprzedaży, minimalną ilość zakupu, cenę netto i opis.
 
 - kategorie produktów,
 - katalog produktów,
@@ -10,4 +10,4 @@ Sposób prezentacji produktów na platformie jest dostosowany do specyfiki handl
 - zdjęcia i multimedia,
 - dokumenty związane z towarami,
 - powiązania (akcesoria, zamienniki itp.),
-- nazwy własne klienta, dodatkowe symbole (np. do importu zamówień).
+- nazwy własne klienta i dodatkowe symbole (np. do importu zamówień).

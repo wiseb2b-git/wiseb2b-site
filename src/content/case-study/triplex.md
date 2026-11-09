@@ -1,6 +1,6 @@
 ---
-title: "Czołowy dystrybutor pirotechniki postawił na WiseB2B"
-description: "Case study wdrożenia platformy B2B WiseB2B w firmie Triplex, czołowym dystrybutorze pirotechniki w Polsce i Europie."
+title: "Triplex: prawie połowa obrotu przez platformę B2B"
+description: "Dystrybutor pirotechniki bał się, że klienci nie odejdą od telefonu i Excela. Dziś 49,55% obrotu Triplexa przechodzi przez platformę WiseB2B."
 clientLogo: "/case-study/triplex/triplex-logo-156x44.png"
 mainImage: "/case-study/triplex/browser-blender-4-811x608.png"
 galleryImages:
@@ -10,33 +10,34 @@ info:
   - label: "Branża"
     items:
       - "Dystrybucja pirotechniki"
-  - label: "Wersja & usługi"
+  # NEED: potwierdzić, czy wdrożenie z 2022 r. odpowiada dzisiejszemu planowi Professional
+  - label: "Plan i usługi"
     items:
-      - "Wersja Professional"
-      - "Dedykowany zespół rozwijający funkcje"
-  - label: "Najważniejsze dla Klienta"
+      - "Plan Professional"
+      - "Zespół rozwijający funkcje na potrzeby Triplexa"
+  - label: "Cele klienta"
     items:
-      - "Przeniesienie do kanału cyfrowego większości sprzedaży."
-      - "Możliwość składania zamówień i przeglądania oferty po godzinach pracy Triplex."
-      - "Stworzenie w ramach platformy B2B bazy wiedzy dla klientów."
-      - "Uwolnienie czasu handlowców, dzięki odciążeniu z powtarzalnych czynności."
+      - "Przenieść większość sprzedaży do kanału online."
+      - "Dać klientom zamawianie i przeglądanie oferty po godzinach pracy biura."
+      - "Udostępnić klientom bazę wiedzy w platformie B2B."
+      - "Zdjąć z handlowców powtarzalne czynności przy zamówieniach."
 about:
   heading: "O firmie"
-  text: "Triplex jest jednym z czołowych dystrybutorów artykułów pirotechnicznych w Polsce oraz w Europie. Asortyment firmy to zarówno produkty profesjonalne, jak i amatorskie, wytwarzane w czołowych fabrykach w Chinach, z uwzględnieniem ścisłych wytycznych. Niebanalne opakowania, konkurencyjne ceny, międzynarodowa certyfikacja ISO 9001 i CE – to główne wyróżniki firmy."
+  text: "Triplex jest jednym z czołowych dystrybutorów artykułów pirotechnicznych w Polsce i w Europie. Sprzedaje produkty profesjonalne i amatorskie, produkowane w fabrykach w Chinach według ścisłych wytycznych. Firmę wyróżniają opakowania, ceny oraz certyfikaty ISO 9001 i CE. Klienci Triplexa przez lata zamawiali telefonicznie i w arkuszach Excel. Platformę wdrożył zespół Sente, partnera wdrożeniowego WiseB2B."
 functions:
-  - name: "Wdrożenie platformy B2B"
-    description: "Implementacja w pełni funkcjonalnego, dostosowanego do specyfiki branży dystrybucji fajerwerków rozwiązania e-Commerce B2B. Elektroniczny kanał sprzedaży pozwala na składanie zamówień o każdej porze, intuicyjne przeglądanie pełnego asortymentu, filtrowanie i sortowanie produktów po indywidualnych parametrach, łatwe kompletowanie koszyków zakupowych, tworzenie list zakupowych, dostęp do pełnej historii zamówień, dokumentów i wiele więcej."
-  - name: "Stworzenie bazy wiedzy"
-    description: "Platforma B2B, poza główną funkcją obsługi sprzedaży elektronicznej, została wyposażona w elementy, pozwalające na budowanie centrum wiedzy dla klienta. Rozwiązanie pozwala na dodawanie artykułów, plików PDF, podział materiałów na kategorie itp. Baza materiałów jest dostępna wyłącznie dla zalogowanych klientów, co umożliwia publikowanie unikalnych informacji i dzielenie się wiedzą, bez obaw przed konkurencją."
+  - name: "Platforma B2B dla dystrybucji pirotechniki"
+    description: "Klient loguje się o dowolnej porze i widzi cały asortyment. Filtruje produkty po parametrach branżowych, kompletuje koszyk, zapisuje listy zakupowe i sprawdza historię zamówień oraz dokumenty."
+  - name: "Baza wiedzy dla klientów"
+    description: "W platformie działa centrum wiedzy z artykułami i plikami PDF podzielonymi na kategorie. Widzą je tylko zalogowani klienci, więc Triplex może publikować informacje, których nie chce pokazywać konkurencji."
   - name: "Integracja z Comarch Optima"
-    description: "Platforma B2B zaprojektowana dla firmy Triplex została zintegrowana z systemem ERP wykorzystywanym przez firmę. Dzięki temu informacje o produktach, klientach, promocjach i wszelkie inne warunki handlowe zostały wiernie odwzorowane w rozwiązaniu e-Commerce B2B. Integracja działa w trybie ciągłym, co daje gwarancję że dane w obu narzędziach są zawsze spójne."
-  - name: "Implementacja indywidualnych layoutów"
-    description: "Przedstawicielom firmy Triplex zależało, aby platforma B2B była intuicyjna, zgodna z aktualnymi trendami projektowania user experience i wiernie odzwierciedlała charakter marki. Firma zdecydowała się na stworzenie dedykowanych layoutów we współpracy z firmą Otree. W związku z tym konsultanci Sente dostosowali poszczególne elementy rozwiązania e-Commerce B2B tak, aby jak najlepiej współgrały z projektami makiet."
+    description: "Produkty, klienci, promocje i warunki handlowe pochodzą z ERP. Ceny w platformie liczą się tak samo jak w Comarch Optima. Integracja działa w trybie ciągłym, więc dane w obu systemach są spójne."
+  - name: "Indywidualne layouty"
+    description: "Triplex chciał, żeby platforma oddawała charakter marki. Makiety przygotowała firma Otree, a konsultanci Sente dopasowali do nich elementy platformy."
 stats:
-  - value: "46,36%"
-    label: "zamówień pochodzących z platformy B2B"
   - value: "49,55%"
     label: "obrotu wygenerowanego poprzez platformę B2B"
+  - value: "46,36%"
+    label: "zamówień pochodzących z platformy B2B"
   - value: "34,43%"
     label: "klientów korzystających z platformy B2B"
 quote:

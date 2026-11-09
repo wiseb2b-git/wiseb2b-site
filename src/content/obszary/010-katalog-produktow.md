@@ -1,5 +1,5 @@
 ---
-title: "Katalog Produktów"
+title: "Katalog produktów"
 order: 10
 modules:
   - name: "Cyfrowy katalog produktów"

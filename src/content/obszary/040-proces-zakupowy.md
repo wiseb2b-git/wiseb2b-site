@@ -18,7 +18,7 @@ modules:
     professional: included
     enterprise: included
   - name: "Import zamówienia"
-    description: "Import koszyka z pliku CSV lub Excel, idealne przy dużych zamówieniach"
+    description: "Import koszyka z pliku CSV lub Excel, przydatny przy dużych zamówieniach"
     starter: included
     professional: included
     enterprise: included

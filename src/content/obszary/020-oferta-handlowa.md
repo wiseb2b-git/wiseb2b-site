@@ -3,7 +3,7 @@ title: "Oferta handlowa"
 order: 20
 modules:
   - name: "Cenniki grupowe i indywidualne"
-    description: "Różne ceny dla grup klientów i indywidualne cenniki dla kluczowych kontraktów"
+    description: "Różne ceny dla grup klientów i indywidualne cenniki dla największych kontraktów"
     starter: included
     professional: included
     enterprise: included

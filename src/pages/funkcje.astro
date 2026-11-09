@@ -12,16 +12,51 @@ const renderedFunkcjonalnosci = await Promise.all(
     return { ...f, Content, index };
   })
 );
+
+// 13 obszarów z macierzy modułów (kolekcja obszary); opisy obszarów poniżej
+const obszary = (await getCollection('obszary')).sort((a, b) => a.data.order - b.data.order);
+const obszarOpis: Record<number, string> = {
+  10: 'Kategorie, atrybuty, zdjęcia, dokumenty, akcesoria i zamienniki. Dane GPSR wymagane przepisami.',
+  20: 'Cenniki grupowe i indywidualne, promocje, limity kredytowe, ceny według magazynu, opakowania i progu ilościowego, cenniki w walutach.',
+  30: 'Wyszukiwarka z synonimami, odporna na literówki, i ranking produktów ustawiony pod Twoją strategię sprzedaży.',
+  40: 'Wielokoszyki, listy zakupowe, import zamówienia z CSV lub Excela, kurierzy, płatności, dropshipping, sprzedaż zagraniczna z kontrolą VIES, akceptacje zamówień.',
+  50: 'Historia zamówień, faktur i dostaw, rozrachunki, zwroty i reklamacje, oferty dedykowane i konta zakupowców klienta.',
+  60: 'Agent klienta, agent administratora i automatyczne generowanie treści przez AI dla wybranych pól.',
+  70: 'Strona główna, slidery, aktualności, baza wiedzy powiązana z produktami i treści SEO.',
+  80: 'Profil zamknięty, profil otwarty bez logowania do zdobywania nowych klientów, MultiStore: wiele sklepów na jednym zapleczu.',
+  90: 'Zakupy bez rejestracji, ceny brutto i obsługa dyrektywy Omnibus, gdy sprzedajesz też klientom detalicznym.',
+  100: 'Logowanie na konto klienta, Panel Handlowca, ofertowanie, zadania i monitoring klientów.',
+  110: 'Gotowe integracje z ERP, Admin API i Client API.',
+  120: 'Środowisko produkcyjne i testowe, n8n do automatyzacji i instalacja on-premise.',
+  130: 'Wtyczki własne, kod źródłowy i Customization Studio do budowy pluginów z AI.',
+};
+
+const faqData = [
+  {
+    question: "Czym funkcje WiseB2B różnią się od zwykłego sklepu internetowego?",
+    answer: "WiseB2B powstało dla handlu B2B. Grupy klientów, cenniki indywidualne, limity kredytowe, konta zakupowców i akceptacje zamówień to moduły platformy, a nie przeróbki sklepu detalicznego. Do tego dochodzą Panel Handlowca i agenci AI, które pracują na tych samych danych z ERP. Część modułów jest w pakiecie każdego planu, część dodajesz jako opcję."
+  },
+  {
+    question: "Czy mogę zacząć od części funkcji?",
+    answer: "Tak. Platforma składa się z modułów, więc zaczynasz od tych, których potrzebujesz dziś, a kolejne dokładasz wraz z rozwojem sprzedaży online. Które moduły są w którym planie, sprawdzisz w porównaniu planów."
+  },
+  {
+    question: "Czy funkcje da się dopasować do mojej branży?",
+    answer: "Tak. Zmiany powstają jako pluginy, poza kodem standardowym, więc aktualizacja do nowej wersji nie wymaga ich przepisywania. Pluginy może zbudować nasz zespół, partner wdrożeniowy albo Twój dział IT. W planie Enterprise masz też dostęp do kodu źródłowego."
+  }
+];
 ---
 
-<BaseLayout title="Funkcje platformy B2B" description="Zaawansowane funkcje platformy B2B, odpowiadające na potrzeby klientów, handlowców i właścicieli. Poznaj możliwości WiseB2B.">
+<BaseLayout title="Funkcje platformy Commerce B2B WiseB2B" description="37 modułów w 13 obszarach: katalog, cenniki z ERP, proces zakupowy, Panel Handlowca, agenci AI, integracje i kod źródłowy. Zobacz, co dostaje Twój klient." faq={faqData}>
 <section class="page-hero">
   <div class="container">
     <span class="page-hero__badge">
       <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 12c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm0 2c-3.34 0-10 1.68-10 5v3h20v-3c0-3.32-6.66-5-10-5z"/></svg>
       Funkcje platformy
     </span>
-    <h1 class="lm-observer">Platforma eCommerce B2B dla firm handlowych i&nbsp;produkcyjnych, łącząca sklep B2B, Panel Handlowca i&nbsp;Agenta AI w&nbsp;jednym środowisku.</h1>
+    <h1 class="lm-observer">Funkcje platformy <span>WiseB2B</span></h1>
+    {/* NEED: potwierdzenie liczby modułów; materiały CEO mówią o 37 modułach, macierz cenowa ma ok. 69 pozycji */}
+    <p class="page-hero__lead lm-observer">37 modułów w 13 obszarach, od katalogu z cenami z ERP po kod źródłowy. Klient zamawia sam, handlowiec widzi każde zamówienie, a powtarzalną pracę przejmują agenci AI.</p>
     <div class="page-hero__actions lm-observer">
       <a class="wise-button wise-button--wise-harvest" href="/zamow-demo/">Zamów demo</a>
     </div>
@@ -33,28 +68,28 @@ const renderedFunkcjonalnosci = await Promise.all(
     <div class="row">
       <div class="col-12">
         <div class="functions-box-white-bg__wrap">
-          <h2 class="h2_semi functions-box-white-bg__header lm-observer">Zaawansowane funkcje platformy B2B, odpowiadające na potrzeby: </h2>
+          <h2 class="h2_semi functions-box-white-bg__header lm-observer">Co z tego ma każda strona sprzedaży:</h2>
           <div class="functions-box-white-bg__wrapper">
             <div class="item lm-observer">
               <span class="icon-purple-badge">
                 <svg class="icon" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 1 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-4 0v-.09a1.65 1.65 0 0 0-1.08-1.51 1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 1 1-2.83-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1 0-4h.09a1.65 1.65 0 0 0 1.51-1.08 1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 1 1 2.83-2.83l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 4 0v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 1 1 2.83 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 0 4h-.09a1.65 1.65 0 0 0-1.51 1z"/></svg>
               </span>
               <p class="p_semi_2 item_header">Klienta</p>
-              <p class="p_regular_3 item__description">Zawsze dostępna oferta, dopasowana do indywidualnych potrzeb i preferencji sprawi, że Twoi klienci będą kupowali więcej. </p>
+              <p class="p_regular_3 item__description">Widzi swoje ceny, stany i historię zamówień. Ponawia zamówienie z listy zakupowej albo wkleja je z maila i zamawia wtedy, kiedy mu pasuje, także wieczorem.</p>
             </div>
             <div class="item lm-observer">
               <span class="icon-purple-badge">
                 <svg class="icon" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="16" rx="2"/><path d="M3 10h18M9 10v10"/></svg>
               </span>
               <p class="p_semi_2 item_header">Właściciela</p>
-              <p class="p_regular_3 item__description">Dzięki WiseB2B w pełni scyfryzujesz proces sprzedaży, jednocześnie obniżając jego koszty i zwiększając wartość transakcji.</p>
+              <p class="p_regular_3 item__description">Powtarzalne zamówienia trafiają do ERP bez przepisywania. Obsługujesz więcej klientów tym samym zespołem i płacisz stały abonament bez prowizji od obrotu.</p>
             </div>
             <div class="item lm-observer">
               <span class="icon-purple-badge">
                 <svg class="icon" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M18 8c0 4.5-6 12-6 12S6 12.5 6 8a6 6 0 1 1 12 0z"/><circle cx="12" cy="8" r="2.2"/></svg>
               </span>
               <p class="p_semi_2 item_header">Działu sprzedaży</p>
-              <p class="p_regular_3 item__description">Odciążeni z powtarzalnych i&nbsp;monotonnych czynności handlowcy, będą mogli skoncentrować się na budowaniu relacji z kluczowymi klientami i&nbsp;docieraniu do nowych.</p>
+              <p class="p_regular_3 item__description">Handlowiec w Panelu Handlowca ma historię zakupów, rozrachunki i oferty klienta. Składa zamówienie w jego imieniu, przygotowuje ofertę i dzwoni do tych, którzy kupują mniej.</p>
             </div>
           </div>
         </div>
@@ -67,29 +102,51 @@ const renderedFunkcjonalnosci = await Promise.all(
   <div class="container">
     <div class="row">
       <div class="col-lg-10 offset-lg-1 col-xl-8 offset-xl-2 p-xl-0">
-        <h2 class="h2_semi functions-cards__heading lm-observer">Pełne wsparcie procesu zakupowego Twojego klienta</h2>
+        <h2 class="h2_semi functions-cards__heading lm-observer">Twój klient załatwia wszystko w jednym miejscu</h2>
         <div class="functions-cards__grid">
           <div class="functions-cards__item lm-observer">
             <span class="icon-purple-badge">
               <svg class="icon" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="7" rx="1.5"/><rect x="14" y="3" width="7" height="7" rx="1.5"/><rect x="3" y="14" width="7" height="7" rx="1.5"/><rect x="14" y="14" width="7" height="7" rx="1.5"/></svg>
             </span>
-            <p class="p_semi_2">Zawsze dostępne centrum klienta biznesowego</p>
-            <p class="p_regular_3">WiseB2B to jedna platforma, na której Twój klient zrobi zakupy z każdego miejsca, o każdej porze, zyska dostęp do pełnej dokumentacji i faktur, zweryfikuje status reklamacji i&nbsp;zwrotów, a nawet poszerzy swoją wiedzę o produktach, usługach i&nbsp;branży.</p>
+            <p class="p_semi_2">Zakupy, faktury i reklamacje</p>
+            <p class="p_regular_3">Klient składa zamówienie z biura albo z telefonu, pobiera fakturę, sprawdza rozrachunki i status reklamacji. Do BOK dzwoni, gdy naprawdę potrzebuje rozmowy.</p>
           </div>
           <div class="functions-cards__item lm-observer">
             <span class="icon-purple-badge">
               <svg class="icon" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2 3 7v6c0 5 3.8 8.6 9 9 5.2-.4 9-4 9-9V7l-9-5z"/><circle cx="12" cy="10" r="2.4"/></svg>
             </span>
-            <p class="p_semi_2">Indywidualne podejście do klienta</p>
-            <p class="p_regular_3">Twoi klienci oczekują od platformy B2B takiej samej jakości obsługi, jakiej doświadczają przy bezpośrednim kontakcie z handlowcem. Twoi klienci mogą skorzystać z&nbsp;indywidualnych cenników, promocji dostosowanych do nawyków zakupowych czy&nbsp;spersonalizowanych rabatów.</p>
+            <p class="p_semi_2">Jego ceny i jego warunki</p>
+            <p class="p_regular_3">Na platformie klient widzi to samo, co ustaliłby z handlowcem: cennik indywidualny, rabaty, limit kupiecki i termin płatności. Wszystko pochodzi z Twojego ERP.</p>
           </div>
           <div class="functions-cards__item lm-observer">
             <span class="icon-purple-badge">
               <svg class="icon" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="16" rx="2"/><path d="M3 9h18M8 3v3M16 3v3"/></svg>
             </span>
-            <p class="p_semi_2">Przejrzysta i intuicyjna oferta</p>
-            <p class="p_regular_3">Nieważne jak rozbudowany katalog produktowy posiadasz, dzięki WiseB2B zaprezentujesz go swojemu klientowi w&nbsp;sposób przejrzysty. Rozwiązanie pozwala na intuicyjne poruszanie się po złożonych drzewach asortymentowych dzięki zaawansowanym mechanizmom filtrowania.</p>
+            <p class="p_semi_2">Duży katalog, szybkie wyszukiwanie</p>
+            <p class="p_regular_3">Klient znajduje produkt po nazwie, indeksie albo własnym symbolu, nawet z literówką. Filtry zmieniają się razem z wynikami, więc w katalogu z dziesiątkami tysięcy indeksów dochodzi do produktu w kilku kliknięciach.</p>
           </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- 13 OBSZARÓW -->
+<div class="functions-cards">
+  <div class="container">
+    <div class="row">
+      <div class="col-12">
+        <h2 class="h2_semi functions-cards__heading lm-observer">13 obszarów platformy</h2>
+        <div class="functions-cards__grid">
+          {obszary.map((obszar) => (
+            <div class="functions-cards__item lm-observer">
+              <p class="p_semi_2">{obszar.data.title}</p>
+              <p class="p_regular_3">{obszarOpis[obszar.data.order] ?? obszar.data.modules.map((m) => m.name).join(', ')}</p>
+            </div>
+          ))}
+        </div>
+        <div class="lm-observer" style="text-align:center; margin-top:32px;">
+          <a class="wise-button wise-button--wise-harvest" href="/plany-wiseb2b/#price-functions">Zobacz moduły w planach</a>
         </div>
       </div>
     </div>
@@ -100,23 +157,23 @@ const renderedFunkcjonalnosci = await Promise.all(
   <div class="container">
     <div class="row">
       <div class="col-lg-10 offset-lg-1 col-xl-8 offset-xl-2 p-xl-0">
-        <h2 class="h2_semi functions-cards__heading lm-observer">Większa wartość zamówień od&nbsp;obecnych klientów</h2>
+        <h2 class="h2_semi functions-cards__heading lm-observer">Więcej sprzedaży z&nbsp;tych samych klientów</h2>
         <div class="functions-table lm-observer">
           <div class="functions-table__cell">
-            <p class="p_semi_2">Większa wartość zamówień od&nbsp;obecnych klientów</p>
-            <p class="p_regular_3">Twój Klient kupuje zawsze te same produkty o&nbsp;tej samej wartości? Wykorzystaj mechanizmy automatycznego reagowania na zachowania klienta w czasie rzeczywistym, dzięki którym zwiększysz wartość zamówień. Promocje celowane, oferty okresowe dostosowane do&nbsp;pogody, sezonowości czy nadzwyczajnych okazji &ndash; to narzędzia, dzięki którym zmotywujesz klientów do większych zakupów.</p>
+            <p class="p_semi_2">Większe koszyki stałych klientów</p>
+            <p class="p_regular_3">Klient co miesiąc zamawia te same pięć pozycji? Pokaż mu promocję celowaną, ofertę sezonową albo rabat od wartości koszyka. Promocje katalogowe i koszykowe są w każdym planie.</p>
           </div>
           <div class="functions-table__cell">
-            <p class="p_semi_2">Lepsza oferta dzięki optymalizacji procesu zakupowego</p>
-            <p class="p_regular_3">Co gdyby Twoi klienci kupowali więcej i&nbsp;częściej, jednocześnie oszczędzając możliwie dużo na każdej transakcji? Tak działa optymalizator zakupów w&nbsp;WiseB2B, sugerując najkorzystniejsze promocje, ilości potrzebne do osiągnięcia lepszej ceny czy produkty komplementarne.</p>
+            <p class="p_semi_2">Optymalizator zakupów</p>
+            <p class="p_regular_3">Podpowiada klientowi, ile sztuk dołożyć do lepszej ceny, kiedy opłaca się karton zamiast sztuk i co kupić razem w promocji wiązanej. Moduł możesz dodać w planie Enterprise.</p>
           </div>
           <div class="functions-table__cell">
-            <p class="p_semi_2">Platforma, która nadąży za rozwojem Twojego biznesu</p>
-            <p class="p_regular_3">Rozważasz wejście na nowe rynki, uruchomienie sprzedaży zagranicznej czy może zastanawiasz się nad wdrożeniem sprzedaży z oddziałów? Dzięki WiseB2B ewolucja Twojego modelu biznesowego znajdzie wierne odzwierciedlenie w kanale e-Commerce.</p>
+            <p class="p_semi_2">Nowe rynki i oddziały</p>
+            <p class="p_regular_3">Sprzedaż zagraniczna z kontrolą VIES i cennikami w walutach, sprzedaż z magazynów oddziałowych, kilka sklepów na jednym zapleczu. Gdy zmieniasz model sprzedaży, dokładasz moduł do tej samej platformy.</p>
           </div>
           <div class="functions-table__cell">
-            <p class="p_semi_2">Skuteczne dotarcie do nowych odbiorców</p>
-            <p class="p_regular_3">Ciągle szukasz nowych klientów. A oni szukają Twoich produktów, zwykle za pomocą wyszukiwarek internetowych. Odpowiednio przygotowany pod kątem wyszukiwarek profil otwarty Twojej platformy B2B pozwoli Ci pozyskiwać nowych odbiorców w sposób pasywny.</p>
+            <p class="p_semi_2">Nowi klienci z wyszukiwarki</p>
+            <p class="p_regular_3">Firmy szukają produktów w Google. Profil otwarty pokazuje Twój katalog bez logowania, z opisami SEO, i zbiera prośby o rejestrację, które możesz akceptować automatycznie.</p>
           </div>
         </div>
       </div>
@@ -128,28 +185,28 @@ const renderedFunkcjonalnosci = await Promise.all(
   <div class="container">
     <div class="row">
       <div class="col-lg-10 offset-lg-1 col-xl-8 offset-xl-2 p-xl-0">
-        <h2 class="h2_semi functions-cards__heading lm-observer">Dział sprzedaży w nowej roli</h2>
+        <h2 class="h2_semi functions-cards__heading lm-observer">Handlowcy sprzedają, rutynę przejmuje platforma</h2>
         <div class="functions-cards__grid">
           <div class="functions-cards__item lm-observer">
             <span class="icon-purple-badge">
               <svg class="icon" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M18 8c0 4.5-6 12-6 12S6 12.5 6 8a6 6 0 1 1 12 0z"/><circle cx="12" cy="8" r="2.2"/></svg>
             </span>
-            <p class="p_semi_2">Budowanie wartościowych relacji</p>
-            <p class="p_regular_3">Dzięki temu, że większość sprzedaży przeniesiesz na WiseB2B, Twoi handlowcy będą mogli skupić się na budowaniu relacji z kluczowymi klientami i&nbsp;pozyskiwaniu nowych. Platforma podpowie im najlepszy w danym momencie rabat czy promocję na podstawie faktycznych danych.</p>
+            <p class="p_semi_2">Czas na rozmowy z klientami</p>
+            <p class="p_regular_3">Powtarzalne zamówienia klienci składają sami. Handlowiec zajmuje się dużymi klientami i nowymi kontraktami, a rabat proponuje na podstawie historii zakupów, którą widzi w panelu.</p>
           </div>
           <div class="functions-cards__item lm-observer">
             <span class="icon-purple-badge">
               <svg class="icon" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7l9 6 9-6"/></svg>
             </span>
-            <p class="p_semi_2">Odciążenie z czasochłonnej komunikacji</p>
-            <p class="p_regular_3">Odpowiadanie na pytania o produkty, dostępność, ceny czy status realizacji zamówienia to żmudne zajęcie. Możesz od niego uwolnić swoich sprzedawców, automatyzując komunikację w zakresie rutynowych działań.</p>
+            <p class="p_semi_2">Mniej pytań o status i dostępność</p>
+            <p class="p_regular_3">Ceny, stany i statusy zamówień klient sprawdza na platformie albo pyta o nie Agenta AI. Powiadomienia mailowe o realizacji i należnościach wychodzą automatycznie.</p>
           </div>
           <div class="functions-cards__item lm-observer">
             <span class="icon-purple-badge">
               <svg class="icon" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="7" rx="1.5"/><rect x="14" y="3" width="7" height="7" rx="1.5"/><rect x="3" y="14" width="7" height="7" rx="1.5"/><path d="M17.5 14v7M14 17.5h7"/></svg>
             </span>
-            <p class="p_semi_2">Centrum wiedzy o kliencie</p>
-            <p class="p_regular_3">WiseB2B stanie się dla Twoich sprzedawców miejscem, w którym znajdą całą historię zakupów poszczególnych klientów oraz dane na temat najczęściej zamawianych produktów i&nbsp;promocji, z&nbsp;których korzystają.</p>
+            <p class="p_semi_2">Cała wiedza o kliencie w jednym miejscu</p>
+            <p class="p_regular_3">Historia zamówień, najczęściej kupowane produkty, wykorzystane promocje, rozrachunki i otwarte oferty. Handlowiec nie szuka ich w CRM, mailu i ERP osobno.</p>
           </div>
         </div>
       </div>
@@ -161,7 +218,7 @@ const renderedFunkcjonalnosci = await Promise.all(
   <div class="container">
     <div class="row">
       <div class="col-12">
-        <h2 class="h2_semi">Poznaj funkcjonalności</h2>
+        <h2 class="h2_semi">Funkcje w szczegółach</h2>
         <div class="functionalities__wrapper">
           {renderedFunkcjonalnosci.map(({ data, Content, index }) => (
             <>
@@ -201,9 +258,9 @@ const renderedFunkcjonalnosci = await Promise.all(
     <div class="row">
       <div class="col-lg-10 offset-lg-1 col-xl-8 offset-xl-2">
         <div class="lm-observer" style="text-align:center;">
-          <h3 class="h3_semi" style="margin-bottom:16px;">Sprawdź, które funkcje są dostępne w Twoim pakiecie</h3>
-          <p class="p_regular_2" style="margin-bottom:32px;max-width:640px;margin-left:auto;margin-right:auto;">Porównaj pakiety i moduły WiseB2B, aby wybrać rozwiązanie najlepiej dopasowane do potrzeb Twojej firmy.</p>
-          <a class="wise-button wise-button--wise-harvest" href="/plany-wiseb2b/#price-functions">Porównaj pakiety i moduły</a>
+          <h3 class="h3_semi" style="margin-bottom:16px;">Sprawdź, które moduły są w którym planie</h3>
+          <p class="p_regular_2" style="margin-bottom:32px;max-width:640px;margin-left:auto;margin-right:auto;">Start od 1 990 zł, Professional od 3 490 zł, Enterprise od 6 990 zł netto miesięcznie. Bez prowizji od obrotu.</p>
+          <a class="wise-button wise-button--wise-harvest" href="/plany-wiseb2b/#price-functions">Porównaj plany i moduły</a>
         </div>
       </div>
     </div>
@@ -217,10 +274,10 @@ const renderedFunkcjonalnosci = await Promise.all(
     <div class="row">
       <div class="col-xl-8 offset-xl-2 col-lg-10 offset-lg-1">
         <div class="call-expert__wrapper">
-          <h2 class="h2_semi">Potrzebujesz szczegółowych informacji?</h2>
-          <p class="p_regular_2" style="color:#fff;">Porozmawiaj z nami</p>
+          <h2 class="h2_semi">Zobacz te funkcje na swoich procesach</h2>
+          <p class="p_regular_2" style="color:#fff;">30 minut z konsultantem, platforma na żywo, scenariusze z Twojej firmy.</p>
           <div class="call-expert__button">
-            <a class="wise-button wise-button--wise-harvest" href="/zamow-demo/">Porozmawiaj</a>
+            <a class="wise-button wise-button--wise-harvest" href="/zamow-demo/">Zamów demo</a>
           </div>
         </div>
       </div>
@@ -240,18 +297,12 @@ const renderedFunkcjonalnosci = await Promise.all(
     <div class="row">
       <div class="col-lg-10 offset-lg-1 col-xl-8 offset-xl-2">
         <div class="questions__items">
-          <div class="item">
-            <h2 class="h5_semi">Czym różnią się funkcje platformy WiseB2B od standardowego sklepu internetowego?</h2>
-            <p class="p_regular_3">WiseB2B zostało zaprojektowane od podstaw z myślą o handlu B2B: grupy klientów, indywidualne cenniki, kredyt kupiecki, sub-konta i procesy akceptacji zamówień to funkcje, których próżno szukać w typowym sklepie B2C. Do tego dochodzi Panel Handlowca i Agent AI wspierający obsługę klienta.</p>
-          </div>
-          <div class="item">
-            <h2 class="h5_semi">Czy mogę wdrożyć tylko część funkcji, które są dla mnie istotne?</h2>
-            <p class="p_regular_3">Tak. Platforma ma budowę modułową, więc możesz zacząć od funkcji kluczowych dla Twojego biznesu, a kolejne wdrażać etapami wraz z rozwojem sprzedaży. Sprawdź, które funkcje są dostępne w poszczególnych pakietach WiseB2B.</p>
-          </div>
-          <div class="item">
-            <h2 class="h5_semi">Czy funkcje platformy można dostosować do specyfiki mojej branży?</h2>
-            <p class="p_regular_3">Tak. Dzięki dostępowi do kodu źródłowego i modułowej architekturze pluginów funkcje WiseB2B można rozwijać i dostosowywać do specyfiki Twojej branży bez ryzyka utraty customizacji przy kolejnych aktualizacjach.</p>
-          </div>
+          {faqData.map((item) => (
+            <div class="item">
+              <h2 class="h5_semi">{item.question}</h2>
+              <p class="p_regular_3">{item.answer}</p>
+            </div>
+          ))}
         </div>
       </div>
     </div>
@@ -328,5 +379,5 @@ document.querySelectorAll('.questions__items .item h2').forEach(h2 => {
   });
 });
 </script>
-<CtaBlock showPresentation={true} />
+<CtaBlock />
 </BaseLayout>

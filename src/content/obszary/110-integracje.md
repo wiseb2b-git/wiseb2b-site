@@ -13,7 +13,7 @@ modules:
     professional: included
     enterprise: included
   - name: "Integracje ERP"
-    description: "Gotowe integracje z Teneum, Comarch Optima, eNova, Comarch XL"
+    description: "Gotowe integracje z Teneum, Comarch XL, Comarch Optima, enova365 i Subiektem"
     starter: optional
     professional: optional
     enterprise: optional

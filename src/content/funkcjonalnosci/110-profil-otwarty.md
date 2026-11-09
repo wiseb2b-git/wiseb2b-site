@@ -2,10 +2,10 @@
 title: "Profil otwarty"
 ---
 
-Platforma B2B zwykle pozwala na dokonywanie zakupów dopiero po rejestracji i tak działa też WiseB2B. Jednocześnie rozwiązanie posiada też profil otwarty, który wyposażony jest w zestaw funkcji wspierających pozycjonowanie produktów w wyszukiwarkach. Dzięki temu platforma B2B pozwala na skuteczne docieranie do nowych klientów oraz wspiera proces rejestracji nowych użytkowników.
+Zakupy na WiseB2B wymagają rejestracji, jak na każdej platformie B2B. Profil otwarty pokazuje jednak katalog bez logowania i ma funkcje, które pomagają pozycjonować produkty w wyszukiwarkach. Firma, która szuka Twoich produktów w Google, trafia na platformę i zostawia prośbę o rejestrację.
 
-- opisy i nagłówki SEO do produktów,
+- opisy i nagłówki SEO produktów,
 - prezentacja produktów i wyszukiwanie bez logowania,
 - generowanie leadów do rejestracji,
 - automatyczne akceptowanie rejestracji,
-- bez możliwości zakupów bez rejestracji.
+- zakupy dostępne dopiero po rejestracji.

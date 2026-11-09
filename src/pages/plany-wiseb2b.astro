@@ -5,9 +5,60 @@ import CtaBlock from '../components/CtaBlock.astro';
 import { getCollection } from 'astro:content';
 
 const obszary = (await getCollection('obszary')).sort((a, b) => a.data.order - b.data.order);
+
+// Filary i moduły, o które pytają najczęściej: dostępność brana z macierzy (kolekcja obszary)
+const keyModuleNames = ['Agent klienta', 'Agent administratora', 'Panel Handlowca', 'Ofertowanie', 'Kod źródłowy', 'OnPremise', 'Integracje ERP', 'Client API'];
+const allModules = obszary.flatMap((o) => o.data.modules);
+const keyModules = keyModuleNames
+  .map((name) => allModules.find((m) => m.name === name))
+  .filter((m): m is NonNullable<typeof m> => Boolean(m));
+const statusLabel = (st: string) => st === 'included' ? 'W pakiecie' : st === 'optional' ? 'Opcja dodatkowa' : 'Niedostępny';
+
+const faqData = [
+  {
+    question: "Ile kosztuje WiseB2B?",
+    answer: "Start od 1 990 zł netto miesięcznie (do 1 000 produktów i 2 000 klientów), Professional od 3 490 zł (do 30 000 produktów i 10 000 klientów), Enterprise od 6 990 zł (bez limitu produktów i klientów). Cena obejmuje hosting w WiseB2B Cloud i aktualizacje. Koszt wdrożenia rozkładamy w subskrypcji, więc nie płacisz go z góry."
+  },
+  {
+    question: "Czy pobieracie prowizję od obrotu?",
+    answer: "Nie. Płacisz stały abonament za plan i wybrane moduły. Nie ma prowizji od wartości zamówień ani od liczby transakcji. Gdy sprzedaż przez platformę rośnie, opłata zostaje ta sama."
+  },
+  {
+    question: "Nie mamy budżetu na nowy system. Ile to realnie kosztuje?",
+    answer: "Abonament z rozłożonym wdrożeniem to zwykle 50–100% miesięcznej pensji jednego handlowca. Platforma odciąża przy tym cały zespół handlowy i BOK. Dokładną kwotę dla Twojej konfiguracji poznasz po sprincie analitycznym."
+  },
+  {
+    question: "Czy integracja z ERP jest w cenie planu?",
+    answer: "Integracja z ERP to osobny moduł, który dodajesz do każdego planu. Mamy gotowe integracje z Teneum, Comarch XL, Comarch Optima, enova365 i Subiektem oraz z platformą Apilo. Integracja przenosi cenniki, stany, zamówienia, faktury i rozrachunki zgodnie z regułami Twojego ERP."
+  },
+  {
+    question: "W którym planie są Agent AI i Panel Handlowca?",
+    answer: "W planie Enterprise Agent AI klienta, Panel Handlowca, ofertowanie i zadania handlowca są w pakiecie. W Professional każdy z nich możesz dodać jako opcję. Plan Start ich nie obejmuje, ale handlowiec może zalogować się na konto klienta i złożyć zamówienie w jego imieniu."
+  },
+  {
+    question: "Kiedy dostaję kod źródłowy?",
+    answer: "Kod źródłowy jest w pakiecie Enterprise. W Professional możesz go dokupić jako opcję. W Enterprise możesz też dodać Customization Studio, środowisko do budowy pluginów z pomocą AI."
+  },
+  {
+    question: "Czym różni się moduł „w pakiecie” od „opcji dodatkowej”?",
+    answer: "Moduł w pakiecie jest wliczony w cenę planu. Opcja dodatkowa jest dostępna w Twoim planie za dodatkową opłatą miesięczną. Moduł niedostępny wymaga przejścia na wyższy plan."
+  },
+  {
+    question: "Który plan wybrać, jeśli nie wiem, jak urośnie sprzedaż online?",
+    answer: "Ustalimy to podczas pokazu i sprintu analitycznego, na podstawie liczby produktów, klientów i Twoich warunków handlowych. Plan możesz później zmienić na wyższy. Moduły dochodzą do tej samej platformy, więc dane i konta klientów zostają na miejscu."
+  },
+  {
+    question: "Czy WiseB2B obsługuje sprzedaż zagraniczną?",
+    answer: "Tak. W Enterprise moduły sprzedaży zagranicznej (kontrola VIES, VAT 0%, wiele walut w koszyku), cenniki wielowalutowe i wielojęzyczność są w pakiecie. W Professional są opcjami. Tak VMP sprzedaje do sklepów w krajach UE."
+  },
+  {
+    question: "Czy mogę zainstalować WiseB2B na własnym serwerze?",
+    answer: "Tak, w planach Professional i Enterprise. Instalacja on-premise jest dla firm, które muszą trzymać dane na własnej infrastrukturze. Platforma działa wtedy tak samo i dostaje te same aktualizacje co w WiseB2B Cloud."
+  }
+];
 ---
 
-<BaseLayout title="Plany WiseB2B Cloud – obszary, moduły i cennik" description="Indywidualne plany platformy B2B dostosowane do Twoich potrzeb. Porównaj wersje Start, Professional i Enterprise WiseB2B.">
+<BaseLayout title="Plany i cennik WiseB2B: Start, Professional, Enterprise" description="Start od 1 990 zł, Professional od 3 490 zł, Enterprise od 6 990 zł netto miesięcznie. Bez prowizji od obrotu, wdrożenie rozłożone w subskrypcji." faq={faqData}>
 
 <section class="demo-hero">
   <div class="container">
@@ -15,8 +66,8 @@ const obszary = (await getCollection('obszary')).sort((a, b) => a.data.order - b
       <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M3 13h8V3H3v10zm0 8h8v-6H3v6zm10 0h8V11h-8v10zm0-18v6h8V3h-8z"/></svg>
       Plany i cennik
     </span>
-    <h1 class="lm-observer">Funkcjonalność platformy <span>dostosowana</span> do Twoich potrzeb.</h1>
-    <p class="demo-hero__lead lm-observer">Platforma eCommerce B2B dla firm handlowych i produkcyjnych, łącząca sklep B2B, Panel Handlowca i Agenta AI w jednym środowisku.</p>
+    <h1 class="lm-observer">Stały abonament <span>bez prowizji</span> od obrotu</h1>
+    <p class="demo-hero__lead lm-observer">Trzy plany z ceną znaną z góry: Start od 1 990 zł, Professional od 3 490 zł, Enterprise od 6 990 zł netto miesięcznie. Koszt wdrożenia rozkładamy w subskrypcji. Poniżej widzisz każdy moduł i plan, w którym go dostaniesz.</p>
     <div class="demo-hero__actions">
       <a href="/zamow-demo/" class="btn btn--primary">Zamów demo</a>
     </div>
@@ -38,7 +89,7 @@ const obszary = (await getCollection('obszary')).sort((a, b) => a.data.order - b
               </svg>
               <h3 class="h3_semi name">Start</h3>
             </div>
-            <p class="p_regular_3 plan__description">Jeśli posiadasz stosunkowo niewielki asortyment, ograniczoną bazę klientów i&nbsp;chciałbyś zacząć sprzedawać w internecie, wybierz wersję Start, która dostarczy Ci podstawowych mechanizmów cyfryzacji sprzedaży i pozwoli wyeliminować analogowe procesy.</p>
+            <p class="p_regular_3 plan__description">Dla firmy, która przenosi do sieci powtarzalne zamówienia stałych klientów na mniejszym asortymencie. Klienci zamawiają na swoich cennikach, a handlowiec może złożyć zamówienie w ich imieniu.</p>
             <div class="plan__price">
               <div class="plan__price-product box">
                 <span class="label_regular">Produkty</span>
@@ -62,7 +113,7 @@ const obszary = (await getCollection('obszary')).sort((a, b) => a.data.order - b
             </ul>
             <div class="plan__monthly-price">
               <span class="plan__monthly-label">Cena od</span>
-              <span class="plan__monthly-amount">1 990 PLN</span>
+              <span class="plan__monthly-amount">1 990 zł</span>
               <span class="plan__monthly-period">netto / miesiąc</span>
             </div>
             <div class="price-list-plans__button">
@@ -79,7 +130,7 @@ const obszary = (await getCollection('obszary')).sort((a, b) => a.data.order - b
               </svg>
               <h3 class="h3_semi name">Professional</h3>
             </div>
-            <p class="p_regular_3 plan__description">Jeśli masz już doświadczenie w sprzedaży internetowej B2B, potrzebujesz precyzyjnie odwzorować swoją ofertę dla poszczególnych klientów, aby osiągnąć nawet 90% sprzedaży za pomocą eCommerce – wersja Professional to rozwiązanie dla Ciebie.</p>
+            <p class="p_regular_3 plan__description">Dla firmy, której klienci mają mieć na platformie całą obsługę: faktury, rozrachunki, zwroty i płatności. Agenta AI, Panel Handlowca i kod źródłowy dodajesz jako opcje.</p>
             <div class="plan__price">
               <div class="plan__price-product box">
                 <span class="label_regular">Produkty</span>
@@ -100,10 +151,11 @@ const obszary = (await getCollection('obszary')).sort((a, b) => a.data.order - b
               <li class="label_regular">Feedy produktowe (Shopify, Ceneo, IAI)</li>
               <li class="label_regular">Admin API i Client API</li>
               <li class="label_regular">Środowisko testowe, n8n, wtyczki własne</li>
+              <li class="label_regular">Opcje: Agent AI, Panel Handlowca, kod źródłowy</li>
             </ul>
             <div class="plan__monthly-price">
               <span class="plan__monthly-label">Cena od</span>
-              <span class="plan__monthly-amount">3 490 PLN</span>
+              <span class="plan__monthly-amount">3 490 zł</span>
               <span class="plan__monthly-period">netto / miesiąc</span>
             </div>
             <div class="price-list-plans__button">
@@ -122,21 +174,21 @@ const obszary = (await getCollection('obszary')).sort((a, b) => a.data.order - b
               </svg>
               <h3 class="h3_semi name">Enterprise</h3>
             </div>
-            <p class="p_regular_3 plan__description">Jeśli prowadzisz dużą firmę, posiadającą dziesiątki tysięcy produktów, sprzedaż zagraniczną, kilkanaście tysięcy klientów, będziesz potrzebować zaawansowanego, ale i otwartego środowiska do indywidualnych zmian budujących Twoją przewagę – rekomendujemy rozwiązanie w&nbsp;wersji Enterprise.</p>
+            <p class="p_regular_3 plan__description">Dla dziesiątek tysięcy indeksów, sprzedaży zagranicznej i wielu sklepów. Agent AI klienta, Panel Handlowca z ofertowaniem i kod źródłowy są w cenie planu.</p>
             <div class="plan__price">
               <div class="plan__price-product box">
                 <span class="label_regular">Produkty</span>
-                <span class="no_limits p_semi_3">bez ograniczeń</span>
+                <span class="no_limits p_semi_3">bez limitu</span>
               </div>
               <div class="plan__price-client box">
                 <span class="label_regular">Klienci</span>
-                <span class="no_limits p_semi_3">bez ograniczeń</span>
+                <span class="no_limits p_semi_3">bez limitu</span>
               </div>
             </div>
             <p class="p_semi_2 price-list-plans__list-header">Najważniejsze funkcje:</p>
             <ul class="price-list-plans__list">
               <li class="label_regular">Sprzedaż zagraniczna i cenniki wielowalutowe</li>
-              <li class="label_regular">Panel handlowca z ofertowaniem</li>
+              <li class="label_regular">Panel Handlowca z ofertowaniem</li>
               <li class="label_regular">Agent AI klienta</li>
               <li class="label_regular">MultiStore (wiele sklepów, jeden backend)</li>
               <li class="label_regular">Oferty dedykowane dla klientów</li>
@@ -145,7 +197,7 @@ const obszary = (await getCollection('obszary')).sort((a, b) => a.data.order - b
             </ul>
             <div class="plan__monthly-price">
               <span class="plan__monthly-label">Cena od</span>
-              <span class="plan__monthly-amount">6 990 PLN</span>
+              <span class="plan__monthly-amount">6 990 zł</span>
               <span class="plan__monthly-period">netto / miesiąc</span>
             </div>
             <div class="price-list-plans__button">
@@ -159,13 +211,49 @@ const obszary = (await getCollection('obszary')).sort((a, b) => a.data.order - b
   </div>
 </div>
 
+<!-- FILARY W PLANACH -->
+<div class="price-functions plany-modules">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-10 offset-lg-1">
+        <h3 class="h3_semi lm-observer" style="margin-bottom: 12px;">Agent AI, Panel Handlowca i kod: w którym planie</h3>
+        <p class="p_regular_2 lm-observer" style="margin-bottom: 24px;">Dostępność z tej samej macierzy modułów, z której liczymy ofertę. Pełną listę znajdziesz niżej.</p>
+        <div class="plan-legend lm-observer">
+          <span class="legend-item"><span class="legend-icon legend-icon--included"></span> W pakiecie</span>
+          <span class="legend-item"><span class="legend-icon legend-icon--optional"></span> Opcja dodatkowa</span>
+          <span class="legend-item"><span class="legend-icon legend-icon--unavailable"></span> Niedostępny</span>
+        </div>
+        <div class="modules-table lm-observer">
+          <div class="modules-table__header">
+            <div class="modules-table__col modules-table__col--name">Moduł</div>
+            <div class="modules-table__col modules-table__col--plan">Start</div>
+            <div class="modules-table__col modules-table__col--plan">Profes&shy;sional</div>
+            <div class="modules-table__col modules-table__col--plan">Enter&shy;prise</div>
+          </div>
+          {keyModules.map((mod) => (
+          <div class="modules-table__row">
+            <div class="modules-table__col modules-table__col--name">
+              <strong>{mod.name}</strong>
+              <span class="modules-table__desc">{mod.description}</span>
+            </div>
+            <div class="modules-table__col modules-table__col--plan"><span class={`plan-icon plan-icon--${mod.starter}`} title={statusLabel(mod.starter)}></span></div>
+            <div class="modules-table__col modules-table__col--plan"><span class={`plan-icon plan-icon--${mod.professional}`} title={statusLabel(mod.professional)}></span></div>
+            <div class="modules-table__col modules-table__col--plan"><span class={`plan-icon plan-icon--${mod.enterprise}`} title={statusLabel(mod.enterprise)}></span></div>
+          </div>
+          ))}
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
 <div class="cloud-includes">
   <div class="container">
     <div class="row">
       <div class="col-lg-10 offset-lg-1 col-xl-8 offset-xl-2">
         <div class="cloud-includes__header lm-observer">
           <h3 class="h3_semi">Co zawiera usługa WiseB2B Cloud?</h3>
-          <p class="p_regular_2">Każdy plan WiseB2B Cloud to kompletne środowisko do prowadzenia handlu B2B online — bez konieczności zarządzania infrastrukturą IT.</p>
+          <p class="p_regular_2">Każdy plan działa w WiseB2B Cloud. Serwery, kopie zapasowe i aktualizacje są po naszej stronie, Twój dział IT ich nie utrzymuje.</p>
         </div>
       </div>
     </div>
@@ -178,7 +266,7 @@ const obszary = (await getCollection('obszary')).sort((a, b) => a.data.order - b
               <svg width="40" height="40" viewBox="0 0 30 30" fill="var(--color-primary-500)"><path d="M5 3.75C4.30965 3.75 3.75 4.30965 3.75 5V12.5C3.75 13.1904 4.30965 13.75 5 13.75H12.5C13.1904 13.75 13.75 13.1904 13.75 12.5V5C13.75 4.30965 13.1904 3.75 12.5 3.75H5ZM5 16.25C4.30965 16.25 3.75 16.8096 3.75 17.5V25C3.75 25.6904 4.30965 26.25 5 26.25H12.5C13.1904 26.25 13.75 25.6904 13.75 25V17.5C13.75 16.8096 13.1904 16.25 12.5 16.25H5ZM17.5 16.25C16.8096 16.25 16.25 16.8096 16.25 17.5V25C16.25 25.6904 16.8096 26.25 17.5 26.25H25C25.6904 26.25 26.25 25.6904 26.25 25V17.5C26.25 16.8096 25.6904 16.25 25 16.25H17.5ZM18.75 23.75V18.75H23.75V23.75H18.75ZM6.25 11.25V6.25H11.25V11.25H6.25ZM6.25 23.75V18.75H11.25V23.75H6.25ZM20 13.75V10H16.25V7.5H20V3.75H22.5V7.5H26.25V10H22.5V13.75H20Z"/></svg>
             </div>
             <h5 class="h5_semi">Środowisko produkcyjne</h5>
-            <p class="p_regular_3">Hosting platformy w chmurze z automatyczną instalacją aktualizacji do nowych wersji. Skalowalna infrastruktura, backup danych i monitoring dostępności — bez angażowania Twojego IT.</p>
+            <p class="p_regular_3">Platforma w chmurze, w której nowe wersje instalują się automatycznie. Kopie zapasowe danych i monitoring dostępności prowadzimy my.</p>
             <span class="cloud-includes__badge">Wszystkie plany</span>
           </div>
 
@@ -187,7 +275,7 @@ const obszary = (await getCollection('obszary')).sort((a, b) => a.data.order - b
               <svg width="40" height="40" viewBox="0 0 30 30" fill="var(--color-primary-500)"><path d="M15.5177 6.25H26.25C26.9404 6.25 27.5 6.80965 27.5 7.5V25C27.5 25.6904 26.9404 26.25 26.25 26.25H3.75C3.05965 26.25 2.5 25.6904 2.5 25V5C2.5 4.30965 3.05965 3.75 3.75 3.75H13.0177L15.5177 6.25ZM5 6.25V23.75H25V8.75H14.4823L11.9822 6.25H5ZM13.75 15V11.25H16.25V15H20V17.5H16.25V21.25H13.75V17.5H10V15H13.75Z"/></svg>
             </div>
             <h5 class="h5_semi">Środowisko testowe</h5>
-            <p class="p_regular_3">Osobna instancja platformy z danymi z produkcji, synchronizowanymi co noc. Bezpieczne testowanie nowych funkcji, konfiguracji i integracji bez ryzyka dla środowiska produkcyjnego.</p>
+            <p class="p_regular_3">Osobna instancja z danymi z produkcji z poprzedniego dnia. Nowy cennik, integrację czy plugin sprawdzasz tutaj, zanim zobaczą je klienci.</p>
             <span class="cloud-includes__badge">Professional i Enterprise</span>
           </div>
 
@@ -195,9 +283,9 @@ const obszary = (await getCollection('obszary')).sort((a, b) => a.data.order - b
             <div class="cloud-includes__icon">
               <svg width="40" height="40" viewBox="0 0 30 30" fill="var(--color-primary-500)"><path d="M11.25 21.25C11.25 20.5592 10.9714 19.9363 10.5176 19.4824C10.0638 19.0286 9.4407 18.75 8.75 18.75C7.36929 18.75 6.25 19.8692 6.25 21.25C6.25 22.6308 7.36929 23.75 8.75 23.75C10.1307 23.75 11.25 22.6308 11.25 21.25ZM23.75 21.25C23.75 19.8692 22.6308 18.75 21.25 18.75C19.8692 18.75 18.75 19.8692 18.75 21.25C18.75 22.6308 19.8692 23.75 21.25 23.75C22.6308 23.75 23.75 22.6308 23.75 21.25ZM11.25 8.75C11.25 7.36929 10.1307 6.25 8.75 6.25C7.36929 6.25 6.25 7.36929 6.25 8.75C6.25 10.1307 7.36929 11.25 8.75 11.25C10.1307 11.25 11.25 10.1307 11.25 8.75ZM23.75 8.75C23.75 7.36929 22.6308 6.25 21.25 6.25C19.8692 6.25 18.75 7.36929 18.75 8.75C18.75 9.4407 19.0286 10.0638 19.4824 10.5176C19.9363 10.9714 20.5592 11.25 21.25 11.25C22.6308 11.25 23.75 10.1307 23.75 8.75ZM26.25 21.25C26.25 24.0114 24.0114 26.25 21.25 26.25C18.4886 26.25 16.25 24.0114 16.25 21.25C16.25 18.4886 18.4886 16.25 21.25 16.25C24.0114 16.25 26.25 18.4886 26.25 21.25ZM13.75 8.75C13.75 11.5114 11.5114 13.75 8.75 13.75C5.98857 13.75 3.75 11.5114 3.75 8.75C3.75 5.98857 5.98857 3.75 8.75 3.75C11.5114 3.75 13.75 5.98857 13.75 8.75ZM26.25 8.75C26.25 11.5114 24.0114 13.75 21.25 13.75C20.323 13.75 19.4543 13.4965 18.7098 13.0566L13.0566 18.7098C13.4965 19.4543 13.75 20.323 13.75 21.25C13.75 24.0114 11.5114 26.25 8.75 26.25C5.98857 26.25 3.75 24.0114 3.75 21.25C3.75 18.4886 5.98857 16.25 8.75 16.25C9.67645 16.25 10.5449 16.5028 11.2891 16.9421L16.9421 11.2891C16.5028 10.5449 16.25 9.67645 16.25 8.75C16.25 5.98857 18.4886 3.75 21.25 3.75C24.0114 3.75 26.25 5.98857 26.25 8.75Z"/></svg>
             </div>
-            <h5 class="h5_semi">n8n — automatyzacja procesów</h5>
-            <p class="p_regular_3">Wizualne środowisko do automatyzacji i synchronizacji platformy z systemami zewnętrznymi (ERP, CRM, email, SMS) — bez konieczności programowania. Setki gotowych integracji.</p>
-            <span class="cloud-includes__badge">Professional i Enterprise</span>
+            <h5 class="h5_semi">n8n do automatyzacji</h5>
+            <p class="p_regular_3">Edytor wizualny do łączenia platformy z CRM, pocztą, SMS czy systemem kurierskim. Scenariusz synchronizacji składasz z gotowych bloków.</p>
+            <span class="cloud-includes__badge">Professional i Enterprise, w Start opcja</span>
           </div>
 
           <div class="cloud-includes__item lm-observer">
@@ -205,7 +293,7 @@ const obszary = (await getCollection('obszary')).sort((a, b) => a.data.order - b
               <svg width="40" height="40" viewBox="0 0 30 30" fill="var(--color-primary-500)"><path d="M1.25 18.125C1.25 15.2145 2.78036 12.6614 5.08033 11.2265C5.70586 6.305 9.90858 2.5 15 2.5C20.0914 2.5 24.2941 6.305 24.9196 11.2265C27.2196 12.6614 28.75 15.2145 28.75 18.125C28.75 22.402 25.4452 25.9071 21.25 26.2264L8.75 26.25C4.55472 25.9071 1.25 22.402 1.25 18.125ZM21.0604 23.7335C23.9771 23.5116 26.25 21.0701 26.25 18.125C26.25 16.1588 25.2355 14.3702 23.5964 13.3476L22.5892 12.7192L22.4396 11.5417C21.9669 7.82254 18.786 5 15 5C11.214 5 8.03309 7.82254 7.56037 11.5417L7.4107 12.7192L6.4036 13.3476C4.76445 14.3702 3.75 16.1588 3.75 18.125C3.75 21.0701 6.02291 23.5116 8.93962 23.7335L9.15625 23.75H20.8438L21.0604 23.7335ZM16.25 16.25V21.25H13.75V16.25H10L15 10L20 16.25H16.25Z"/></svg>
             </div>
             <h5 class="h5_semi">Aktualizacje i nowe wersje</h5>
-            <p class="p_regular_3">Regularne aktualizacje platformy z nowymi funkcjami i poprawkami bezpieczeństwa. Dzięki architekturze pluginowej aktualizacja nie narusza Twoich indywidualnych modyfikacji.</p>
+            <p class="p_regular_3">Nowe funkcje i poprawki bezpieczeństwa w ramach abonamentu. Twoje zmiany żyją w pluginach, poza kodem standardowym, więc aktualizacja nie wymaga ich przepisywania.</p>
             <span class="cloud-includes__badge">Wszystkie plany</span>
           </div>
 
@@ -214,7 +302,8 @@ const obszary = (await getCollection('obszary')).sort((a, b) => a.data.order - b
               <svg width="40" height="40" viewBox="0 0 30 30" fill="var(--color-primary-500)"><path d="M22.9554 13.724C24.908 15.6766 24.908 18.8424 22.9554 20.795L15.8844 27.8661C15.3962 28.3542 14.6047 28.3542 14.1166 27.8661L7.04552 20.795C5.0929 18.8424 5.0929 15.6766 7.04552 13.724C8.99814 11.7714 12.164 11.7714 14.1166 13.724L14.9996 14.607L15.8844 13.724C17.837 11.7714 21.0027 11.7714 22.9554 13.724ZM8.81329 15.4918C7.83697 16.468 7.83697 18.051 8.81329 19.0273L15.0005 25.2145L21.1876 19.0273C22.164 18.051 22.164 16.468 21.1876 15.4918C20.2114 14.5154 18.6284 14.5154 17.6504 15.4935L14.9979 18.1408L12.3488 15.4918C11.3725 14.5154 9.7896 14.5154 8.81329 15.4918ZM15.0005 1.25C17.7619 1.25 20.0005 3.48857 20.0005 6.25C20.0005 9.01143 17.7619 11.25 15.0005 11.25C12.239 11.25 10.0005 9.01143 10.0005 6.25C10.0005 3.48857 12.239 1.25 15.0005 1.25ZM15.0005 3.75C13.6197 3.75 12.5005 4.86929 12.5005 6.25C12.5005 7.63071 13.6197 8.75 15.0005 8.75C16.3811 8.75 17.5005 7.63071 17.5005 6.25C17.5005 4.86929 16.3811 3.75 15.0005 3.75Z"/></svg>
             </div>
             <h5 class="h5_semi">Bezpieczeństwo i SLA</h5>
-            <p class="p_regular_3">Profesjonalne zarządzanie infrastrukturą, backup danych, monitoring 24/7 i gwarantowana dostępność. Brak opłat GMV — płacisz tylko za plan, niezależnie od obrotów.</p>
+            {/* NEED: liczbowe SLA (dostępność w %, czas reakcji); do tego czasu bez słowa „gwarantowana” */}
+            <p class="p_regular_3">Zarządzanie infrastrukturą, kopie zapasowe i monitoring 24/7. Płacisz za plan, a nie od obrotu, więc rosnąca sprzedaż nie podnosi rachunku.</p>
             <span class="cloud-includes__badge">Wszystkie plany</span>
           </div>
 
@@ -222,8 +311,8 @@ const obszary = (await getCollection('obszary')).sort((a, b) => a.data.order - b
             <div class="cloud-includes__icon">
               <svg width="40" height="40" viewBox="0 0 30 30" fill="var(--color-primary-500)"><path d="M3.75 3.75H26.25C26.9404 3.75 27.5 4.30965 27.5 5V25C27.5 25.6904 26.9404 26.25 26.25 26.25H3.75C3.05965 26.25 2.5 25.6904 2.5 25V5C2.5 4.30965 3.05965 3.75 3.75 3.75ZM25 9.0474L15.0898 17.9225L5 9.01993V23.75H25V9.0474ZM5.63932 6.25L15.0774 14.5775L24.3762 6.25H5.63932Z"/></svg>
             </div>
-            <h5 class="h5_semi">Cloud lub OnPremise</h5>
-            <p class="p_regular_3">Sam wybierasz model korzystania z systemu. Możliwość instalacji lokalnej (OnPremise) dla firm z restrykcyjnymi wymaganiami bezpieczeństwa lub compliance.</p>
+            <h5 class="h5_semi">Chmura albo on-premise</h5>
+            <p class="p_regular_3">Jeśli Twoja polityka bezpieczeństwa wymaga trzymania danych u siebie, instalujemy platformę na Twoich serwerach.</p>
             <span class="cloud-includes__badge">Professional i Enterprise</span>
           </div>
 
@@ -234,11 +323,11 @@ const obszary = (await getCollection('obszary')).sort((a, b) => a.data.order - b
 </div>
 
 
-<div id="price-functions" class="price-functions">
+<div id="price-functions" class="price-functions plany-modules">
   <div class="container">
     <div class="row">
       <div class="col-lg-10 offset-lg-1">
-        <h3 class="h3_semi lm-observer" style="margin-bottom: 24px;">Szczegółowe porównanie planów</h3>
+        <h3 class="h3_semi lm-observer" style="margin-bottom: 24px;">Wszystkie moduły w 13 obszarach</h3>
         <div class="plan-legend lm-observer">
           <span class="legend-item"><span class="legend-icon legend-icon--included"></span> W pakiecie</span>
           <span class="legend-item"><span class="legend-icon legend-icon--optional"></span> Opcja dodatkowa</span>
@@ -263,7 +352,7 @@ const obszary = (await getCollection('obszary')).sort((a, b) => a.data.order - b
               <div class="modules-table">
                 <div class="modules-table__header">
                   <div class="modules-table__col modules-table__col--name">Moduł</div>
-                  <div class="modules-table__col modules-table__col--plan">Starter</div>
+                  <div class="modules-table__col modules-table__col--plan">Start</div>
                   <div class="modules-table__col modules-table__col--plan">Profes&shy;sional</div>
                   <div class="modules-table__col modules-table__col--plan">Enter&shy;prise</div>
                 </div>
@@ -289,17 +378,45 @@ const obszary = (await getCollection('obszary')).sort((a, b) => a.data.order - b
   </div>
 </div>
 
-<!-- CTA: Zamów rozmowę z ekspertem -->
+<!-- PLAN -->
+<section class="hp-plan">
+  <div class="container">
+    <h2 class="hp-section-title lm-observer">Od rozmowy do wyceny</h2>
+    <ol class="hp-plan__steps">
+      <li class="hp-plan__step lm-observer">
+        <span class="hp-plan__num">1</span>
+        <h3>Pokaz na Twoich przykładach</h3>
+        <p>30 minut z konsultantem. Platforma na żywo, na scenariuszach z Twojej firmy.</p>
+      </li>
+      <li class="hp-plan__step lm-observer">
+        <span class="hp-plan__num">2</span>
+        <h3>Sprint analityczny</h3>
+        <p>Od 1 do 4 tygodni. Na koniec wiesz, co wdrażamy, ile to kosztuje i kiedy ruszamy.</p>
+      </li>
+      <li class="hp-plan__step lm-observer">
+        <span class="hp-plan__num">3</span>
+        <h3>Uruchomienie obok obecnego procesu</h3>
+        <p>Klienci przechodzą na platformę stopniowo. Stary system działa do końca przejścia.</p>
+      </li>
+    </ol>
+    <p class="hp-plan__terms lm-observer">Abonament bez prowizji od obrotu. Koszt wdrożenia rozłożony w subskrypcji.</p>
+    <div class="hp-plan__cta">
+      <a href="/zamow-demo/" class="btn btn--primary">Zamów demo</a>
+    </div>
+  </div>
+</section>
+
+<!-- CTA: rozmowa z CEO -->
 <section class="call-expert">
   <div class="container">
     <div class="row">
       <div class="col-xl-8 offset-xl-2 col-lg-10 offset-lg-1">
         <div class="call-expert__wrapper lm-observer">
-          <h2 class="h2_semi">Potrzebujesz szczegółowych informacji?</h2>
+          <h2 class="h2_semi">Chcesz wycenę dla swojej konfiguracji?</h2>
           <p class="name h5_regular">Jakub Czyżkowski</p>
           <p class="job p_regular_2">CEO</p>
           <div class="call-expert__button">
-            <a class="wise-button wise-button--wise-harvest" href="/zamow-demo/">Porozmawiaj</a>
+            <a class="wise-button wise-button--wise-harvest" href="/zamow-demo/">Zamów demo</a>
           </div>
         </div>
       </div>
@@ -319,53 +436,19 @@ const obszary = (await getCollection('obszary')).sort((a, b) => a.data.order - b
     <div class="row">
       <div class="col-lg-10 offset-lg-1 col-xl-8 offset-xl-2">
         <div class="questions__items">
-          <div class="item lm-observer">
-            <h2 class="h5_semi">Czym jest WiseB2B i do czego służy?</h2>
-            <p class="p_regular_3">WiseB2B to polska platforma e-Commerce B2B w modelu Cloud, zaprojektowana dla dystrybutorów, producentów i hurtowni. Umożliwia cyfryzację sprzedaży hurtowej — od katalogu produktów, przez cenniki indywidualne i proces zakupowy, po integracje z systemami ERP (Comarch, Teneum, eNova). Platforma jest dostępna w trzech planach: Starter, Professional i Enterprise, dopasowanych do skali działalności.</p>
-          </div>
-          <div class="item lm-observer">
-            <h2 class="h5_semi">Ile kosztuje platforma B2B WiseB2B?</h2>
-            <p class="p_regular_3">WiseB2B oferuje trzy plany abonamentowe: Starter od 1 990 PLN netto/miesiąc (do 1 000 produktów i 2 000 klientów), Professional od 3 490 PLN netto/miesiąc (do 30 000 produktów i 10 000 klientów) oraz Enterprise od 6 990 PLN netto/miesiąc (bez ograniczeń). W każdym planie cena obejmuje hosting w chmurze, aktualizacje i wsparcie. Nie ma opłat od wartości transakcji (GMV).</p>
-          </div>
-          <div class="item lm-observer">
-            <h2 class="h5_semi">Który plan WiseB2B wybrać, jeśli nie mogę przewidzieć rozwoju biznesu?</h2>
-            <p class="p_regular_3">Taki wybór najlepiej omówić z konsultantem WiseB2B. Wspólnie przeanalizujecie obecną sytuację Twojej firmy, liczbę produktów, klientów i plany rozwojowe. Generalnie: Starter sprawdzi się na start cyfryzacji sprzedaży, Professional — gdy potrzebujesz zaawansowanych cenników, dokumentów handlowych i integracji, a Enterprise — przy sprzedaży międzynarodowej, wielu sklepach lub dużej skali operacji.</p>
-          </div>
-          <div class="item lm-observer">
-            <h2 class="h5_semi">Czy mogę zmienić plan WiseB2B w trakcie użytkowania?</h2>
-            <p class="p_regular_3">Tak, zmiana planu jest bardzo prosta — dopełniasz formalności i natychmiast otrzymujesz dostęp do dodatkowych modułów i funkcji. Konsultant wprowadzi Cię w nowe możliwości i pokaże, jak je wykorzystać w Twoim biznesie. Dzięki modułowej architekturze platformy upgrade nie wymaga migracji danych ani przerwy w działaniu sklepu.</p>
-          </div>
-          <div class="item lm-observer">
-            <h2 class="h5_semi">Czym różni się moduł „w pakiecie" od „opcji dodatkowej"?</h2>
-            <p class="p_regular_3">Moduły oznaczone jako „w pakiecie" są wliczone w cenę danego planu — nie ponosisz za nie dodatkowych opłat. „Opcja dodatkowa" oznacza, że moduł jest dostępny w Twoim planie, ale jego koszt nie jest uwzględniony w cenie bazowej — możesz go dokupić w zależności od potrzeb. Moduły oznaczone jako „niedostępne" wymagają przejścia na wyższy plan.</p>
-          </div>
-          <div class="item lm-observer">
-            <h2 class="h5_semi">Z jakimi systemami ERP integruje się WiseB2B?</h2>
-            <p class="p_regular_3">WiseB2B oferuje gotowe integracje z popularnymi systemami ERP: Teneum, Comarch Optima, Comarch XL i eNova. Integracja odwzorowuje reguły handlowe występujące w danym ERP — cenniki, stany magazynowe, zamówienia, faktury i rozrachunki. Dodatkowo platforma udostępnia Admin API i Client API oraz środowisko n8n do budowania własnych automatyzacji i integracji z dowolnymi systemami zewnętrznymi.</p>
-          </div>
-          <div class="item lm-observer">
-            <h2 class="h5_semi">Czy WiseB2B obsługuje sprzedaż zagraniczną i wielojęzyczność?</h2>
-            <p class="p_regular_3">Tak. Plan Enterprise zawiera moduły sprzedaży zagranicznej (automatyczna weryfikacja VIES, VAT 0%, wielowalutowe koszyki), cenniki wielowalutowe oraz wielojęzyczność (opisy produktów, kategorie, artykuły CMS w wielu językach). W planie Professional moduły te są dostępne jako opcje dodatkowe. To sprawia, że WiseB2B sprawdza się zarówno na rynku krajowym, jak i przy ekspansji na rynki CEE i UE.</p>
-          </div>
-          <div class="item lm-observer">
-            <h2 class="h5_semi">Czym są pluginy i rozszerzenia w WiseB2B?</h2>
-            <p class="p_regular_3">Pluginy to dodatkowe moduły rozszerzające funkcjonalność platformy, tworzone na potrzeby konkretnych klientów. W planie Professional możesz budować własne wtyczki i instalować je w środowisku Cloud. W planie Enterprise otrzymujesz dodatkowo dostęp do kodu źródłowego oraz Development Studio — środowiska do generowania pluginów wspieranego przez AI. Pluginy możesz projektować samodzielnie lub zlecić ich budowę zespołowi WiseB2B.</p>
-          </div>
-          <div class="item lm-observer">
-            <h2 class="h5_semi">Czy WiseB2B można zainstalować na własnym serwerze (OnPremise)?</h2>
-            <p class="p_regular_3">Tak. Plany Professional i Enterprise oferują możliwość instalacji lokalnej (OnPremise) oprócz standardowego modelu WiseB2B Cloud. To rozwiązanie dla firm z restrykcyjnymi wymaganiami bezpieczeństwa, compliance lub potrzebą pełnej kontroli nad infrastrukturą. Niezależnie od modelu wdrożenia, platforma działa identycznie i otrzymuje te same aktualizacje.</p>
-          </div>
-          <div class="item lm-observer">
-            <h2 class="h5_semi">Jak wygląda wdrożenie platformy WiseB2B?</h2>
-            <p class="p_regular_3">Wdrożenie WiseB2B obejmuje analizę potrzeb, konfigurację platformy, integrację z ERP, migrację danych i szkolenia użytkowników. Dzięki gotowym modułom i integracjom czas wdrożenia jest znacznie krótszy niż przy dedykowanych rozwiązaniach. Każdy klient otrzymuje środowisko produkcyjne i (w planach Professional/Enterprise) testowe, co pozwala bezpiecznie weryfikować konfigurację przed uruchomieniem.</p>
-          </div>
+          {faqData.map((item) => (
+            <div class="item lm-observer">
+              <h2 class="h5_semi">{item.question}</h2>
+              <p class="p_regular_3">{item.answer}</p>
+            </div>
+          ))}
         </div>
       </div>
     </div>
   </div>
 </div>
 
-<CtaBlock showPresentation={true} />
+<CtaBlock />
 
 <script>
   // Accordion for price-functions sections

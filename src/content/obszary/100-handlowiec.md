@@ -7,8 +7,8 @@ modules:
     starter: included
     professional: included
     enterprise: included
-  - name: "Panel handlowca"
-    description: "Dedykowany panel z widokiem na klientów, zamówienia i statystyki i składaniem zamówień"
+  - name: "Panel Handlowca"
+    description: "Panel z widokiem na klientów, zamówienia i statystyki oraz ze składaniem zamówień w imieniu klienta"
     starter: unavailable
     professional: optional
     enterprise: included

@@ -50,3 +50,9 @@ wp/
 wiseb2b.eu-audit/
 test-results/
 playwright-report/
+
+# Robocze zrzuty treści do analizy
+.analiza-tmp/
+
+# Kontekst marketingowy (dane wewnętrzne, repo jest publiczne)
+.agents/

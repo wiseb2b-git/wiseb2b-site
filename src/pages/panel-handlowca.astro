@@ -111,7 +111,6 @@ import CtaBlock from '../components/CtaBlock.astro';
 </div>
 
 <!-- Sekcja 5: Obszary funkcjonalne -->
-{/* NEED: potwierdzić z CEO, które funkcje Panelu są produkcyjne. Na stronie z maja były też: kalendarz, sprawy handlowe i lejki, komunikacja z klientem w wielu kanałach, edycja złożonych zamówień (zależnie od ERP). Pochodzą z zaproszenia Early Adopter (zakres planowany), nie ma ich w macierzy modułów, więc je pominięto. */}
 <div class="ph-areas">
   <div class="container">
     <div class="row">
@@ -159,6 +158,27 @@ import CtaBlock from '../components/CtaBlock.astro';
             </div>
             <h3 class="p_semi_2">Aktywność w&nbsp;sklepie</h3>
             <p class="p_regular_3">Statystyki zakupowe i&nbsp;zachowanie klienta na platformie. Handlowiec widzi, czym klient się interesuje i&nbsp;czego nie kupił.</p>
+          </div>
+          <div class="ph-area-card lm-observer">
+            <div class="ph-area-card__icon">
+              <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="var(--color-primary-500)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="17" rx="2"/><path d="M3 9h18M8 2v4M16 2v4"/></svg>
+            </div>
+            <h3 class="p_semi_2">Kalendarz i&nbsp;sprawy handlowe</h3>
+            <p class="p_regular_3">Spotkania, telefony i&nbsp;sprawy prowadzone w&nbsp;lejku sprzedaży. Każda sprawa jest przypięta do karty klienta.</p>
+          </div>
+          <div class="ph-area-card lm-observer">
+            <div class="ph-area-card__icon">
+              <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="var(--color-primary-500)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12a8 8 0 0 1-11.6 7.1L4 21l1.9-5.4A8 8 0 1 1 21 12z"/></svg>
+            </div>
+            <h3 class="p_semi_2">Komunikacja z&nbsp;klientem</h3>
+            <p class="p_regular_3">Wiadomości do klienta z&nbsp;jednego miejsca, w&nbsp;kanale, którego klient używa. Historia rozmów zostaje przy kliencie.</p>
+          </div>
+          <div class="ph-area-card lm-observer">
+            <div class="ph-area-card__icon">
+              <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="var(--color-primary-500)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 20h4L19 9l-4-4L4 16v4z"/><path d="M13.5 6.5l4 4"/></svg>
+            </div>
+            <h3 class="p_semi_2">Edycja złożonych zamówień</h3>
+            <p class="p_regular_3">Handlowiec poprawia zamówienie klienta przed realizacją: zmienia pozycje, ilości i&nbsp;warunki, zgodnie z&nbsp;zasadami w&nbsp;ERP.</p>
           </div>
         </div>
       </div>
@@ -211,8 +231,8 @@ import CtaBlock from '../components/CtaBlock.astro';
     <p class="hp-section-subtitle lm-observer">Mniej zamówień do ręcznej obsługi, więcej czasu handlowców na sprzedaż</p>
     <div class="hp-proof">
       <div class="hp-proof__card lm-observer">
-        <img src="/images/logo-agrotex.jpg" alt="Agrotex" width="180" height="28" class="hp-proof__logo" loading="lazy" />
-        <p class="hp-proof__desc">Dystrybutor części do maszyn rolniczych, 120 mln zł obrotu, 840 klientów na platformie</p>
+        <span class="hp-proof__tag">Wdrożenie WiseB2B</span>
+        <p class="hp-proof__desc">Dystrybutor części do maszyn rolniczych</p>
         <div class="hp-proof__stats">
           <div><span class="hp-proof__value">42%</span><span class="hp-proof__label">zamówień bez weryfikacji handlowca</span></div>
           <div><span class="hp-proof__value">+22%</span><span class="hp-proof__label">dostępności produktów dzięki sprzedaży z wielu magazynów</span></div>

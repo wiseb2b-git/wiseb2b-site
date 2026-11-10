@@ -6229,3 +6229,18 @@ p + .page-hero__actions { margin-top: 24px; }
 @media (min-width: 992px) {
   .hp-partner__card { padding-left: calc(16% + 68px); }
 }
+/* Karta wyniku bez logo klienta (brak zgody na nazwę) */
+.hp-proof__tag {
+  display: inline-block;
+  align-self: flex-start;
+  padding: 4px 12px;
+  margin-bottom: 12px;
+  border-radius: var(--radius-full);
+  background: var(--color-primary-50);
+  color: var(--color-primary-500);
+  font-size: 1.3rem;
+  font-weight: 600;
+}
+/* Panel Handlowca: ikony czytelne na ciemnym tle */
+.ph-area-card__icon svg[fill^="var"] { fill: var(--color-primary-300); }
+.ph-area-card__icon svg[stroke] { stroke: var(--color-primary-300); }

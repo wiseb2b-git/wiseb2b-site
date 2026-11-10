@@ -10,7 +10,7 @@ specialization:
   - "Magento / Shopware / Shopify"
   - "UX/UI i optymalizacja konwersji"
   - "PIM (Akeneo, Ergonode)"
-shortDescription: "Wrocławska agencja eCommerce, 14 lat na rynku. Pracuje na Magento, Shopware, Shopify i systemach PIM. W projektach WiseB2B projektuje ścieżki zakupowe dla klientów biznesowych, dba o UX i konwersję oraz przenosi firmy z Magento i innych platform."
+shortDescription: "Wrocławska agencja eCommerce, 14 lat na rynku i ponad 120 udanych wdrożeń. Pracuje na Magento, Shopware, Shopify i systemach PIM. W projektach WiseB2B projektuje ścieżki zakupowe dla klientów biznesowych, dba o UX i konwersję oraz przenosi firmy z Magento i innych platform."
 order: 2
 ---
 

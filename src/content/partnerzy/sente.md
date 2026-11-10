@@ -11,7 +11,7 @@ specialization:
   - "Platforma eCommerce B2B"
   - "CRM"
   - "Systemy dla handlu i dystrybucji"
-shortDescription: "Wrocławski dostawca oprogramowania dla handlu od 25 lat i twórca Teneum ERP. Wspiera WiseB2B w drugiej linii i wdraża platformę u dystrybutorów i producentów, także z integracją z ERP, WMS i kurierami. Zespół Sente wdrożył platformę B2B w Triplexie."
+shortDescription: "Wrocławski dostawca oprogramowania dla handlu od 25 lat i twórca Teneum ERP. Wspiera WiseB2B w drugiej linii i wdraża platformę u dystrybutorów i producentów, także z integracją z ERP, WMS i kurierami. Kompetencje integracyjne wypracował w ponad 120 projektach wdrożeniowych. Zespół Sente wdrożył platformę B2B w Triplexie."
 order: 1
 ---
 
@@ -19,7 +19,7 @@ order: 1
 
 Sente działa na rynku od 2000 roku. Firma powstała we Wrocławiu i dziś liczy ponad 150 specjalistów: konsultantów, wdrożeniowców oraz ekspertów biznesowych z obszarów logistyki, finansów i sprzedaży.
 
-Główna siedziba mieści się we Wrocławiu (ul. Legnicka 51-53), a dodatkowe biura firma prowadzi w Rzeszowie i Starachowicach. Pracuje dla średnich i dużych firm w Polsce.
+Główna siedziba mieści się we Wrocławiu (ul. Legnicka 51-53), a dodatkowe biura firma prowadzi w Rzeszowie i Starachowicach. Na koncie ma ponad 120 wdrożeń dla średnich i dużych firm w Polsce.
 
 Sente rozwija własne oprogramowanie i realizuje projekty dopasowane do działalności klienta, szczególnie w handlu, dystrybucji, eCommerce i produkcji.
 

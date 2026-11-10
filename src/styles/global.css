@@ -6244,3 +6244,4 @@ p + .page-hero__actions { margin-top: 24px; }
 /* Panel Handlowca: ikony czytelne na ciemnym tle */
 .ph-area-card__icon svg[fill^="var"] { fill: var(--color-primary-300); }
 .ph-area-card__icon svg[stroke] { stroke: var(--color-primary-300); }
+.about-us-numbers__row2 { margin-top: 32px; }

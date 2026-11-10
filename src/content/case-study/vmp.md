@@ -1,6 +1,6 @@
 ---
 title: "VMP: obsługa zamówienia krótsza o 60% w hurtowni bielizny"
-description: "VMP sprzedaje do sklepów w krajach UE z katalogu 86 000 indeksów. Po przejściu na WiseB2B zapytań do BOK jest o 45% mniej, a stary system wyłączono po miesiącu."
+description: "VMP sprzedaje do sklepów w 13 krajach z katalogu 86 000 indeksów. Po przejściu na WiseB2B zapytań do BOK jest o 45% mniej, a stary system wyłączono po miesiącu."
 clientLogo: "/case-study/vmp/vmp-logo.png"
 mainImage: "/case-study/vmp/vmp-homepage.png"
 galleryImages:
@@ -14,19 +14,19 @@ info:
     items:
       - "Plan Professional"
       - "Integracja z ERP"
-      - "Wersje językowe i waluty dla rynków UE"
+      - "13 wersji językowych i waluty dla rynków UE"
   - label: "Cele klienta"
     items:
       - "Zastąpić stary system B2B, który nie nadążał za rozwojem firmy."
       - "Zautomatyzować zamówienia, zwroty i wymianę danych z ERP."
-      - "Sprzedawać do sklepów w krajach UE w ich językach i walutach."
+      - "Obsłużyć 13 rynków zagranicznych w ich językach i walutach."
       - "Odciążyć BOK i dział IT."
 about:
   heading: "O firmie"
-  text: "VMP Group dystrybuuje bieliznę i odzież nocną premium pod markami Momenti Per Me i VMP. Katalog ma ponad 86 000 aktywnych indeksów, a klienci to sklepy w krajach UE. Ponad 90% zamówień VMP realizuje w dropshippingu z magazynów własnych, partnerskich i producenckich. Poprzedni system B2B generował błędy, nie liczył rabatów automatycznie i podnosił koszty obsługi. Przez okres przejścia działał równolegle z WiseB2B. Po miesiącu VMP go wyłączyło, bez utraty funkcji."
+  text: "VMP Group dystrybuuje bieliznę i odzież nocną premium pod markami Momenti Per Me i VMP. Katalog ma ponad 86 000 aktywnych indeksów, a klienci to sklepy w 13 krajach. Ponad 90% zamówień VMP realizuje w dropshippingu z magazynów własnych, partnerskich i producenckich. Poprzedni system B2B generował błędy, nie liczył rabatów automatycznie i podnosił koszty obsługi. Przez okres przejścia działał równolegle z WiseB2B. Po miesiącu VMP go wyłączyło, bez utraty funkcji."
 functions:
   - name: "Platforma B2B w wielu językach"
-    description: "Klienci hurtowi zamawiają w swoim języku, na komputerze i telefonie. Wygląd sklepu wzorowany na sklepach B2C eksponuje marki VMP."
+    description: "Klienci hurtowi zamawiają w swoim języku, w jednej z 13 wersji językowych, na komputerze i telefonie. Wygląd sklepu wzorowany na sklepach B2C eksponuje marki VMP."
   - name: "Cenniki, waluty i reguły rabatowe"
     description: "Platforma obsługuje wiele cenników i walut, m.in. PLN, EUR i GBP. Rabaty liczą się automatycznie według grupy klienta, wartości zamówienia i marki."
   - name: "Integracja z ERP i API"
@@ -36,7 +36,7 @@ functions:
   - name: "Wiele magazynów"
     description: "Na karcie produktu klient widzi stany, ceny i dostępność w magazynie dystrybutora, partnera i producenta, z podziałem na rozmiary."
   - name: "Automatyzacja zwrotów"
-    description: "Zgłoszenie zwrotu, walidacja terminu i faktura korygująca przechodzą przez platformę. W branży odzieżowej zwrotów jest dużo, więc każdy zautomatyzowany krok to mniej pracy dla BOK."
+    description: "Zgłoszenie zwrotu, walidacja terminu i faktura korygująca przechodzą przez platformę. Czas obsługi zwrotu może spaść nawet o połowę, a w branży odzieżowej zwrotów jest dużo."
 stats:
   - value: "−60%"
     label: "czasu obsługi zamówienia"
@@ -44,8 +44,10 @@ stats:
     label: "zapytań do BOK"
   - value: "ponad 90%"
     label: "zamówień w dropshippingu"
-  - value: "86 000"
-    label: "indeksów w katalogu"
+  - value: "86 000+"
+    label: "aktywnych indeksów w katalogu"
+  - value: "13"
+    label: "wersji językowych"
 # NEED: autoryzowany cytat osoby z VMP (imię, nazwisko, rola). Poprzedni cytat podpisany „VMP Group” nie miał źródła i został usunięty.
 date: "2025-01-15"
 ---

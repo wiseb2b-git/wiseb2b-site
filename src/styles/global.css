@@ -6428,3 +6428,102 @@ p + .page-hero__actions { margin-top: 24px; }
 .single-hero { margin: 0 20px !important; background: var(--kv-dark) url("/images/kv-background.png") center / cover no-repeat !important; border-radius: 20px; }
 .single-hero__meta-pill { background: #fff !important; color: var(--kv-dark) !important; border: 0 !important; }
 @media (max-width: 767px) { .single-hero { margin: 0 10px !important; border-radius: 16px; } }
+
+/* =====================================================================
+   „Dla kogo” wg Figmy (ramki 68:124 i 61:2815)
+   4 karty: kontener + połączona siatka 2x2 z wyblakłą ikoną i ozdobnikami.
+   2 karty: osobne karty z ikoną w kafelku, bez kontenera.
+   Numer sekcji 01/02/03 nad tytułem.
+   ===================================================================== */
+.numbers-text .items { counter-reset: nt; }
+.numbers-text .items > .item { counter-increment: nt; }
+.numbers-text .items > .item::before,
+.numbers-text .items > .item::after { content: none !important; }
+.numbers-text .items > .item h2 { font-size: 3.2rem; line-height: 1.3; font-weight: 700; max-width: 560px; margin: 0 auto 56px; }
+.numbers-text .items > .item h2::before {
+  content: counter(nt, decimal-leading-zero);
+  display: block;
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: var(--color-primary-500);
+  margin-bottom: 12px;
+}
+.numbers-text .items > .item:nth-child(even) h2::before { color: var(--kv-accent-light); }
+
+/* Sekcja z 2 kartami: bez kontenera, osobne karty z ikoną w kafelku */
+.numbers-text .items > .item:not(:has(.col-md-6:nth-child(3))) { background: transparent !important; }
+.numbers-text .items > .item:not(:has(.col-md-6:nth-child(3))) .row { row-gap: 20px; }
+.numbers-text .items > .item:not(:has(.col-md-6:nth-child(3))) .box {
+  background: var(--kv-section) !important;
+  padding: 28px !important;
+}
+.numbers-text .items > .item:not(:has(.col-md-6:nth-child(3))) .numbers-text__box-icon {
+  width: 60px; height: 60px; border-radius: 10px; background: var(--kv-icon-bg); color: var(--color-primary-500); margin-bottom: 24px;
+}
+.numbers-text .items > .item:not(:has(.col-md-6:nth-child(3))) .numbers-text__box-icon svg { width: 30px; height: 30px; }
+.numbers-text .items > .item:not(:has(.col-md-6:nth-child(3))) .box h3 { font-size: 2rem !important; line-height: 1.4; margin-bottom: 20px; }
+.numbers-text .items > .item:not(:has(.col-md-6:nth-child(3))) .box p { font-size: 1.8rem !important; line-height: 1.55; }
+
+/* Sekcja z 4 kartami: połączona siatka 2x2 */
+.numbers-text .items > .item:has(.col-md-6:nth-child(3)) > .row {
+  position: relative;
+  z-index: 0;
+  max-width: 1254px;
+  margin: 0 auto;
+  row-gap: 0;
+}
+.numbers-text .items > .item:has(.col-md-6:nth-child(3)) > .row > .col-md-6 { padding: 0; }
+.numbers-text .items > .item:has(.col-md-6:nth-child(3)) .box {
+  position: relative;
+  overflow: hidden;
+  height: 100%;
+  border: 1px solid #E6E6E6 !important;
+  border-radius: 0 !important;
+  background: var(--kv-card) !important;
+  padding: 44px 24px 32px !important;
+}
+.numbers-text .items > .item:has(.col-md-6:nth-child(3)) > .row > .col-md-6:nth-child(1) .box { border-radius: 20px 0 0 0 !important; }
+.numbers-text .items > .item:has(.col-md-6:nth-child(3)) > .row > .col-md-6:nth-child(2) .box { border-radius: 0 20px 0 0 !important; }
+.numbers-text .items > .item:has(.col-md-6:nth-child(3)) > .row > .col-md-6:nth-child(3) .box { border-radius: 0 0 0 20px !important; }
+.numbers-text .items > .item:has(.col-md-6:nth-child(3)) > .row > .col-md-6:nth-child(4) .box { border-radius: 0 0 20px 0 !important; }
+.numbers-text .items > .item:has(.col-md-6:nth-child(3)) .box h3,
+.numbers-text .items > .item:has(.col-md-6:nth-child(3)) .box p { position: relative; z-index: 1; max-width: 92%; }
+.numbers-text .items > .item:has(.col-md-6:nth-child(3)) .numbers-text__box-icon {
+  position: absolute;
+  top: -25px;
+  right: -32px;
+  width: 157px;
+  height: 157px;
+  margin: 0;
+  background: none !important;
+  color: #F0F0F0 !important;
+}
+.numbers-text .items > .item:has(.col-md-6:nth-child(3)) .numbers-text__box-icon svg { width: 157px; height: 157px; stroke-width: 2.4; }
+.numbers-text .items > .item:nth-child(even):has(.col-md-6:nth-child(3)) .box { background: #222931 !important; border-color: #2E3640 !important; }
+.numbers-text .items > .item:nth-child(even):has(.col-md-6:nth-child(3)) .numbers-text__box-icon { color: #29313B !important; }
+.numbers-text .items > .item:nth-child(even) .box p { color: #E9E9EA !important; }
+/* Ozdobniki wystające zza siatki (pozycje z Figmy) */
+@media (min-width: 1200px) {
+  .numbers-text .items > .item:has(.col-md-6:nth-child(3)) > .row::before,
+  .numbers-text .items > .item:has(.col-md-6:nth-child(3)) > .row::after {
+    content: "";
+    position: absolute;
+    z-index: -1;
+    width: 213px;
+    height: 143px;
+    background: center / contain no-repeat;
+  }
+  .numbers-text .items > .item:has(.col-md-6:nth-child(3)) > .row::before { left: 132px; top: -54px; background-image: url("/images/kv-Frame-152.png"); }
+  .numbers-text .items > .item:has(.col-md-6:nth-child(3)) > .row::after { right: -81px; bottom: -22px; background-image: url("/images/kv-Frame-153.png"); }
+}
+@media (max-width: 767px) {
+  .numbers-text .items > .item h2 { font-size: 2.6rem; margin-bottom: 32px; }
+  .numbers-text .items > .item:has(.col-md-6:nth-child(3)) > .row > .col-md-6 .box { border-radius: 0 !important; }
+  .numbers-text .items > .item:has(.col-md-6:nth-child(3)) > .row > .col-md-6:first-child .box { border-radius: 16px 16px 0 0 !important; }
+  .numbers-text .items > .item:has(.col-md-6:nth-child(3)) > .row > .col-md-6:last-child .box { border-radius: 0 0 16px 16px !important; }
+  .numbers-text .items > .item:not(:has(.col-md-6:nth-child(3))) .box h3 { font-size: 1.8rem !important; }
+  .numbers-text .items > .item:not(:has(.col-md-6:nth-child(3))) .box p { font-size: 1.6rem !important; }
+}
+/* Figma: tło strony pod sekcjami białe, kontenery #FBFBFB, karty 2-kolumnowe #F6F6F6 */
+.numbers-text { background: #fff; }
+.numbers-text .items > .item:not(:has(.col-md-6:nth-child(3))) .box { background: var(--kv-card) !important; }

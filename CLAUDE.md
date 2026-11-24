@@ -7,13 +7,13 @@ Strona marketingowa firmy WiseB2B (platforma e-Commerce B2B). Źródłem prawdy 
 - **Nie zapisujemy niczego w pamięci Claude** (auto-memory, `~/.claude/projects/.../memory`). Wszystko, co ma przetrwać między sesjami, zapisujemy w plikach projektu.
 - Zasady ogólne i techniczne: ten plik (`CLAUDE.md`). Uwaga: repo jest publiczne, więc tu tylko informacje, które mogą być jawne.
 - Decyzje, ustalenia z CEO, zasady treści i stan prac: `.knowledge/ustalenia-projektu.md`. **Przeczytaj go na początku każdej sesji** i dopisuj tam nowe decyzje z datą.
-- Księga marketingowa: `.knowledge/*.md`. Dokumenty marketingowe CEO (źródło nadrzędne): `.knowledge/marketing/`. Opis skilli: `.claude/README.md`.
+- Księga marketingowa: `.knowledge/*.md` (spis i hierarchia: `.knowledge/README.md`). Dokumenty marketingowe CEO: `.knowledge/marketing/` (tylko do odczytu). Opis skilli: `.claude/README.md`.
 
 ## Stan projektu
 Migracja jest w trakcie. Struktura stron, routing, redirecty, design tokens, header, footer i komponenty są gotowe. Strony mają treść i layout, ale **wizualnie nie odpowiadają Figma/WP**. Główne zadanie: przejść stronę po stronie i doprowadzić wygląd do zgodności z nowym KV z Figmy.
 
 Co zrobione:
-- Nowy design system (tokeny w `src/styles/tokens.css`, font Inter, paleta fioletowa `#512da8`)
+- Nowy design system (tokeny w `src/styles/tokens.css`, font Manrope, paleta fioletowa `#512da8`)
 - Wszystkie strony istnieją pod nowymi flat URL-ami (21 stron .astro)
 - Redirecty 301 w `public/_redirects` (stare nested URL-e → nowe flat)
 - Header, Footer, CtaBlock, CookieBar, ArticleCards jako komponenty
@@ -74,13 +74,13 @@ Co wymaga pracy:
 - Przykład pobrania HTML strony: `curl -s -L "https://wiseb2b.eu/podstrona/"`
 
 ### Wiedza biznesowa
-Katalog `.knowledge/` zawiera materiały z NotebookLM (opisy funkcji, wartości, USP, grupy docelowe, messaging). Przy tworzeniu treści czerpać z tych materiałów. `.knowledge/screenshots` zawiera printscreeny z platformy WiseB2B.
+Katalog `.knowledge/` zawiera materiały o marce, ofercie i zasadach komunikacji. Spis, role plików i hierarchia źródeł: `.knowledge/README.md`. Master dla skilli marketingowych: `.knowledge/WiseB2B - kontekst marketingowy.md`. Przy tworzeniu treści czerpać z tych materiałów. `.knowledge/screenshots` zawiera printscreeny z platformy WiseB2B.
 
 ## Stos technologiczny
 - **Astro 6** z SSR (`output: 'server'`), strony mają `export const prerender = true`
 - **Astro Content Collections** (5 kolekcji, patrz niżej)
 - Czysty HTML/CSS, skrypty inline, brak frameworka JS
-- Font: **Inter** (Google Fonts, wagi 400, 500, 600, 700)
+- Font: **Manrope** (Google Fonts, wagi 400, 500, 600, 700, 800)
 - Node.js >= 22.12.0
 
 ## Architektura CSS
@@ -199,7 +199,7 @@ npm run preview  # podgląd buildu (TUTAJ testować, wszystkie strony działają
 - Używać techpage zamiast playwright jeśli wystarcza (szybsze)
 
 ## Styl pisania
-- Pisz naturalnym, bezpośrednim językiem, jak programista do kolegi z zespołu
+- Pisz naturalnym, bezpośrednim językiem
 - **Zakaz myślników** (`—`, `–`) jako elementu stylistycznego
 - Nie używaj bullet pointów tam, gdzie wystarczy zdanie lub dwa
 - Unikaj słów typowych dla AI: "oczywiście", "z pewnością", "warto zauważyć", "należy podkreślić", "kompleksowy", "kluczowy", "istotny", "w kontekście", "co więcej", "podsumowując"

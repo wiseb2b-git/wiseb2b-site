@@ -3,6 +3,12 @@
 ## Co to jest
 Strona marketingowa firmy WiseB2B (platforma e-Commerce B2B). Źródłem prawdy wizualnej jest plik Figma (`WiseB2B.eu.fig`) oraz aktualny WordPress (`wiseb2b.eu`). Cel: odwzorowanie nowego Key Visual z Figma/WP w Astro SSG.
 
+## Pamięć i ustalenia (ZASADA)
+- **Nie zapisujemy niczego w pamięci Claude** (auto-memory, `~/.claude/projects/.../memory`). Wszystko, co ma przetrwać między sesjami, zapisujemy w plikach projektu.
+- Zasady ogólne i techniczne: ten plik (`CLAUDE.md`). Uwaga: repo jest publiczne, więc tu tylko informacje, które mogą być jawne.
+- Decyzje, ustalenia z CEO, zasady treści i stan prac: `.knowledge/ustalenia-projektu.md`. **Przeczytaj go na początku każdej sesji** i dopisuj tam nowe decyzje z datą.
+- Księga marketingowa: `.knowledge/*.md`. Dokumenty marketingowe CEO (źródło nadrzędne): `.knowledge/marketing/`. Opis skilli: `.claude/README.md`.
+
 ## Stan projektu
 Migracja jest w trakcie. Struktura stron, routing, redirecty, design tokens, header, footer i komponenty są gotowe. Strony mają treść i layout, ale **wizualnie nie odpowiadają Figma/WP**. Główne zadanie: przejść stronę po stronie i doprowadzić wygląd do zgodności z nowym KV z Figmy.
 
@@ -164,8 +170,8 @@ Baza wiedzy                 → /baza-wiedzy/
 ## Wzorce wizualne z Figma (nowy KV)
 - Header: biały, logo wise + B2B (wersja kolorowa `logo-wiseb2b.svg`), nawigacja ciemna (`#20262e`), CTA "Zamów demo" w `#512da8`
 - Hero sekcje: ciemne tło z dekoracyjnym SVG (siatka linii), biały tekst, fioletowy CTA pill, badge "Commerce B2B Platform" z ikoną błyskawicy, screenshot dashboardu na dole
-- Font: Inter (Manrope w Figma, ale Inter w tokenach. W WP: Roboto/Manrope mieszanka)
-- Karty: biały bg, border `#cccfd5`, border-radius, lekki cień
+- Font: Manrope (jak w Figmie; od 2026-11-24 także w tokenach)
+- Karty: `#F6F6F6`, bez ramki, border-radius 20px; ikona w kafelku `#EEEAF6` (blok „KV z Figmy” na końcu `global.css`)
 - Sekcje na ciemnym tle: `#20262e`, border-radius 20px
 - Newsletter/CTA bar: gradient fioletowy
 - Footer: ciemny, 4 kolumny, ikony LinkedIn+Facebook

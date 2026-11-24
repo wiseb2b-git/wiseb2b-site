@@ -15,7 +15,7 @@
   --color-white: #ffffff;
   --color-dark: var(--color-dark-800);
 
-  --font-family: 'Inter', sans-serif;
+  --font-family: 'Manrope', sans-serif;
 
   --header-height: 108px;
   --header-height-mobile: 85px;
@@ -6245,3 +6245,186 @@ p + .page-hero__actions { margin-top: 24px; }
 .ph-area-card__icon svg[fill^="var"] { fill: var(--color-primary-300); }
 .ph-area-card__icon svg[stroke] { stroke: var(--color-primary-300); }
 .about-us-numbers__row2 { margin-top: 32px; }
+
+/* =====================================================================
+   KV z Figmy (style guide, wzór: wiseb2b.eu)
+   Font Manrope, hero jako zaokrąglona karta z siatką, karty #F6F6F6
+   bez ramki, sekcje z ozdobnikami w rogach.
+   ===================================================================== */
+:root {
+  --kv-dark: #20262E;
+  --kv-card: #F6F6F6;
+  --kv-section: #FBFBFB;
+  --kv-text: #4D5158;
+  --kv-accent-light: #AF9ED7;
+  --kv-icon-bg: #EEEAF6;
+}
+
+/* Hero podstron */
+:is(.text-logos, .supports-logos, .integrations-top, .page-hero, .demo-hero, .agent-ai-hero, .ph-hero, .case-study-hero) {
+  margin: 0 20px !important;
+  border-radius: 20px;
+  background: var(--kv-dark) url("/images/kv-background.png") center / cover no-repeat !important;
+  padding: 120px 0 !important;
+  min-height: 536px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  color: #fff;
+}
+:is(.text-logos, .supports-logos, .integrations-top, .page-hero, .demo-hero, .agent-ai-hero, .ph-hero, .case-study-hero) > .container { width: 100%; }
+:is(.text-logos, .supports-logos, .integrations-top, .page-hero, .demo-hero, .agent-ai-hero, .ph-hero, .case-study-hero) h1 {
+  font-size: 5.4rem !important;
+  line-height: 1.33 !important;
+  font-weight: 700 !important;
+  color: #fff !important;
+  letter-spacing: -0.01em;
+  margin: 20px auto 20px !important;
+  max-width: 1100px;
+}
+:is(.text-logos, .supports-logos, .integrations-top, .page-hero, .demo-hero, .agent-ai-hero, .ph-hero, .case-study-hero) h1 span { color: var(--kv-accent-light) !important; }
+:is(.text-logos, .supports-logos, .integrations-top, .page-hero, .demo-hero, .agent-ai-hero, .ph-hero, .case-study-hero) h1 + p,
+:is(.text-logos, .supports-logos, .integrations-top, .page-hero, .demo-hero, .agent-ai-hero, .ph-hero, .case-study-hero) :is(.demo-hero__lead, .page-hero__lead, .text-logos__text, .description, .case-study-hero__lead) {
+  font-size: 2rem !important;
+  line-height: 1.55 !important;
+  color: #fff !important;
+  max-width: 820px;
+  margin-left: auto !important;
+  margin-right: auto !important;
+}
+/* Badge w hero: biała pigułka z fioletowym kółkiem */
+:is(.page-hero__badge, .text-logos__badge, .demo-hero__badge) {
+  display: inline-flex !important;
+  align-items: center;
+  gap: 8px;
+  background: #fff !important;
+  color: var(--kv-dark) !important;
+  border: 0 !important;
+  border-radius: 100px !important;
+  padding: 5px 16px 5px 5px !important;
+  font-size: 1.4rem !important;
+  font-weight: 700 !important;
+}
+:is(.page-hero__badge, .text-logos__badge, .demo-hero__badge) > svg {
+  box-sizing: content-box;
+  width: 14px; height: 14px;
+  padding: 6px;
+  border-radius: 50%;
+  background: var(--color-primary-500);
+  color: #fff; fill: #fff;
+}
+:is(.text-logos__badge-icon, .demo-hero__badge-icon) {
+  background: var(--color-primary-500) !important;
+  color: #fff !important;
+  border-radius: 50%;
+}
+@media (max-width: 1199px) {
+  :is(.text-logos, .supports-logos, .integrations-top, .page-hero, .demo-hero, .agent-ai-hero, .ph-hero, .case-study-hero) h1 { font-size: 4rem !important; }
+}
+@media (max-width: 767px) {
+  :is(.text-logos, .supports-logos, .integrations-top, .page-hero, .demo-hero, .agent-ai-hero, .ph-hero, .case-study-hero) {
+    margin: 0 10px !important;
+    border-radius: 16px;
+    padding: 56px 0 !important;
+    min-height: 0;
+  }
+  :is(.text-logos, .supports-logos, .integrations-top, .page-hero, .demo-hero, .agent-ai-hero, .ph-hero, .case-study-hero) h1 { font-size: 2.8rem !important; line-height: 1.36 !important; }
+  :is(.text-logos, .supports-logos, .integrations-top, .page-hero, .demo-hero, .agent-ai-hero, .ph-hero, .case-study-hero) h1 + p,
+  :is(.text-logos, .supports-logos, .integrations-top, .page-hero, .demo-hero, .agent-ai-hero, .ph-hero, .case-study-hero) :is(.demo-hero__lead, .page-hero__lead, .text-logos__text, .description, .case-study-hero__lead) { font-size: 1.6rem !important; }
+}
+
+/* Sekcje z kartami (Dla dystrybutorów, Dla producentów) */
+.numbers-text { padding: 60px 0 !important; }
+.numbers-text .items > .item {
+  position: relative;
+  max-width: 1480px;
+  margin: 0 auto 60px;
+  padding: 60px 0 !important;
+  border-radius: 20px;
+}
+.numbers-text .items > .item:nth-child(odd) { background: var(--kv-section); }
+.numbers-text .items > .item:nth-child(even) { background: var(--kv-dark); }
+@media (min-width: 1200px) {
+  .numbers-text .items > .item::before,
+  .numbers-text .items > .item::after {
+    content: "";
+    position: absolute;
+    width: 177px;
+    height: 119px;
+    background: center / contain no-repeat;
+    pointer-events: none;
+  }
+  .numbers-text .items > .item::before { top: 20px; left: 20px; background-image: url("/images/kv-Frame-152.png"); }
+  .numbers-text .items > .item::after { bottom: 20px; right: 20px; background-image: url("/images/kv-Frame-153.png"); }
+  .numbers-text .items > .item > * { position: relative; z-index: 1; }
+}
+.numbers-text .items > .item h2 { font-size: 3.2rem; font-weight: 700; color: var(--kv-dark); }
+.numbers-text .items > .item h2 span { color: inherit; }
+.numbers-text .items > .item:nth-child(even) h2,
+.numbers-text .items > .item:nth-child(even) h2 span { color: #fff; }
+
+/* Karty KV: szare, bez ramki, promień 20 px */
+:where(.numbers-text .box, .hp-why__card, .hp-paths__card, .hp-proof__card, .about-us-rules__item, .functions-cards__item, .agent-ai-feature-card, .functions-box-white-bg__wrapper .item, .ph-goal, .boxes:not(.boxes--flat) .box, .supports-numbers--card .number, .case-study-stats__item, .hp-plan__step, .cloud-includes__item) {
+  background: var(--kv-card) !important;
+  border: 0 !important;
+  box-shadow: none !important;
+  border-radius: 20px !important;
+}
+.numbers-text .box { padding: 28px !important; }
+.numbers-text .items > .item:nth-child(even) .box { background: #262C34 !important; }
+.numbers-text .box h3 { font-size: 1.8rem !important; line-height: 2.6rem; font-weight: 700 !important; color: var(--kv-dark); margin-bottom: 12px; }
+.numbers-text .box p { font-size: 1.6rem !important; line-height: 1.6; color: var(--kv-text); }
+.numbers-text .items > .item:nth-child(even) .box h3 { color: #fff; }
+.numbers-text .items > .item:nth-child(even) .box p { color: #BABCBE; }
+.numbers-text__box-icon { width: 50px; height: 50px; border-radius: 10px; background: var(--kv-icon-bg); color: var(--color-primary-500); }
+.numbers-text__box-icon svg { width: 24px; height: 24px; }
+.numbers-text .items > .item:nth-child(even) .numbers-text__box-icon { background: var(--kv-icon-bg); color: var(--color-primary-500); }
+@media (max-width: 767px) {
+  .numbers-text { padding: 20px 0 !important; }
+  .numbers-text .items > .item { margin: 0 10px 20px; padding: 40px 0 !important; border-radius: 16px; }
+  .numbers-text .items > .item h2 { font-size: 2.6rem; }
+}
+/* Sekcje z kartami na pełną szerokość KV (1480 px, 60 px wcięcia) */
+@media (min-width: 1200px) {
+  .numbers-text > .container { max-width: 1520px; }
+  .numbers-text > .container > .row > [class*="col-"] { flex: 0 0 100%; max-width: 100%; margin-left: 0; }
+  .numbers-text .items > .item { padding: 70px 60px 90px !important; }
+  .numbers-text .items > .item h2 { margin-bottom: 48px; }
+}
+@media (min-width: 992px) {
+  :is(.text-logos, .supports-logos, .integrations-top, .page-hero, .demo-hero, .agent-ai-hero, .ph-hero, .case-study-hero) > .container > .row > [class*="col-"] {
+    flex: 0 0 83.333%; max-width: 83.333%; margin-left: 8.333%;
+  }
+}
+
+/* KV: poprawki po przeglądzie spójności */
+.functions-cards--dark .functions-cards__item { background: #262C34 !important; }
+.functions-cards--dark .functions-cards__item p:last-child { color: #BABCBE; }
+.functions-table { border: 0 !important; box-shadow: none !important; }
+.box-posts .item { border: 0 !important; }
+/* Ciemne sekcje jako zaokrąglone bloki z wcięciem */
+:is(.functions-cards--dark, .functionalities, .integrations-api) { margin-left: 20px; margin-right: 20px; border-radius: 20px; }
+@media (max-width: 767px) {
+  :is(.functions-cards--dark, .functionalities, .integrations-api) { margin-left: 10px; margin-right: 10px; border-radius: 16px; }
+}
+/* Kafelki ikon jak w KV: jasnoliliowe tło, fioletowa ikona */
+.about-us-rules__icon-bg { background: var(--kv-icon-bg) !important; border-radius: 10px; }
+.about-us-rules__icon-bg svg path { fill: var(--color-primary-500); }
+.about-us-rules__icon-bg img { filter: brightness(0) saturate(100%) invert(19%) sepia(63%) saturate(3000%) hue-rotate(250deg) brightness(88%); }
+.wise-more-row__icon-bg { background: var(--kv-icon-bg) !important; border-radius: 10px !important; }
+.wise-more-row__icon-bg img { filter: brightness(0) saturate(100%) invert(19%) sepia(63%) saturate(3000%) hue-rotate(250deg) brightness(88%); }
+.partner-benefit-icon img { filter: brightness(0) saturate(100%) invert(19%) sepia(63%) saturate(3000%) hue-rotate(250deg) brightness(88%) !important; }
+/* Typografia kart KV */
+:where(.boxes:not(.boxes--flat) .box h5, .functions-cards__item .p_semi_2, .ph-goal .p_semi_2, .about-us-rules__content-header, .agent-ai-feature-card h3, .ph-area-card h3) {
+  font-size: 1.8rem !important; line-height: 2.6rem; font-weight: 700 !important;
+}
+:where(.boxes:not(.boxes--flat) .box h5, .functions-cards__item .p_semi_2, .ph-goal .p_semi_2, .about-us-rules__content-header, .agent-ai-feature-card h3) { color: var(--kv-dark) !important; }
+.functions-cards--dark .functions-cards__item .p_semi_2 { color: #fff !important; }
+:where(.boxes:not(.boxes--flat) .box p, .functions-cards__item p:last-child, .ph-goal p:last-child, .about-us-rules__content-desc, .agent-ai-feature-card p) { font-size: 1.6rem !important; line-height: 1.6; }
+.agent-ai-features { background: var(--kv-section) !important; }
+/* Strona główna: H1 na telefonie jak na podstronach */
+@media (max-width: 480px) { .hp-hero h1 { font-size: 2.8rem !important; } }
+/* Artykuły: hero jako karta KV */
+.single-hero { margin: 0 20px !important; background: var(--kv-dark) url("/images/kv-background.png") center / cover no-repeat !important; border-radius: 20px; }
+.single-hero__meta-pill { background: #fff !important; color: var(--kv-dark) !important; border: 0 !important; }
+@media (max-width: 767px) { .single-hero { margin: 0 10px !important; border-radius: 16px; } }

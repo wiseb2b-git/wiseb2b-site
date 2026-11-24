@@ -5,14 +5,22 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 
 <BaseLayout title="Fundusze Europejskie" description="Informacje o projektach WiseB2B współfinansowanych z Funduszy Europejskich. Badania i rozwój platformy eCommerce B2B." noindex={true}>
 
-<div id="content" role="main">
+<section class="page-hero">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 offset-lg-2 text-center">
+        <h1 class="h2_semi">Fundusze Europejskie</h1>
+        <p class="page-hero__lead">Projekty WiseB2B współfinansowane z Funduszy Europejskich</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div id="content" role="main" style="padding-top:60px;">
   <div class="container">
     <div class="row">
       <div class="col-lg-10 offset-lg-1 col-xl-8 offset-xl-2">
         <article>
-          <header>
-            <h1 class="h2_semi">Fundusze Europejskie</h1>
-          </header>
           <div class="page-entry-content">
             <div class="eu-funds-logos lm-observer">
               <img fetchpriority="high" decoding="async" width="845" height="86" src="/images/fundusze.png" class="attachment-post_image size-post_image" alt="Logotypy Funduszy Europejskich" sizes="(max-width: 845px) 100vw, 845px" />

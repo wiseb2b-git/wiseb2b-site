@@ -6,6 +6,7 @@ const caseStudy = defineCollection({
   schema: z.object({
     title: z.string(),
     description: z.string(),
+    heading: z.string().optional(),
     clientLogo: z.string(),
     mainImage: z.string(),
     galleryImages: z.array(z.string()).optional(),
@@ -17,6 +18,15 @@ const caseStudy = defineCollection({
       heading: z.string(),
       text: z.string(),
     }),
+    challenge: z.object({
+      heading: z.string(),
+      text: z.string(),
+    }).optional(),
+    functionsHeading: z.string().optional(),
+    cta: z.object({
+      title: z.string(),
+      text: z.string(),
+    }).optional(),
     functions: z.array(z.object({
       name: z.string(),
       description: z.string(),

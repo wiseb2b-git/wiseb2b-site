@@ -4,10 +4,16 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
 import CtaBlock from '../../components/CtaBlock.astro';
 import { getCollection } from 'astro:content';
 
-const articles = await getCollection('baza-wiedzy');
+// Tekst: .knowledge/teksty/baza-wiedzy.md (Figma 160:3209).
+const articles = (await getCollection('baza-wiedzy'))
+  .sort((a, b) => new Date(b.data.date).getTime() - new Date(a.data.date).getTime());
+// Kategoria z frontmattera („Dystrybucja i Handel”) wyświetlana i filtrowana jak w Figmie („Dystrybucja i handel”).
+const catLabel = (c: string) => c.charAt(0).toUpperCase() + c.slice(1).toLowerCase();
+const catSlug = (c: string) => c.toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g, '').replace(/ł/g, 'l').replace(/\s+/g, '-');
+const fmtDate = (d: string) => d.split('-').reverse().join('.');
 ---
 
-<BaseLayout title="Baza wiedzy o platformie B2B" description="Artykuły i poradniki o platformach B2B, eCommerce B2B, wdrożeniach i cyfrowej transformacji sprzedaży. Baza wiedzy WiseB2B.">
+<BaseLayout title="Baza wiedzy o platformie B2B i eCommerce B2B" description="Artykuły o eCommerce B2B dla firm handlowych i produkcyjnych: czym B2B różni się od B2C, jak wybrać platformę i co daje wdrożenie platformy B2B.">
 
 <section class="page-hero">
   <div class="container">
@@ -16,6 +22,7 @@ const articles = await getCollection('baza-wiedzy');
       Baza wiedzy
     </span>
     <h1 class="lm-observer">Baza wiedzy o platformie <span>B2B</span></h1>
+    <p class="page-hero__lead lm-observer">Piszemy o&nbsp;tym, co widzimy we wdrożeniach: czym sprzedaż B2B online różni się od B2C, jak wybrać platformę i&nbsp;co zmienia się w&nbsp;firmie, gdy stali klienci zamawiają sami.</p>
   </div>
 </section>
 
@@ -26,7 +33,7 @@ const articles = await getCollection('baza-wiedzy');
         <div class="categories lm-observer">
           <ul class="categories__list">
             <li class="p_regular_3 active" data-slug="all">Wszystkie kategorie</li>
-            <li class="p_regular_3" data-slug="dystrybucja-i-handel">Dystrybucja i Handel</li>
+            <li class="p_regular_3" data-slug="dystrybucja-i-handel">Dystrybucja i handel</li>
             <li class="p_regular_3" data-slug="funkcje">Funkcje</li>
             <li class="p_regular_3" data-slug="korzysci">Korzyści</li>
           </ul>
@@ -35,23 +42,16 @@ const articles = await getCollection('baza-wiedzy');
     </div>
     <div id="posts-list-wrapper">
       <div class="row">
-        <div class="col-lg-12 col-xl-10 offset-xl-1">
-          <div class="box-posts box-posts--4col">
-
+        <div class="col-12">
+          <div class="bw-grid">
             {articles.map((article) => (
-              <a class="item lm-observer" href={`/baza-wiedzy/${article.id}/`}
-                 data-category={article.data.category.toLowerCase().replace(/\s+/g, '-').normalize('NFD').replace(/[\u0300-\u036f]/g, '')}>
-                <div class="image">
-                  <img loading="lazy" width="632" height="421" src={article.data.image} class="attachment-box-posts size-box-posts wp-post-image" alt={article.data.title} />
-                </div>
-                <div class="content">
-                  <p class="item_category p_regular_3">{article.data.category}</p>
-                  <h2 class="title p_semi_1">{article.data.title}</h2>
-                  <p class="excerpt p_regular_3">{article.data.description}</p>
-                </div>
+              <a class="bw-card lm-observer" href={`/baza-wiedzy/${article.id}/`} data-category={catSlug(article.data.category)}>
+                <img loading="lazy" width="632" height="421" src={article.data.image} class="bw-card__img" alt="" />
+                <span class="bw-card__cat">{catLabel(article.data.category)}</span>
+                <span class="bw-card__date"><time datetime={article.data.date}>{fmtDate(article.data.date)}</time></span>
+                <h2 class="bw-card__title">{article.data.title}</h2>
               </a>
             ))}
-
           </div>
         </div>
       </div>
@@ -68,10 +68,10 @@ const articles = await getCollection('baza-wiedzy');
 <section class="call-expert">
   <div class="container">
     <div class="row">
-      <div class="col-xl-8 offset-xl-2 col-lg-10 offset-lg-1">
+      <div class="col-12">
         <div class="call-expert__wrapper lm-observer">
           <h2 class="h2_semi">Potrzebujesz szczegółowych informacji?</h2>
-          <p class="job p_regular_1">Porozmawiaj z nami</p>
+          <p class="p_regular_1 bw-expert__text">Doświadczenie i&nbsp;efekty naszej pracy pomagają nam tworzyć powyższe treści. Ale każdy biznes jest inny. Chętnie poznamy Twoje wyzwania i&nbsp;oczekiwania.</p>
           <div class="call-expert__button">
             <a class="wise-button wise-button--wise-harvest" href="/zamow-demo/">Porozmawiaj</a>
           </div>
@@ -87,7 +87,7 @@ const articles = await getCollection('baza-wiedzy');
       document.querySelectorAll('.categories__list li').forEach(function(l) { l.classList.remove('active'); });
       li.classList.add('active');
       var slug = li.getAttribute('data-slug');
-      document.querySelectorAll('.box-posts .item').forEach(function(item) {
+      document.querySelectorAll('.bw-grid .bw-card').forEach(function(item) {
         if (slug === 'all' || item.getAttribute('data-category') === slug) {
           item.style.display = '';
         } else {

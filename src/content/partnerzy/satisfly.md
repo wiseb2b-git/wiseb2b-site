@@ -10,7 +10,7 @@ specialization:
   - "Magento / Shopware / Shopify"
   - "UX/UI i optymalizacja konwersji"
   - "PIM (Akeneo, Ergonode)"
-shortDescription: "Wrocławska agencja eCommerce, 14 lat na rynku i ponad 120 udanych wdrożeń. Pracuje na Magento, Shopware, Shopify i systemach PIM. W projektach WiseB2B projektuje ścieżki zakupowe dla klientów biznesowych, dba o UX i konwersję oraz przenosi firmy z Magento i innych platform."
+shortDescription: "Satisfly to wrocławska agencja eCommerce z 14-letnim doświadczeniem i ponad 120 udanymi wdrożeniami. Specjalizuje się w Magento, Shopware, Shopify i systemach PIM. Jako partner WiseB2B wnosi perspektywę UX i optymalizacji konwersji do projektów B2B. Firmom przechodzącym z Magento i innych platform pomaga w migracji."
 order: 2
 ---
 

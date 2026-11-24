@@ -7,164 +7,153 @@ import { getCollection } from 'astro:content';
 const articles = (await getCollection('baza-wiedzy'))
   .sort((a, b) => new Date(b.data.date).getTime() - new Date(a.data.date).getTime())
   .slice(0, 4);
+const fmtDate = (d: string) => d.split('-').reverse().join('.');
+const catLabel = (c: string) => c.charAt(0).toUpperCase() + c.slice(1).toLowerCase();
+// Tekst: .knowledge/teksty/wdrozenia.md (Figma 51:2). S3 to nowa sekcja spoza Figmy.
 ---
 
-<BaseLayout title="Wdrożenia WiseB2B: wyniki dystrybutorów w liczbach" description="Triplex, VMP i inni dystrybutorzy sprzedają na WiseB2B. Zobacz, ile zamówień przeszło do platformy B2B i ile czasu odzyskali handlowcy i BOK." service={{ name: "Wdrożenie platformy Commerce B2B WiseB2B", serviceType: "Wdrożenie oprogramowania B2B", description: "Wdrożenie platformy Commerce B2B dla dystrybutorów i producentów: sprint analityczny, integracja z ERP, uruchomienie obok obecnego procesu sprzedaży." }}>
+<BaseLayout title="Wdrożenia WiseB2B: Triplex, VMP i inne case study" description="Triplex przyjmuje przez platformę B2B 46,36% zamówień, VMP skróciło obsługę zamówienia o 60%. Zobacz wyniki wdrożeń WiseB2B u dystrybutorów." service={{ name: "Wdrożenie platformy Commerce B2B WiseB2B", serviceType: "Wdrożenie oprogramowania B2B", description: "Wdrożenie platformy Commerce B2B dla dystrybutorów i producentów: sprint analityczny, integracja z ERP, uruchomienie obok obecnego procesu sprzedaży." }}>
 
+<!-- S1. HERO -->
 <section class="demo-hero">
   <div class="container">
     <span class="demo-hero__badge">
       <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M13 10h7l-9 13v-9H4l9-13v9z"/></svg>
       Wdrożenia
     </span>
-    <h1 class="lm-observer">Ile sprzedaży przeszło do platformy B2B u naszych klientów</h1>
-    <p class="demo-hero__lead lm-observer">Triplex, VMP i pozostali nasi klienci to dystrybutorzy, których klienci kupują od lat. Sprawdź, ile zamówień przeszło do samoobsługi i ile pracy zdjęliśmy z handlowców i BOK.</p>
+    <h1 class="lm-observer">Przykłady wdrożeń <span>platformy B2B</span></h1>
+    <p class="demo-hero__lead lm-observer">Klienci Triplexa przez lata zamawiali telefonicznie i&nbsp;w&nbsp;Excelu, a&nbsp;VMP Group pracowało na autorskim systemie B2B, który nie nadążał za rozwojem firmy. Zobacz, ile zamówień przeszło u&nbsp;nich na platformę WiseB2B i&nbsp;ile pracy zniknęło z&nbsp;BOK.</p>
     <div class="demo-hero__actions">
       <a href="/zamow-demo/" class="btn btn--primary">Zamów demo</a>
     </div>
   </div>
 </section>
 
-<!-- STAWKA -->
-<section class="hp-stakes">
-  <div class="container">
-    <h2 class="hp-stakes__title lm-observer">Czy Twoi klienci w ogóle zechcą zamawiać online?</h2>
-    <p class="hp-stakes__text lm-observer">Tego bał się Triplex. Ich klienci od lat zamawiali telefonem i w Excelu. Przez platformę przechodzi dziś prawie połowa ich obrotu.</p>
-  </div>
-</section>
-
+<!-- S2. CASE STUDY -->
 <div class="implementation-lic">
   <div class="container">
     <div class="row">
-      <div class="col-lg-10 offset-lg-1">
-
+      <div class="col-12">
         <div class="items lm-observer">
           <div class="item">
             <div class="item__image">
-              <img width="811" height="608" src="/case-study/triplex/browser-blender-4-811x608.png" class="attachment-functions-images-small size-functions-images-small" alt="Platforma B2B Triplex na WiseB2B" />
+              <img width="811" height="608" src="/case-study/triplex/browser-blender-4-811x608.png" alt="Platforma B2B Triplex na WiseB2B" loading="lazy" />
             </div>
             <div class="item__content">
               <img width="74" height="21" src="/images/triplex-logo.png" class="item__content-logo" alt="Logo Triplex" />
-              <h2 class="h3_semi">Triplex, dystrybutor pirotechniki: 49,55% obrotu przez platformę B2B</h2>
-              <p class="p_regular_3 description">Klienci Triplexa zamawiają sami, także po godzinach pracy biura, po cenach liczonych tak samo jak w Comarch Optima. Przez platformę przechodzi 46,36% zamówień, a korzysta z niej 34,43% klientów. Handlowcy mają mniej powtarzalnej pracy przy zamówieniach.</p>
+              <h2 class="h3_semi">Czołowy dystrybutor pirotechniki postawił na WiseB2B</h2>
+              <p class="p_regular_3 description">Triplex, jeden z&nbsp;czołowych dystrybutorów artykułów pirotechnicznych w&nbsp;Polsce i&nbsp;Europie, wdrożył platformę WiseB2B, aby przenieść większość sprzedaży do kanału cyfrowego. Dzięki platformie klienci mogą składać zamówienia o&nbsp;każdej porze, a&nbsp;handlowcy zostali odciążeni z&nbsp;powtarzalnych czynności. Dziś przez platformę przechodzi 49,55% obrotu i&nbsp;46,36% zamówień Triplexa.</p>
               <a class="btn btn--dark" href="/case-study/triplex/">Przeczytaj case study</a>
             </div>
           </div>
-          <div class="item item--reverse">
+          <div class="item">
             <div class="item__image">
-              <img width="1456" height="706" src="/case-study/vmp/vmp-homepage.png" class="attachment-functions-images-small size-functions-images-small" alt="Platforma B2B VMP na WiseB2B" />
+              <img width="1456" height="706" src="/case-study/vmp/vmp-homepage.png" alt="Platforma B2B VMP na WiseB2B" loading="lazy" />
             </div>
             <div class="item__content">
               <img width="74" height="21" src="/case-study/vmp/vmp-logo.png" class="item__content-logo" alt="Logo VMP Group" />
-              <h2 class="h3_semi">VMP, hurtownia bielizny: obsługa zamówienia krótsza o 60%</h2>
-              <p class="p_regular_3 description">VMP obsługuje 13 rynków zagranicznych i sprzedaje do sklepów z katalogu ponad 86 000 indeksów, a ponad 90% zamówień realizuje w dropshippingu. Po wdrożeniu zapytań do BOK jest o 45% mniej. Stary system B2B działał równolegle i został wyłączony po miesiącu.</p>
+              <h2 class="h3_semi">Platforma B2B dla lidera dystrybucji bielizny w&nbsp;Europie</h2>
+              <p class="p_regular_3 description">VMP Group, dystrybutor bielizny i&nbsp;odzieży premium z&nbsp;katalogiem ponad 86&nbsp;000 indeksów, wdrożył WiseB2B, aby zastąpić przestarzały system B2B. Platforma obsługuje klientów w&nbsp;13 krajach, automatyzuje zwroty i&nbsp;integruje się z&nbsp;ERP, skracając czas obsługi zamówień o&nbsp;60%. Zapytań do BOK jest o&nbsp;45% mniej. Stary system działał równolegle i&nbsp;VMP wyłączyło go po miesiącu.</p>
               <a class="btn btn--dark" href="/case-study/vmp/">Przeczytaj case study</a>
             </div>
           </div>
         </div>
-
       </div>
     </div>
   </div>
 </div>
 
-<!-- WIĘCEJ DOWODÓW -->
-<section class="hp-case">
+<!-- S3. NOWA SEKCJA (poza Figmą): WIĘCEJ WYNIKÓW -->
+<section class="hp-case wdrozenia-more">
   <div class="container">
     <h2 class="hp-section-title lm-observer">Więcej wyników</h2>
-    <p class="hp-section-subtitle lm-observer">Kolejne wdrożenia platformy i zespołu</p>
+    <p class="hp-section-subtitle lm-observer">Kolejne wdrożenia platformy i&nbsp;doświadczenie zespołu</p>
 
     <div class="hp-proof">
       <div class="hp-proof__card lm-observer">
-        <span class="hp-proof__tag">Wdrożenie WiseB2B</span>
-        <p class="hp-proof__desc">Dystrybutor części do maszyn rolniczych, 120 mln zł obrotu, 840 klientów na platformie. Przeszedł na WiseB2B z platformy SaaS. Dostawa wycenia się automatycznie, więc handlowiec nie musi sprawdzać każdego zamówienia.</p>
+        <h3 class="wdrozenia-more__title">Dystrybutor części do maszyn rolniczych</h3>
+        <p class="hp-proof__desc">120 mln zł obrotu, 840 klientów, około 2,5 tys. zamówień miesięcznie i&nbsp;50 tys. produktów. Firma przeszła na WiseB2B z&nbsp;platformy SaaS działającej pod ERP Wa-PRO. Integracja działa przez n8n, z&nbsp;wymianą danych przyrostową i&nbsp;nocną. Koszt dostawy gabarytów, szkła i&nbsp;opon wycenia się automatycznie, więc handlowiec nie musi sprawdzać każdego zamówienia. Klienci szukają części według modeli ciągników i&nbsp;nazywają platformę „jednym z&nbsp;najwygodniejszych miejsc do zakupów w&nbsp;branży”.</p>
         <div class="hp-proof__stats">
           <div><span class="hp-proof__value">42%</span><span class="hp-proof__label">zamówień bez weryfikacji handlowca</span></div>
-          <div><span class="hp-proof__value">+22%</span><span class="hp-proof__label">dostępności produktów dzięki sprzedaży z wielu magazynów</span></div>
+          <div><span class="hp-proof__value">+22%</span><span class="hp-proof__label">dostępności produktów dzięki sprzedaży z&nbsp;wielu sklepów</span></div>
         </div>
-
       </div>
       <div class="hp-proof__card lm-observer">
-        <p class="hp-proof__desc"><strong>Wdrożenia zespołu WiseB2B i Sente.</strong> Te platformy B2B zespół zbudował razem z Sente dla dużych firm handlowych i produkcyjnych. Pokazują, z jaką skalą i złożonością warunków handlowych pracowaliśmy.</p>
+        <h3 class="wdrozenia-more__title">Wdrożenia zespołu WiseB2B i&nbsp;Sente</h3>
+        <p class="hp-proof__desc">Te platformy B2B nasz zespół budował razem z&nbsp;Sente dla dużych firm handlowych i&nbsp;produkcyjnych. Pokazują, z&nbsp;jaką skalą i&nbsp;złożonością warunków handlowych pracowaliśmy. W&nbsp;branży medycznej klienci składają zestawy produktów w&nbsp;konfiguratorze.</p>
         <div class="hp-proof__stats">
-          <div><span class="hp-proof__value">1,6 mld zł</span><span class="hp-proof__label">obrotu dystrybutora spożywczego, sprzedaż w wielu walutach</span></div>
-          <div><span class="hp-proof__value">80 mln zł</span><span class="hp-proof__label">obrotu producenta opakowań, B2B i B2C na jednej platformie, zgodność z Omnibus</span></div>
+          <div><span class="hp-proof__value">1,6 mld zł</span><span class="hp-proof__label">obrotu dystrybutora spożywczego, sprzedaż w&nbsp;wielu walutach</span></div>
+          <div><span class="hp-proof__value">80 mln zł</span><span class="hp-proof__label">obrotu producenta opakowań, B2B i&nbsp;B2C na jednej platformie, zgodność z&nbsp;Omnibus</span></div>
         </div>
-        <p class="hp-proof__desc">W branży medycznej klienci składają zestawy produktów w konfiguratorze.</p>
       </div>
     </div>
   </div>
 </section>
 
-<!-- OPINIA -->
-<section class="hp-testimonials">
+<!-- S4. WSPANIALI KLIENCI (karuzela) -->
+<section class="hp-testimonials wdrozenia-quotes">
   <div class="container">
-    <h2 class="hp-section-title lm-observer">Opinia klienta</h2>
-    <p class="hp-section-subtitle lm-observer">Triplex, dystrybutor pirotechniki</p>
+    <h2 class="hp-section-title lm-observer">Wspaniali Klienci</h2>
+    <p class="hp-section-subtitle lm-observer">Tak o&nbsp;wdrożeniu mówią firmy, które przeniosły zamówienia na platformę.</p>
 
     <div class="hp-testimonials__card lm-observer">
       <img src="/svg/double-quotes-r.svg" alt="" class="hp-testimonials__quote hp-testimonials__quote--right" width="80" height="80" />
-      <blockquote>
-        Jesteśmy w branży 30 lat, nasi klienci również &ndash; baliśmy się na początku, że klienci przyzwyczajeni do exceli i telefonu nie będą chcieli składać zamówień przez platformę B2B. Ale reakcje są inne &ndash; klienci są zachwyceni. Takie zmiany też dobrze wpływają na wizerunek branży i przyciągają młode pokolenie. Bardzo pozytywnie oceniam zmiany, jakie wniosła platforma B2B wdrożona przez Sente.
-      </blockquote>
-      <div class="hp-testimonials__author">
-        <p class="hp-testimonials__author-name">Aneta Siwarga</p>
-        <p class="hp-testimonials__author-site">Prokurent w Triplex</p>
+      <div class="wdrozenia-quotes__slider swiper">
+        <div class="swiper-wrapper">
+          <div class="swiper-slide">
+            <blockquote>
+              Jesteśmy w branży 30 lat, nasi klienci również &ndash; baliśmy się na początku, że klienci przyzwyczajeni do exceli i telefonu nie będą chcieli składać zamówień przez platformę B2B. Ale reakcje są inne &ndash; klienci są zachwyceni. Takie zmiany też dobrze wpływają na wizerunek branży i przyciągają młode pokolenie. Bardzo pozytywnie oceniam zmiany, jakie wniosła platforma B2B wdrożona przez Sente.
+            </blockquote>
+            <div class="hp-testimonials__author">
+              <p class="hp-testimonials__author-name">Aneta Siwarga</p>
+              <p class="hp-testimonials__author-site">Prokurent w&nbsp;Triplex</p>
+            </div>
+          </div>
+          <div class="swiper-slide">
+            <blockquote>
+              Potrzebowaliśmy solidnej platformy, która automatyzuje i ułatwia współpracę z partnerami handlowymi w całej Europie. Poprzedni system nie nadążał za naszym rozwojem: błędy, brak automatyzacji rabatów i wysokie koszty obsługi. WiseB2B dało nam nowoczesne narzędzie, które odciąża zespół, a naszym klientom zapewnia doświadczenia zakupowe na najwyższym poziomie.
+            </blockquote>
+            <div class="hp-testimonials__author">
+              {/* NEED: imię, nazwisko i rola osoby z VMP oraz zgoda na publikację */}
+              <p class="hp-testimonials__author-name">VMP Group</p>
+              <p class="hp-testimonials__author-site">dystrybutor bielizny i&nbsp;odzieży premium</p>
+            </div>
+          </div>
+        </div>
+        <div class="wdrozenia-quotes__pagination swiper-pagination"></div>
       </div>
       <img src="/svg/double-quotes-l.svg" alt="" class="hp-testimonials__quote hp-testimonials__quote--left" width="80" height="80" />
     </div>
-    {/* NEED: autoryzowany cytat osoby z VMP (imię, nazwisko, rola); dotychczasowy tekst „VMP Group” nie miał źródła i został usunięty */}
   </div>
 </section>
 
-<!-- DWIE ŚCIEŻKI -->
-<section class="hp-paths">
-  <div class="container">
-    <h2 class="hp-section-title lm-observer">Która sytuacja jest bliższa Twojej?</h2>
-    <p class="hp-section-subtitle lm-observer">VMP zmienił platformę. Triplex uruchamiał sprzedaż online obok handlowców.</p>
-    <div class="hp-paths__grid">
-      <div class="hp-paths__card lm-observer">
-        <h3>Masz platformę B2B, która Cię ogranicza</h3>
-        <p>Stary system działa do pełnego przejścia. W VMP trwało to miesiąc, bez utraty funkcji.</p>
-        <a href="/bezpieczna-migracja/" class="btn btn--outline">Jak wygląda migracja</a>
-      </div>
-      <div class="hp-paths__card lm-observer">
-        <h3>Sprzedajesz głównie przez handlowców</h3>
-        <p>Kanał online rusza obok telefonu i maila. Klienci przechodzą na niego w swoim tempie, a handlowiec widzi w Panelu Handlowca, co zamówili sami.</p>
-        <a href="/dla-dystrybutorow/" class="btn btn--outline">Dla dystrybutorów</a>
-        <a href="/dla-producentow/" class="hp-why__link hp-paths__alt">Jesteś producentem?</a>
-      </div>
-    </div>
-  </div>
-</section>
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    // @ts-ignore
+    if (typeof Swiper === 'undefined') return;
+    // @ts-ignore
+    new Swiper('.wdrozenia-quotes__slider', {
+      loop: true,
+      autoHeight: true,
+      autoplay: { delay: 8000, disableOnInteraction: false },
+      pagination: { el: '.wdrozenia-quotes__pagination', clickable: true },
+    });
+  });
+</script>
 
-<!-- FINAŁOWE CTA -->
-<section class="hp-final">
-  <div class="container">
-    <div class="hp-final__card lm-observer">
-      <h2>Zobacz, jak to wyglądałoby u Ciebie</h2>
-      <p>60 minut z konsultantem, platforma na żywo, scenariusze z Twojej firmy.</p>
-      <a href="/zamow-demo/" class="btn btn--light">Zamów demo</a>
-    </div>
-  </div>
-</section>
-
-<!-- BAZA WIEDZY -->
+<!-- S5. MOGĄ CIĘ ZAINTERESOWAĆ -->
 <section class="hp-blog">
   <div class="container">
     <h2 class="hp-section-title lm-observer">Mogą Cię zainteresować</h2>
-    <p class="hp-section-subtitle lm-observer">Artykuły o eCommerce B2B i wdrożeniach platformy</p>
+    <p class="hp-section-subtitle lm-observer">Artykuły o&nbsp;eCommerce B2B, wyborze platformy i&nbsp;korzyściach z&nbsp;wdrożenia.</p>
 
-    <div class="hp-blog__grid">
+    <div class="bw-grid">
       {articles.map((article) => (
-        <a href={`/baza-wiedzy/${article.id}/`} class="hp-blog__card lm-observer">
-          <div class="hp-blog__card-img">
-            {article.data.image && <img src={article.data.image} alt={article.data.title} width="376" height="250" loading="lazy" />}
-            <span class="hp-blog__card-cat">{article.data.category}</span>
-          </div>
-          <div class="hp-blog__card-body">
-            <h3>{article.data.title}</h3>
-          </div>
+        <a href={`/baza-wiedzy/${article.id}/`} class="bw-card lm-observer">
+          {article.data.image && <img src={article.data.image} alt="" width="376" height="250" loading="lazy" class="bw-card__img" />}
+          <span class="bw-card__cat">{catLabel(article.data.category)}</span>
+          <span class="bw-card__date"><time datetime={article.data.date}>{fmtDate(article.data.date)}</time></span>
+          <h3 class="bw-card__title">{article.data.title}</h3>
         </a>
       ))}
     </div>
@@ -174,5 +163,6 @@ const articles = (await getCollection('baza-wiedzy'))
   </div>
 </section>
 
+<!-- S6. NEWSLETTER -->
 <CtaBlock />
 </BaseLayout>

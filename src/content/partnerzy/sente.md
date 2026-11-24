@@ -11,7 +11,7 @@ specialization:
   - "Platforma eCommerce B2B"
   - "CRM"
   - "Systemy dla handlu i dystrybucji"
-shortDescription: "Wrocławski dostawca oprogramowania dla handlu od 25 lat i twórca Teneum ERP. Wspiera WiseB2B w drugiej linii i wdraża platformę u dystrybutorów i producentów, także z integracją z ERP, WMS i kurierami. Kompetencje integracyjne wypracował w ponad 120 projektach wdrożeniowych. Zespół Sente wdrożył platformę B2B w Triplexie."
+shortDescription: "Sente to polska firma IT z 25-letnim doświadczeniem, twórca systemu Teneum ERP. Projektuje i wdraża rozwiązania ERP, WMS z AI oraz platformy eCommerce B2B dla firm handlowych, dystrybucyjnych i produkcyjnych. Jako partner WiseB2B łączy znajomość procesów B2B z kompetencjami integracyjnymi wypracowanymi w ponad 120 projektach wdrożeniowych. Zespół Sente wdrożył platformę B2B w Triplexie."
 order: 1
 ---
 

@@ -6527,3 +6527,11 @@ p + .page-hero__actions { margin-top: 24px; }
 /* Figma: tło strony pod sekcjami białe, kontenery #FBFBFB, karty 2-kolumnowe #F6F6F6 */
 .numbers-text { background: #fff; }
 .numbers-text .items > .item:not(:has(.col-md-6:nth-child(3))) .box { background: var(--kv-card) !important; }
+/* Strona główna: 4 karty pod claimem w jednym rzędzie */
+.hp-why__grid--4 .hp-why__card { width: calc(25% - 15px); display: flex; flex-direction: column; }
+.hp-why__grid--4 .hp-why__card p { flex-grow: 1; }
+@media (max-width: 1199px) { .hp-why__grid--4 .hp-why__card { width: calc(50% - 10px); } }
+@media (max-width: 767px) { .hp-why__grid--4 .hp-why__card { width: 100%; } }
+.hp-why--claim + .hp-why { padding-top: 0; }
+/* Slider funkcjonalności: tekst nie wchodzi pod strzałkę */
+@media (min-width: 768px) { .hp-features__card-body { padding-right: 72px; } }

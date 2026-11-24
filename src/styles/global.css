@@ -6936,3 +6936,61 @@ p + .page-hero__actions { margin-top: 24px; }
 .bw-expert__text { color: #fff !important; max-width: 640px; margin: 0 auto; }
 @media (max-width: 1199px) { .bw-grid { grid-template-columns: repeat(2, 1fr); } }
 @media (max-width: 575px) { .bw-grid { grid-template-columns: 1fr; } }
+
+/* Poprawki mobile po wdrożeniu copy decków */
+@media (max-width: 991px) {
+  .agent-ai-why--dark .agent-ai-why__cell--feature { flex-basis: auto; padding: 20px 24px; }
+}
+@media (max-width: 767px) {
+  .supports-numbers { padding: 40px 0 !important; }
+  .supports-numbers .number { padding: 32px 0; }
+  .call-expert { padding: 32px 0 !important; }
+  .questions { padding: 48px 0 !important; }
+  .price-list-plans { padding: 40px 0 48px !important; }
+  .price-functions { padding: 0 0 48px !important; }
+  .cloud-includes { padding: 48px 0 40px; }
+  .cta-newsletter__consent input[type="checkbox"] { width: 22px; height: 22px; flex: 0 0 22px; margin-top: 1px; }
+  .cta-newsletter__consent { gap: 10px; padding: 4px 0; }
+}
+
+/* Poprawki desktop po przeglądzie wdrożenia (porównanie z Figmą) */
+/* Zamów demo: zdjęcie bez rozciągania, karta widoczna */
+@media (min-width: 992px) {
+  .demo-agenda__inner { align-items: start; }
+  .demo-agenda__image img { height: auto; aspect-ratio: 735 / 690; max-height: 690px; object-fit: cover; }
+}
+.demo-agenda__content { background: var(--kv-card); }
+/* Case study na ciemnym tle jako zaokrąglony blok z wcięciem */
+.hp-case--dark { margin: 0 20px 40px; border-radius: 20px; }
+.hp-case--dark .hp-case__logo img { height: 40px; width: auto; max-width: none; flex-shrink: 0; }
+/* Ikony etapów: bez powiększania małych plików */
+.supports-numbers--card .number__wrap img, .supports-numbers .number__wrap img { max-width: 64px !important; height: auto; image-rendering: auto; }
+/* Karty widoczne na tle strony */
+.team-process__card, .team-process__panel-text { background: var(--kv-card); }
+.team-process__card { border-radius: 20px; }
+.o-nas-exp__card { background: var(--kv-card) !important; }
+/* Platforma i Funkcje: treść na szerokość KV */
+@media (min-width: 1200px) {
+  :is(.functions-box-white-bg, .functions-cards, .functions-list-artwork) > .container { max-width: 1520px; padding: 0 60px; }
+  :is(.functions-box-white-bg, .functions-cards, .functions-list-artwork) > .container > .row > [class*="col-xl-8"] { flex: 0 0 100%; max-width: 100%; margin-left: 0; }
+  .about-us-rules__items.rules-2col { grid-template-columns: repeat(4, 1fr); }
+}
+/* Funkcje: tabela skalowania jak połączona siatka KV */
+.functions-table__cell { background: var(--kv-card) !important; border-color: #E6E6E6 !important; }
+.functions-table { border-radius: 20px; overflow: hidden; border: 0 !important; }
+/* Partnerzy: typografia kart i ikona */
+.partner-benefits .box__content-header { font-size: 2rem !important; font-weight: 700 !important; color: var(--kv-dark); }
+.partner-benefits .boxes .box__icon.partner-benefit-icon { margin: 0 0 24px; width: 60px; height: 60px; }
+/* Case study: karty KV, bez podwójnego fioletu */
+.case-study-functions__item { background: var(--kv-card) !important; border: 0 !important; border-radius: 20px !important; }
+.case-study-quote, .hp-final { background: transparent; }
+/* Plany: ikony usług w kafelku, legenda na środku */
+.cloud-includes__icon { width: 60px; height: 60px; border-radius: 10px; background: var(--kv-icon-bg); display: flex; align-items: center; justify-content: center; }
+.cloud-includes__icon svg { width: 28px; height: 28px; }
+.plan-legend { justify-content: center; }
+/* Dla kogo: wcięcie 20 px jak inne bloki */
+@media (min-width: 1200px) {
+  .numbers-text > .container { padding: 0 20px; }
+  .numbers-text > .container > .row { margin: 0; }
+  .numbers-text > .container > .row > [class*="col-"] { padding: 0; }
+}

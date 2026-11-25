@@ -29,7 +29,7 @@ const faqSchema = faq.map(f => ({ question: f.q, answer: f.a.replace(/<[^>]+>/g,
 <BaseLayout title="Platforma Commerce B2B z agentami AI i Panelem Handlowca" description="WiseB2B to platforma Commerce B2B stworzona od podstaw dla B2B. Agenci AI, Panel Handlowca, kod źródłowy, gotowe integracje z ERP i brak opłat od obrotu." faq={faqSchema}>
 
   <!-- S1. HERO -->
-  <section class="text-logos">
+  <section class="text-logos kv-on-dark">
     <div class="container">
       <div class="row">
         <div class="col-lg-8 offset-lg-2">
@@ -40,8 +40,8 @@ const faqSchema = faq.map(f => ({ question: f.q, answer: f.a.replace(/<[^>]+>/g,
               </span>
               Platforma Commerce B2B
             </span>
-            <h1 class="text-logos__title">Platforma Commerce B2B z <span>agentami AI</span>, Panelem Handlowca i otwartym kodem</h1>
-            <p class="desc p_regular_1">Platforma eCommerce B2B dla firm handlowych i produkcyjnych, łącząca sklep B2B, Panel Handlowca i Agenta AI w jednym środowisku.</p>
+            <h1 class="text-logos__title kv-h1">Platforma Commerce B2B z <span>agentami AI</span>, Panelem Handlowca i otwartym kodem</h1>
+            <p class="desc kv-lead">Platforma eCommerce B2B dla firm handlowych i produkcyjnych, łącząca sklep B2B, Panel Handlowca i Agenta AI w jednym środowisku.</p>
             <div class="page-hero__actions">
               <a class="wise-button wise-button--wise-harvest" href="/zamow-demo/">Zamów demo</a>
             </div>
@@ -54,7 +54,7 @@ const faqSchema = faq.map(f => ({ question: f.q, answer: f.a.replace(/<[^>]+>/g,
   <!-- S2. CZTERY FILARY -->
   <div class="functions-list-artwork" style="background:#fff; padding-top:60px; padding-bottom:20px; margin-top:0; margin-bottom:0;">
     <div class="container">
-      <h2 class="hp-section-title pcb-claim lm-observer">Jedyna platforma Commerce B2B AI-Native z Panelem Handlowca i otwartym kodem</h2>
+      <h2 class="hp-section-title pcb-claim lm-observer kv-h2">Jedyna platforma Commerce B2B AI-Native z Panelem Handlowca i otwartym kodem</h2>
 
       <!-- 1. B2B first (zdjęcie z lewej) -->
       <div class="row" style="margin-bottom: 100px;">
@@ -68,8 +68,8 @@ const faqSchema = faq.map(f => ({ question: f.q, answer: f.a.replace(/<[^>]+>/g,
                 <li class="lm-observer">
                   <span class="icon-purple-badge pcb-icon" set:html={icon(I.cart)} />
                   <div>
-                    <h3 class="p_semi_2 head">B2B first: platforma stworzona dla B2B, nie adaptowana</h3>
-                    <p class="p_regular_3 description">Większość rozwiązań dostępnych na rynku to platformy B2C rozbudowane o moduły dla biznesu. WiseB2B powstało od podstaw z myślą o złożoności relacji handlowych B2B: grupach klientów, hierarchiach cennikowych, kredycie kupieckim, sub-kontach i procesach akceptacji zamówień. Warunki zapisane w ERP widać na platformie 1:1, a w standardzie dostajesz 37 modułów w 13 obszarach. Dzięki temu wdrożenie jest szybsze, tańsze i trafia dokładnie w potrzeby Twojej organizacji.</p>
+                    <h3 class="head kv-title">B2B first: platforma stworzona dla B2B, nie adaptowana</h3>
+                    <p class="description kv-text">Większość rozwiązań dostępnych na rynku to platformy B2C rozbudowane o moduły dla biznesu. WiseB2B powstało od podstaw z myślą o złożoności relacji handlowych B2B: grupach klientów, hierarchiach cennikowych, kredycie kupieckim, sub-kontach i procesach akceptacji zamówień. Warunki zapisane w ERP widać na platformie 1:1, a w standardzie dostajesz 37 modułów w 13 obszarach. Dzięki temu wdrożenie jest szybsze, tańsze i trafia dokładnie w potrzeby Twojej organizacji.</p>
                     <a href="/funkcje/" class="hp-why__link">Zobacz wszystkie funkcje</a>
                   </div>
                 </li>
@@ -88,8 +88,8 @@ const faqSchema = faq.map(f => ({ question: f.q, answer: f.a.replace(/<[^>]+>/g,
                 <li class="lm-observer">
                   <span class="icon-purple-badge pcb-icon" set:html={icon(I.grid)} />
                   <div>
-                    <h3 class="p_semi_2 head">Panel Handlowca: sprzedaż online i offline w jednym miejscu</h3>
-                    <p class="p_regular_3 description">Zamiast żonglować oddzielnym CRM-em i platformą eCommerce, Twoi handlowcy mają wszystko pod ręką w jednym systemie. Te same ceny, te same warunki, ten sam klient, niezależnie od tego, czy zakup odbywa się online, czy przez telefon. Panel ma 8 obszarów, w tym kalendarz i zadania, ofertowanie, sprawy handlowe i kartę klienta 360°. Przygotowywanie ofert, monitorowanie zakupów, reagowanie na spadki sprzedaży to realne wsparcie nastawione na wzrost marży.</p>
+                    <h3 class="head kv-title">Panel Handlowca: sprzedaż online i offline w jednym miejscu</h3>
+                    <p class="description kv-text">Zamiast żonglować oddzielnym CRM-em i platformą eCommerce, Twoi handlowcy mają wszystko pod ręką w jednym systemie. Te same ceny, te same warunki, ten sam klient, niezależnie od tego, czy zakup odbywa się online, czy przez telefon. Panel ma 8 obszarów, w tym kalendarz i zadania, ofertowanie, sprawy handlowe i kartę klienta 360°. Przygotowywanie ofert, monitorowanie zakupów, reagowanie na spadki sprzedaży to realne wsparcie nastawione na wzrost marży.</p>
                     <a href="/panel-handlowca/" class="hp-why__link">Poznaj Panel Handlowca</a>
                   </div>
                 </li>
@@ -114,8 +114,8 @@ const faqSchema = faq.map(f => ({ question: f.q, answer: f.a.replace(/<[^>]+>/g,
                 <li class="lm-observer">
                   <span class="icon-purple-badge pcb-icon" set:html={icon(I.ai)} />
                   <div>
-                    <h3 class="p_semi_2 head">Agenci AI działający w praktyce</h3>
-                    <p class="p_regular_3 description">WiseB2B to pierwsza platforma Commerce B2B z agentami AI, które naprawdę pracują. Klient może nie tylko wyszukać produkt, może też poprosić agenta o zbudowanie całego koszyka, import zamówienia z dowolnego pliku, sprawdzenie statusu dostawy czy porównanie ofert. Agent Handlowca przygotowuje ofertę z otrzymanej wiadomości i podpowiada, czym zająć się dziś, a Agent Administratora wykonuje operacje masowe na cennikach i katalogu. Mniej maili, mniej telefonów, mniej pracy dla Twojego BOK. Więcej czasu na to, co naprawdę ważne.</p>
+                    <h3 class="head kv-title">Agenci AI działający w praktyce</h3>
+                    <p class="description kv-text">WiseB2B to pierwsza platforma Commerce B2B z agentami AI, które naprawdę pracują. Klient może nie tylko wyszukać produkt, może też poprosić agenta o zbudowanie całego koszyka, import zamówienia z dowolnego pliku, sprawdzenie statusu dostawy czy porównanie ofert. Agent Handlowca przygotowuje ofertę z otrzymanej wiadomości i podpowiada, czym zająć się dziś, a Agent Administratora wykonuje operacje masowe na cennikach i katalogu. Mniej maili, mniej telefonów, mniej pracy dla Twojego BOK. Więcej czasu na to, co naprawdę ważne.</p>
                     <a href="/agent-ai/" class="hp-why__link">Zobacz Agenta AI</a>
                   </div>
                 </li>
@@ -134,8 +134,8 @@ const faqSchema = faq.map(f => ({ question: f.q, answer: f.a.replace(/<[^>]+>/g,
                 <li class="lm-observer">
                   <span class="icon-purple-badge pcb-icon" set:html={icon(I.code)} />
                   <div>
-                    <h3 class="p_semi_2 head">Kod źródłowy: Twoja niezależność i bezpieczeństwo</h3>
-                    <p class="p_regular_3 description">W odróżnieniu od platform SaaS, z WiseB2B nie jesteś uzależniony od jednego dostawcy. Masz dostęp do kodu źródłowego, więc rozwojem może zająć się Twój własny zespół IT lub dowolna agencja. Modułowa architektura i technologia pluginów sprawiają, że aktualizacje nie psują Twoich customizacji. Budujesz na solidnym fundamencie. I ten fundament zawsze jest Twój.</p>
+                    <h3 class="head kv-title">Kod źródłowy: Twoja niezależność i bezpieczeństwo</h3>
+                    <p class="description kv-text">W odróżnieniu od platform SaaS, z WiseB2B nie jesteś uzależniony od jednego dostawcy. Masz dostęp do kodu źródłowego, więc rozwojem może zająć się Twój własny zespół IT lub dowolna agencja. Modułowa architektura i technologia pluginów sprawiają, że aktualizacje nie psują Twoich customizacji. Budujesz na solidnym fundamencie. I ten fundament zawsze jest Twój.</p>
                     <a href="/integracje/" class="hp-why__link">Zobacz integracje i technologię</a>
                   </div>
                 </li>
@@ -156,49 +156,49 @@ const faqSchema = faq.map(f => ({ question: f.q, answer: f.a.replace(/<[^>]+>/g,
       <div class="row">
         <div class="col-lg-10 offset-lg-1 col-xl-8 offset-xl-2 p-xl-0">
           <div class="functions-box-white-bg__wrap">
-            <h2 class="h2_semi lm-observer" style="text-align:center;">
+            <h2 class="lm-observer kv-h2" style="text-align:center;">
               Co więcej w <img src="/svg/logo-wiseb2b.svg" alt="WiseB2B" style="height:1em; width:auto; display:inline-block; vertical-align:middle; position:relative; top:-0.05em;" />?
             </h2>
           </div>
           <div class="wise-more-table">
 
             <div class="wise-more-row lm-observer">
-              <div class="wise-more-row__name"><h3 class="p_semi_2" style="margin:0;">Client API</h3></div>
+              <div class="wise-more-row__name"><h3 class="kv-title" style="margin:0;">Client API</h3></div>
               <div class="wise-more-row__icon"><div class="wise-more-row__icon-bg"><img src="/svg/icon-client-api.svg" width="26" height="26" alt="" /></div></div>
               <div class="wise-more-row__desc">
-                <p class="p_regular_3" style="margin:0;">Twoi klienci mogą zintegrować swoje systemy zakupowe bezpośrednio z Twoją platformą. Zamówienia, stany i faktury przechodzą między systemami, bez logowania do sklepu i przepisywania indeksów. Nigdzie nie będzie im się kupowało tak wygodnie jak u Ciebie.</p>
+                <p class="kv-text" style="margin:0;">Twoi klienci mogą zintegrować swoje systemy zakupowe bezpośrednio z Twoją platformą. Zamówienia, stany i faktury przechodzą między systemami, bez logowania do sklepu i przepisywania indeksów. Nigdzie nie będzie im się kupowało tak wygodnie jak u Ciebie.</p>
               </div>
             </div>
 
             <div class="wise-more-row lm-observer">
-              <div class="wise-more-row__name"><h3 class="p_semi_2" style="margin:0;">Gotowe integracje</h3></div>
+              <div class="wise-more-row__name"><h3 class="kv-title" style="margin:0;">Gotowe integracje</h3></div>
               <div class="wise-more-row__icon"><div class="wise-more-row__icon-bg"><img src="/svg/icon-integracje.svg" width="26" height="26" alt="" /></div></div>
               <div class="wise-more-row__desc">
-                <p class="p_regular_3" style="margin:0;">Gotowe integracje z systemami ERP (Teneum, Comarch XL, Comarch Optima, enova365, Subiekt) oraz platformą integracyjną Apilo istotnie zmniejszają ryzyka projektu, jego koszty i czas wdrożenia. Pozostałe systemy połączysz przez n8n albo Admin API.</p>
+                <p class="kv-text" style="margin:0;">Gotowe integracje z systemami ERP (Teneum, Comarch XL, Comarch Optima, enova365, Subiekt) oraz platformą integracyjną Apilo istotnie zmniejszają ryzyka projektu, jego koszty i czas wdrożenia. Pozostałe systemy połączysz przez n8n albo Admin API.</p>
               </div>
             </div>
 
             <div class="wise-more-row lm-observer">
-              <div class="wise-more-row__name"><h3 class="p_semi_2" style="margin:0;">Wersja mobilna</h3></div>
+              <div class="wise-more-row__name"><h3 class="kv-title" style="margin:0;">Wersja mobilna</h3></div>
               <div class="wise-more-row__icon"><div class="wise-more-row__icon-bg"><img src="/svg/icon-mobile.svg" width="26" height="26" alt="" /></div></div>
               <div class="wise-more-row__desc">
-                <p class="p_regular_3" style="margin:0;">Mobilna wersja platformy dostarczana jest w standardzie. Twoi klienci mogą składać zamówienia w każdych warunkach: z biura, magazynu czy w trasie.</p>
+                <p class="kv-text" style="margin:0;">Mobilna wersja platformy dostarczana jest w standardzie. Twoi klienci mogą składać zamówienia w każdych warunkach: z biura, magazynu czy w trasie.</p>
               </div>
             </div>
 
             <div class="wise-more-row lm-observer">
-              <div class="wise-more-row__name"><h3 class="p_semi_2" style="margin:0;">Ekspansja zagraniczna</h3></div>
+              <div class="wise-more-row__name"><h3 class="kv-title" style="margin:0;">Ekspansja zagraniczna</h3></div>
               <div class="wise-more-row__icon"><div class="wise-more-row__icon-bg"><img src="/svg/icon-ekspansja.svg" width="26" height="26" alt="" /></div></div>
               <div class="wise-more-row__desc">
-                <p class="p_regular_3" style="margin:0;">Wielojęzyczność, wielokrajowość, wielosklepowość i wielowalutowość wbudowane w system. Automatyczna weryfikacja VIES, obsługa stawek VAT (także VAT 0% przy dostawie do innego kraju UE), kursy walut z NBP lub ECB i lokalne metody dostawy. Handel z całym światem bez większego wysiłku: VMP sprzedaje tak do 13 krajów w 13 wersjach językowych.</p>
+                <p class="kv-text" style="margin:0;">Wielojęzyczność, wielokrajowość, wielosklepowość i wielowalutowość wbudowane w system. Automatyczna weryfikacja VIES, obsługa stawek VAT (także VAT 0% przy dostawie do innego kraju UE), kursy walut z NBP lub ECB i lokalne metody dostawy. Handel z całym światem bez większego wysiłku: VMP sprzedaje tak do 13 krajów w 13 wersjach językowych.</p>
               </div>
             </div>
 
             <div class="wise-more-row lm-observer">
-              <div class="wise-more-row__name"><h3 class="p_semi_2" style="margin:0;">SEO-friendly</h3></div>
+              <div class="wise-more-row__name"><h3 class="kv-title" style="margin:0;">SEO-friendly</h3></div>
               <div class="wise-more-row__icon"><div class="wise-more-row__icon-bg"><img src="/svg/icon-seo.svg" width="26" height="26" alt="" /></div></div>
               <div class="wise-more-row__desc">
-                <p class="p_regular_3" style="margin:0;">Platforma B2B to nie tylko obsługa obecnych klientów, ale też pozyskiwanie nowych. WiseB2B jest zoptymalizowane pod wyszukiwarki, a profil otwarty pokazuje katalog bez logowania, żeby Twoje produkty i firma były widoczne tam, gdzie szukają Cię potencjalni klienci.</p>
+                <p class="kv-text" style="margin:0;">Platforma B2B to nie tylko obsługa obecnych klientów, ale też pozyskiwanie nowych. WiseB2B jest zoptymalizowane pod wyszukiwarki, a profil otwarty pokazuje katalog bez logowania, żeby Twoje produkty i firma były widoczne tam, gdzie szukają Cię potencjalni klienci.</p>
               </div>
             </div>
 
@@ -214,8 +214,8 @@ const faqSchema = faq.map(f => ({ question: f.q, answer: f.a.replace(/<[^>]+>/g,
       <div class="row">
         <div class="col-lg-10 offset-lg-1 col-xl-8 offset-xl-2 p-xl-0">
           <div class="functions-box-white-bg__wrap">
-            <h2 class="h2_semi functions-box-white-bg__header lm-observer">Bezpieczeństwo Twojego biznesu</h2>
-            <p class="p_regular_2 lm-observer" style="text-align:center; margin-top:16px; max-width:560px; margin-left:auto; margin-right:auto; color:#5a5a72;">WiseB2B to nie tylko technologia, ale też partner, który dba o Twoją niezależność, zgodność z prawem i stabilność biznesu na każdym etapie.</p>
+            <h2 class="functions-box-white-bg__header lm-observer kv-h2">Bezpieczeństwo Twojego biznesu</h2>
+            <p class="lm-observer kv-text" style="text-align:center; margin-top:16px; max-width:560px; margin-left:auto; margin-right:auto;">WiseB2B to nie tylko technologia, ale też partner, który dba o Twoją niezależność, zgodność z prawem i stabilność biznesu na każdym etapie.</p>
           </div>
         </div>
       </div>
@@ -226,40 +226,40 @@ const faqSchema = faq.map(f => ({ question: f.q, answer: f.a.replace(/<[^>]+>/g,
             <div class="about-us-rules__item lm-observer">
               <div class="about-us-rules__icon"><div class="about-us-rules__icon-bg"><img src="/svg/icon-no-vendor-lock.svg" width="24" height="24" alt="" /></div></div>
               <div class="about-us-rules__content">
-                <h3 class="p_semi_1 about-us-rules__content-header">Bez vendor lock-in: Twoja niezależność</h3>
-                <p class="p_regular_3 about-us-rules__content-desc">WiseB2B dostarcza technologię, ale nie uzależnia Cię od siebie. Wdrożenia może dokonać nasz partner, Twój własny zespół IT lub dowolna agencja. Możesz zmienić firmę, która rozwija Twoją platformę, a platforma zostaje u Ciebie. Otwarty kod i sieć niezależnych Partnerów Wdrożeniowych to realna niezależność, nie marketingowa obietnica.</p>
+                <h3 class="about-us-rules__content-header kv-title">Bez vendor lock-in: Twoja niezależność</h3>
+                <p class="about-us-rules__content-desc kv-text">WiseB2B dostarcza technologię, ale nie uzależnia Cię od siebie. Wdrożenia może dokonać nasz partner, Twój własny zespół IT lub dowolna agencja. Możesz zmienić firmę, która rozwija Twoją platformę, a platforma zostaje u Ciebie. Otwarty kod i sieć niezależnych Partnerów Wdrożeniowych to realna niezależność, nie marketingowa obietnica.</p>
               </div>
             </div>
 
             <div class="about-us-rules__item lm-observer">
               <div class="about-us-rules__icon"><div class="about-us-rules__icon-bg"><img src="/svg/icon-legal-compliance.svg" width="24" height="24" alt="" /></div></div>
               <div class="about-us-rules__content">
-                <h3 class="p_semi_1 about-us-rules__content-header">Gwarancja zgodności prawnej</h3>
-                <p class="p_regular_3 about-us-rules__content-desc">Żadne rozwiązanie OpenSource nie zapewni Ci pewności formalnej i prawnej, bo ciężar dostosowania zawsze spada na Ciebie. WiseB2B bierze ten ciężar na siebie. GPSR, RODO, Omnibus, opłata SUP i wymogi fakturowania są po naszej stronie, a platforma jest aktualizowana zgodnie z obowiązującymi przepisami, abyś Ty mógł skupić się na biznesie.</p>
+                <h3 class="about-us-rules__content-header kv-title">Gwarancja zgodności prawnej</h3>
+                <p class="about-us-rules__content-desc kv-text">Żadne rozwiązanie OpenSource nie zapewni Ci pewności formalnej i prawnej, bo ciężar dostosowania zawsze spada na Ciebie. WiseB2B bierze ten ciężar na siebie. GPSR, RODO, Omnibus, opłata SUP i wymogi fakturowania są po naszej stronie, a platforma jest aktualizowana zgodnie z obowiązującymi przepisami, abyś Ty mógł skupić się na biznesie.</p>
               </div>
             </div>
 
             <div class="about-us-rules__item lm-observer">
               <div class="about-us-rules__icon"><div class="about-us-rules__icon-bg"><img src="/svg/icon-no-gmv.svg" width="24" height="24" alt="" /></div></div>
               <div class="about-us-rules__content">
-                <h3 class="p_semi_1 about-us-rules__content-header">Brak opłat GMV: dożywotnia obietnica</h3>
-                <p class="p_regular_3 about-us-rules__content-desc">Nie jesteśmy Twoimi wspólnikami. Dostarczamy narzędzia, ale Twój sukces należy do Ciebie. WiseB2B nigdy nie pobiera prowizji od wartości Twoich transakcji. Im więcej sprzedajesz, tym bardziej opłacalne staje się korzystanie z platformy.</p>
+                <h3 class="about-us-rules__content-header kv-title">Brak opłat GMV: dożywotnia obietnica</h3>
+                <p class="about-us-rules__content-desc kv-text">Nie jesteśmy Twoimi wspólnikami. Dostarczamy narzędzia, ale Twój sukces należy do Ciebie. WiseB2B nigdy nie pobiera prowizji od wartości Twoich transakcji. Im więcej sprzedajesz, tym bardziej opłacalne staje się korzystanie z platformy.</p>
               </div>
             </div>
 
             <div class="about-us-rules__item lm-observer">
               <div class="about-us-rules__icon"><div class="about-us-rules__icon-bg"><img src="/svg/icon-methodology.svg" width="24" height="24" alt="" /></div></div>
               <div class="about-us-rules__content">
-                <h3 class="p_semi_1 about-us-rules__content-header">Sprawdzona metodyka wdrożeniowa</h3>
-                <p class="p_regular_3 about-us-rules__content-desc">WiseB2B daje Ci gotową metodykę tworzenia specyfikacji wymagań, specyfikacji funkcjonalnej i podziału na zadania wdrożeniowe, przetestowaną w dziesiątkach projektów. Zaczynamy od sprintu analitycznego (1&ndash;4 tygodnie), po którym znasz zakres, czas i budżet. Stary system działa równolegle, dopóki Twoi klienci nie przejdą na nową platformę. Wiesz, czego się spodziewać na każdym etapie i co dostaniesz na końcu.</p>
+                <h3 class="about-us-rules__content-header kv-title">Sprawdzona metodyka wdrożeniowa</h3>
+                <p class="about-us-rules__content-desc kv-text">WiseB2B daje Ci gotową metodykę tworzenia specyfikacji wymagań, specyfikacji funkcjonalnej i podziału na zadania wdrożeniowe, przetestowaną w dziesiątkach projektów. Zaczynamy od sprintu analitycznego (1&ndash;4 tygodnie), po którym znasz zakres, czas i budżet. Stary system działa równolegle, dopóki Twoi klienci nie przejdą na nową platformę. Wiesz, czego się spodziewać na każdym etapie i co dostaniesz na końcu.</p>
               </div>
             </div>
 
             <div class="about-us-rules__item lm-observer">
               <div class="about-us-rules__icon"><div class="about-us-rules__icon-bg"><img src="/svg/icon-team-support.svg" width="24" height="24" alt="" /></div></div>
               <div class="about-us-rules__content">
-                <h3 class="p_semi_1 about-us-rules__content-header">Zespół ze wsparciem Sente: 25 lat, ponad 120 projektów</h3>
-                <p class="p_regular_3 about-us-rules__content-desc">Za WiseB2B stoi Sente, firma z ponad 25-letnim doświadczeniem w budowaniu rozwiązań IT dla firm handlowych i produkcyjnych. Wiedza zdobyta w ponad 120 projektach wdrożeniowych nie jest teorią. Jest wbudowana w produkt i metodykę, z której korzystasz od pierwszego dnia.</p>
+                <h3 class="about-us-rules__content-header kv-title">Zespół ze wsparciem Sente: 25 lat, ponad 120 projektów</h3>
+                <p class="about-us-rules__content-desc kv-text">Za WiseB2B stoi Sente, firma z ponad 25-letnim doświadczeniem w budowaniu rozwiązań IT dla firm handlowych i produkcyjnych. Wiedza zdobyta w ponad 120 projektach wdrożeniowych nie jest teorią. Jest wbudowana w produkt i metodykę, z której korzystasz od pierwszego dnia.</p>
               </div>
             </div>
 
@@ -274,7 +274,7 @@ const faqSchema = faq.map(f => ({ question: f.q, answer: f.a.replace(/<[^>]+>/g,
     <div class="container">
       <div class="row lm-observer">
         <div class="col-12">
-          <h2 class="h3_semi">WiseB2B jest dla Ciebie, jeśli:</h2>
+          <h2 class="kv-h3">WiseB2B jest dla Ciebie, jeśli:</h2>
         </div>
       </div>
       <div class="row">
@@ -291,22 +291,22 @@ const faqSchema = faq.map(f => ({ question: f.q, answer: f.a.replace(/<[^>]+>/g,
                   <li class="lm-observer">
                     <span class="icon-purple-badge pcb-num">01</span>
                     <div>
-                      <h3 class="p_semi_2 head">Chcesz obsługiwać większą liczbę klientów</h3>
-                      <p class="p_regular_3 description">Przenieś większość sprzedaży do kanału cyfrowego, zadbaj o doświadczenia zakupowe obecnych klientów i pozyskuj nowych.</p>
+                      <h3 class="head kv-title">Chcesz obsługiwać większą liczbę klientów</h3>
+                      <p class="description kv-text">Przenieś większość sprzedaży do kanału cyfrowego, zadbaj o doświadczenia zakupowe obecnych klientów i pozyskuj nowych.</p>
                     </div>
                   </li>
                   <li class="lm-observer">
                     <span class="icon-purple-badge pcb-num">02</span>
                     <div>
-                      <h3 class="p_semi_2 head">Szukasz doradztwa w rozwoju handlu B2B</h3>
-                      <p class="p_regular_3 description">Skorzystaj z doświadczenia konsultantów WiseB2B, którzy od ponad 25 lat wspierają firmy handlowe w zwiększaniu efektywności za pomocą dobranych do potrzeb rozwiązań IT.</p>
+                      <h3 class="head kv-title">Szukasz doradztwa w rozwoju handlu B2B</h3>
+                      <p class="description kv-text">Skorzystaj z doświadczenia konsultantów WiseB2B, którzy od ponad 25 lat wspierają firmy handlowe w zwiększaniu efektywności za pomocą dobranych do potrzeb rozwiązań IT.</p>
                     </div>
                   </li>
                   <li class="lm-observer">
                     <span class="icon-purple-badge pcb-num">03</span>
                     <div>
-                      <h3 class="p_semi_2 head">Zależy Ci na optymalizacji kosztów</h3>
-                      <p class="p_regular_3 description">Zwiększ liczbę obsługiwanych klientów i zamówień, redukując koszty obsługi sprzedaży, i bez ograniczeń skaluj przychody. VMP skrócił czas obsługi zamówienia o 60%, a zapytań do BOK ma o 45% mniej.</p>
+                      <h3 class="head kv-title">Zależy Ci na optymalizacji kosztów</h3>
+                      <p class="description kv-text">Zwiększ liczbę obsługiwanych klientów i zamówień, redukując koszty obsługi sprzedaży, i bez ograniczeń skaluj przychody. VMP skrócił czas obsługi zamówienia o 60%, a zapytań do BOK ma o 45% mniej.</p>
                     </div>
                   </li>
                 </ul>
@@ -323,7 +323,7 @@ const faqSchema = faq.map(f => ({ question: f.q, answer: f.a.replace(/<[^>]+>/g,
       <div class="row">
         <div class="col-lg-10 offset-lg-1 col-xl-8 offset-xl-2">
           <div class="price-list-cta-contact__wrapper lm-observer">
-            <h2 class="h2_semi">Przeczytaj więcej o możliwościach WiseB2B dla branż:</h2>
+            <h2 class="kv-h2">Przeczytaj więcej o możliwościach WiseB2B dla branż:</h2>
             <div class="price-list-cta-contact__buttons">
               <a class="wise-button wise-button--wise-harvest" href="/dla-dystrybutorow/">Dystrybucji i handlu</a>
               <a class="wise-button wise-button--transparent-light" href="/dla-producentow/">Produkcji</a>
@@ -340,40 +340,40 @@ const faqSchema = faq.map(f => ({ question: f.q, answer: f.a.replace(/<[^>]+>/g,
       <div class="row">
         <div class="col-lg-10 offset-lg-1 col-xl-8 offset-xl-2 p-xl-0">
           <div class="functions-box-white-bg__wrap">
-            <h2 class="h2_semi functions-box-white-bg__header lm-observer">Technologia, która daje przewagę</h2>
-            <p class="p_regular_2 lm-observer" style="text-align:center; margin-top:16px; max-width:560px; margin-left:auto; margin-right:auto; color:#5a5a72;">PHP/Symfony i React, architektura DDD i API-first. Tak zbudowaną platformę Twój zespół IT albo partner rozwija bez ingerencji w kod standardowy.</p>
+            <h2 class="functions-box-white-bg__header lm-observer kv-h2">Technologia, która daje przewagę</h2>
+            <p class="lm-observer kv-text" style="text-align:center; margin-top:16px; max-width:560px; margin-left:auto; margin-right:auto;">PHP/Symfony i React, architektura DDD i API-first. Tak zbudowaną platformę Twój zespół IT albo partner rozwija bez ingerencji w kod standardowy.</p>
           </div>
           <div class="about-us-rules__items rules-compact rules-2col" style="padding: 20px 0 20px;">
 
             <div class="about-us-rules__item lm-observer">
               <div class="about-us-rules__icon"><div class="about-us-rules__icon-bg"><img src="/svg/icon-client-api.svg" width="24" height="24" alt="" /></div></div>
               <div class="about-us-rules__content">
-                <h3 class="p_semi_1 about-us-rules__content-header">Architektura DDD, headless, API-first</h3>
-                <p class="p_regular_3 about-us-rules__content-desc">Modułowa budowa oparta o Domain-Driven Design z podejściem API-first i headless frontend. Rozwój z użyciem narzędzi kodujących AI jest szybki i bardzo efektywny.</p>
+                <h3 class="about-us-rules__content-header kv-title">Architektura DDD, headless, API-first</h3>
+                <p class="about-us-rules__content-desc kv-text">Modułowa budowa oparta o Domain-Driven Design z podejściem API-first i headless frontend. Rozwój z użyciem narzędzi kodujących AI jest szybki i bardzo efektywny.</p>
               </div>
             </div>
 
             <div class="about-us-rules__item lm-observer">
               <div class="about-us-rules__icon"><div class="about-us-rules__icon-bg"><img src="/svg/icon-integracje.svg" width="24" height="24" alt="" /></div></div>
               <div class="about-us-rules__content">
-                <h3 class="p_semi_1 about-us-rules__content-header">Technologia pluginów: rozwój bez ryzyka</h3>
-                <p class="p_regular_3 about-us-rules__content-desc">37 modułów z możliwością rozbudowy bez ingerencji w kod standardowy. AI wspiera tworzenie pluginów, a aktualizacje nie psują Twoich customizacji. W pakiecie Enterprise możesz dodać Customization Studio, w którym pluginy powstają z pomocą AI.</p>
+                <h3 class="about-us-rules__content-header kv-title">Technologia pluginów: rozwój bez ryzyka</h3>
+                <p class="about-us-rules__content-desc kv-text">37 modułów z możliwością rozbudowy bez ingerencji w kod standardowy. AI wspiera tworzenie pluginów, a aktualizacje nie psują Twoich customizacji. W pakiecie Enterprise możesz dodać Customization Studio, w którym pluginy powstają z pomocą AI.</p>
               </div>
             </div>
 
             <div class="about-us-rules__item lm-observer">
               <div class="about-us-rules__icon"><div class="about-us-rules__icon-bg"><img src="/svg/icon-methodology.svg" width="24" height="24" alt="" /></div></div>
               <div class="about-us-rules__content">
-                <h3 class="p_semi_1 about-us-rules__content-header">WiseB2B Cloud z platformą n8n</h3>
-                <p class="p_regular_3 about-us-rules__content-desc">Pełne środowisko handlu cyfrowego z wbudowaną platformą integracji i automatyzacji procesów n8n, bez budowania infrastruktury od zera. Tak połączysz platformę z CRM, pocztą czy systemem kurierskim.</p>
+                <h3 class="about-us-rules__content-header kv-title">WiseB2B Cloud z platformą n8n</h3>
+                <p class="about-us-rules__content-desc kv-text">Pełne środowisko handlu cyfrowego z wbudowaną platformą integracji i automatyzacji procesów n8n, bez budowania infrastruktury od zera. Tak połączysz platformę z CRM, pocztą czy systemem kurierskim.</p>
               </div>
             </div>
 
             <div class="about-us-rules__item lm-observer">
               <div class="about-us-rules__icon"><div class="about-us-rules__icon-bg"><img src="/svg/icon-no-vendor-lock.svg" width="24" height="24" alt="" /></div></div>
               <div class="about-us-rules__content">
-                <h3 class="p_semi_1 about-us-rules__content-header">SaaS lub OnPremise: Ty decydujesz</h3>
-                <p class="p_regular_3 about-us-rules__content-desc">Cloud zapewnia wygodę i szybki start, a opcja OnPremise (w pakietach Professional i Enterprise) albo chmura publiczna AWS, Azure lub Google daje pełną kontrolę nad danymi, gdy wymaga tego Twoja polityka bezpieczeństwa.</p>
+                <h3 class="about-us-rules__content-header kv-title">SaaS lub OnPremise: Ty decydujesz</h3>
+                <p class="about-us-rules__content-desc kv-text">Cloud zapewnia wygodę i szybki start, a opcja OnPremise (w pakietach Professional i Enterprise) albo chmura publiczna AWS, Azure lub Google daje pełną kontrolę nad danymi, gdy wymaga tego Twoja polityka bezpieczeństwa.</p>
               </div>
             </div>
 
@@ -389,7 +389,7 @@ const faqSchema = faq.map(f => ({ question: f.q, answer: f.a.replace(/<[^>]+>/g,
       <div class="row">
         <div class="col-lg-12">
           <div class="questions__wrapper">
-            <h3 class="h3_semi">Najczęściej zadawane pytania</h3>
+            <h3 class="kv-h3">Najczęściej zadawane pytania</h3>
           </div>
         </div>
       </div>
@@ -398,8 +398,8 @@ const faqSchema = faq.map(f => ({ question: f.q, answer: f.a.replace(/<[^>]+>/g,
           <div class="questions__items">
             {faq.map(f => (
               <div class="item">
-                <h2 class="h5_semi">{f.q}</h2>
-                <p class="p_regular_3" set:html={f.a} />
+                <h2 class="kv-title">{f.q}</h2>
+                <p class="kv-text" set:html={f.a} />
               </div>
             ))}
           </div>
@@ -413,10 +413,10 @@ const faqSchema = faq.map(f => ({ question: f.q, answer: f.a.replace(/<[^>]+>/g,
     <div class="container">
       <div class="row">
         <div class="col-xl-8 offset-xl-2 col-lg-10 offset-lg-1">
-          <div class="call-expert__wrapper">
-            <h2 class="h2_semi">Potrzebujesz szczegółowych informacji?</h2>
-            <p class="name h5_regular">Jakub Czyżkowski</p>
-            <p class="job p_regular_2">CEO</p>
+          <div class="call-expert__wrapper kv-on-dark">
+            <h2 class="kv-h2">Potrzebujesz szczegółowych informacji?</h2>
+            <p class="name kv-title">Jakub Czyżkowski</p>
+            <p class="job kv-text">CEO</p>
             <div class="call-expert__button">
               <a class="wise-button wise-button--wise-harvest" href="/zamow-demo/">Porozmawiaj</a>
             </div>

@@ -2734,21 +2734,8 @@ section {
 /* ===================================================================
    TYPOGRAPHY CLASSES (legacy WP names, new values)
    =================================================================== */
-.h2_semi { font-size: 3.2rem; font-weight: 700; line-height: 1.25; color: var(--color-dark-500); }
-.h3_semi { font-size: 2.4rem; font-weight: 700; line-height: 1.3; color: var(--color-dark-500); }
-.h4_semi { font-size: 1.8rem; font-weight: 600; line-height: 1.35; color: var(--color-dark-500); }
-.h4_regular { font-size: 1.8rem; font-weight: 400; line-height: 1.5; }
-.h5_semi { font-size: 1.5rem; font-weight: 600; line-height: 1.4; color: var(--color-dark-500); }
-.h5_regular { font-size: 1.5rem; font-weight: 400; line-height: 1.5; }
-.p_regular_1 { font-size: 1.6rem; font-weight: 400; line-height: 1.6; }
-.p_regular_2 { font-size: 1.4rem; font-weight: 400; line-height: 1.6; }
-.p_regular_3 { font-size: 1.3rem; font-weight: 400; line-height: 1.6; color: var(--color-dark-300); }
-.p_semi_1 { font-size: 1.6rem; font-weight: 600; line-height: 1.5; }
-.p_semi_2 { font-size: 1.4rem; font-weight: 600; line-height: 1.5; }
 
 @media (max-width: 767px) {
-  .h2_semi { font-size: 2.4rem; }
-  .h3_semi { font-size: 2rem; }
 }
 
 
@@ -4350,12 +4337,7 @@ section {
 .link-arrow:hover { text-decoration: underline; }
 
 /* --- Additional typography --- */
-.h1_semi { font-size: 4rem; font-weight: 700; line-height: 1.2; color: var(--color-dark-500); }
-.h1_regular { font-size: 4rem; font-weight: 400; line-height: 1.2; }
-.h2_regular { font-size: 3.2rem; font-weight: 400; line-height: 1.3; }
 @media (max-width: 767px) {
-  .h1_semi, .h1_regular { font-size: 2.8rem; }
-  .h2_regular { font-size: 2.4rem; }
 }
 
 /* ===================================================================
@@ -5774,8 +5756,6 @@ section {
 @media (max-width: 480px) {
   .main-claim-heading { font-size: 2.4rem; }
   .hp-hero h1,
-  .h1_semi,
-  .h1_regular { font-size: 2rem; }
   .footer__grid { grid-template-columns: 1fr; }
 }
 
@@ -6414,13 +6394,6 @@ p + .page-hero__actions { margin-top: 24px; }
 .wise-more-row__icon-bg { background: var(--kv-icon-bg) !important; border-radius: 10px !important; }
 .wise-more-row__icon-bg img { filter: brightness(0) saturate(100%) invert(19%) sepia(63%) saturate(3000%) hue-rotate(250deg) brightness(88%); }
 .partner-benefit-icon img { filter: brightness(0) saturate(100%) invert(19%) sepia(63%) saturate(3000%) hue-rotate(250deg) brightness(88%) !important; }
-/* Typografia kart KV */
-:where(.boxes:not(.boxes--flat) .box h5, .functions-cards__item .p_semi_2, .ph-goal .p_semi_2, .about-us-rules__content-header, .agent-ai-feature-card h3, .ph-area-card h3) {
-  font-size: 1.8rem !important; line-height: 2.6rem; font-weight: 700 !important;
-}
-:where(.boxes:not(.boxes--flat) .box h5, .functions-cards__item .p_semi_2, .ph-goal .p_semi_2, .about-us-rules__content-header, .agent-ai-feature-card h3) { color: var(--kv-dark) !important; }
-.functions-cards--dark .functions-cards__item .p_semi_2 { color: #fff !important; }
-:where(.boxes:not(.boxes--flat) .box p, .functions-cards__item p:last-child, .ph-goal p:last-child, .about-us-rules__content-desc, .agent-ai-feature-card p) { font-size: 1.6rem !important; line-height: 1.6; }
 .agent-ai-features { background: var(--kv-section) !important; }
 /* Strona główna: H1 na telefonie jak na podstronach */
 @media (max-width: 480px) { .hp-hero h1 { font-size: 2.8rem !important; } }
@@ -6996,36 +6969,67 @@ p + .page-hero__actions { margin-top: 24px; }
 }
 
 /* =====================================================================
-   Typografia kart wg Figmy (2026-11-25), na wszystkich stronach.
-   Figma: tytuł karty 18–20 px / 700 #20262E, opis 16–18 px / 400 #4D5158,
-   pytanie FAQ 18 px / 600, etap procesu 32 / 24 / 18 px.
+   SYSTEM TYPOGRAFII KV (2026-11-25)
+   Jedyne miejsce, które ustala rozmiar, grubość, interlinię i kolor tekstu
+   w treści stron. Wartości: tokeny --kv-* w src/styles/tokens.css (z Figmy).
+   Warstwa @layer kv z !important wygrywa z każdą regułą spoza warstwy,
+   niezależnie od specyficzności. Style komponentów (.box, .hp-why__card…)
+   ustalają tylko układ: odstępy, tła, siatki.
+
+   Klasy:
+     .kv-h1        tytuł strony (hero)                54 / 34 px
+     .kv-h2        nagłówek sekcji                    32 / 26 px
+     .kv-h3        podtytuł, nagłówek bloku           24 / 20 px
+     .kv-title-lg  tytuł dużej karty                  20 / 18 px
+     .kv-title     tytuł karty, pytanie FAQ           18 / 17 px
+     .kv-lead      tekst wiodący, opis dużej karty    18 / 16 px
+     .kv-text      tekst podstawowy, opis karty       16 px
+     .kv-small     podpis, etykieta, stanowisko       14 px
+     .kv-num       numer etapu (01, 02…)              32 / 26 px, fiolet
+     .kv-stat      liczba w statystyce (25 lat, 80%)  32 / 26 px, fiolet, pogrubiona
+     .kv-eyebrow   etykieta nad nagłówkiem            14 px, wersaliki, fiolet
+     .kv-accent    modyfikator: kolor akcentu (np. kv-small kv-accent dla kategorii)
+   Kontekst:
+     .kv-on-dark   na kontenerze z ciemnym tłem: tytuły białe, tekst jasny.
+     .kv-on-light  jasna karta wewnątrz ciemnej sekcji (przywraca kolory jasne).
+     .kv-on-accent kontener na fioletowym tle (cały tekst biały).
+   Nowe sekcje: tylko te klasy. Nie dodajemy font-size w stylach komponentów.
    ===================================================================== */
-/* Opisy w jasnych kartach: kolor #4D5158 zamiast jaśniejszego #6A6E73 */
-:where(.about-us-rules__item, .agent-ai-feature-card, .ph-goal, .ph-benefits__card, .functions-cards__item, .functions-table__cell, .hp-why__card, .box, .cloud-includes__item, .team-process__card, .case-study-functions__item, .functions-box-white-bg .item, .questions__items .item, .number__content) :is(p, li):not([class*="semi"]):not(.o-nas-exp__value) { color: #4D5158 !important; }
-.numbers-text .box--dark p, .functions-cards--dark p { color: inherit; }
-
-/* Tytuł 18 px / 700, opis 16 px */
-.functions-table__cell h3, .hp-why__card h3, .case-study-functions__name { font-size: 18px !important; font-weight: 700 !important; line-height: 1.35 !important; color: #20262E !important; }
-.functions-table__cell p, .hp-why__card p, .ph-benefits__card p, .case-study-functions__desc { font-size: 16px !important; line-height: 1.55 !important; }
-
-/* Tytuł 20 px / 700, opis 18 px (Funkcje: moduły; Plany: usługa; Zespół: etapy) */
-.functions-box-white-bg .item .item_header, .cloud-includes__item h5, .team-process__card h3 { font-size: 20px !important; font-weight: 700 !important; line-height: 1.3 !important; color: #20262E !important; }
-.functions-box-white-bg .item p, .cloud-includes__item p, .team-process__card p { font-size: 18px !important; line-height: 1.55 !important; }
-
-/* FAQ: pytanie 18 px / 600, odpowiedź 16 px */
-.questions__items .item h2 { font-size: 18px !important; font-weight: 600 !important; line-height: 1.4 !important; }
-.questions__items .item p { font-size: 16px !important; line-height: 1.6 !important; }
-
-/* Etapy procesu i migracji: 32 / 24 / 18 px */
-.number__content-header { font-size: 32px !important; font-weight: 700 !important; line-height: 1.2 !important; }
-.number__content-subheader { font-size: 24px !important; font-weight: 700 !important; line-height: 1.3 !important; color: #4D5158 !important; }
-.number__content :is(.p_regular_1, .p_regular_3) { font-size: 18px !important; line-height: 1.55 !important; }
-
-@media (max-width: 767px) {
-  .number__content-header { font-size: 24px !important; }
-  .number__content-subheader { font-size: 19px !important; }
-  .functions-box-white-bg .item .item_header, .cloud-includes__item h5, .team-process__card h3 { font-size: 18px !important; }
-  .functions-box-white-bg .item p, .cloud-includes__item p, .team-process__card p, .number__content :is(.p_regular_1, .p_regular_3) { font-size: 16px !important; }
+@layer kv {
+  .kv-on-dark {
+    --kv-c-strong: #FFFFFF;
+    --kv-c-body: #BABCBE;
+    --kv-c-muted: #989B9F;
+    --kv-c-accent: #AF9ED7;
+  }
+  .kv-on-accent {
+    --kv-c-strong: #FFFFFF;
+    --kv-c-body: #FFFFFF;
+    --kv-c-muted: #E9E9EA;
+    --kv-c-accent: #FFFFFF;
+  }
+  .kv-on-light {
+    --kv-c-strong: #20262E;
+    --kv-c-body: #4D5158;
+    --kv-c-muted: #6A6E73;
+    --kv-c-accent: #512DA8;
+  }
+  .kv-h1, .kv-h2, .kv-h3, .kv-title-lg, .kv-title, .kv-lead, .kv-text, .kv-small, .kv-num {
+    font-family: var(--font-family) !important;
+    letter-spacing: 0 !important;
+  }
+  .kv-h1, .kv-h2 { text-wrap: balance; }
+  .kv-h1 { font-size: var(--kv-fs-h1) !important; line-height: var(--kv-lh-h1) !important; font-weight: 700 !important; color: var(--kv-c-strong) !important; }
+  .kv-h2 { font-size: var(--kv-fs-h2) !important; line-height: var(--kv-lh-h2) !important; font-weight: 700 !important; color: var(--kv-c-strong) !important; }
+  .kv-h3 { font-size: var(--kv-fs-h3) !important; line-height: var(--kv-lh-h3) !important; font-weight: 700 !important; color: var(--kv-c-strong) !important; }
+  .kv-title-lg { font-size: var(--kv-fs-title-lg) !important; line-height: var(--kv-lh-title-lg) !important; font-weight: 700 !important; color: var(--kv-c-strong) !important; }
+  .kv-title { font-size: var(--kv-fs-title) !important; line-height: var(--kv-lh-title) !important; font-weight: 700 !important; color: var(--kv-c-strong) !important; }
+  .kv-lead { font-size: var(--kv-fs-lead) !important; line-height: var(--kv-lh-lead) !important; font-weight: 400 !important; color: var(--kv-c-body) !important; }
+  .kv-text { font-size: var(--kv-fs-text) !important; line-height: var(--kv-lh-text) !important; font-weight: 400 !important; color: var(--kv-c-body) !important; }
+  .kv-small { font-size: var(--kv-fs-small) !important; line-height: var(--kv-lh-small) !important; font-weight: 400 !important; color: var(--kv-c-muted) !important; }
+  .kv-stat { font-size: var(--kv-fs-h2) !important; line-height: 1.1 !important; font-weight: 700 !important; color: var(--kv-c-accent) !important; font-family: var(--font-family) !important; }
+  .kv-eyebrow { font-size: var(--kv-fs-small) !important; line-height: 1.4 !important; font-weight: 700 !important; color: var(--kv-c-accent) !important; letter-spacing: .08em !important; text-transform: uppercase; font-family: var(--font-family) !important; }
+  .kv-num { font-size: var(--kv-fs-h2) !important; line-height: 1 !important; font-weight: 400 !important; color: var(--kv-c-accent) !important; }
+  /* Modyfikator: kolor akcentu (kategoria, podpis w opinii) */
+  .kv-accent { color: var(--kv-c-accent) !important; }
 }
-/* Ciemne sekcje: opisy jasne (Figma #989B9F / #E9E9EA), nie #4D5158 */
-[class*="--dark"] :is(.about-us-rules__item, .agent-ai-feature-card, .functions-cards__item, .box, .hp-why__card, .item) :is(p, li):not([class*="semi"]) { color: #BABCBE !important; }

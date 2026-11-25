@@ -36,7 +36,7 @@ const faq = [
 <BaseLayout title="Platforma sprzedażowa B2B dla dystrybutorów" description="Platforma B2B dla firm dystrybucyjnych: warunki handlowe z ERP odwzorowane w 100%, samoobsługa klientów 24/7, Agent AI i Panel Handlowca." faq={faq.map(f => ({ question: f.q, answer: f.a.replace(/<[^>]+>/g, '') }))}>
 
   <!-- HERO -->
-  <section class="text-logos">
+  <section class="text-logos kv-on-dark">
     <div class="container">
       <div class="row">
         <div class="col-lg-8 offset-lg-2">
@@ -47,8 +47,8 @@ const faq = [
               </span>
               Dla dystrybutorów
             </span>
-            <h1 class="text-logos__title">Rozwiązanie dedykowane <span>zwiększaniu sprzedaży B2B</span> przez firmy dystrybucyjne</h1>
-            <p class="desc p_regular_1">Twoja sprzedaż jest skomplikowana, warunki handlowe złożone, a klienci oczekują indywidualnego podejścia i pełnej dostępności? Wiemy, jak przekuć te wyzwania w szanse i w pełni wykorzystać potencjał Twojego biznesu.</p>
+            <h1 class="text-logos__title kv-h1">Rozwiązanie dedykowane <span>zwiększaniu sprzedaży B2B</span> przez firmy dystrybucyjne</h1>
+            <p class="desc kv-lead">Twoja sprzedaż jest skomplikowana, warunki handlowe złożone, a klienci oczekują indywidualnego podejścia i pełnej dostępności? Wiemy, jak przekuć te wyzwania w szanse i w pełni wykorzystać potencjał Twojego biznesu.</p>
             <div class="page-hero__actions">
               <a class="wise-button wise-button--wise-harvest" href="/zamow-demo/">Zamów demo</a>
             </div>
@@ -65,69 +65,69 @@ const faq = [
           <div class="items">
 
             <div class="item">
-              <h2 class="h2_semi">Przenieś 95% sprzedaży do kanału cyfrowego</h2>
+              <h2 class="kv-h2">Przenieś 95% sprzedaży do kanału cyfrowego</h2>
               <div class="row">
                 <div class="col-md-6"><div class="box">
                   <span class="numbers-text__box-icon" set:html={icon(I.cart)} />
-                  <h3 class="p_regular_1">Sprzedawaj więcej do obecnych klientów</h3>
-                  <p class="p_regular_3">Dysponujesz określoną bazą stałych klientów, którzy generują określone przychody. Co gdyby średnia wartość ich zakupów wzrosła o 20%, bez potrzeby angażowania czasu Twoich handlowców? Dzięki WiseB2B taki scenariusz stanie się faktem, a pomogą w tym takie funkcje jak promocje celowane, rabaty indywidualne, sugerowanie produktów komplementarnych czy wartości zakupów potrzebnej do skorzystania z lepszej ceny.</p>
+                  <h3 class="kv-title">Sprzedawaj więcej do obecnych klientów</h3>
+                  <p class="kv-text">Dysponujesz określoną bazą stałych klientów, którzy generują określone przychody. Co gdyby średnia wartość ich zakupów wzrosła o 20%, bez potrzeby angażowania czasu Twoich handlowców? Dzięki WiseB2B taki scenariusz stanie się faktem, a pomogą w tym takie funkcje jak promocje celowane, rabaty indywidualne, sugerowanie produktów komplementarnych czy wartości zakupów potrzebnej do skorzystania z lepszej ceny.</p>
                 </div></div>
                 <div class="col-md-6"><div class="box box--even">
                   <span class="numbers-text__box-icon" set:html={icon(I.tag)} />
-                  <h3 class="p_regular_1">Odwzoruj specyfikę swojej oferty</h3>
-                  <p class="p_regular_3">Warunki handlowe, indywidualny model cennikowy, szeroka oferta produktowa, specyficzne rabaty i promocje: wszystko, co wyróżnia Twój biznes i za co Twoi klienci wybierają właśnie Twoją firmę, będzie w 100% odwzorowane na platformie B2B. Ceny, stany i warunki płyną prosto z Twojego ERP.</p>
+                  <h3 class="kv-title">Odwzoruj specyfikę swojej oferty</h3>
+                  <p class="kv-text">Warunki handlowe, indywidualny model cennikowy, szeroka oferta produktowa, specyficzne rabaty i promocje: wszystko, co wyróżnia Twój biznes i za co Twoi klienci wybierają właśnie Twoją firmę, będzie w 100% odwzorowane na platformie B2B. Ceny, stany i warunki płyną prosto z Twojego ERP.</p>
                 </div></div>
                 <div class="col-md-6"><div class="box">
                   <span class="numbers-text__box-icon" set:html={icon(I.globe)} />
-                  <h3 class="p_regular_1">Zdobywaj nowych klientów</h3>
-                  <p class="p_regular_3">WiseB2B to nie tylko narzędzie dla Twoich obecnych klientów, ale również źródło pozyskiwania nowych. Dzięki optymalizacji pod kątem pozycjonowania w wyszukiwarkach i dostępowi przez <a href="/funkcje/">profil otwarty</a> Twoja oferta dotrze do nieograniczonej liczby odbiorców, których będziesz miał okazję przekształcić w klientów.</p>
+                  <h3 class="kv-title">Zdobywaj nowych klientów</h3>
+                  <p class="kv-text">WiseB2B to nie tylko narzędzie dla Twoich obecnych klientów, ale również źródło pozyskiwania nowych. Dzięki optymalizacji pod kątem pozycjonowania w wyszukiwarkach i dostępowi przez <a href="/funkcje/">profil otwarty</a> Twoja oferta dotrze do nieograniczonej liczby odbiorców, których będziesz miał okazję przekształcić w klientów.</p>
                 </div></div>
                 <div class="col-md-6"><div class="box box--even">
                   <span class="numbers-text__box-icon" set:html={icon(I.user)} />
-                  <h3 class="p_regular_1">Uwolnij potencjał handlowców</h3>
-                  <p class="p_regular_3">Kiedy odciążysz swoich sprzedawców z czasochłonnego i mozolnego przyjmowania zamówień od dziesiątek klientów, będą oni mogli skupić się na zadaniach naprawdę ważnych: budowaniu relacji z kluczowymi kontrahentami, dbaniu o ich potrzeby i docieraniu do nowych rynków oraz klientów. Zamówienie z maila, PDF-a czy Excela <a href="/agent-ai/">Agent AI</a> zamieni w gotowy koszyk. U dystrybutora części do maszyn rolniczych, który przeszedł na WiseB2B z platformy SaaS, 42% zamówień przechodzi bez weryfikacji działu handlowego.</p>
+                  <h3 class="kv-title">Uwolnij potencjał handlowców</h3>
+                  <p class="kv-text">Kiedy odciążysz swoich sprzedawców z czasochłonnego i mozolnego przyjmowania zamówień od dziesiątek klientów, będą oni mogli skupić się na zadaniach naprawdę ważnych: budowaniu relacji z kluczowymi kontrahentami, dbaniu o ich potrzeby i docieraniu do nowych rynków oraz klientów. Zamówienie z maila, PDF-a czy Excela <a href="/agent-ai/">Agent AI</a> zamieni w gotowy koszyk. U dystrybutora części do maszyn rolniczych, który przeszedł na WiseB2B z platformy SaaS, 42% zamówień przechodzi bez weryfikacji działu handlowego.</p>
                 </div></div>
               </div>
             </div>
 
-            <div class="item">
-              <h2 class="h2_semi">Zbuduj lojalność i przywiązanie klientów</h2>
+            <div class="item kv-on-dark">
+              <h2 class="kv-h2">Zbuduj lojalność i przywiązanie klientów</h2>
               <div class="row">
                 <div class="col-md-6"><div class="box">
                   <span class="numbers-text__box-icon" set:html={icon(I.search)} />
-                  <h3 class="p_regular_1">Intuicyjność będzie Twoją przewagą</h3>
-                  <p class="p_regular_3">Twoi klienci znajdują błyskawicznie wszystkie potrzebne produkty, po dowolnie zadanych parametrach, a w wynikach wyszukiwania uwzględnione są Twoje priorytety sprzedażowe. Brzmi jak utopijna wizja? Dzięki WiseB2B zapewnisz swoim klientom właśnie takie doświadczenia, zadbasz o szybkie i komfortowe wyszukiwanie produktów, a jednocześnie wesprzesz swoje cele sprzedażowe.</p>
+                  <h3 class="kv-title">Intuicyjność będzie Twoją przewagą</h3>
+                  <p class="kv-text">Twoi klienci znajdują błyskawicznie wszystkie potrzebne produkty, po dowolnie zadanych parametrach, a w wynikach wyszukiwania uwzględnione są Twoje priorytety sprzedażowe. Brzmi jak utopijna wizja? Dzięki WiseB2B zapewnisz swoim klientom właśnie takie doświadczenia, zadbasz o szybkie i komfortowe wyszukiwanie produktów, a jednocześnie wesprzesz swoje cele sprzedażowe.</p>
                 </div></div>
                 <div class="col-md-6"><div class="box box--even">
                   <span class="numbers-text__box-icon" set:html={icon(I.clock)} />
-                  <h3 class="p_regular_1">Zapewnij dostępność i przejrzystość oferty</h3>
-                  <p class="p_regular_3">Twoi klienci biznesowi chcą robić zakupy wtedy, kiedy mają na to czas, korzystając z intuicyjnych narzędzi, które znają z rynku konsumenckiego. WiseB2B jest zaprojektowane z myślą o potrzebach, przyzwyczajeniach i nawykach osób decyzyjnych w firmach dystrybucyjnych. Stany, statusy zamówień i faktury klient sprawdza sam, także wieczorem i w weekend.</p>
+                  <h3 class="kv-title">Zapewnij dostępność i przejrzystość oferty</h3>
+                  <p class="kv-text">Twoi klienci biznesowi chcą robić zakupy wtedy, kiedy mają na to czas, korzystając z intuicyjnych narzędzi, które znają z rynku konsumenckiego. WiseB2B jest zaprojektowane z myślą o potrzebach, przyzwyczajeniach i nawykach osób decyzyjnych w firmach dystrybucyjnych. Stany, statusy zamówień i faktury klient sprawdza sam, także wieczorem i w weekend.</p>
                 </div></div>
                 <div class="col-md-6"><div class="box">
                   <span class="numbers-text__box-icon" set:html={icon(I.heart)} />
-                  <h3 class="p_regular_1">Zadbaj o indywidualne doświadczenia</h3>
-                  <p class="p_regular_3">Masz wielu klientów, ale zależy Ci, aby każdy z nich czuł się indywidualnie traktowany. WiseB2B dostarcza bogaty wachlarz narzędzi, takich jak indywidualne cenniki, zakresy i dostępności produktów, promocje czy limity kredytowe. Dzięki nim możesz udostępnić swoim klientom jedną platformę, która odpowie na indywidualne potrzeby i specyfikę każdego z nich z osobna. Handlowiec w <a href="/panel-handlowca/">Panelu Handlowca</a> widzi, co klient kupuje online i offline, i przygotowuje mu ofertę na tych samych warunkach.</p>
+                  <h3 class="kv-title">Zadbaj o indywidualne doświadczenia</h3>
+                  <p class="kv-text">Masz wielu klientów, ale zależy Ci, aby każdy z nich czuł się indywidualnie traktowany. WiseB2B dostarcza bogaty wachlarz narzędzi, takich jak indywidualne cenniki, zakresy i dostępności produktów, promocje czy limity kredytowe. Dzięki nim możesz udostępnić swoim klientom jedną platformę, która odpowie na indywidualne potrzeby i specyfikę każdego z nich z osobna. Handlowiec w <a href="/panel-handlowca/">Panelu Handlowca</a> widzi, co klient kupuje online i offline, i przygotowuje mu ofertę na tych samych warunkach.</p>
                 </div></div>
                 <div class="col-md-6"><div class="box box--even">
                   <span class="numbers-text__box-icon" set:html={icon(I.book)} />
-                  <h3 class="p_regular_1">Bądź źródłem wiedzy</h3>
-                  <p class="p_regular_3">Twoja firma funkcjonuje w specyficznej branży i nie chcesz udostępniać wszystkich informacji publicznie? Jednocześnie Twoi klienci pytają Cię o najnowsze produkty lub zmiany w przepisach? Wykorzystaj platformę B2B jako dedykowane i ekskluzywne centrum wiedzy, dostępne tylko dla zalogowanych klientów.</p>
+                  <h3 class="kv-title">Bądź źródłem wiedzy</h3>
+                  <p class="kv-text">Twoja firma funkcjonuje w specyficznej branży i nie chcesz udostępniać wszystkich informacji publicznie? Jednocześnie Twoi klienci pytają Cię o najnowsze produkty lub zmiany w przepisach? Wykorzystaj platformę B2B jako dedykowane i ekskluzywne centrum wiedzy, dostępne tylko dla zalogowanych klientów.</p>
                 </div></div>
               </div>
             </div>
 
             <div class="item">
-              <h2 class="h2_semi">Realizuj strategię wzrostu bez ograniczeń</h2>
+              <h2 class="kv-h2">Realizuj strategię wzrostu bez ograniczeń</h2>
               <div class="row">
                 <div class="col-md-6"><div class="box">
                   <span class="numbers-text__box-icon" set:html={icon(I.wallet)} />
-                  <h3 class="p_regular_1">Skorzystaj z wiedzy konsultantów z ponad 25-letnim doświadczeniem</h3>
-                  <p class="p_regular_3">Masz za sobą pierwsze, niekoniecznie udane próby przeniesienia sprzedaży B2B do kanału cyfrowego lub jest to Twoje pierwsze podejście. Może masz już eCommerce, ale przechodzi przez niego 10&ndash;15% sprzedaży, a reszta nadal płynie mailem, telefonem i w Excelu. Niezależnie od sytuacji stoi przed Tobą duże wyzwanie: najpierw przeniesienie całej oferty i wszystkich warunków handlowych do świata cyfrowego, a następnie dopracowywanie i rozwijanie wdrożonego rozwiązania zgodnie z tym, jak będzie zmieniał się Twój biznes i potrzeby Twoich klientów. Mamy dla Ciebie dobrą informację: nie będziesz w tym procesie sam. Wybierając WiseB2B, decydujesz się nie tylko na w pełni funkcjonalne narzędzie, dopasowane do rynku firm dystrybucyjnych. W pakiecie dostajesz również wiedzę i doświadczenie konsultantów, którzy wspierają firmy handlowe w procesach transformacji sprzedaży.</p>
+                  <h3 class="kv-title">Skorzystaj z wiedzy konsultantów z ponad 25-letnim doświadczeniem</h3>
+                  <p class="kv-text">Masz za sobą pierwsze, niekoniecznie udane próby przeniesienia sprzedaży B2B do kanału cyfrowego lub jest to Twoje pierwsze podejście. Może masz już eCommerce, ale przechodzi przez niego 10&ndash;15% sprzedaży, a reszta nadal płynie mailem, telefonem i w Excelu. Niezależnie od sytuacji stoi przed Tobą duże wyzwanie: najpierw przeniesienie całej oferty i wszystkich warunków handlowych do świata cyfrowego, a następnie dopracowywanie i rozwijanie wdrożonego rozwiązania zgodnie z tym, jak będzie zmieniał się Twój biznes i potrzeby Twoich klientów. Mamy dla Ciebie dobrą informację: nie będziesz w tym procesie sam. Wybierając WiseB2B, decydujesz się nie tylko na w pełni funkcjonalne narzędzie, dopasowane do rynku firm dystrybucyjnych. W pakiecie dostajesz również wiedzę i doświadczenie konsultantów, którzy wspierają firmy handlowe w procesach transformacji sprzedaży.</p>
                 </div></div>
                 <div class="col-md-6"><div class="box box--even">
                   <span class="numbers-text__box-icon" set:html={icon(I.chart)} />
-                  <h3 class="p_regular_1">Rozwijaj platformę zgodnie z potrzebami Twojego biznesu</h3>
-                  <p class="p_regular_3">WiseB2B nigdy nie ograniczy Twojego biznesu. To nie marketingowy frazes, ale nasza misja, z jaką budujemy to rozwiązanie. Wiemy, jakich funkcji potrzebują firmy dystrybucyjne, aby skutecznie przenosić handel do online, i zadbaliśmy o to, aby nasza platforma zapewniała dostęp do każdej z nich. Jednocześnie wiemy, że w pewnym momencie może to być dla Ciebie za mało, bo wejdziesz na nowy rynek, będziesz chciał przetestować nowy model biznesowy lub zupełnie przedefiniować swoją ofertę. Dlatego, tworząc WiseB2B, postawiliśmy na to, aby oprócz bogatej funkcjonalności było ono również otwarte na zmiany, konfigurację i rozbudowywanie. Dostęp do kodu źródłowego sprawia, że to Ty decydujesz, kto je rozwija. Mamy przekonanie, że takie podejście do budowania cyfrowych narzędzi sprzedaży dla B2B to jedyna słuszna droga i gwarancja bezpieczeństwa na przyszłość.</p>
+                  <h3 class="kv-title">Rozwijaj platformę zgodnie z potrzebami Twojego biznesu</h3>
+                  <p class="kv-text">WiseB2B nigdy nie ograniczy Twojego biznesu. To nie marketingowy frazes, ale nasza misja, z jaką budujemy to rozwiązanie. Wiemy, jakich funkcji potrzebują firmy dystrybucyjne, aby skutecznie przenosić handel do online, i zadbaliśmy o to, aby nasza platforma zapewniała dostęp do każdej z nich. Jednocześnie wiemy, że w pewnym momencie może to być dla Ciebie za mało, bo wejdziesz na nowy rynek, będziesz chciał przetestować nowy model biznesowy lub zupełnie przedefiniować swoją ofertę. Dlatego, tworząc WiseB2B, postawiliśmy na to, aby oprócz bogatej funkcjonalności było ono również otwarte na zmiany, konfigurację i rozbudowywanie. Dostęp do kodu źródłowego sprawia, że to Ty decydujesz, kto je rozwija. Mamy przekonanie, że takie podejście do budowania cyfrowych narzędzi sprzedaży dla B2B to jedyna słuszna droga i gwarancja bezpieczeństwa na przyszłość.</p>
                 </div></div>
               </div>
             </div>
@@ -147,11 +147,11 @@ const faq = [
     <div class="container">
       <div class="row">
         <div class="col-xl-8 offset-xl-2 col-lg-10 offset-lg-1">
-          <div class="call-expert__wrapper">
-            <h2 class="h2_semi">Potrzebujesz szczegółowych informacji?</h2>
-            <p class="dd-call-expert__lead p_regular_1">Wejdź na wyższy poziom eCommerce. Powiedz nam, ile Twojej sprzedaży przechodzi dziś przez kanał online, a pokażemy, jak przenieść tam resztę.</p>
-            <p class="name h5_regular">Jakub Czyżkowski</p>
-            <p class="job p_regular_2">CEO</p>
+          <div class="call-expert__wrapper kv-on-dark">
+            <h2 class="kv-h2">Potrzebujesz szczegółowych informacji?</h2>
+            <p class="dd-call-expert__lead kv-lead">Wejdź na wyższy poziom eCommerce. Powiedz nam, ile Twojej sprzedaży przechodzi dziś przez kanał online, a pokażemy, jak przenieść tam resztę.</p>
+            <p class="name kv-title">Jakub Czyżkowski</p>
+            <p class="job kv-text">CEO</p>
             <div class="call-expert__button">
               <a class="wise-button wise-button--wise-harvest" href="/zamow-demo/">Zamów rozmowę z ekspertem</a>
             </div>
@@ -162,10 +162,10 @@ const faq = [
   </section>
 
   <!-- CASE STUDY -->
-  <section class="hp-case hp-case--dark">
+  <section class="hp-case hp-case--dark kv-on-dark">
     <div class="container">
-      <h2 class="hp-section-title lm-observer">Case study</h2>
-      <p class="hp-section-subtitle lm-observer">Klienci Triplex zamawiali przez telefon i w Excelu. Zobacz, ile zamówień przechodzi dziś przez platformę B2B.</p>
+      <h2 class="hp-section-title lm-observer kv-h2">Case study</h2>
+      <p class="hp-section-subtitle lm-observer kv-text">Klienci Triplex zamawiali przez telefon i w Excelu. Zobacz, ile zamówień przechodzi dziś przez platformę B2B.</p>
       <div class="hp-case__inner lm-observer">
         <div class="hp-case__visual">
           <img src="/case-study/triplex/browser-blender-4-811x608.png" alt="Sklep B2B Triplex na platformie WiseB2B" width="811" height="608" loading="lazy" />
@@ -174,7 +174,7 @@ const faq = [
           <div class="hp-case__logo">
             <img loading="lazy" width="68" height="68" src="/images/triplex-p-68x68.png" alt="Triplex" />
           </div>
-          <h3>Czołowy dystrybutor pirotechniki postawił na WiseB2B</h3>
+          <h3 class="kv-title-lg">Czołowy dystrybutor pirotechniki postawił na WiseB2B</h3>
           <div class="hp-case__stats">
             <div class="hp-case__stat">
               <span class="hp-case__stat-value">46,36%</span>
@@ -196,16 +196,16 @@ const faq = [
   </section>
 
   <!-- OPINIA -->
-  <section class="hp-testimonials">
+  <section class="hp-testimonials kv-on-dark">
     <div class="container">
       <div class="hp-testimonials__card lm-observer">
         <img src="/svg/double-quotes-r.svg" alt="" class="hp-testimonials__quote hp-testimonials__quote--right" width="80" height="80" />
-        <blockquote>
+        <blockquote class="kv-lead">
           Jesteśmy w branży 30 lat, nasi klienci również &ndash; baliśmy się na początku, że klienci przyzwyczajeni do exceli i telefonu nie będą chcieli składać zamówień przez platformę B2B. Ale reakcje są inne &ndash; klienci są zachwyceni. Takie zmiany też dobrze wpływają na wizerunek branży i przyciągają młode pokolenie. Bardzo pozytywnie oceniam zmiany, jakie wniosła platforma B2B wdrożona przez Sente.
         </blockquote>
         <div class="hp-testimonials__author">
-          <p class="hp-testimonials__author-name">Aneta Siwarga</p>
-          <p class="hp-testimonials__author-site">Prokurent w Triplex</p>
+          <p class="hp-testimonials__author-name kv-title">Aneta Siwarga</p>
+          <p class="hp-testimonials__author-site kv-small kv-accent">Prokurent w Triplex</p>
         </div>
         <img src="/svg/double-quotes-l.svg" alt="" class="hp-testimonials__quote hp-testimonials__quote--left" width="80" height="80" />
       </div>
@@ -215,8 +215,8 @@ const faq = [
   <!-- BAZA WIEDZY -->
   <section class="hp-blog">
     <div class="container">
-      <h2 class="hp-section-title lm-observer">Mogą Cię zainteresować</h2>
-      <p class="hp-section-subtitle lm-observer">Artykuły dla dystrybutorów, którzy planują sprzedaż B2B online</p>
+      <h2 class="hp-section-title lm-observer kv-h2">Mogą Cię zainteresować</h2>
+      <p class="hp-section-subtitle lm-observer kv-text">Artykuły dla dystrybutorów, którzy planują sprzedaż B2B online</p>
       <div class="hp-blog__grid">
         {articles.map((article) => (
           <a href={`/baza-wiedzy/${article.id}/`} class="hp-blog__card lm-observer">
@@ -225,7 +225,7 @@ const faq = [
               <span class="hp-blog__card-cat">{article.data.category}</span>
             </div>
             <div class="hp-blog__card-body">
-              <h3>{article.data.title}</h3>
+              <h3 class="kv-title">{article.data.title}</h3>
             </div>
           </a>
         ))}
@@ -242,7 +242,7 @@ const faq = [
       <div class="row">
         <div class="col-lg-12">
           <div class="questions__wrapper">
-            <h3 class="h3_semi">Najczęściej zadawane pytania</h3>
+            <h3 class="kv-h3">Najczęściej zadawane pytania</h3>
           </div>
         </div>
       </div>
@@ -251,8 +251,8 @@ const faq = [
           <div class="questions__items">
             {faq.map(f => (
               <div class="item">
-                <h2 class="h5_semi">{f.q}</h2>
-                <p class="p_regular_3" set:html={f.a} />
+                <h2 class="kv-title">{f.q}</h2>
+                <p class="kv-text" set:html={f.a} />
               </div>
             ))}
           </div>

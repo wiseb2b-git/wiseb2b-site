@@ -89,7 +89,15 @@ Stare pliki WP CSS zostały usunięte. Zostały tylko:
 1. `public/css/bootstrap-grid.min.css` — grid, `.container` (max-width via `--container-max-width: 1140px`)
 2. `public/css/swiper-bundle.min.css` — karuzele Swiper.js
 3. `src/styles/tokens.css` — design tokens (kolory, fonty, spacing, radius, shadows, z-index)
-4. `src/styles/global.css` (4533 linii) — wszystkie style strony: reset, typografia, header, footer, sekcje stron, komponenty, responsive
+4. `src/styles/global.css` — wszystkie style strony: reset, header, footer, sekcje stron, komponenty, responsive
+
+### System typografii KV (od 2026-11-25, ZASADA)
+- **Rozmiar, grubość, interlinię i kolor tekstu treści ustalają wyłącznie klasy `.kv-*`.** Wartości to tokeny `--kv-*` w `src/styles/tokens.css` (z Figmy, z wersją mobilną). Klasy są w bloku „SYSTEM TYPOGRAFII KV” na końcu `global.css`, w `@layer kv` z `!important`, więc wygrywają z każdą regułą komponentu.
+- Klasy: `kv-h1` (hero), `kv-h2` (sekcja), `kv-h3`, `kv-title-lg` (duża karta), `kv-title` (karta, FAQ), `kv-lead`, `kv-text`, `kv-small`, `kv-eyebrow`, `kv-stat`, `kv-num`.
+- Kontekst tła: `kv-on-dark` na kontenerze z ciemnym tłem lub zdjęciem (biały tytuł, jasny tekst), `kv-on-accent` na fioletowym tle, `kv-on-light` na jasnej karcie wewnątrz ciemnej sekcji. Kolor nigdy nie jest ustawiany per komponent.
+- Style komponentów (`.box`, `.hp-why__card`…) ustalają tylko układ: odstępy, tła, siatki. **Nie dodajemy `font-size` w stylach komponentów ani stylów per strona.** Zmiana typografii = zmiana tokenu.
+- Stare klasy z WordPressa (`h2_semi`, `p_regular_3`, `p_semi_2`…) są usunięte; smoke test pilnuje, żeby nie wróciły. Wyjątek: `p_semi_3` (cena w Planach).
+- Akcent w nagłówku: `<span>` wewnątrz `kv-h*` (kolor ze stylu sekcji).
 
 `global.css` importowany przez Astro pojawia się w `<head>` PO linkach do CSS. Nie definiować `.container` (robi to bootstrap-grid).
 
@@ -194,6 +202,7 @@ npm run preview  # podgląd buildu (TUTAJ testować, wszystkie strony działają
 ## Zasady pracy
 - **Nie pushować automatycznie na git** — zawsze najpierw testować lokalnie
 - Nowe style dodawać do `src/styles/global.css`, nie tworzyć nowych plików CSS
+- Typografia tylko przez klasy `.kv-*` i tokeny `--kv-*`. Błąd wizualny poprawiamy we wzorcu (token, klasa), nie na pojedynczej stronie, i sprawdzamy go na wszystkich stronach
 - Przy pracy nad stroną: porównywać z Figma (konwertować node do JSON/PNG) i z WP (curl HTML)
 - Zawsze najpierw szukać zasobów lokalnie (wp/wp-content/uploads, WiseB2B.eu.fig), potem dopiero sięgać do MCP/sieci
 - Używać techpage zamiast playwright jeśli wystarcza (szybsze)

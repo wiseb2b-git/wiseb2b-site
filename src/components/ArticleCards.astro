@@ -26,8 +26,8 @@ if (slugs && slugs.length > 0) {
     <div class="row">
       <div class="col-xl-10 offset-xl-1 col-lg-12">
         <div class="knowledge-bases__wrapper">
-          <h2 class="h2_semi">Baza wiedzy</h2>
-          {subtitle && <p class="knowledge-bases__subtitle p_regular_2">{subtitle}</p>}
+          <h2 class="kv-h2">Baza wiedzy</h2>
+          {subtitle && <p class="knowledge-bases__subtitle kv-text">{subtitle}</p>}
           <div class="box-posts">
             {articles.map((article) => (
               <a class="item lm-observer" href={`/baza-wiedzy/${article!.id}/`}>
@@ -35,9 +35,9 @@ if (slugs && slugs.length > 0) {
                   <img loading="lazy" width="632" height="421" src={article!.data.image} alt={article!.data.title} />
                 </div>
                 <div class="content">
-                  <p class="item_category p_regular_3">{article!.data.category}</p>
-                  <h3 class="title p_semi_1">{article!.data.title}</h3>
-                  <p class="excerpt p_regular_3">{article!.data.description}</p>
+                  <p class="item_category kv-small kv-accent">{article!.data.category}</p>
+                  <h3 class="title kv-title">{article!.data.title}</h3>
+                  <p class="excerpt kv-text">{article!.data.description}</p>
                 </div>
               </a>
             ))}

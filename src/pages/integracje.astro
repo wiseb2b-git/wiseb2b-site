@@ -39,7 +39,7 @@ const faq = [
 <BaseLayout title="Integracje WiseB2B z ERP, API, n8n, płatnościami" description="Gotowe integracje z Teneum, Comarch XL i Optima, enova365 i Subiekt. Do tego Apilo, n8n, Admin API i Client API, płatności, kurierzy i headless." faq={faq.map(f => ({ question: f.q, answer: f.a }))}>
 
 <!-- S1: Hero -->
-<div class="integrations-top">
+<div class="integrations-top kv-on-dark">
   <div class="container">
     <div class="row">
       <div class="col-12">
@@ -47,8 +47,8 @@ const faq = [
           <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M3.9 12c0-1.71 1.39-3.1 3.1-3.1h4V7H7c-2.76 0-5 2.24-5 5s2.24 5 5 5h4v-1.9H7c-1.71 0-3.1-1.39-3.1-3.1zM8 13h8v-2H8v2zm9-6h-4v1.9h4c1.71 0 3.1 1.39 3.1 3.1s-1.39 3.1-3.1 3.1h-4V17h4c2.76 0 5-2.24 5-5s-2.24-5-5-5z"/></svg>
           Integracje
         </span>
-        <h1 class="h2_semi">Integracja WiseB2B z&nbsp;<span>Twoim ERP</span> i&nbsp;resztą systemów firmy</h1>
-        <p class="p_regular_1">Gotowe integracje z&nbsp;Teneum, Comarch XL, Comarch Optima, enova365 i&nbsp;Subiekt. Pozostałe systemy łączymy przez Apilo, n8n i&nbsp;API.</p>
+        <h1 class="kv-h1">Integracja WiseB2B z&nbsp;<span>Twoim ERP</span> i&nbsp;resztą systemów firmy</h1>
+        <p class="kv-lead">Gotowe integracje z&nbsp;Teneum, Comarch XL, Comarch Optima, enova365 i&nbsp;Subiekt. Pozostałe systemy łączymy przez Apilo, n8n i&nbsp;API.</p>
         <div class="page-hero__actions lm-observer">
           <a class="wise-button wise-button--wise-harvest" href="/zamow-demo/">Zamów demo</a>
         </div>
@@ -62,28 +62,28 @@ const faq = [
   <div class="container">
     <div class="row">
       <div class="col-xl-10 offset-xl-1">
-        <h2 class="h2_semi agent-ai-features__heading lm-observer">Integracja platformy B2B z&nbsp;systemem ERP</h2>
-        <p class="p_regular_1 agent-ai-features__subheading lm-observer">Integracje pozwalają WiseB2B pracować tam, gdzie Ty.</p>
+        <h2 class="agent-ai-features__heading lm-observer kv-h2">Integracja platformy B2B z&nbsp;systemem ERP</h2>
+        <p class="agent-ai-features__subheading lm-observer kv-lead">Integracje pozwalają WiseB2B pracować tam, gdzie Ty.</p>
         <div class="agent-ai-features__grid">
           <div class="agent-ai-feature-card lm-observer">
             <div class="agent-ai-feature-card__icon" set:html={icon(I.building)} />
-            <h3 class="p_semi_2">Reguły handlowe będą spójne</h3>
-            <p class="p_regular_3">Informacje o&nbsp;cenach, promocjach czy rabatach: wszystkie elementy, które zdefiniujesz w&nbsp;swoim ERP, będą w&nbsp;100% odwzorowane w&nbsp;WiseB2B. Dotyczy to też cenników indywidualnych i&nbsp;kredytu kupieckiego.</p>
+            <h3 class="kv-title">Reguły handlowe będą spójne</h3>
+            <p class="kv-text">Informacje o&nbsp;cenach, promocjach czy rabatach: wszystkie elementy, które zdefiniujesz w&nbsp;swoim ERP, będą w&nbsp;100% odwzorowane w&nbsp;WiseB2B. Dotyczy to też cenników indywidualnych i&nbsp;kredytu kupieckiego.</p>
           </div>
           <div class="agent-ai-feature-card lm-observer">
             <div class="agent-ai-feature-card__icon" set:html={icon(I.refresh)} />
-            <h3 class="p_semi_2">Dane zachowają integralność</h3>
-            <p class="p_regular_3">Dzięki integracji z&nbsp;ERP informacje o&nbsp;kontrahentach, zamówieniach czy produktach będą obustronnie wymieniane z&nbsp;platformą eCommerce B2B. W&nbsp;VMP synchronizacja ERP z&nbsp;platformą jest zautomatyzowana w&nbsp;100%.</p>
+            <h3 class="kv-title">Dane zachowają integralność</h3>
+            <p class="kv-text">Dzięki integracji z&nbsp;ERP informacje o&nbsp;kontrahentach, zamówieniach czy produktach będą obustronnie wymieniane z&nbsp;platformą eCommerce B2B. W&nbsp;VMP synchronizacja ERP z&nbsp;platformą jest zautomatyzowana w&nbsp;100%.</p>
           </div>
           <div class="agent-ai-feature-card lm-observer">
             <div class="agent-ai-feature-card__icon" set:html={icon(I.bookmark)} />
-            <h3 class="p_semi_2">Bez dodatkowych paneli</h3>
-            <p class="p_regular_3">Nie będziesz musiał zarządzać informacjami o&nbsp;produktach, klientach czy swojej ofercie z&nbsp;poziomu WiseB2B. Jeśli w&nbsp;swoim ERP będziesz w&nbsp;stanie zapisać niezbędne informacje, to dzięki integracji będą one spójne również w&nbsp;kanale eCommerce B2B.</p>
+            <h3 class="kv-title">Bez dodatkowych paneli</h3>
+            <p class="kv-text">Nie będziesz musiał zarządzać informacjami o&nbsp;produktach, klientach czy swojej ofercie z&nbsp;poziomu WiseB2B. Jeśli w&nbsp;swoim ERP będziesz w&nbsp;stanie zapisać niezbędne informacje, to dzięki integracji będą one spójne również w&nbsp;kanale eCommerce B2B.</p>
           </div>
         </div>
 
         <div class="integ-erp__block lm-observer">
-          <p class="integ-erp__label">Integrujemy się z:</p>
+          <p class="integ-erp__label kv-title">Integrujemy się z:</p>
           <ul class="integ-erp__list">
             {erp.map(e => (
               <li class="integ-erp__item">
@@ -91,7 +91,7 @@ const faq = [
               </li>
             ))}
           </ul>
-          <p class="p_regular_2 integ-erp__other"><strong>Masz inny ERP?</strong> SAP, Oracle, IFS, Dynamics albo inny system bez gotowej integracji łączymy przez platformę Apilo, n8n lub Admin API. To dłuższy projekt integracyjny. Jego zakres, czas i&nbsp;koszt ustalamy w&nbsp;sprincie analitycznym (1&ndash;4 tygodnie), zanim ruszy wdrożenie.</p>
+          <p class="integ-erp__other kv-text"><strong>Masz inny ERP?</strong> SAP, Oracle, IFS, Dynamics albo inny system bez gotowej integracji łączymy przez platformę Apilo, n8n lub Admin API. To dłuższy projekt integracyjny. Jego zakres, czas i&nbsp;koszt ustalamy w&nbsp;sprincie analitycznym (1&ndash;4 tygodnie), zanim ruszy wdrożenie.</p>
         </div>
       </div>
     </div>
@@ -99,17 +99,17 @@ const faq = [
 </div>
 
 <!-- S3: Integracja za pomocą API -->
-<div class="integrations-api">
+<div class="integrations-api kv-on-dark">
   <div class="container">
     <div class="row">
       <div class="col-12 col-lg-10 offset-lg-1">
         <div class="integrations-api__wrapper lm-observer">
-          <h2 class="h2_semi integrations-api__header">Integracja za pomocą API</h2>
-          <p class="p_regular_1 integrations-api__desc">Integracja WiseB2B za pomocą API jest możliwa w&nbsp;dwóch trybach:</p>
+          <h2 class="integrations-api__header kv-h2">Integracja za pomocą API</h2>
+          <p class="integrations-api__desc kv-lead">Integracja WiseB2B za pomocą API jest możliwa w&nbsp;dwóch trybach:</p>
           <div class="integrations-api__boxes">
-            <div class="item item--left">
-              <p class="p_semi_2 item__head">Client API</p>
-              <p class="p_regular_3 item__desc">Przeznaczone dla klientów biznesowych dystrybutorów i&nbsp;producentów do składania i&nbsp;śledzenia realizacji swoich zamówień, ewentualnie pobierania cenników i&nbsp;informacji na temat dostępności towarów. Z&nbsp;Client API korzysta VMP.</p>
+            <div class="item item--left kv-on-accent">
+              <p class="item__head kv-title">Client API</p>
+              <p class="item__desc kv-text">Przeznaczone dla klientów biznesowych dystrybutorów i&nbsp;producentów do składania i&nbsp;śledzenia realizacji swoich zamówień, ewentualnie pobierania cenników i&nbsp;informacji na temat dostępności towarów. Z&nbsp;Client API korzysta VMP.</p>
             </div>
             <div class="svg">
               <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -119,9 +119,9 @@ const faq = [
                 <path d="M15 6l-6 6 6 6" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
               </svg>
             </div>
-            <div class="item item--right">
-              <p class="p_semi_2 item__head">Admin API</p>
-              <p class="p_regular_3 item__desc">Przeznaczone dla dystrybutorów i&nbsp;producentów korzystających z&nbsp;WiseB2B do samodzielnej integracji systemów własnych. Przez Admin API Twój dział IT może też automatyzować administrację platformą. Dokumentacja API jest dostępna w&nbsp;ReDoc.</p>
+            <div class="item item--right kv-on-light">
+              <p class="item__head kv-title">Admin API</p>
+              <p class="item__desc kv-text">Przeznaczone dla dystrybutorów i&nbsp;producentów korzystających z&nbsp;WiseB2B do samodzielnej integracji systemów własnych. Przez Admin API Twój dział IT może też automatyzować administrację platformą. Dokumentacja API jest dostępna w&nbsp;ReDoc.</p>
             </div>
           </div>
         </div>
@@ -136,23 +136,23 @@ const faq = [
     <div class="agent-ai-features__grid agent-ai-features__grid--2">
       <div class="agent-ai-feature-card lm-observer">
         <div class="agent-ai-feature-card__icon" set:html={icon(I.wallet)} />
-        <h3 class="p_semi_2">Integracje z&nbsp;systemami płatności</h3>
-        <p class="p_regular_3">W&nbsp;sprzedaży B2B coraz częściej mamy do czynienia z&nbsp;płatnościami natychmiastowymi, dlatego możliwość dokonywania opłaty za zamówienie z&nbsp;poziomu platformy B2B jest tak ważna. WiseB2B jest zintegrowane z&nbsp;najpopularniejszymi systemami płatności, m.in. AutoPay i&nbsp;PayU, ułatwiając finalizowanie transakcji klientom biznesowym. Status zamówienia aktualizuje się po potwierdzeniu płatności.</p>
+        <h3 class="kv-title">Integracje z&nbsp;systemami płatności</h3>
+        <p class="kv-text">W&nbsp;sprzedaży B2B coraz częściej mamy do czynienia z&nbsp;płatnościami natychmiastowymi, dlatego możliwość dokonywania opłaty za zamówienie z&nbsp;poziomu platformy B2B jest tak ważna. WiseB2B jest zintegrowane z&nbsp;najpopularniejszymi systemami płatności, m.in. AutoPay i&nbsp;PayU, ułatwiając finalizowanie transakcji klientom biznesowym. Status zamówienia aktualizuje się po potwierdzeniu płatności.</p>
       </div>
       <div class="agent-ai-feature-card lm-observer">
         <div class="agent-ai-feature-card__icon" set:html={icon(I.truck)} />
-        <h3 class="p_semi_2">Integracje z&nbsp;kurierami</h3>
-        <p class="p_regular_3">Platforma jest zintegrowana z&nbsp;GLS, DPD, DPD Pickup, InPost, InPost Kurier i&nbsp;Pocztex. Sama wylicza koszt dostawy, a&nbsp;klient wybiera kuriera i&nbsp;śledzi status przesyłki na platformie. Dla każdego sposobu dostawy ustawiasz osobne zasady: dla kogo jest widoczny, od jakiej kwoty dostawa jest darmowa i&nbsp;jak liczy się jej cena.</p>
+        <h3 class="kv-title">Integracje z&nbsp;kurierami</h3>
+        <p class="kv-text">Platforma jest zintegrowana z&nbsp;GLS, DPD, DPD Pickup, InPost, InPost Kurier i&nbsp;Pocztex. Sama wylicza koszt dostawy, a&nbsp;klient wybiera kuriera i&nbsp;śledzi status przesyłki na platformie. Dla każdego sposobu dostawy ustawiasz osobne zasady: dla kogo jest widoczny, od jakiej kwoty dostawa jest darmowa i&nbsp;jak liczy się jej cena.</p>
       </div>
       <div class="agent-ai-feature-card lm-observer">
         <div class="agent-ai-feature-card__icon" set:html={icon(I.search)} />
-        <h3 class="p_semi_2">Wywiadownie gospodarcze BIG i&nbsp;KRD</h3>
-        <p class="p_regular_3">Kredyt kupiecki możesz oprzeć na danych z&nbsp;wywiadowni gospodarczych, np. BIG i&nbsp;KRD. Platforma weryfikuje kontrahenta, sugeruje limit kredytowy i&nbsp;aktualizuje go, gdy przyjdą nowe dane.</p>
+        <h3 class="kv-title">Wywiadownie gospodarcze BIG i&nbsp;KRD</h3>
+        <p class="kv-text">Kredyt kupiecki możesz oprzeć na danych z&nbsp;wywiadowni gospodarczych, np. BIG i&nbsp;KRD. Platforma weryfikuje kontrahenta, sugeruje limit kredytowy i&nbsp;aktualizuje go, gdy przyjdą nowe dane.</p>
       </div>
       <div class="agent-ai-feature-card lm-observer">
         <div class="agent-ai-feature-card__icon" set:html={icon(I.chart)} />
-        <h3 class="p_semi_2">Integracja z&nbsp;alternatywnym systemem front-end</h3>
-        <p class="p_regular_3">Wybierając WiseB2B, otrzymujesz kompletną platformę, która pozwoli scyfryzować Twoją sprzedaż B2B od A&nbsp;do Z. Jeśli jednak z&nbsp;dowolnego powodu zależy Ci na zastosowaniu własnego systemu front-end, możesz zintegrować WiseB2B z&nbsp;zewnętrznym rozwiązaniem UX, np. Vue Storefront. Architektura headless pozwala też podłączyć do platformy własny portal albo aplikację mobilną.</p>
+        <h3 class="kv-title">Integracja z&nbsp;alternatywnym systemem front-end</h3>
+        <p class="kv-text">Wybierając WiseB2B, otrzymujesz kompletną platformę, która pozwoli scyfryzować Twoją sprzedaż B2B od A&nbsp;do Z. Jeśli jednak z&nbsp;dowolnego powodu zależy Ci na zastosowaniu własnego systemu front-end, możesz zintegrować WiseB2B z&nbsp;zewnętrznym rozwiązaniem UX, np. Vue Storefront. Architektura headless pozwala też podłączyć do platformy własny portal albo aplikację mobilną.</p>
       </div>
     </div>
   </div>
@@ -163,29 +163,29 @@ const faq = [
   <div class="container">
     <div class="integrations-n8n__wrapper lm-observer">
       <div class="integrations-n8n__header">
-        <h2 class="h2_semi">Silnik automatyzacji n8n w&nbsp;WiseB2B Cloud</h2>
-        <p class="p_regular_1">W&nbsp;ramach usługi WiseB2B Cloud udostępniamy n8n: niezależne, potężne środowisko do integracji i&nbsp;automatyzacji procesów biznesowych.</p>
+        <h2 class="kv-h2">Silnik automatyzacji n8n w&nbsp;WiseB2B Cloud</h2>
+        <p class="kv-lead">W&nbsp;ramach usługi WiseB2B Cloud udostępniamy n8n: niezależne, potężne środowisko do integracji i&nbsp;automatyzacji procesów biznesowych.</p>
       </div>
       <div class="integrations-n8n__content">
         <div class="integrations-n8n__features">
           <div class="integrations-n8n__feature">
             <div class="integrations-n8n__icon"><span class="agent-ai-feature-card__icon" set:html={icon(I.flow)} /></div>
-            <h3 class="h5_regular">Wizualne tworzenie workflow</h3>
-            <p class="p_regular_3">Twórz przepływy automatyzujące procesy między platformą a&nbsp;systemami zewnętrznymi bez pisania kodu. Interfejs drag &amp; drop pozwala budować nawet złożone scenariusze.</p>
+            <h3 class="kv-title">Wizualne tworzenie workflow</h3>
+            <p class="kv-text">Twórz przepływy automatyzujące procesy między platformą a&nbsp;systemami zewnętrznymi bez pisania kodu. Interfejs drag &amp; drop pozwala budować nawet złożone scenariusze.</p>
           </div>
           <div class="integrations-n8n__feature">
             <div class="integrations-n8n__icon"><span class="agent-ai-feature-card__icon" set:html={icon(I.plug)} /></div>
-            <h3 class="h5_regular">Setki gotowych integracji</h3>
-            <p class="p_regular_3">Łącz platformę z&nbsp;ERP, CRM, systemami e-mail, SMS, magazynowymi i&nbsp;wieloma innymi. n8n wspiera setki konektorów do popularnych usług i&nbsp;systemów.</p>
+            <h3 class="kv-title">Setki gotowych integracji</h3>
+            <p class="kv-text">Łącz platformę z&nbsp;ERP, CRM, systemami e-mail, SMS, magazynowymi i&nbsp;wieloma innymi. n8n wspiera setki konektorów do popularnych usług i&nbsp;systemów.</p>
           </div>
           <div class="integrations-n8n__feature">
             <div class="integrations-n8n__icon"><span class="agent-ai-feature-card__icon" set:html={icon(I.clock)} /></div>
-            <h3 class="h5_regular">Harmonogramowanie i&nbsp;monitoring</h3>
-            <p class="p_regular_3">Ustawiaj automatyczne wykonywanie workflow w&nbsp;określonych godzinach. Monitoruj ich przebieg i&nbsp;korzystaj z&nbsp;logów do audytu oraz debugowania.</p>
+            <h3 class="kv-title">Harmonogramowanie i&nbsp;monitoring</h3>
+            <p class="kv-text">Ustawiaj automatyczne wykonywanie workflow w&nbsp;określonych godzinach. Monitoruj ich przebieg i&nbsp;korzystaj z&nbsp;logów do audytu oraz debugowania.</p>
           </div>
         </div>
         <div class="integrations-n8n__summary">
-          <p class="p_regular_2">n8n eliminuje manualną obsługę powtarzalnych procesów i&nbsp;redukuje błędy. Automatyzuj synchronizację danych, powiadomienia, statusy zamówień i&nbsp;dziesiątki innych operacji bez zatrudniania programistów. Przez n8n działa integracja z&nbsp;ERP u&nbsp;dystrybutora części do maszyn rolniczych, z&nbsp;wymianą danych przyrostową i&nbsp;nocną.</p>
+          <p class="kv-text">n8n eliminuje manualną obsługę powtarzalnych procesów i&nbsp;redukuje błędy. Automatyzuj synchronizację danych, powiadomienia, statusy zamówień i&nbsp;dziesiątki innych operacji bez zatrudniania programistów. Przez n8n działa integracja z&nbsp;ERP u&nbsp;dystrybutora części do maszyn rolniczych, z&nbsp;wymianą danych przyrostową i&nbsp;nocną.</p>
           <div class="integrations-n8n__badges">
             <span class="integrations-n8n__badge integrations-n8n__badge--optional">Start: opcja</span>
             <span class="integrations-n8n__badge integrations-n8n__badge--included">Professional: w&nbsp;cenie</span>
@@ -202,22 +202,22 @@ const faq = [
   <div class="container">
     <div class="row">
       <div class="col-xl-10 offset-xl-1">
-        <h2 class="h2_semi agent-ai-features__heading lm-observer">Technologia, którą Twój dział IT może sprawdzić</h2>
+        <h2 class="agent-ai-features__heading lm-observer kv-h2">Technologia, którą Twój dział IT może sprawdzić</h2>
         <div class="agent-ai-features__grid">
           <div class="agent-ai-feature-card lm-observer">
             <div class="agent-ai-feature-card__icon" set:html={icon(I.code)} />
-            <h3 class="p_semi_2">PHP/Symfony i&nbsp;React</h3>
-            <p class="p_regular_3">Backend w&nbsp;PHP/Symfony z&nbsp;PostgreSQL lub MySQL, front-end w&nbsp;React. Architektura DDD, API-first, headless i&nbsp;PWA, budowa modułowa.</p>
+            <h3 class="kv-title">PHP/Symfony i&nbsp;React</h3>
+            <p class="kv-text">Backend w&nbsp;PHP/Symfony z&nbsp;PostgreSQL lub MySQL, front-end w&nbsp;React. Architektura DDD, API-first, headless i&nbsp;PWA, budowa modułowa.</p>
           </div>
           <div class="agent-ai-feature-card lm-observer">
             <div class="agent-ai-feature-card__icon" set:html={icon(I.braces)} />
-            <h3 class="p_semi_2">Kod źródłowy u&nbsp;Ciebie</h3>
-            <p class="p_regular_3">Kod źródłowy jest w&nbsp;pakiecie Enterprise, a&nbsp;w&nbsp;Professional jako opcja. Platformę może rozwijać Twój zespół IT, partner wdrożeniowy albo nasz zespół.</p>
+            <h3 class="kv-title">Kod źródłowy u&nbsp;Ciebie</h3>
+            <p class="kv-text">Kod źródłowy jest w&nbsp;pakiecie Enterprise, a&nbsp;w&nbsp;Professional jako opcja. Platformę może rozwijać Twój zespół IT, partner wdrożeniowy albo nasz zespół.</p>
           </div>
           <div class="agent-ai-feature-card lm-observer">
             <div class="agent-ai-feature-card__icon" set:html={icon(I.cloud)} />
-            <h3 class="p_semi_2">Chmura albo własne serwery</h3>
-            <p class="p_regular_3">Wybierasz WiseB2B Cloud z&nbsp;n8n, instalację OnPremise na swoich serwerach albo chmurę publiczną (AWS, Azure, Google). Abonament jest stały, bez opłat od obrotu.</p>
+            <h3 class="kv-title">Chmura albo własne serwery</h3>
+            <p class="kv-text">Wybierasz WiseB2B Cloud z&nbsp;n8n, instalację OnPremise na swoich serwerach albo chmurę publiczną (AWS, Azure, Google). Abonament jest stały, bez opłat od obrotu.</p>
           </div>
         </div>
         <div class="agent-ai-features__more lm-observer">
@@ -230,7 +230,7 @@ const faq = [
 </div>
 
 <!-- S7: Rozbudowa bez modyfikacji kodu -->
-<div class="agent-ai-showcase agent-ai-showcase--dark integ-extend">
+<div class="agent-ai-showcase agent-ai-showcase--dark integ-extend kv-on-dark">
   <div class="container">
     <div class="agent-ai-showcase__grid lm-observer">
       <div class="agent-ai-showcase__visual">
@@ -238,7 +238,7 @@ const faq = [
       </div>
       <div class="agent-ai-showcase__text">
         <div class="agent-ai-showcase__block">
-          <h2 class="h2_semi"><span class="agent-ai-showcase__accent">WiseB2B</span> jest gotowy do rozbudowy bez modyfikacji kodu źródłowego, z&nbsp;zachowaniem możliwości aktualizacji. Tak, aby podążać za Twoim biznesem i&nbsp;<span class="agent-ai-showcase__accent">wyprzedzać rynek</span>.</h2>
+          <h2 class="kv-h2"><span class="agent-ai-showcase__accent">WiseB2B</span> jest gotowy do rozbudowy bez modyfikacji kodu źródłowego, z&nbsp;zachowaniem możliwości aktualizacji. Tak, aby podążać za Twoim biznesem i&nbsp;<span class="agent-ai-showcase__accent">wyprzedzać rynek</span>.</h2>
           <a class="wise-button wise-button--white-wise" href="/bezpieczna-migracja/">Przeczytaj więcej o&nbsp;migracji</a>
         </div>
       </div>
@@ -251,11 +251,11 @@ const faq = [
   <div class="container">
     <div class="row">
       <div class="col-xl-8 offset-xl-2 col-lg-10 offset-lg-1">
-        <div class="call-expert__wrapper">
-          <h2 class="h2_semi">Chcesz dowiedzieć się więcej o&nbsp;możliwościach integracyjnych WiseB2B?</h2>
-          <p class="job p_regular_1">Porozmawiaj z&nbsp;nami</p>
-          <p class="name h5_regular">Jakub Czyżkowski</p>
-          <p class="job p_regular_2">CEO</p>
+        <div class="call-expert__wrapper kv-on-dark">
+          <h2 class="kv-h2">Chcesz dowiedzieć się więcej o&nbsp;możliwościach integracyjnych WiseB2B?</h2>
+          <p class="job kv-text">Porozmawiaj z&nbsp;nami</p>
+          <p class="name kv-title">Jakub Czyżkowski</p>
+          <p class="job kv-text">CEO</p>
           <div class="call-expert__button">
             <a class="wise-button wise-button--wise-harvest" href="/zamow-demo/">Umów się na rozmowę z&nbsp;ekspertem</a>
           </div>
@@ -271,7 +271,7 @@ const faq = [
     <div class="row">
       <div class="col-lg-12">
         <div class="questions__wrapper">
-          <h3 class="h3_semi">Najczęściej zadawane pytania</h3>
+          <h3 class="kv-h3">Najczęściej zadawane pytania</h3>
         </div>
       </div>
     </div>
@@ -280,8 +280,8 @@ const faq = [
         <div class="questions__items">
           {faq.map(f => (
             <div class="item">
-              <h2 class="h5_semi">{f.q}</h2>
-              <p class="p_regular_3" set:html={f.a} />
+              <h2 class="kv-title">{f.q}</h2>
+              <p class="kv-text" set:html={f.a} />
             </div>
           ))}
         </div>

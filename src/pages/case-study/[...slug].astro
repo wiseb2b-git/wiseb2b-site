@@ -43,7 +43,7 @@ const dateLabel = date.split('-').reverse().join('.');
 >
 
 <article class="case-study-page">
-  <section class="case-study-hero">
+  <section class="case-study-hero kv-on-dark">
     <div class="container">
       <div class="case-study-hero__inner">
         <span class="page-hero__badge">
@@ -64,10 +64,10 @@ const dateLabel = date.split('-').reverse().join('.');
       <div class="case-study-info__grid lm-observer">
         {info.map((item) => (
           <div class="case-study-info__item">
-            <p class="case-study-info__label">{item.label}</p>
+            <p class="case-study-info__label kv-eyebrow">{item.label}</p>
             <ul>
               {item.items.map((li) => (
-                <li>{li}</li>
+                <li class="kv-text">{li}</li>
               ))}
             </ul>
           </div>
@@ -101,12 +101,12 @@ const dateLabel = date.split('-').reverse().join('.');
   <section class="case-study-about">
     <div class="container">
       <div class="case-study-about__inner lm-observer">
-        <h2>{about.heading}</h2>
-        <p>{about.text}</p>
+        <h2 class="kv-h3">{about.heading}</h2>
+        <p class="kv-text">{about.text}</p>
         {challenge && (
           <>
-            <h2 class="case-study-about__challenge">{challenge.heading}</h2>
-            <p>{challenge.text}</p>
+            <h2 class="case-study-about__challenge kv-h3">{challenge.heading}</h2>
+            <p class="kv-text">{challenge.text}</p>
           </>
         )}
       </div>
@@ -115,13 +115,13 @@ const dateLabel = date.split('-').reverse().join('.');
 
   <section class="case-study-functions">
     <div class="container">
-      <h2 class="lm-observer">{functionsHeading ?? 'Co uruchomiliśmy'}</h2>
+      <h2 class="lm-observer kv-h2">{functionsHeading ?? 'Co uruchomiliśmy'}</h2>
       <div class="case-study-functions__grid">
         {functions.map((fn) => (
           <div class="case-study-functions__item lm-observer">
             <svg width="20" height="20" viewBox="0 0 20 20" fill="none"><circle cx="10" cy="10" r="10" fill="var(--color-success)"/><path d="M8.6 14.8L4.3 10.5 6.6 8.2 8.6 10.5 14.2 5.9 15.8 7.6 8.6 14.8Z" fill="white"/></svg>
-            <p class="case-study-functions__name">{fn.name}</p>
-            <p class="case-study-functions__desc">{fn.description}</p>
+            <p class="case-study-functions__name kv-title">{fn.name}</p>
+            <p class="case-study-functions__desc kv-text">{fn.description}</p>
           </div>
         ))}
       </div>
@@ -146,11 +146,11 @@ const dateLabel = date.split('-').reverse().join('.');
   {quote && (
     <section class="case-study-quote">
       <div class="container">
-        <div class="case-study-quote__card lm-observer">
+        <div class="case-study-quote__card lm-observer kv-on-dark">
           <img src="/svg/double-quotes-r.svg" alt="" class="case-study-quote__mark case-study-quote__mark--right" width="60" height="60" />
-          <blockquote>{quote.text}</blockquote>
-          <p class="case-study-quote__author">{quote.author}</p>
-          <p class="case-study-quote__role">{quote.role}</p>
+          <blockquote class="kv-lead">{quote.text}</blockquote>
+          <p class="case-study-quote__author kv-title">{quote.author}</p>
+          <p class="case-study-quote__role kv-small">{quote.role}</p>
           <img src="/svg/double-quotes-l.svg" alt="" class="case-study-quote__mark case-study-quote__mark--left" width="60" height="60" />
         </div>
       </div>
@@ -158,11 +158,11 @@ const dateLabel = date.split('-').reverse().join('.');
   )}
 </article>
 
-<section class="hp-final">
+<section class="hp-final kv-on-accent">
   <div class="container">
     <div class="hp-final__card lm-observer">
-      <h2>{cta?.title ?? 'Dowiedz się więcej o WiseB2B'}</h2>
-      <p>{cta?.text ?? 'Pokażemy Ci platformę na żywo, na scenariuszach z Twojej firmy. Demo trwa około 60 minut.'}</p>
+      <h2 class="kv-h2">{cta?.title ?? 'Dowiedz się więcej o WiseB2B'}</h2>
+      <p class="kv-text">{cta?.text ?? 'Pokażemy Ci platformę na żywo, na scenariuszach z Twojej firmy. Demo trwa około 60 minut.'}</p>
       <a href="/zamow-demo/" class="btn btn--light">Zamów demo</a>
     </div>
   </div>

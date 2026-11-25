@@ -41,7 +41,7 @@ const faq = [
 <BaseLayout title="Platforma sprzedażowa B2B dla producentów" description="Platforma B2B dla producentów: zlecenia na produkcję online, konfigurator produktów, limity kontraktowe i centrum informacji dla kontrahentów 24/7." faq={faq.map(f => ({ question: f.q, answer: f.a.replace(/<[^>]+>/g, '') }))}>
 
   <!-- HERO -->
-  <section class="text-logos">
+  <section class="text-logos kv-on-dark">
     <div class="container">
       <div class="row">
         <div class="col-lg-8 offset-lg-2">
@@ -52,8 +52,8 @@ const faq = [
               </span>
               Dla producentów
             </span>
-            <h1 class="text-logos__title">Funkcje dedykowane <span>zwiększaniu sprzedaży B2B</span> przez firmy produkcyjne</h1>
-            <p class="desc p_regular_1">Wieloletnia współpraca z firmami produkcyjnymi dała nam doskonałe zrozumienie Twoich potrzeb, specyficznych funkcji oraz tego, czego oczekują i potrzebują Twoi klienci.</p>
+            <h1 class="text-logos__title kv-h1">Funkcje dedykowane <span>zwiększaniu sprzedaży B2B</span> przez firmy produkcyjne</h1>
+            <p class="desc kv-lead">Wieloletnia współpraca z firmami produkcyjnymi dała nam doskonałe zrozumienie Twoich potrzeb, specyficznych funkcji oraz tego, czego oczekują i potrzebują Twoi klienci.</p>
             <div class="page-hero__actions">
               <a class="wise-button wise-button--wise-harvest" href="/zamow-demo/">Zamów demo</a>
             </div>
@@ -70,59 +70,59 @@ const faq = [
           <div class="items">
 
             <div class="item">
-              <h2 class="h2_semi">Zwiększ wartość zamówień i odpowiedz na oczekiwania klientów</h2>
+              <h2 class="kv-h2">Zwiększ wartość zamówień i odpowiedz na oczekiwania klientów</h2>
               <div class="row">
                 <div class="col-md-6"><div class="box">
                   <span class="numbers-text__box-icon" set:html={icon(I.share)} />
-                  <h3 class="p_regular_1">Udostępnij klientom platformę, która ułatwi ich pracę</h3>
-                  <p class="p_regular_3">Twoi klienci składają zamówienia telefonicznie lub mailowo, co zabiera im wiele czasu i nie jest zbyt wygodnym rozwiązaniem. Decydując się na wdrożenie WiseB2B, udostępniasz im zawsze dostępny, w pełni funkcjonalny i intuicyjny sposób składania zamówień. Dzięki temu zrobią zakupy o najbardziej dogodnej dla siebie porze, zapoznają się ze wszystkimi szczegółami Twojej oferty i uzyskają wgląd w statusy aktualnie realizowanych zleceń. Duże zamówienie wgrają z pliku, a zamówienie przysłane mailem <a href="/agent-ai/">Agent AI</a> zamieni w gotowy koszyk.</p>
+                  <h3 class="kv-title">Udostępnij klientom platformę, która ułatwi ich pracę</h3>
+                  <p class="kv-text">Twoi klienci składają zamówienia telefonicznie lub mailowo, co zabiera im wiele czasu i nie jest zbyt wygodnym rozwiązaniem. Decydując się na wdrożenie WiseB2B, udostępniasz im zawsze dostępny, w pełni funkcjonalny i intuicyjny sposób składania zamówień. Dzięki temu zrobią zakupy o najbardziej dogodnej dla siebie porze, zapoznają się ze wszystkimi szczegółami Twojej oferty i uzyskają wgląd w statusy aktualnie realizowanych zleceń. Duże zamówienie wgrają z pliku, a zamówienie przysłane mailem <a href="/agent-ai/">Agent AI</a> zamieni w gotowy koszyk.</p>
                 </div></div>
                 <div class="col-md-6"><div class="box box--even">
                   <span class="numbers-text__box-icon" set:html={icon(I.info)} />
-                  <h3 class="p_regular_1">Precyzyjnie informuj o istotnych szczegółach na temat zamówień</h3>
-                  <p class="p_regular_3">Jeśli zajmujesz się produkcją towarów, to moment złożenia zamówienia przez Twojego klienta jest dopiero początkiem Waszych interakcji. Kontrahenci oczekują informacji o statusie zleceń, planowanym terminie dostawy i bieżących rozliczeniach. WiseB2B pełni rolę centrum informacji dla Twoich klientów: przez całą dobę mogą oni zweryfikować wszelkie dane o aktualnie oraz historycznie realizowanych zamówieniach, fakturach, rozrachunkach i dokumentach.</p>
+                  <h3 class="kv-title">Precyzyjnie informuj o istotnych szczegółach na temat zamówień</h3>
+                  <p class="kv-text">Jeśli zajmujesz się produkcją towarów, to moment złożenia zamówienia przez Twojego klienta jest dopiero początkiem Waszych interakcji. Kontrahenci oczekują informacji o statusie zleceń, planowanym terminie dostawy i bieżących rozliczeniach. WiseB2B pełni rolę centrum informacji dla Twoich klientów: przez całą dobę mogą oni zweryfikować wszelkie dane o aktualnie oraz historycznie realizowanych zamówieniach, fakturach, rozrachunkach i dokumentach.</p>
                 </div></div>
               </div>
             </div>
 
-            <div class="item">
-              <h2 class="h2_semi">Wykorzystaj pełen potencjał swojej oferty</h2>
+            <div class="item kv-on-dark">
+              <h2 class="kv-h2">Wykorzystaj pełen potencjał swojej oferty</h2>
               <div class="row">
                 <div class="col-md-6"><div class="box">
                   <span class="numbers-text__box-icon" set:html={icon(I.gear)} />
-                  <h3 class="p_regular_1">Zautomatyzuj przyjmowanie zleceń na produkcję pod zamówienie</h3>
-                  <p class="p_regular_3">Realizujesz produkcję na zamówienie i każde zlecenie wymaga wymiany wielu informacji? Ten proces możesz w pełni zautomatyzować dzięki WiseB2B. Platforma dostarczy Twoim klientom wszelkich informacji o możliwych do wyprodukowania towarach oraz szacowanym terminie realizacji. Dzięki temu kontrahenci będą mogli zlecać produkcję na zamówienie w pełni samodzielnie, za pośrednictwem kanału cyfrowego.</p>
+                  <h3 class="kv-title">Zautomatyzuj przyjmowanie zleceń na produkcję pod zamówienie</h3>
+                  <p class="kv-text">Realizujesz produkcję na zamówienie i każde zlecenie wymaga wymiany wielu informacji? Ten proces możesz w pełni zautomatyzować dzięki WiseB2B. Platforma dostarczy Twoim klientom wszelkich informacji o możliwych do wyprodukowania towarach oraz szacowanym terminie realizacji. Dzięki temu kontrahenci będą mogli zlecać produkcję na zamówienie w pełni samodzielnie, za pośrednictwem kanału cyfrowego.</p>
                 </div></div>
                 <div class="col-md-6"><div class="box box--even">
                   <span class="numbers-text__box-icon" set:html={icon(I.sliders)} />
-                  <h3 class="p_regular_1">Ułatw zamawianie produktów konfigurowalnych</h3>
-                  <p class="p_regular_3">Masz szeroką ofertę, w ramach której możliwe jest indywidualne konfigurowanie produktów. Jednak wybór odpowiednich wariantów na podstawie katalogów czy zestawień w Excelu nie jest zbyt intuicyjny dla Twoich klientów i zwykle wymaga asysty Twoich pracowników. Wykorzystaj WiseB2B do stworzenia dedykowanego konfiguratora produktów dostępnego online i uprość zakupy klientom.</p>
+                  <h3 class="kv-title">Ułatw zamawianie produktów konfigurowalnych</h3>
+                  <p class="kv-text">Masz szeroką ofertę, w ramach której możliwe jest indywidualne konfigurowanie produktów. Jednak wybór odpowiednich wariantów na podstawie katalogów czy zestawień w Excelu nie jest zbyt intuicyjny dla Twoich klientów i zwykle wymaga asysty Twoich pracowników. Wykorzystaj WiseB2B do stworzenia dedykowanego konfiguratora produktów dostępnego online i uprość zakupy klientom.</p>
                 </div></div>
                 <div class="col-md-6"><div class="box">
                   <span class="numbers-text__box-icon" set:html={icon(I.coins)} />
-                  <h3 class="p_regular_1">Optymalizuj koszty sprzedaży</h3>
-                  <p class="p_regular_3">Przyjmowanie zamówień, odpowiadanie na pytania o terminy produkcji, informowanie o statusach zleceń: wszystkie czynności związane z procesem sprzedaży i obsługi klienta zabierają Twoim pracownikom wiele godzin każdego dnia. A co gdyby mogły one zostać zautomatyzowane, członkowie Twojego zespołu mogliby skupić się na bardziej wymagających zadaniach? To możliwe dzięki wdrożeniu WiseB2B. Dealer zamówi także w dropshippingu prosto do swojego klienta, ze stanami z każdego Twojego magazynu.</p>
+                  <h3 class="kv-title">Optymalizuj koszty sprzedaży</h3>
+                  <p class="kv-text">Przyjmowanie zamówień, odpowiadanie na pytania o terminy produkcji, informowanie o statusach zleceń: wszystkie czynności związane z procesem sprzedaży i obsługi klienta zabierają Twoim pracownikom wiele godzin każdego dnia. A co gdyby mogły one zostać zautomatyzowane, członkowie Twojego zespołu mogliby skupić się na bardziej wymagających zadaniach? To możliwe dzięki wdrożeniu WiseB2B. Dealer zamówi także w dropshippingu prosto do swojego klienta, ze stanami z każdego Twojego magazynu.</p>
                 </div></div>
                 <div class="col-md-6"><div class="box box--even">
                   <span class="numbers-text__box-icon" set:html={icon(I.file)} />
-                  <h3 class="p_regular_1">Zadbaj o rentowność kontraktów</h3>
-                  <p class="p_regular_3">Współpracujesz z klientami w ramach długoterminowych kontraktów i dlatego wdrożenie eCommerce B2B wydaje się w przypadku Twojej firmy niemożliwe? Wręcz przeciwnie: możesz udostępnić swoim klientom kontraktowym elektroniczny kanał składania zamówień i jednocześnie wykorzystać go do monitorowania wykorzystania limitów w ramach kontraktów. Wszystko to dzięki odpowiedniej integracji z systemem ERP. Większy partner może zamawiać prosto ze swojego systemu zakupowego przez Client API.</p>
+                  <h3 class="kv-title">Zadbaj o rentowność kontraktów</h3>
+                  <p class="kv-text">Współpracujesz z klientami w ramach długoterminowych kontraktów i dlatego wdrożenie eCommerce B2B wydaje się w przypadku Twojej firmy niemożliwe? Wręcz przeciwnie: możesz udostępnić swoim klientom kontraktowym elektroniczny kanał składania zamówień i jednocześnie wykorzystać go do monitorowania wykorzystania limitów w ramach kontraktów. Wszystko to dzięki odpowiedniej integracji z systemem ERP. Większy partner może zamawiać prosto ze swojego systemu zakupowego przez Client API.</p>
                 </div></div>
               </div>
             </div>
 
             <div class="item">
-              <h2 class="h2_semi">Otwórz swój biznes na nowe możliwości</h2>
+              <h2 class="kv-h2">Otwórz swój biznes na nowe możliwości</h2>
               <div class="row">
                 <div class="col-md-6"><div class="box">
                   <span class="numbers-text__box-icon" set:html={icon(I.wallet)} />
-                  <h3 class="p_regular_1">Stwórz strategię transformacji, bazując na ponad 25-letnim doświadczeniu</h3>
-                  <p class="p_regular_3">Opracowanie strategii transformacji sprzedaży i tego, w jaki sposób budujesz relację z klientami, to trudny proces. Wyzwaniem jest wykorzystanie najbardziej perspektywicznych tendencji rynkowych i uwzględnienie przy tym specyfiki konkretnego biznesu. Planując wdrażanie zmian z konsultantami WiseB2B, możesz skorzystać z ponad 25-letniego doświadczenia zdobytego w ponad 120 projektach. To unikalna korzyść, która zdecydowanie ułatwi wprowadzanie innowacji w Twojej firmie.</p>
+                  <h3 class="kv-title">Stwórz strategię transformacji, bazując na ponad 25-letnim doświadczeniu</h3>
+                  <p class="kv-text">Opracowanie strategii transformacji sprzedaży i tego, w jaki sposób budujesz relację z klientami, to trudny proces. Wyzwaniem jest wykorzystanie najbardziej perspektywicznych tendencji rynkowych i uwzględnienie przy tym specyfiki konkretnego biznesu. Planując wdrażanie zmian z konsultantami WiseB2B, możesz skorzystać z ponad 25-letniego doświadczenia zdobytego w ponad 120 projektach. To unikalna korzyść, która zdecydowanie ułatwi wprowadzanie innowacji w Twojej firmie.</p>
                 </div></div>
                 <div class="col-md-6"><div class="box box--even">
                   <span class="numbers-text__box-icon" set:html={icon(I.chart)} />
-                  <h3 class="p_regular_1">Rozwijaj platformę B2B w sposób, który zwiększy przewagę biznesową Twojej firmy</h3>
-                  <p class="p_regular_3">Choć aktualnie wdrożenie platformy B2B to innowacja w Twojej firmie, to na pewno nie będzie to koniec procesu transformacji. Jak Twoi klienci będą korzystać z nowego rozwiązania, które funkcje przypadną im do gustu, a jakich elementów będzie im brakować? Wszystko to da Ci wskazówki i pomysły na rozwój platformy. Wybierając WiseB2B, otrzymujesz elastyczne rozwiązanie z dostępem do kodu źródłowego, które w przyszłości będzie mogło być dostosowane do nowych potrzeb i wyzwań Twojego biznesu, bez żadnych ograniczeń.</p>
+                  <h3 class="kv-title">Rozwijaj platformę B2B w sposób, który zwiększy przewagę biznesową Twojej firmy</h3>
+                  <p class="kv-text">Choć aktualnie wdrożenie platformy B2B to innowacja w Twojej firmie, to na pewno nie będzie to koniec procesu transformacji. Jak Twoi klienci będą korzystać z nowego rozwiązania, które funkcje przypadną im do gustu, a jakich elementów będzie im brakować? Wszystko to da Ci wskazówki i pomysły na rozwój platformy. Wybierając WiseB2B, otrzymujesz elastyczne rozwiązanie z dostępem do kodu źródłowego, które w przyszłości będzie mogło być dostosowane do nowych potrzeb i wyzwań Twojego biznesu, bez żadnych ograniczeń.</p>
                 </div></div>
               </div>
             </div>
@@ -142,11 +142,11 @@ const faq = [
     <div class="container">
       <div class="row">
         <div class="col-xl-8 offset-xl-2 col-lg-10 offset-lg-1">
-          <div class="call-expert__wrapper">
-            <h2 class="h2_semi">Potrzebujesz szczegółowych informacji?</h2>
-            <p class="dp-call-expert__lead p_regular_1">Porozmawiaj z nami o tym, jak Twoi dealerzy i hurtownie zamawiają dziś i co chcesz przenieść na platformę.</p>
-            <p class="name h5_regular">Jakub Czyżkowski</p>
-            <p class="job p_regular_2">CEO</p>
+          <div class="call-expert__wrapper kv-on-dark">
+            <h2 class="kv-h2">Potrzebujesz szczegółowych informacji?</h2>
+            <p class="dp-call-expert__lead kv-lead">Porozmawiaj z nami o tym, jak Twoi dealerzy i hurtownie zamawiają dziś i co chcesz przenieść na platformę.</p>
+            <p class="name kv-title">Jakub Czyżkowski</p>
+            <p class="job kv-text">CEO</p>
             <div class="call-expert__button">
               <a class="wise-button wise-button--wise-harvest" href="/zamow-demo/">Zamów rozmowę z ekspertem</a>
             </div>
@@ -157,10 +157,10 @@ const faq = [
   </section>
 
   <!-- CASE STUDY -->
-  <section class="hp-case hp-case--dark">
+  <section class="hp-case hp-case--dark kv-on-dark">
     <div class="container">
-      <h2 class="hp-section-title lm-observer">Case study</h2>
-      <p class="hp-section-subtitle lm-observer">Te same mechanizmy, z których korzysta Twój dealer: zamówienia online na warunkach z ERP. Zobacz, jak przyjęli je klienci Triplex.</p>
+      <h2 class="hp-section-title lm-observer kv-h2">Case study</h2>
+      <p class="hp-section-subtitle lm-observer kv-text">Te same mechanizmy, z których korzysta Twój dealer: zamówienia online na warunkach z ERP. Zobacz, jak przyjęli je klienci Triplex.</p>
       <div class="hp-case__inner lm-observer">
         <div class="hp-case__visual">
           <img src="/case-study/triplex/browser-blender-4-811x608.png" alt="Sklep B2B Triplex na platformie WiseB2B" width="811" height="608" loading="lazy" />
@@ -169,7 +169,7 @@ const faq = [
           <div class="hp-case__logo">
             <img loading="lazy" width="68" height="68" src="/images/triplex-p-68x68.png" alt="Triplex" />
           </div>
-          <h3>Czołowy dystrybutor pirotechniki postawił na WiseB2B</h3>
+          <h3 class="kv-title-lg">Czołowy dystrybutor pirotechniki postawił na WiseB2B</h3>
           <div class="hp-case__stats">
             <div class="hp-case__stat">
               <span class="hp-case__stat-value">46,36%</span>
@@ -191,16 +191,16 @@ const faq = [
   </section>
 
   <!-- OPINIA -->
-  <section class="hp-testimonials">
+  <section class="hp-testimonials kv-on-dark">
     <div class="container">
       <div class="hp-testimonials__card lm-observer">
         <img src="/svg/double-quotes-r.svg" alt="" class="hp-testimonials__quote hp-testimonials__quote--right" width="80" height="80" />
-        <blockquote>
+        <blockquote class="kv-lead">
           Jesteśmy w branży 30 lat, nasi klienci również &ndash; baliśmy się na początku, że klienci przyzwyczajeni do exceli i telefonu nie będą chcieli składać zamówień przez platformę B2B. Ale reakcje są inne &ndash; klienci są zachwyceni. Takie zmiany też dobrze wpływają na wizerunek branży i przyciągają młode pokolenie. Bardzo pozytywnie oceniam zmiany, jakie wniosła platforma B2B wdrożona przez Sente.
         </blockquote>
         <div class="hp-testimonials__author">
-          <p class="hp-testimonials__author-name">Aneta Siwarga</p>
-          <p class="hp-testimonials__author-site">Prokurent w Triplex</p>
+          <p class="hp-testimonials__author-name kv-title">Aneta Siwarga</p>
+          <p class="hp-testimonials__author-site kv-small kv-accent">Prokurent w Triplex</p>
         </div>
         <img src="/svg/double-quotes-l.svg" alt="" class="hp-testimonials__quote hp-testimonials__quote--left" width="80" height="80" />
       </div>
@@ -210,8 +210,8 @@ const faq = [
   <!-- BAZA WIEDZY -->
   <section class="hp-blog">
     <div class="container">
-      <h2 class="hp-section-title lm-observer">Mogą Cię zainteresować</h2>
-      <p class="hp-section-subtitle lm-observer">Artykuły dla producentów, którzy planują sprzedaż B2B online</p>
+      <h2 class="hp-section-title lm-observer kv-h2">Mogą Cię zainteresować</h2>
+      <p class="hp-section-subtitle lm-observer kv-text">Artykuły dla producentów, którzy planują sprzedaż B2B online</p>
       <div class="hp-blog__grid">
         {articles.map((article) => (
           <a href={`/baza-wiedzy/${article.id}/`} class="hp-blog__card lm-observer">
@@ -220,7 +220,7 @@ const faq = [
               <span class="hp-blog__card-cat">{article.data.category}</span>
             </div>
             <div class="hp-blog__card-body">
-              <h3>{article.data.title}</h3>
+              <h3 class="kv-title">{article.data.title}</h3>
             </div>
           </a>
         ))}
@@ -237,7 +237,7 @@ const faq = [
       <div class="row">
         <div class="col-lg-12">
           <div class="questions__wrapper">
-            <h3 class="h3_semi">Najczęściej zadawane pytania</h3>
+            <h3 class="kv-h3">Najczęściej zadawane pytania</h3>
           </div>
         </div>
       </div>
@@ -246,8 +246,8 @@ const faq = [
           <div class="questions__items">
             {faq.map(f => (
               <div class="item">
-                <h2 class="h5_semi">{f.q}</h2>
-                <p class="p_regular_3" set:html={f.a} />
+                <h2 class="kv-title">{f.q}</h2>
+                <p class="kv-text" set:html={f.a} />
               </div>
             ))}
           </div>

@@ -15,14 +15,14 @@ const fmtDate = (d: string) => d.split('-').reverse().join('.');
 
 <BaseLayout title="Baza wiedzy o platformie B2B i eCommerce B2B" description="Artykuły o eCommerce B2B dla firm handlowych i produkcyjnych: czym B2B różni się od B2C, jak wybrać platformę i co daje wdrożenie platformy B2B.">
 
-<section class="page-hero">
+<section class="page-hero kv-on-dark">
   <div class="container">
     <span class="page-hero__badge">
       <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M4 4h6v6H4V4zm10 0h6v6h-6V4zM4 14h6v6H4v-6zm10 0h6v6h-6v-6z"/></svg>
       Baza wiedzy
     </span>
-    <h1 class="lm-observer">Baza wiedzy o platformie <span>B2B</span></h1>
-    <p class="page-hero__lead lm-observer">Piszemy o&nbsp;tym, co widzimy we wdrożeniach: czym sprzedaż B2B online różni się od B2C, jak wybrać platformę i&nbsp;co zmienia się w&nbsp;firmie, gdy stali klienci zamawiają sami.</p>
+    <h1 class="lm-observer kv-h1">Baza wiedzy o platformie <span>B2B</span></h1>
+    <p class="page-hero__lead lm-observer kv-lead">Piszemy o&nbsp;tym, co widzimy we wdrożeniach: czym sprzedaż B2B online różni się od B2C, jak wybrać platformę i&nbsp;co zmienia się w&nbsp;firmie, gdy stali klienci zamawiają sami.</p>
   </div>
 </section>
 
@@ -32,10 +32,10 @@ const fmtDate = (d: string) => d.split('-').reverse().join('.');
       <div class="col-lg-12 col-xl-10 offset-xl-1">
         <div class="categories lm-observer">
           <ul class="categories__list">
-            <li class="p_regular_3 active" data-slug="all">Wszystkie kategorie</li>
-            <li class="p_regular_3" data-slug="dystrybucja-i-handel">Dystrybucja i handel</li>
-            <li class="p_regular_3" data-slug="funkcje">Funkcje</li>
-            <li class="p_regular_3" data-slug="korzysci">Korzyści</li>
+            <li class="active" data-slug="all">Wszystkie kategorie</li>
+            <li data-slug="dystrybucja-i-handel">Dystrybucja i handel</li>
+            <li data-slug="funkcje">Funkcje</li>
+            <li data-slug="korzysci">Korzyści</li>
           </ul>
         </div>
       </div>
@@ -45,11 +45,11 @@ const fmtDate = (d: string) => d.split('-').reverse().join('.');
         <div class="col-12">
           <div class="bw-grid">
             {articles.map((article) => (
-              <a class="bw-card lm-observer" href={`/baza-wiedzy/${article.id}/`} data-category={catSlug(article.data.category)}>
+              <a class="bw-card lm-observer kv-on-dark" href={`/baza-wiedzy/${article.id}/`} data-category={catSlug(article.data.category)}>
                 <img loading="lazy" width="632" height="421" src={article.data.image} class="bw-card__img" alt="" />
                 <span class="bw-card__cat">{catLabel(article.data.category)}</span>
                 <span class="bw-card__date"><time datetime={article.data.date}>{fmtDate(article.data.date)}</time></span>
-                <h2 class="bw-card__title">{article.data.title}</h2>
+                <h2 class="bw-card__title kv-title">{article.data.title}</h2>
               </a>
             ))}
           </div>
@@ -69,9 +69,9 @@ const fmtDate = (d: string) => d.split('-').reverse().join('.');
   <div class="container">
     <div class="row">
       <div class="col-12">
-        <div class="call-expert__wrapper lm-observer">
-          <h2 class="h2_semi">Potrzebujesz szczegółowych informacji?</h2>
-          <p class="p_regular_1 bw-expert__text">Doświadczenie i&nbsp;efekty naszej pracy pomagają nam tworzyć powyższe treści. Ale każdy biznes jest inny. Chętnie poznamy Twoje wyzwania i&nbsp;oczekiwania.</p>
+        <div class="call-expert__wrapper lm-observer kv-on-dark">
+          <h2 class="kv-h2">Potrzebujesz szczegółowych informacji?</h2>
+          <p class="bw-expert__text kv-lead">Doświadczenie i&nbsp;efekty naszej pracy pomagają nam tworzyć powyższe treści. Ale każdy biznes jest inny. Chętnie poznamy Twoje wyzwania i&nbsp;oczekiwania.</p>
           <div class="call-expert__button">
             <a class="wise-button wise-button--wise-harvest" href="/zamow-demo/">Porozmawiaj</a>
           </div>

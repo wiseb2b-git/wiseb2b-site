@@ -115,6 +115,11 @@ for (const vp of VIEWPORTS) {
     });
 
     if (/<!--[^>]*NEED/.test(await page.content())) add(url, vp.name, 'znacznik NEED w kodzie HTML');
+    {
+      const html = await page.content();
+      const old = html.match(/class="[^"]*\b(h[1-6]_(semi|regular)|p_(semi|regular)_[12]|p_regular_3)\b/);
+      if (old) add(url, vp.name, `stara klasa typografii WP: ${old[1]} (używaj .kv-*)`);
+    }
     if (!info.title || info.title.length < 10) add(url, vp.name, `zły title "${info.title}"`);
     if (vp.name === 'desktop') {
       titles.set(info.title, [...(titles.get(info.title) || []), url]);

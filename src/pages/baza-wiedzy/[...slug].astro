@@ -32,7 +32,7 @@ const faqItems = extractFaq(article.body || '');
 
 <BaseLayout title={title} description={description} article={{ headline: title, image, datePublished: date, dateModified, authorName: author, authorJob, description }} faq={faqItems.length > 0 ? faqItems : undefined}>
 
-<section class="single-hero">
+<section class="single-hero kv-on-dark">
   <div class="container">
     <div class="single-hero__meta lm-observer">
       <span class="single-hero__meta-pill">
@@ -50,7 +50,7 @@ const faqItems = extractFaq(article.body || '');
         {formattedDate}
       </span>
     </div>
-    <h1 class="single-hero__title lm-observer">{title}</h1>
+    <h1 class="single-hero__title lm-observer kv-h1">{title}</h1>
   </div>
 </section>
 
@@ -78,11 +78,11 @@ const faqItems = extractFaq(article.body || '');
               {authorImage && (
                 <img width="64" height="64" src={authorImage} alt={author} style="border-radius: 50%; width: 64px; height: 64px; object-fit: cover;" />
               )}
-              <p class="name p_semi_2">{author}</p>
-              {authorJob && <p class="job p_regular_3" style="color: var(--color-dark-300);">{authorJob}</p>}
+              <p class="name kv-title">{author}</p>
+              {authorJob && <p class="job kv-text">{authorJob}</p>}
             </div>
             {authorBio && (
-              <div class="single-author-bottom__desc p_regular_3" style="color: var(--color-dark-300);">
+              <div class="single-author-bottom__desc kv-text">
                 {authorBio}
               </div>
             )}
@@ -100,9 +100,9 @@ const faqItems = extractFaq(article.body || '');
   <div class="container">
     <div class="row">
       <div class="col-xl-8 offset-xl-2 col-lg-10 offset-lg-1">
-        <div class="call-expert__wrapper lm-observer">
-          <h2 class="h2_semi">Potrzebujesz szczegółowych informacji?</h2>
-          <p class="job p_regular_1">Porozmawiaj z nami</p>
+        <div class="call-expert__wrapper lm-observer kv-on-dark">
+          <h2 class="kv-h2">Potrzebujesz szczegółowych informacji?</h2>
+          <p class="job kv-text">Porozmawiaj z nami</p>
           <div class="call-expert__button">
             <a class="wise-button wise-button--wise-harvest" href="/zamow-demo/">Porozmawiaj</a>
           </div>

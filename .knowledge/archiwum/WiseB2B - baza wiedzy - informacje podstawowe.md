@@ -1,11 +1,16 @@
 # WiseB2B Commerce Platform \- informacje podstawowe
 
+> **Status (audyt 2026-11-24):** notatka z NotebookLM (marzec 2026). Źródłem nadrzędnym jest dokumenty `.knowledge/marketing/` i `WiseB2B - kontekst marketingowy.md` (v3). Poprawione: nazwa pakietu Start, enova365. Nie zmieniano treści merytorycznych.
+
+
 WiseB2B to nowoczesna platforma Commerce B2B \- do kompleksowej obsługi procesów sprzedaży dla firmy handlowej i produkcyjnej.
 
 # Główny claim
 
 **Jedyna platforma Commerce B2B**  
 **z użytecznym AI, Panelem Handlowca i kodem źródłowym**
+
+> Aktualny claim (decyzja CEO 2026-11-09): „Jedyna platforma Commerce B2B AI-Native z Panelem Handlowca i otwartym kodem”.
 
 Głównym celem biznesowym wdrożenia platformy jest wzrost efektywności procesów sprzedaży i obsługi klienta B2B.
 
@@ -35,7 +40,7 @@ Jednocześnie tachnologia WiseB2B daje możliwość realizacji potrzeb przy znac
 
 * **Client API** \- platforma dla Twoich klientów do integracji ich systemów zakupowych z Twoim system (ClientAPI). Tego nie daje żadne inne narzędzie.
 
-* **Gotowe integracje**  \- gotowe integracje zarówno do systemów ERP (Teneum, Comarch XL, eNoca, Subiekt) jak i do platform integracyjnych (Aplio) istotnie zmniejszają ryzyka projektu, jego koszty i czas wdrożenia.
+* **Gotowe integracje**  \- gotowe integracje zarówno do systemów ERP (Teneum, Comarch XL, enova365, Subiekt) jak i do platform integracyjnych (Aplio) istotnie zmniejszają ryzyka projektu, jego koszty i czas wdrożenia.
 
 * **Wersja mobilna** \- w standardzie dostarczana jest mobilna wersja platformy. Twoi klienci mogą dokonywać zakupów w każdych warunkach. 
 
@@ -64,7 +69,7 @@ Jednocześnie tachnologia WiseB2B daje możliwość realizacji potrzeb przy znac
 
 * **Metodyka wdrożeniowa** \- WiseB2B to nie czysta technologia. To również metodyka tworzenia specyfikacji wymagań, specyfikacji funkcjonalnej, podziału na zadania wdrożeniowe. Wszystko gotowe i przetestowane. Dzięki czemu proces wdrożeniowy może być zrealizowany wyjątkowo sprawnie i skutecznie. 
 
-* Zespół, który ma **wsparcie Sente** \- dostawcy rozwiązań dla handlu od 25 lat. Doświadczenie zdobyte w około 100 projektach dla średnich i dużych firm zostało przełożone na WiseB2B. 
+* Zespół, który ma **wsparcie Sente** \- dostawcy rozwiązań dla handlu od 25 lat. Doświadczenie zdobyte w około 100 projektach [dokumenty marketing/: ponad 120 projektów; do potwierdzenia] dla średnich i dużych firm zostało przełożone na WiseB2B. 
 
 # Informacje dodatkowe
 

@@ -1,12 +1,19 @@
 # WiseB2B — Obszary i Moduły
 
+> **Status (audyt 2026-11-24):** notatka z NotebookLM (marzec 2026). Źródłem nadrzędnym jest dokumenty `.knowledge/marketing/` i `WiseB2B - kontekst marketingowy.md` (v3). Poprawione: nazwa pakietu Start, enova365. Nie zmieniano treści merytorycznych.
+
+
 ## Pakiety cenowe
 
-| | Starter | Professional | Enterprise |
+| | Start | Professional | Enterprise |
 |---|---:|---:|---:|
 | Wartość modułów w pakiecie | 2 490,00 | 4 490,00 | 8 590,00 |
 | Redukcja za pakiety | 400,00 | 400,00 | 500,00 |
 | **Cena pakietu** | **2 090,00** | **3 690,00** | **7 290,00** |
+| **Cena pakietu — aktualna (marketing/01, potwierdzona 2026-07-07)** | **od 1 990** | **od 3 490** | **od 6 990** |
+| Limit produktów / klientów | 1 000 / 2 000 | 30 000 / 10 000 | bez limitu |
+
+> Ceny 2 090 / 3 690 / 7 290 i redukcje 400/400/500 są nieaktualne (marketing/: „NIE używać”). Aktualne redukcje: 500 / 500 / 600 zł. Ceny modułów poniżej wymagają weryfikacji z aktualnym cennikiem.
 
 ## Legenda
 
@@ -20,7 +27,7 @@
 
 ## 1. Katalog Produktów
 
-| Moduł | Opis | Starter | Professional | Enterprise | Cena |
+| Moduł | Opis | Start | Professional | Enterprise | Cena |
 |---|---|:---:|:---:|:---:|---:|
 | Cyfrowy katalog produktów | Kategorie produktów, katalog produktów, atrybuty, zdjęcia i multimedia, dokumenty związane z towarami, powiązania (akcesoria, zamienniki itp.) | 🟢 | 🟢 | 🟢 | 90 |
 | GPSR | Kartoteka dostawców GPSR, dodatkowe opisy produktów | 🟢 | 🟢 | 🟢 | 40 |
@@ -30,7 +37,7 @@
 
 ## 2. Oferta handlowa
 
-| Moduł | Opis | Starter | Professional | Enterprise | Cena |
+| Moduł | Opis | Start | Professional | Enterprise | Cena |
 |---|---|:---:|:---:|:---:|---:|
 | Cenniki grupowe i indywidualne | | 🟢 | 🟢 | 🟢 | 80 |
 | Promocje katalogowe | | 🟢 | 🟢 | 🟢 | 90 |
@@ -45,7 +52,7 @@
 
 ## 3. Prezentacja oferty
 
-| Moduł | Opis | Starter | Professional | Enterprise | Cena |
+| Moduł | Opis | Start | Professional | Enterprise | Cena |
 |---|---|:---:|:---:|:---:|---:|
 | Wyszukiwarka z obsługą synonimów i priorytetów | Wyszukiwanie po słowach kluczowych, znormalizowanych | 🟢 | 🟢 | 🟢 | 100 |
 | Dynamiczny ranking produktów | Dynamiczne określanie rankingu w zależności od dopasowania, promocji, strategii sprzedażowej | - | O | 🟢 | 250 |
@@ -54,7 +61,7 @@
 
 ## 4. Proces zakupowy
 
-| Moduł | Opis | Starter | Professional | Enterprise | Cena |
+| Moduł | Opis | Start | Professional | Enterprise | Cena |
 |---|---|:---:|:---:|:---:|---:|
 | Zakupy B2B | Sprzedaż B2B wg cen netto/brutto, miejsca odbioru, umowy i zgody zakupowe, koszty dostawy, koszty płatności | 🟢 | 🟢 | 🟢 | 120 |
 | Wielokoszyki | Wiele koszyków dla jednego użytkownika / klienta | 🟢 | 🟢 | 🟢 | 60 |
@@ -71,7 +78,7 @@
 
 ## 5. Obsługa klienta
 
-| Moduł | Opis | Starter | Professional | Enterprise | Cena |
+| Moduł | Opis | Start | Professional | Enterprise | Cena |
 |---|---|:---:|:---:|:---:|---:|
 | Dane klienta | Dane adresowe, rejestrowe, miejsca odbioru | 🟢 | 🟢 | 🟢 | 100 |
 | Użytkownicy klienta i role | Rola głównego użytkownika i zakupowców (po stronie klienta) | 🟢 | 🟢 | 🟢 | 100 |
@@ -86,7 +93,7 @@
 
 ## 6. AI
 
-| Moduł | Opis | Starter | Professional | Enterprise | Cena |
+| Moduł | Opis | Start | Professional | Enterprise | Cena |
 |---|---|:---:|:---:|:---:|---:|
 | Agent klienta | Wyszukiwanie i realizacja zakupów | - | O | 🟢 | 600 |
 | Agent administratora | Asystent konfigurowania systemu | - | O | O | 600 |
@@ -94,7 +101,7 @@
 
 ## 7. CMS
 
-| Moduł | Opis | Starter | Professional | Enterprise | Cena |
+| Moduł | Opis | Start | Professional | Enterprise | Cena |
 |---|---|:---:|:---:|:---:|---:|
 | Konfigurowanie layoutu | Strona główna, slidery (w tym obsługa video), wybrane kategorie, dowolne bloki HTML, obsługa mediów, boxy produktowe | 🟢 | 🟢 | 🟢 | 70 |
 | Aktualności | | 🟢 | 🟢 | 🟢 | 50 |
@@ -103,7 +110,7 @@
 
 ## 8. Dostępność platformy
 
-| Moduł | Opis | Starter | Professional | Enterprise | Cena |
+| Moduł | Opis | Start | Professional | Enterprise | Cena |
 |---|---|:---:|:---:|:---:|---:|
 | Profil zamknięty | Platforma dostępna jedynie po zalogowaniu | 🟢 | 🟢 | 🟢 | 50 |
 | Profil otwarty | Prezentacja produktów i wyszukiwanie bez logowania, generowanie leadów do rejestracji, automatyczne akceptowanie rejestracji, bez możliwości zakupów bez rejestracji | 🟢 | 🟢 | 🟢 | 50 |
@@ -111,14 +118,14 @@
 
 ## 9. B2C
 
-| Moduł | Opis | Starter | Professional | Enterprise | Cena |
+| Moduł | Opis | Start | Professional | Enterprise | Cena |
 |---|---|:---:|:---:|:---:|---:|
 | Profil B2C | Zakupy niezarejestrowanego użytkownika, rejestracja B2C, prezentacja w cenach brutto | - | O | O | 600 |
 | Obsługa Omnibus | | - | O | O | 0 |
 
 ## 10. Handlowiec
 
-| Moduł | Opis | Starter | Professional | Enterprise | Cena |
+| Moduł | Opis | Start | Professional | Enterprise | Cena |
 |---|---|:---:|:---:|:---:|---:|
 | Wsparcie klienta w zakupach | Przelogowanie w konto klienta i obsługa sklepu w imieniu klienta | 🟢 | 🟢 | 🟢 | 100 |
 | Panel handlowca | | - | O | 🟢 | 300 |
@@ -128,15 +135,15 @@
 
 ## 11. Integracje
 
-| Moduł | Opis | Starter | Professional | Enterprise | Cena |
+| Moduł | Opis | Start | Professional | Enterprise | Cena |
 |---|---|:---:|:---:|:---:|---:|
 | Admin API | | O | 🟢 | 🟢 | 160 |
 | Client API | | - | 🟢 | 🟢 | 160 |
-| Integracje ERP | Teneum, Comarch Optima, eNova, Comarch XL | O | O | O | 400 |
+| Integracje ERP | Teneum, Comarch Optima, enova365, Comarch XL | O | O | O | 400 |
 
 ## 12. WiseB2B Cloud
 
-| Moduł | Opis | Starter | Professional | Enterprise | Cena |
+| Moduł | Opis | Start | Professional | Enterprise | Cena |
 |---|---|:---:|:---:|:---:|---:|
 | Środowisko produkcyjne | Oprogramowanie platformy, instalacja aktualizacji do nowych wersji | 🟢 | 🟢 | 🟢 | 750 |
 | Środowisko testowe | Instancja testowa platformy, dane z nocy z dnia poprzedniego | - | 🟢 | 🟢 | 300 |
@@ -146,7 +153,7 @@
 
 ## 13. Technologia
 
-| Moduł | Opis | Starter | Professional | Enterprise | Cena |
+| Moduł | Opis | Start | Professional | Enterprise | Cena |
 |---|---|:---:|:---:|:---:|---:|
 | Wtyczki własne | Dostęp do możliwości instalacji własnych wtyczek rozszerzających | - | 🟢 | 🟢 | 0 |
 | Kod źródłowy | Dostęp do kodu źródłowego | - | O | 🟢 | 300 |

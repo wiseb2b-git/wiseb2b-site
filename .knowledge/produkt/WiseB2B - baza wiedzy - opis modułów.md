@@ -1,5 +1,8 @@
 # Opisy Modułów WiseB2B
 
+> **Status (audyt 2026-11-24):** notatka z NotebookLM (marzec 2026). Źródłem nadrzędnym jest dokumenty `.knowledge/marketing/` i `WiseB2B - kontekst marketingowy.md` (v3). Poprawione: nazwa pakietu Start, enova365. Nie zmieniano treści merytorycznych.
+
+
 Pełne opisy modułów platformy WiseB2B z perspektywy biznesowej i technicznej.
 
 ---
@@ -9,7 +12,7 @@ Pełne opisy modułów platformy WiseB2B z perspektywy biznesowej i technicznej.
 ### Cyfrowy katalog produktów
 
 **Metryczka:**
-* **Pakiet Starter:** ✅ Wliczony
+* **Pakiet Start:** ✅ Wliczony
 * **Pakiet Professional:** ✅ Wliczony
 * **Pakiet Enterprise:** ✅ Wliczony
 * **Cena modułu:** 90,00 PLN
@@ -30,7 +33,7 @@ Produkty można wiązać w relacji rodzic - dziecko, co pozwala na efekt "dziedz
 ### GPSR
 
 **Metryczka:**
-* **Pakiet Starter:** ✅ Wliczony
+* **Pakiet Start:** ✅ Wliczony
 * **Pakiet Professional:** ✅ Wliczony
 * **Pakiet Enterprise:** ✅ Wliczony
 * **Cena modułu:** 40,00 PLN
@@ -50,7 +53,7 @@ W Panelu Administracyjnym jest osobna kartoteka "Producentów GPSR". Może być 
 ### Wielojęzyczność
 
 **Metryczka:**
-* **Pakiet Starter:** ⛔ Brak
+* **Pakiet Start:** ⛔ Brak
 * **Pakiet Professional:** ⭕ Dostępny (opcja)
 * **Pakiet Enterprise:** ✅ Wliczony
 * **Cena modułu:** 350,00 PLN
@@ -70,7 +73,7 @@ System wykorzystuje mechanizm tłumaczeń oparty na kluczach językowych z możl
 ### Ograniczenie widoczności produktów
 
 **Metryczka:**
-* **Pakiet Starter:** ⛔ Brak
+* **Pakiet Start:** ⛔ Brak
 * **Pakiet Professional:** ⭕ Dostępny (opcja)
 * **Pakiet Enterprise:** ⭕ Dostępny (opcja)
 * **Cena modułu:** 100,00 PLN
@@ -90,7 +93,7 @@ System wykorzystuje mechanizm filtrów widoczności działających na poziomie z
 ### Symbole własne
 
 **Metryczka:**
-* **Pakiet Starter:** ⛔ Brak
+* **Pakiet Start:** ⛔ Brak
 * **Pakiet Professional:** ⛔ Brak
 * **Pakiet Enterprise:** ⭕ Dostępny (opcja)
 * **Cena modułu:** 70,00 PLN
@@ -112,7 +115,7 @@ System przechowuje mapowanie symboli własnych w relacji wiele-do-wielu z produk
 ### Cenniki grupowe i indywidualne
 
 **Metryczka:**
-* **Pakiet Starter:** ✅ Wliczony
+* **Pakiet Start:** ✅ Wliczony
 * **Pakiet Professional:** ✅ Wliczony
 * **Pakiet Enterprise:** ✅ Wliczony
 * **Cena modułu:** 80,00 PLN
@@ -131,7 +134,7 @@ System wykorzystuje hierarchię priorytetów cenników - najpierw sprawdza cenni
 ### Promocje katalogowe
 
 **Metryczka:**
-* **Pakiet Starter:** ✅ Wliczony
+* **Pakiet Start:** ✅ Wliczony
 * **Pakiet Professional:** ✅ Wliczony
 * **Pakiet Enterprise:** ✅ Wliczony
 * **Cena modułu:** 90,00 PLN
@@ -151,7 +154,7 @@ Promocje są obliczane w czasie rzeczywistym z uwzględnieniem hierarchii cennik
 ### Promocje koszykowe
 
 **Metryczka:**
-* **Pakiet Starter:** ✅ Wliczony
+* **Pakiet Start:** ✅ Wliczony
 * **Pakiet Professional:** ✅ Wliczony
 * **Pakiet Enterprise:** ✅ Wliczony
 * **Cena modułu:** 90,00 PLN
@@ -171,7 +174,7 @@ System wylicza promocje koszykowe w czasie rzeczywistym podczas dodawania produk
 ### Dostępność produktów
 
 **Metryczka:**
-* **Pakiet Starter:** ✅ Wliczony
+* **Pakiet Start:** ✅ Wliczony
 * **Pakiet Professional:** ✅ Wliczony
 * **Pakiet Enterprise:** ✅ Wliczony
 * **Cena modułu:** 80,00 PLN
@@ -191,7 +194,7 @@ System integruje się z systemami magazynowymi przez API, umożliwiając synchro
 ### Warunki handlowe
 
 **Metryczka:**
-* **Pakiet Starter:** ✅ Wliczony
+* **Pakiet Start:** ✅ Wliczony
 * **Pakiet Professional:** ✅ Wliczony
 * **Pakiet Enterprise:** ✅ Wliczony
 * **Cena modułu:** 80,00 PLN
@@ -211,7 +214,7 @@ System wykorzystuje mechanizm weryfikacji warunków handlowych działający w cz
 ### Feedy produktowe dla klientów
 
 **Metryczka:**
-* **Pakiet Starter:** ⭕ Dostępny (opcja)
+* **Pakiet Start:** ⭕ Dostępny (opcja)
 * **Pakiet Professional:** ✅ Wliczony
 * **Pakiet Enterprise:** ✅ Wliczony
 * **Cena modułu:** 90,00 PLN
@@ -231,7 +234,7 @@ System generuje feedy w różnych formatach (XML, CSV, JSON) zgodnych z wymagani
 ### Ceny wg magazynów
 
 **Metryczka:**
-* **Pakiet Starter:** ⛔ Brak
+* **Pakiet Start:** ⛔ Brak
 * **Pakiet Professional:** ⭕ Dostępny (opcja)
 * **Pakiet Enterprise:** ✅ Wliczony
 * **Cena modułu:** 110,00 PLN
@@ -251,7 +254,7 @@ System automatycznie wybiera cenę na podstawie magazynu przypisanego do pozycji
 ### Ceny wg opakowań i progów ilościowych
 
 **Metryczka:**
-* **Pakiet Starter:** ⛔ Brak
+* **Pakiet Start:** ⛔ Brak
 * **Pakiet Professional:** ⭕ Dostępny (opcja)
 * **Pakiet Enterprise:** ✅ Wliczony
 * **Cena modułu:** 110,00 PLN
@@ -271,7 +274,7 @@ System wspiera wiele jednostek miary dla jednego produktu z automatyczną konwer
 ### Cenniki wielowalutowe
 
 **Metryczka:**
-* **Pakiet Starter:** ⛔ Brak
+* **Pakiet Start:** ⛔ Brak
 * **Pakiet Professional:** ⭕ Dostępny (opcja)
 * **Pakiet Enterprise:** ✅ Wliczony
 * **Cena modułu:** 180,00 PLN
@@ -291,7 +294,7 @@ System integruje się z zewnętrznymi źródłami kursów walut (NBP, ECB) z mo�
 ### Zarządzanie kredytem kupieckim
 
 **Metryczka:**
-* **Pakiet Starter:** ⛔ Brak
+* **Pakiet Start:** ⛔ Brak
 * **Pakiet Professional:** ⭕ Dostępny (opcja)
 * **Pakiet Enterprise:** ⭕ Dostępny (opcja)
 * **Cena modułu:** 180,00 PLN
@@ -313,7 +316,7 @@ Moduł integruje się z API wywiadowni gospodarczych (np. BIG, KRD) z automatycz
 ### Wyszukiwarka z obsługą synonimów i priorytetów
 
 **Metryczka:**
-* **Pakiet Starter:** ✅ Wliczony
+* **Pakiet Start:** ✅ Wliczony
 * **Pakiet Professional:** ✅ Wliczony
 * **Pakiet Enterprise:** ✅ Wliczony
 * **Cena modułu:** 100,00 PLN
@@ -333,7 +336,7 @@ System wykorzystuje słownik synonimów konfigurowalny przez panel administracyj
 ### Dynamiczny ranking produktów
 
 **Metryczka:**
-* **Pakiet Starter:** ⛔ Brak
+* **Pakiet Start:** ⛔ Brak
 * **Pakiet Professional:** ⭕ Dostępny (opcja)
 * **Pakiet Enterprise:** ✅ Wliczony
 * **Cena modułu:** 250,00 PLN
@@ -353,7 +356,7 @@ System wykorzystuje algorytmy rankingowe oparte na wielu czynnikach (dopasowanie
 ### Wyszukiwanie z Elasticsearch
 
 **Metryczka:**
-* **Pakiet Starter:** ⛔ Brak
+* **Pakiet Start:** ⛔ Brak
 * **Pakiet Professional:** ⛔ Brak
 * **Pakiet Enterprise:** ⭕ Dostępny (opcja)
 * **Cena modułu:** 250,00 PLN
@@ -373,7 +376,7 @@ Elasticsearch jest zintegrowany jako zewnętrzny serwis z automatyczną synchron
 ### Wyszukiwanie z TypeSense
 
 **Metryczka:**
-* **Pakiet Starter:** ⛔ Brak
+* **Pakiet Start:** ⛔ Brak
 * **Pakiet Professional:** ⛔ Brak
 * **Pakiet Enterprise:** ⭕ Dostępny (opcja)
 * **Cena modułu:** 250,00 PLN
@@ -395,7 +398,7 @@ TypeSense jest zintegrowany jako zewnętrzny serwis z automatyczną synchronizac
 ### Zakupy B2B
 
 **Metryczka:**
-* **Pakiet Starter:** ✅ Wliczony
+* **Pakiet Start:** ✅ Wliczony
 * **Pakiet Professional:** ✅ Wliczony
 * **Pakiet Enterprise:** ✅ Wliczony
 * **Cena modułu:** 120,00 PLN
@@ -415,7 +418,7 @@ System automatycznie wybiera odpowiednią stawkę VAT na podstawie statusu klien
 ### Wielokoszyki
 
 **Metryczka:**
-* **Pakiet Starter:** ✅ Wliczony
+* **Pakiet Start:** ✅ Wliczony
 * **Pakiet Professional:** ✅ Wliczony
 * **Pakiet Enterprise:** ✅ Wliczony
 * **Cena modułu:** 60,00 PLN
@@ -435,7 +438,7 @@ System przechowuje wiele koszyków dla każdego użytkownika z możliwością na
 ### Listy zakupowe
 
 **Metryczka:**
-* **Pakiet Starter:** ✅ Wliczony
+* **Pakiet Start:** ✅ Wliczony
 * **Pakiet Professional:** ✅ Wliczony
 * **Pakiet Enterprise:** ✅ Wliczony
 * **Cena modułu:** 60,00 PLN
@@ -455,7 +458,7 @@ Moduł jest zintegrowany z procesem zakupowym — listy mogą być szybko przeks
 ### Import zamówienia
 
 **Metryczka:**
-* **Pakiet Starter:** ✅ Wliczony
+* **Pakiet Start:** ✅ Wliczony
 * **Pakiet Professional:** ✅ Wliczony
 * **Pakiet Enterprise:** ✅ Wliczony
 * **Cena modułu:** 60,00 PLN
@@ -475,7 +478,7 @@ System wspiera import z plików CSV i Excel z automatyczną walidacją danych. I
 ### Podział koszyka
 
 **Metryczka:**
-* **Pakiet Starter:** ✅ Wliczony
+* **Pakiet Start:** ✅ Wliczony
 * **Pakiet Professional:** ✅ Wliczony
 * **Pakiet Enterprise:** ✅ Wliczony
 * **Cena modułu:** 60,00 PLN
@@ -492,7 +495,7 @@ Podział koszyka to funkcja dla firm, które potrzebują rozdzielić jedno zamó
 ### Kurierzy
 
 **Metryczka:**
-* **Pakiet Starter:** ⭕ Dostępny (opcja)
+* **Pakiet Start:** ⭕ Dostępny (opcja)
 * **Pakiet Professional:** ✅ Wliczony
 * **Pakiet Enterprise:** ✅ Wliczony
 * **Cena modułu:** 120,00 PLN
@@ -512,7 +515,7 @@ Dla każdego sposobu dostawy skonfigurowanego w systemie można deklarować osob
 ### Płatności elektroniczne
 
 **Metryczka:**
-* **Pakiet Starter:** ⭕ Dostępny (opcja)
+* **Pakiet Start:** ⭕ Dostępny (opcja)
 * **Pakiet Professional:** ✅ Wliczony
 * **Pakiet Enterprise:** ✅ Wliczony
 * **Cena modułu:** 130,00 PLN
@@ -532,7 +535,7 @@ Moduł wykorzystuje uniwersalny driver płatności, umożliwiający łatwe dodaw
 ### Dropshipping
 
 **Metryczka:**
-* **Pakiet Starter:** ⭕ Dostępny (opcja)
+* **Pakiet Start:** ⭕ Dostępny (opcja)
 * **Pakiet Professional:** ⭕ Dostępny (opcja)
 * **Pakiet Enterprise:** ✅ Wliczony
 * **Cena modułu:** 110,00 PLN
@@ -552,7 +555,7 @@ System weryfikuje adresy dostawy i automatycznie wybiera odpowiedniego kuriera. 
 ### Sprzedaż zagraniczna
 
 **Metryczka:**
-* **Pakiet Starter:** ⛔ Brak
+* **Pakiet Start:** ⛔ Brak
 * **Pakiet Professional:** ⭕ Dostępny (opcja)
 * **Pakiet Enterprise:** ✅ Wliczony
 * **Cena modułu:** 160,00 PLN
@@ -572,7 +575,7 @@ System integruje się z API VIES dla automatycznej weryfikacji numerów VAT. Wer
 ### Zaawansowane uprawnienia użytkowników
 
 **Metryczka:**
-* **Pakiet Starter:** ⛔ Brak
+* **Pakiet Start:** ⛔ Brak
 * **Pakiet Professional:** ⭕ Dostępny (opcja)
 * **Pakiet Enterprise:** ⭕ Dostępny (opcja)
 * **Cena modułu:** 140,00 PLN
@@ -592,7 +595,7 @@ System wspiera hierarchiczne struktury uprawnień z możliwością dziedziczenia
 ### SUP
 
 **Metryczka:**
-* **Pakiet Starter:** ⛔ Brak
+* **Pakiet Start:** ⛔ Brak
 * **Pakiet Professional:** ⭕ Dostępny (opcja)
 * **Pakiet Enterprise:** ⭕ Dostępny (opcja)
 * **Cena modułu:** 50,00 PLN
@@ -612,7 +615,7 @@ System automatycznie identyfikuje produkty objęte opłatą SUP na podstawie kat
 ### Optymalizator zakupów
 
 **Metryczka:**
-* **Pakiet Starter:** ⛔ Brak
+* **Pakiet Start:** ⛔ Brak
 * **Pakiet Professional:** ⛔ Brak
 * **Pakiet Enterprise:** ⭕ Dostępny (opcja)
 * **Cena modułu:** 500,00 PLN
@@ -634,7 +637,7 @@ System wykorzystuje algorytmy optymalizacyjne do analizy tysięcy kombinacji pro
 ### Dane klienta
 
 **Metryczka:**
-* **Pakiet Starter:** ✅ Wliczony
+* **Pakiet Start:** ✅ Wliczony
 * **Pakiet Professional:** ✅ Wliczony
 * **Pakiet Enterprise:** ✅ Wliczony
 * **Cena modułu:** 100,00 PLN
@@ -654,7 +657,7 @@ System automatycznie weryfikuje dane rejestrowe przez API GUS i innych dostawcó
 ### Użytkownicy klienta i role
 
 **Metryczka:**
-* **Pakiet Starter:** ✅ Wliczony
+* **Pakiet Start:** ✅ Wliczony
 * **Pakiet Professional:** ✅ Wliczony
 * **Pakiet Enterprise:** ✅ Wliczony
 * **Cena modułu:** 100,00 PLN
@@ -674,7 +677,7 @@ System wspiera hierarchiczne struktury uprawnień z możliwością dziedziczenia
 ### Listy zakupowe
 
 **Metryczka:**
-* **Pakiet Starter:** ✅ Wliczony
+* **Pakiet Start:** ✅ Wliczony
 * **Pakiet Professional:** ✅ Wliczony
 * **Pakiet Enterprise:** ✅ Wliczony
 * **Cena modułu:** 80,00 PLN
@@ -694,7 +697,7 @@ Listy są przechowywane w systemie z możliwością nazwania, kategoryzacji i ws
 ### Historia zamówień
 
 **Metryczka:**
-* **Pakiet Starter:** ✅ Wliczony
+* **Pakiet Start:** ✅ Wliczony
 * **Pakiet Professional:** ✅ Wliczony
 * **Pakiet Enterprise:** ✅ Wliczony
 * **Cena modułu:** 80,00 PLN
@@ -714,7 +717,7 @@ System automatycznie aktualizuje statusy zamówień na podstawie zdarzeń w proc
 ### Historia faktur
 
 **Metryczka:**
-* **Pakiet Starter:** ⛔ Brak
+* **Pakiet Start:** ⛔ Brak
 * **Pakiet Professional:** ✅ Wliczony
 * **Pakiet Enterprise:** ✅ Wliczony
 * **Cena modułu:** 120,00 PLN
@@ -734,7 +737,7 @@ Moduł integruje się z systemami rozliczeniowymi przez API dla automatycznej sy
 ### Historia dostaw
 
 **Metryczka:**
-* **Pakiet Starter:** ⛔ Brak
+* **Pakiet Start:** ⛔ Brak
 * **Pakiet Professional:** ✅ Wliczony
 * **Pakiet Enterprise:** ✅ Wliczony
 * **Cena modułu:** 120,00 PLN
@@ -754,7 +757,7 @@ Moduł integruje się z systemami kurierów przez API dla automatycznej synchron
 ### Rozrachunki
 
 **Metryczka:**
-* **Pakiet Starter:** ⛔ Brak
+* **Pakiet Start:** ⛔ Brak
 * **Pakiet Professional:** ✅ Wliczony
 * **Pakiet Enterprise:** ✅ Wliczony
 * **Cena modułu:** 130,00 PLN
@@ -774,7 +777,7 @@ Moduł integruje się z systemami rozliczeniowymi przez API dla automatycznej sy
 ### Zwroty i reklamacje
 
 **Metryczka:**
-* **Pakiet Starter:** ⭕ Dostępny (opcja)
+* **Pakiet Start:** ⭕ Dostępny (opcja)
 * **Pakiet Professional:** ✅ Wliczony
 * **Pakiet Enterprise:** ✅ Wliczony
 * **Cena modułu:** 190,00 PLN
@@ -794,7 +797,7 @@ Moduł wspiera złożone procesy zwrotów z wieloma krokami i weryfikacjami. Sys
 ### Oferty dedykowane
 
 **Metryczka:**
-* **Pakiet Starter:** ⛔ Brak
+* **Pakiet Start:** ⛔ Brak
 * **Pakiet Professional:** ⭕ Dostępny (opcja)
 * **Pakiet Enterprise:** ✅ Wliczony
 * **Cena modułu:** 350,00 PLN
@@ -814,7 +817,7 @@ Moduł wspiera złożone reguły ofert z wieloma warunkami i wyjątkami. Oferty 
 ### Edycja zamówień w realizacji
 
 **Metryczka:**
-* **Pakiet Starter:** ⛔ Brak
+* **Pakiet Start:** ⛔ Brak
 * **Pakiet Professional:** ⭕ Dostępny (opcja)
 * **Pakiet Enterprise:** ⭕ Dostępny (opcja)
 * **Cena modułu:** 200,00 PLN
@@ -836,7 +839,7 @@ Moduł wspiera złożone procesy edycji z wieloma krokami weryfikacji i akceptac
 ### Agent klienta
 
 **Metryczka:**
-* **Pakiet Starter:** ⛔ Brak
+* **Pakiet Start:** ⛔ Brak
 * **Pakiet Professional:** ⭕ Dostępny (opcja)
 * **Pakiet Enterprise:** ✅ Wliczony
 * **Cena modułu:** 600,00 PLN
@@ -856,7 +859,7 @@ Agent wykorzystuje zaawansowane modele językowe do rozumienia intencji klientó
 ### Agent administratora
 
 **Metryczka:**
-* **Pakiet Starter:** ⛔ Brak
+* **Pakiet Start:** ⛔ Brak
 * **Pakiet Professional:** ⭕ Dostępny (opcja)
 * **Pakiet Enterprise:** ⭕ Dostępny (opcja)
 * **Cena modułu:** 600,00 PLN
@@ -876,7 +879,7 @@ Agent wykorzystuje zaawansowane modele językowe do rozumienia intencji administ
 ### Automatyzacja generowania AI
 
 **Metryczka:**
-* **Pakiet Starter:** ⛔ Brak
+* **Pakiet Start:** ⛔ Brak
 * **Pakiet Professional:** ⭕ Dostępny (opcja)
 * **Pakiet Enterprise:** ⭕ Dostępny (opcja)
 * **Cena modułu:** 800,00 PLN
@@ -898,7 +901,7 @@ Moduł wspiera konfigurowalne schematy generowania dla każdego pola z możliwo�
 ### Konfigurowanie layoutu
 
 **Metryczka:**
-* **Pakiet Starter:** ✅ Wliczony
+* **Pakiet Start:** ✅ Wliczony
 * **Pakiet Professional:** ✅ Wliczony
 * **Pakiet Enterprise:** ✅ Wliczony
 * **Cena modułu:** 70,00 PLN
@@ -918,7 +921,7 @@ Moduł wykorzystuje system szablonów z możliwością nadpisywania i customizac
 ### Aktualności
 
 **Metryczka:**
-* **Pakiet Starter:** ✅ Wliczony
+* **Pakiet Start:** ✅ Wliczony
 * **Pakiet Professional:** ✅ Wliczony
 * **Pakiet Enterprise:** ✅ Wliczony
 * **Cena modułu:** 50,00 PLN
@@ -938,7 +941,7 @@ Moduł wspiera zaawansowany edytor treści z możliwością formatowania, wstawi
 ### Baza wiedzy
 
 **Metryczka:**
-* **Pakiet Starter:** ✅ Wliczony
+* **Pakiet Start:** ✅ Wliczony
 * **Pakiet Professional:** ✅ Wliczony
 * **Pakiet Enterprise:** ✅ Wliczony
 * **Cena modułu:** 50,00 PLN
@@ -958,7 +961,7 @@ Moduł wspiera zaawansowany edytor treści z możliwością formatowania, wstawi
 ### SEO
 
 **Metryczka:**
-* **Pakiet Starter:** ⭕ Dostępny (opcja)
+* **Pakiet Start:** ⭕ Dostępny (opcja)
 * **Pakiet Professional:** ✅ Wliczony
 * **Pakiet Enterprise:** ✅ Wliczony
 * **Cena modułu:** 180,00 PLN
@@ -980,7 +983,7 @@ Moduł automatycznie generuje meta tagi na podstawie treści strony z możliwoś
 ### Profil zamknięty
 
 **Metryczka:**
-* **Pakiet Starter:** ✅ Wliczony
+* **Pakiet Start:** ✅ Wliczony
 * **Pakiet Professional:** ✅ Wliczony
 * **Pakiet Enterprise:** ✅ Wliczony
 * **Cena modułu:** 50,00 PLN
@@ -1000,7 +1003,7 @@ System wykorzystuje zaawansowane mechanizmy uwierzytelniania z możliwością in
 ### Profil otwarty
 
 **Metryczka:**
-* **Pakiet Starter:** ✅ Wliczony
+* **Pakiet Start:** ✅ Wliczony
 * **Pakiet Professional:** ✅ Wliczony
 * **Pakiet Enterprise:** ✅ Wliczony
 * **Cena modułu:** 50,00 PLN
@@ -1020,7 +1023,7 @@ System automatycznie generuje leady z danych kontaktowych niezarejestrowanych u�
 ### MultiStore
 
 **Metryczka:**
-* **Pakiet Starter:** ⛔ Brak
+* **Pakiet Start:** ⛔ Brak
 * **Pakiet Professional:** ⛔ Brak
 * **Pakiet Enterprise:** ✅ Wliczony
 * **Cena modułu:** 600,00 PLN
@@ -1042,7 +1045,7 @@ System wspiera nieograniczoną liczbę sklepów z pełną izolacją danych międ
 ### Profil B2C
 
 **Metryczka:**
-* **Pakiet Starter:** ⛔ Brak
+* **Pakiet Start:** ⛔ Brak
 * **Pakiet Professional:** ⭕ Dostępny (opcja)
 * **Pakiet Enterprise:** ⭕ Dostępny (opcja)
 * **Cena modułu:** 600,00 PLN
@@ -1062,7 +1065,7 @@ System automatycznie rozpoznaje typ klienta (B2B/B2C) i dostosowuje interfejs i 
 ### Obsługa Omnibus
 
 **Metryczka:**
-* **Pakiet Starter:** ⛔ Brak
+* **Pakiet Start:** ⛔ Brak
 * **Pakiet Professional:** ⭕ Dostępny (opcja)
 * **Pakiet Enterprise:** ⭕ Dostępny (opcja)
 * **Cena modułu:** 0,00 PLN
@@ -1084,7 +1087,7 @@ System automatycznie śledzi historię cen produktów i wyświetla najniższą c
 ### Wsparcie klienta w zakupach
 
 **Metryczka:**
-* **Pakiet Starter:** ✅ Wliczony
+* **Pakiet Start:** ✅ Wliczony
 * **Pakiet Professional:** ✅ Wliczony
 * **Pakiet Enterprise:** ✅ Wliczony
 * **Cena modułu:** 100,00 PLN
@@ -1104,7 +1107,7 @@ System wspiera bezpieczne przelogowanie handlowca w konto klienta z pełnym audy
 ### Panel handlowca
 
 **Metryczka:**
-* **Pakiet Starter:** ⛔ Brak
+* **Pakiet Start:** ⛔ Brak
 * **Pakiet Professional:** ⭕ Dostępny (opcja)
 * **Pakiet Enterprise:** ✅ Wliczony
 * **Cena modułu:** 300,00 PLN
@@ -1124,7 +1127,7 @@ Panel jest zbudowany na architekturze modułowej z możliwością dostosowania d
 ### Ofertowanie
 
 **Metryczka:**
-* **Pakiet Starter:** ⛔ Brak
+* **Pakiet Start:** ⛔ Brak
 * **Pakiet Professional:** ⭕ Dostępny (opcja)
 * **Pakiet Enterprise:** ✅ Wliczony
 * **Cena modułu:** 300,00 PLN
@@ -1144,7 +1147,7 @@ System wspiera tworzenie ofert z szablonów dla szybkiego przygotowania propozyc
 ### Zadania
 
 **Metryczka:**
-* **Pakiet Starter:** ⛔ Brak
+* **Pakiet Start:** ⛔ Brak
 * **Pakiet Professional:** ⭕ Dostępny (opcja)
 * **Pakiet Enterprise:** ✅ Wliczony
 * **Cena modułu:** 300,00 PLN
@@ -1164,7 +1167,7 @@ System wspiera różne typy zadań (kontakt z klientem, przygotowanie oferty, we
 ### Monitoring klientów
 
 **Metryczka:**
-* **Pakiet Starter:** ⛔ Brak
+* **Pakiet Start:** ⛔ Brak
 * **Pakiet Professional:** ⛔ Brak
 * **Pakiet Enterprise:** ⭕ Dostępny (opcja)
 * **Cena modułu:** 100,00 PLN
@@ -1186,7 +1189,7 @@ System wspiera konfigurowalne polityki monitorowania z wieloma warunkami i wyją
 ### Admin API
 
 **Metryczka:**
-* **Pakiet Starter:** ⭕ Dostępny (opcja)
+* **Pakiet Start:** ⭕ Dostępny (opcja)
 * **Pakiet Professional:** ✅ Wliczony
 * **Pakiet Enterprise:** ✅ Wliczony
 * **Cena modułu:** 160,00 PLN
@@ -1206,7 +1209,7 @@ API jest zbudowane na standardzie REST z pełną dokumentacją OpenAPI/Swagger. 
 ### Client API
 
 **Metryczka:**
-* **Pakiet Starter:** ⛔ Brak
+* **Pakiet Start:** ⛔ Brak
 * **Pakiet Professional:** ✅ Wliczony
 * **Pakiet Enterprise:** ✅ Wliczony
 * **Cena modułu:** 160,00 PLN
@@ -1226,14 +1229,14 @@ API jest zbudowane na standardzie REST z pełną dokumentacją dla klientów. Sy
 ### Integracje ERP
 
 **Metryczka:**
-* **Pakiet Starter:** ⭕ Dostępny (opcja)
+* **Pakiet Start:** ⭕ Dostępny (opcja)
 * **Pakiet Professional:** ⭕ Dostępny (opcja)
 * **Pakiet Enterprise:** ⭕ Dostępny (opcja)
 * **Cena modułu:** 400,00 PLN
 
 **Opis biznesowy:**
 
-Integracje ERP to gotowe rozwiązania do synchronizacji platformy z popularnymi systemami ERP (Teneum, Comarch Optima, eNova, Comarch XL). System automatycznie synchronizuje dane produktowe, klientów, zamówienia i faktury między platformą a systemem ERP. To eliminuje konieczność manualnej obsługi danych i redukuje błędy. Dla firm z systemami ERP to standard, który umożliwia pełną automatyzację procesów. To narzędzie do zwiększania efektywności operacyjnej poprzez eliminację duplikacji danych.
+Integracje ERP to gotowe rozwiązania do synchronizacji platformy z popularnymi systemami ERP (Teneum, Comarch Optima, enova365, Comarch XL). System automatycznie synchronizuje dane produktowe, klientów, zamówienia i faktury między platformą a systemem ERP. To eliminuje konieczność manualnej obsługi danych i redukuje błędy. Dla firm z systemami ERP to standard, który umożliwia pełną automatyzację procesów. To narzędzie do zwiększania efektywności operacyjnej poprzez eliminację duplikacji danych.
 
 **Ciekawostki techniczne:**
 
@@ -1248,7 +1251,7 @@ Każda integracja ERP jest zbudowana jako osobny moduł z możliwością konfigu
 ### Środowisko produkcyjne
 
 **Metryczka:**
-* **Pakiet Starter:** ✅ Wliczony
+* **Pakiet Start:** ✅ Wliczony
 * **Pakiet Professional:** ✅ Wliczony
 * **Pakiet Enterprise:** ✅ Wliczony
 * **Cena modułu:** 750,00 PLN
@@ -1268,7 +1271,7 @@ Każda integracja ERP jest zbudowana jako osobny moduł z możliwością konfigu
 ### Środowisko testowe
 
 **Metryczka:**
-* **Pakiet Starter:** ⛔ Brak
+* **Pakiet Start:** ⛔ Brak
 * **Pakiet Professional:** ✅ Wliczony
 * **Pakiet Enterprise:** ✅ Wliczony
 * **Cena modułu:** 300,00 PLN
@@ -1288,7 +1291,7 @@ Każda integracja ERP jest zbudowana jako osobny moduł z możliwością konfigu
 ### n8n
 
 **Metryczka:**
-* **Pakiet Starter:** ⭕ Dostępny (opcja)
+* **Pakiet Start:** ⭕ Dostępny (opcja)
 * **Pakiet Professional:** ✅ Wliczony
 * **Pakiet Enterprise:** ✅ Wliczony
 * **Cena modułu:** 300,00 PLN
@@ -1308,7 +1311,7 @@ n8n jest zintegrowane z platformą przez API z dostępem do wszystkich funkcji s
 ### OnPremise
 
 **Metryczka:**
-* **Pakiet Starter:** ⛔ Brak
+* **Pakiet Start:** ⛔ Brak
 * **Pakiet Professional:** ✅ Wliczony
 * **Pakiet Enterprise:** ✅ Wliczony
 * **Cena modułu:** 0,00 PLN
@@ -1328,7 +1331,7 @@ Instalacja OnPremise wspiera różne systemy operacyjne (Linux, Windows) i bazy 
 ### Tłumaczenia językowe
 
 **Metryczka:**
-* **Pakiet Starter:** ⛔ Brak
+* **Pakiet Start:** ⛔ Brak
 * **Pakiet Professional:** ⛔ Brak
 * **Pakiet Enterprise:** ✅ Wliczony
 * **Cena modułu:** 80,00 PLN
@@ -1350,7 +1353,7 @@ Tłumaczenia są wykonywane przez profesjonalnych tłumaczy z weryfikacją jako�
 ### Wtyczki własne
 
 **Metryczka:**
-* **Pakiet Starter:** ⛔ Brak
+* **Pakiet Start:** ⛔ Brak
 * **Pakiet Professional:** ✅ Wliczony
 * **Pakiet Enterprise:** ✅ Wliczony
 * **Cena modułu:** 0,00 PLN
@@ -1370,7 +1373,7 @@ System wspiera modułową architekturę wtyczek z możliwością izolacji i zarz
 ### Kod źródłowy
 
 **Metryczka:**
-* **Pakiet Starter:** ⛔ Brak
+* **Pakiet Start:** ⛔ Brak
 * **Pakiet Professional:** ⭕ Dostępny (opcja)
 * **Pakiet Enterprise:** ✅ Wliczony
 * **Cena modułu:** 300,00 PLN
@@ -1390,7 +1393,7 @@ Kod źródłowy jest dostępny przez repozytorium Git z pełną historią zmian.
 ### Customization Studio
 
 **Metryczka:**
-* **Pakiet Starter:** ⛔ Brak
+* **Pakiet Start:** ⛔ Brak
 * **Pakiet Professional:** ⛔ Brak
 * **Pakiet Enterprise:** ⭕ Dostępny (opcja)
 * **Cena modułu:** 400,00 PLN

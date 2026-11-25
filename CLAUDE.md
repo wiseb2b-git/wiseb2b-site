@@ -6,8 +6,36 @@ Strona marketingowa firmy WiseB2B (platforma e-Commerce B2B). Źródłem prawdy 
 ## Pamięć i ustalenia (ZASADA)
 - **Nie zapisujemy niczego w pamięci Claude** (auto-memory, `~/.claude/projects/.../memory`). Wszystko, co ma przetrwać między sesjami, zapisujemy w plikach projektu.
 - Zasady ogólne i techniczne: ten plik (`CLAUDE.md`). Uwaga: repo jest publiczne, więc tu tylko informacje, które mogą być jawne.
-- Decyzje, ustalenia z CEO, zasady treści i stan prac: `.knowledge/ustalenia-projektu.md`. **Przeczytaj go na początku każdej sesji** i dopisuj tam nowe decyzje z datą.
-- Księga marketingowa: `.knowledge/*.md` (spis i hierarchia: `.knowledge/README.md`). Dokumenty marketingowe CEO: `.knowledge/marketing/` (tylko do odczytu). Opis skilli: `.claude/README.md`.
+- Decyzje, ustalenia z CEO, zasady treści i stan prac: `.knowledge/projekt/ustalenia-projektu.md`. **Przeczytaj go na początku każdej sesji** i dopisuj tam nowe decyzje z datą.
+
+## Źródło prawdy dla treści (copywriting, marketing)
+**Księga marketingowa = jedyne pliki w głównym katalogu `.knowledge/`.** To one są źródłem prawdy o marce, ofercie i komunikacji:
+1. `.knowledge/WiseB2B - kontekst marketingowy.md`: **MASTER**. Produkt, klienci (ICP), persony, konkurencja, wyróżniki, obiekcje, dowody i liczby, ceny, głos marki, słownik pisowni. Skille czytają go przez `.agents/product-marketing.md` (symlink).
+2. `.knowledge/WiseB2B - mapa komunikacji.md`: stała warstwa komunikacji (rdzeń marki, pozycjonowanie, filary, warstwa bezpieczeństwa) i rola każdej strony. Bez własnych faktów: liczby i słownik bierze z kontekstu.
+
+**Teksty stron:** `.knowledge/teksty/<strona>.md` (copy deck, sekcja po sekcji w kolejności z Figmy). Zmiana tekstu: najpierw w copy decku, potem w `src/`.
+
+**Materiały wspierające** (podkatalogi `.knowledge/`, nie są źródłem prawdy, służą do pogłębienia lub sprawdzenia):
+- `marketing/`: dokumenty sprzedażowe CEO (persony, konkurencja, przegrane deale, proces zakupu). Tylko do odczytu.
+- `zrodla/`: PDF-y CEO (szkolenia, opis rozwiązania, przykłady wdrożeń, case VMP).
+- `produkt/`: katalog modułów i cennik modułów (dla stron Funkcje i Plany).
+- `projekt/`: ustalenia z CEO, decyzje do podjęcia, spis katalogu.
+- `archiwum/`: stare notatki (m.in. próbka głosu CEO), audyt.
+
+**Hierarchia przy sprzecznościach:** decyzje CEO (`projekt/ustalenia-projektu.md`) > księga marketingowa > `marketing/` > `zrodla/` > strona z maja > `produkt/`, `archiwum/`. Otwarte sprzeczności: `projekt/decyzje-do-podjecia.md`. Gdy materiał wspierający jest nowszy lub dokładniejszy niż księga, **najpierw aktualizujemy księgę**, potem teksty.
+
+**Nazewnictwo w rozmowie z CEO: zawsze podawaj nazwę pliku**, nie skrót myślowy:
+| Pojęcie | Plik |
+|---|---|
+| księga marketingowa | `.knowledge/WiseB2B - kontekst marketingowy.md` + `.knowledge/WiseB2B - mapa komunikacji.md` |
+| dokumenty marketingowe CEO | `.knowledge/marketing/00_directives.md` … `07_qualification.md` |
+| ustalenia z CEO | `.knowledge/projekt/ustalenia-projektu.md` |
+| decyzje do podjęcia (P##) | `.knowledge/projekt/decyzje-do-podjecia.md` |
+| teksty stron (copy deck) | `.knowledge/teksty/<strona>.md` |
+| próbka głosu CEO | `.knowledge/archiwum/WiseB2B - baza wiedzy - informacje podstawowe.md` |
+| strona z maja (wersja CEO) | `/home/ubuntu/wiseb2b_site_old`, zrzut tekstów `.analiza-tmp/A_old/` |
+
+**Zasady dla copywritera:** teksty CEO (strona z maja, Figma) to prawdziwy głos: poprawiamy fakty, słownik i strukturę, nie piszemy od nowa (skill `copywriting`, sytuacja B). Nie usuwamy liczb bez zgody CEO. Nie podważamy funkcji opisanych w materiałach. Opis skilli: `.claude/README.md`.
 
 ## Stan projektu
 Migracja jest w trakcie. Struktura stron, routing, redirecty, design tokens, header, footer i komponenty są gotowe. Strony mają treść i layout, ale **wizualnie nie odpowiadają Figma/WP**. Główne zadanie: przejść stronę po stronie i doprowadzić wygląd do zgodności z nowym KV z Figmy.
@@ -18,7 +46,7 @@ Co zrobione:
 - Redirecty 301 w `public/_redirects` (stare nested URL-e → nowe flat)
 - Header, Footer, CtaBlock, CookieBar, ArticleCards jako komponenty
 - Content Collections: baza-wiedzy (4), funkcjonalnosci (16), obszary (13), case-study (2), partnerzy (2)
-- CSS: `global.css` (4533 linii) zawiera wszystkie style. Stare WP CSS (otree, theme-inline, styles.min) usunięte
+- CSS: `global.css` zawiera wszystkie style. Stare WP CSS (otree, theme-inline, styles.min) usunięte
 - Animacje: IntersectionObserver (`.lm-observer`) i Swiper.js zachowane, WOW.js usunięty
 
 Co wymaga pracy:
@@ -179,7 +207,7 @@ Baza wiedzy                 → /baza-wiedzy/
 - Header: biały, logo wise + B2B (wersja kolorowa `logo-wiseb2b.svg`), nawigacja ciemna (`#20262e`), CTA "Zamów demo" w `#512da8`
 - Hero sekcje: ciemne tło z dekoracyjnym SVG (siatka linii), biały tekst, fioletowy CTA pill, badge "Commerce B2B Platform" z ikoną błyskawicy, screenshot dashboardu na dole
 - Font: Manrope (jak w Figmie; od 2026-11-24 także w tokenach)
-- Karty: `#F6F6F6`, bez ramki, border-radius 20px; ikona w kafelku `#EEEAF6` (blok „KV z Figmy” na końcu `global.css`)
+- Karty: `#F6F6F6`, bez ramki, border-radius 20px; ikona w kafelku `#EEEAF6` (blok „KV z Figmy” w `global.css`). Typografia: tylko klasy `.kv-*` (sekcja „System typografii KV”)
 - Sekcje na ciemnym tle: `#20262e`, border-radius 20px
 - Newsletter/CTA bar: gradient fioletowy
 - Footer: ciemny, 4 kolumny, ikony LinkedIn+Facebook

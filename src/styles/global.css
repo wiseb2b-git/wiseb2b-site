@@ -6994,3 +6994,38 @@ p + .page-hero__actions { margin-top: 24px; }
   .numbers-text > .container > .row { margin: 0; }
   .numbers-text > .container > .row > [class*="col-"] { padding: 0; }
 }
+
+/* =====================================================================
+   Typografia kart wg Figmy (2026-11-25), na wszystkich stronach.
+   Figma: tytuł karty 18–20 px / 700 #20262E, opis 16–18 px / 400 #4D5158,
+   pytanie FAQ 18 px / 600, etap procesu 32 / 24 / 18 px.
+   ===================================================================== */
+/* Opisy w jasnych kartach: kolor #4D5158 zamiast jaśniejszego #6A6E73 */
+:where(.about-us-rules__item, .agent-ai-feature-card, .ph-goal, .ph-benefits__card, .functions-cards__item, .functions-table__cell, .hp-why__card, .box, .cloud-includes__item, .team-process__card, .case-study-functions__item, .functions-box-white-bg .item, .questions__items .item, .number__content) :is(p, li):not([class*="semi"]):not(.o-nas-exp__value) { color: #4D5158 !important; }
+.numbers-text .box--dark p, .functions-cards--dark p { color: inherit; }
+
+/* Tytuł 18 px / 700, opis 16 px */
+.functions-table__cell h3, .hp-why__card h3, .case-study-functions__name { font-size: 18px !important; font-weight: 700 !important; line-height: 1.35 !important; color: #20262E !important; }
+.functions-table__cell p, .hp-why__card p, .ph-benefits__card p, .case-study-functions__desc { font-size: 16px !important; line-height: 1.55 !important; }
+
+/* Tytuł 20 px / 700, opis 18 px (Funkcje: moduły; Plany: usługa; Zespół: etapy) */
+.functions-box-white-bg .item .item_header, .cloud-includes__item h5, .team-process__card h3 { font-size: 20px !important; font-weight: 700 !important; line-height: 1.3 !important; color: #20262E !important; }
+.functions-box-white-bg .item p, .cloud-includes__item p, .team-process__card p { font-size: 18px !important; line-height: 1.55 !important; }
+
+/* FAQ: pytanie 18 px / 600, odpowiedź 16 px */
+.questions__items .item h2 { font-size: 18px !important; font-weight: 600 !important; line-height: 1.4 !important; }
+.questions__items .item p { font-size: 16px !important; line-height: 1.6 !important; }
+
+/* Etapy procesu i migracji: 32 / 24 / 18 px */
+.number__content-header { font-size: 32px !important; font-weight: 700 !important; line-height: 1.2 !important; }
+.number__content-subheader { font-size: 24px !important; font-weight: 700 !important; line-height: 1.3 !important; color: #4D5158 !important; }
+.number__content :is(.p_regular_1, .p_regular_3) { font-size: 18px !important; line-height: 1.55 !important; }
+
+@media (max-width: 767px) {
+  .number__content-header { font-size: 24px !important; }
+  .number__content-subheader { font-size: 19px !important; }
+  .functions-box-white-bg .item .item_header, .cloud-includes__item h5, .team-process__card h3 { font-size: 18px !important; }
+  .functions-box-white-bg .item p, .cloud-includes__item p, .team-process__card p, .number__content :is(.p_regular_1, .p_regular_3) { font-size: 16px !important; }
+}
+/* Ciemne sekcje: opisy jasne (Figma #989B9F / #E9E9EA), nie #4D5158 */
+[class*="--dark"] :is(.about-us-rules__item, .agent-ai-feature-card, .functions-cards__item, .box, .hp-why__card, .item) :is(p, li):not([class*="semi"]) { color: #BABCBE !important; }
